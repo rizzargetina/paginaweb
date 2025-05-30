@@ -351,8 +351,8 @@
     .hero-cta { padding: 12px 28px; font-size: 0.95rem; } /* Ajuste al botón específico del hero */
 
     /* Imágenes de fondo móviles (específicas para esta página) */
-    #hero-slide-1 { background-image: url('../img/mobile1.jpg'); }
-    #hero-slide-2 { background-image: url('../img/mobile2.jpg'); }
+    #hero-slide-1 { background-image: url('../img/mobile2.jpg'); }
+    #hero-slide-2 { background-image: url('../img/mobile1.jpg'); }
     /* #hero-slide-3 { background-image: url('../img/mobile-image3.jpg'); } */
 
     .content-section,

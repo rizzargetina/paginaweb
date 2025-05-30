@@ -1,0 +1,393 @@
+/* css/forms-jobs.css */
+/* Estilos específicos para la página de contacto y oportunidades laborales */
+
+/* --- Estilos Comunes para Contenedores de Sección en estas páginas --- */
+.section-container { /* Clase reutilizable para forms y jobs */
+    background-color: var(--color-content-bg-lighter); /* Definida en _variables.css */
+    padding: 30px;
+    border-radius: var(--border-radius-medium); /* Definida en _variables.css */
+    box-shadow: var(--shadow-soft); /* Definida en _variables.css */
+    margin-bottom: 40px;
+}
+
+.section-container h2 {
+    /* Estilos base de h2 heredados de _typography.css */
+    margin-top: 0;
+    margin-bottom: 1.8rem; /* Override */
+    font-size: 1.8rem; /* Override o ajuste a _typography.css */
+    color: var(--color-heading-text); /* Puede ser el default de _typography.css */
+    border-bottom: 2px solid var(--color-accent); /* Específico */
+    padding-bottom: 0.6rem; /* Específico */
+    display: inline-block; /* Para que el borde no ocupe todo el ancho */
+}
+
+/* --- Estilos Página de Contacto --- */
+.contact-wrapper {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 40px;
+    /* Si contact-wrapper también tiene la clase .section-container, heredará esos estilos. */
+}
+
+.contact-form-container,
+.contact-info-container {
+    flex: 1;
+    min-width: 300px; /* Evita que se compriman demasiado */
+}
+
+/* Padding para el contenedor principal de la página de contacto.
+   Asume que contact.html tiene <div class="container page-container">.
+   .container ya provee padding lateral y max-width. */
+.page-container {
+    padding-top: calc(var(--spacing-unit) * 6);
+    padding-bottom: calc(var(--spacing-unit) * 8);
+}
+
+/* Formulario de Contacto */
+#contact-form .form-group {
+    margin-bottom: 1.8rem;
+}
+
+#contact-form label {
+    display: block;
+    margin-bottom: 0.6rem;
+    font-weight: 500; /* Medium weight */
+    color: var(--color-primary-text);
+    font-size: 0.9rem;
+}
+
+#contact-form input[type="text"],
+#contact-form input[type="email"],
+#contact-form input[type="tel"],
+#contact-form textarea {
+    width: 100%;
+    padding: 14px;
+    border: 1px solid var(--color-border-stronger); /* Asume var de _variables.css */
+    border-radius: var(--border-radius-small);    /* Asume var de _variables.css */
+    background-color: var(--color-primary-bg);
+    color: var(--color-primary-text);
+    font-size: 1rem;
+    font-family: var(--font-primary);
+    transition: border-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+#contact-form ::placeholder {
+  color: var(--color-secondary-text);
+  opacity: 1; /* Firefox */
+  font-style: italic;
+  font-size: 0.95rem;
+}
+/* Para navegadores más antiguos si es necesario */
+#contact-form ::-moz-placeholder { color: var(--color-secondary-text); opacity: 1; font-style: italic; font-size: 0.95rem; }
+#contact-form :-ms-input-placeholder { color: var(--color-secondary-text); opacity: 1; font-style: italic; font-size: 0.95rem; }
+#contact-form ::-webkit-input-placeholder { color: var(--color-secondary-text); opacity: 1; font-style: italic; font-size: 0.95rem; }
+
+
+#contact-form input:focus,
+#contact-form textarea:focus {
+    outline: none;
+    border-color: var(--color-accent);
+    box-shadow: var(--shadow-focus); /* Asume var de _variables.css */
+}
+
+#contact-form textarea {
+    resize: vertical;
+    min-height: 150px;
+}
+
+/* Botón de submit. Asumir que en HTML es <button type="submit" class="cta-button contact-form-submit"> */
+.contact-form-submit { /* Clase adicional a .cta-button para overrides */
+    width: auto; /* Si .cta-button fuera width:100% por alguna razón */
+    padding: 12px 35px; /* Override del padding de .cta-button base */
+}
+
+#form-status {
+    margin-top: 1.5rem;
+    font-weight: 500;
+    padding: 10px;
+    border-radius: var(--border-radius-small);
+    text-align: center;
+}
+#form-status.success { background-color: rgba(40, 167, 69, 0.18); color: #28a745; border: 1px solid rgba(40, 167, 69, 0.5); }
+#form-status.error { background-color: rgba(220, 53, 69, 0.18); color: #dc3545; border: 1px solid rgba(220, 53, 69, 0.5); }
+
+
+/* Información de Contacto Directa */
+.contact-info-container .info-item {
+    margin-bottom: 1.8rem;
+    line-height: 1.6; /* Puede heredar de body o ser específico */
+    display: flex;
+    align-items: flex-start; /* Alinea icono y texto al inicio */
+    gap: 15px;
+}
+
+.contact-info-container .info-item i { /* Iconos Font Awesome u otros */
+    font-size: 1.3rem;
+    color: var(--color-accent);
+    margin-top: 0.1em; /* Ajuste vertical fino */
+    width: 20px; /* Ancho fijo para alineación */
+    text-align: center;
+}
+
+.contact-info-container .info-text {
+    flex: 1; /* Para que el texto ocupe el espacio restante */
+}
+
+.contact-info-container .info-item strong {
+    display: block;
+    color: var(--color-heading-text); /* Puede ser el default de strong */
+    margin-bottom: 0.3rem;
+    font-size: 1.05rem; /* Override */
+    font-weight: 500; /* Override (strong es 700 por defecto) */
+}
+
+.contact-info-container .info-item p {
+    margin: 0; /* Anula margen de p global si es necesario */
+    color: var(--color-secondary-text); /* Puede ser el default */
+    font-size: 0.95rem; /* Override */
+}
+
+.contact-info-container .info-item a {
+    /* Estilos base de 'a' heredados de _typography.css */
+    /* color: var(--color-link); /* Heredado */
+}
+/* .contact-info-container .info-item a:hover,
+.contact-info-container .info-item a:focus {
+    color: var(--color-link-hover); /* Heredado */
+    /* text-decoration: underline; /* Heredado */
+/*}*/
+
+/* Mapa de Ubicación */
+.map-container {
+    margin-top: 2.5rem;
+    border-radius: var(--border-radius-medium);
+    overflow: hidden; /* Para que el iframe respete el border-radius */
+    border: 1px solid var(--color-border-subtle); /* Asume var de _variables.css */
+}
+
+.map-container iframe {
+    display: block; /* Elimina espacio extra debajo del iframe */
+    width: 100%; /* Definido en HTML, pero bueno tenerlo */
+    height: 350px; /* Definido en HTML, pero bueno tenerlo */
+    border: 0; /* Quita borde por defecto del iframe */
+}
+
+/* --- Estilos Página de Oportunidades (Jobs) --- */
+/* Se recomienda usar .section-container en el HTML para #por-que-jgt y #ofertas-actuales */
+
+#por-que-jgt ul {
+    /* Estilos base de ul heredados de _typography.css o _reset.css */
+}
+
+#por-que-jgt li {
+    padding-left: 35px; /* Espacio para el icono personalizado */
+    position: relative;
+    margin-bottom: 1rem; /* Override de li global */
+    line-height: 1.7; /* Override */
+    color: var(--color-primary-text); /* Puede ser el default */
+}
+#por-que-jgt li::before {
+    display: none; /* Oculta el ::before por defecto de _typography.css */
+}
+
+#por-que-jgt li i { /* Icono Font Awesome (ej. <i class="fas fa-check"></i>) */
+    position: absolute;
+    left: 0;
+    top: 0.2em; /* Ajuste vertical del icono */
+    color: var(--color-accent);
+    font-size: 1.2rem;
+    width: 25px;
+    text-align: center;
+}
+
+.jobs-hr { /* Separador específico para la página de Jobs, si el hr global no es suficiente */
+    border: 0;
+    height: 1px;
+    background-color: var(--color-border-subtle);
+    margin: 50px auto; /* Override del hr global */
+    width: 70%; /* Override del hr global */
+}
+
+.job-listings-container {
+    display: grid;
+    gap: 30px;
+    /* Para layout en columnas en desktop:
+    grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); */
+}
+
+.job-listing {
+    background-color: var(--color-primary-bg);
+    padding: 25px;
+    border-radius: var(--border-radius-small);
+    border: 1px solid var(--color-border-stronger);
+    border-left: 5px solid var(--color-accent); /* Acento visual */
+    transition: transform 0.25s ease, box-shadow 0.25s ease, border-color 0.25s ease;
+    position: relative;
+}
+
+.job-listing:hover {
+    transform: translateY(-4px);
+    box-shadow: var(--shadow-medium);
+    border-color: var(--color-accent); /* Cambia el color del borde general, no el izquierdo */
+}
+
+.job-listing h3 {
+    margin-top: 0;
+    margin-bottom: 0.6rem; /* Override */
+    font-size: 1.3rem; /* Override o ajuste a h3 global */
+    color: var(--color-heading-text); /* Puede ser el default */
+}
+
+.job-location {
+    font-size: 0.9rem;
+    color: var(--color-secondary-text);
+    margin-bottom: 1.2rem;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+.job-location i {
+    font-size: 1rem;
+    color: inherit; /* Hereda color de .job-location */
+}
+
+.job-description {
+    margin-bottom: 1.8rem;
+    color: var(--color-primary-text);
+    font-size: 0.95rem;
+    line-height: 1.65; /* Puede ser el default */
+}
+
+
+
+.no-vacancies {
+    background-color: transparent; /* Sin fondo extra */
+    padding: 30px;
+    border-radius: var(--border-radius-medium);
+    text-align: center;
+    border: 2px dashed var(--color-border-stronger);
+    color: var(--color-secondary-text);
+}
+.no-vacancies p { margin-bottom: 0.5rem; font-size: 1.1rem; }
+.no-vacancies strong { color: var(--color-primary-text); } /* Puede ser el default */
+
+
+#como-postular {
+    text-align: center;
+    padding: 30px;
+    background-color: var(--color-content-bg-darker); /* Asume var de _variables.css */
+    border-radius: var(--border-radius-medium);
+    margin-top: 40px; /* Si no está envuelto en .section-container */
+}
+
+#como-postular h2 {
+    margin-top: 0;
+    margin-bottom: 1.5rem; /* Override */
+    font-size: 1.8rem; /* Override o ajuste a h2 global */
+    color: var(--color-heading-text); /* Puede ser el default */
+}
+
+#como-postular p {
+    color: var(--color-primary-text); /* Puede ser el default */
+    line-height: 1.7; /* Override */
+    max-width: 700px; /* Para legibilidad */
+    margin-left: auto;
+    margin-right: auto;
+    margin-bottom: 1.5rem; /* Override */
+}
+
+.contact-email { /* Contenedor del enlace de email */
+    margin: 2rem 0;
+}
+
+.contact-email a { /* Enlace de email estilizado como botón */
+    font-size: 1.1rem;
+    font-weight: 500;
+    color: var(--color-heading-text);
+    text-decoration: none; /* Anula el underline de 'a' global */
+    padding: 12px 25px;
+    border: 1px solid var(--color-border-stronger);
+    border-radius: var(--border-radius-small);
+    background-color: var(--color-content-bg-lighter);
+    transition: background-color 0.3s ease, color 0.3s ease, border-color 0.3s ease, box-shadow 0.3s ease;
+    display: inline-flex; /* Para alinear icono y texto */
+    align-items: center;
+    gap: 12px;
+}
+
+.contact-email a i {
+    font-size: 1.2em; /* Relativo al texto del enlace */
+    color: var(--color-accent);
+    transition: color 0.3s ease;
+}
+
+.contact-email a:hover,
+.contact-email a:focus {
+    background-color: var(--color-accent);
+    color: var(--color-header-bg); /* Asume var de _variables.css, color de texto oscuro sobre fondo de acento */
+    border-color: var(--color-accent);
+    text-decoration: none;
+    outline: none; /* :focus-visible se encargará del outline */
+    box-shadow: var(--shadow-focus); /* O un estilo de foco específico */
+}
+.contact-email a:hover i,
+.contact-email a:focus i {
+    color: var(--color-header-bg); /* Icono del mismo color que el texto en hover/focus */
+}
+
+#como-postular p em { /* Nota al final de "Cómo Postular" */
+    color: var(--color-secondary-text);
+    font-size: 0.9rem;
+    display: block;
+    margin-top: 2rem;
+    font-style: normal; /* Si no se quiere la itálica por defecto de 'em' */
+}
+
+
+/* --- Media Queries Específicas para Forms & Jobs --- */
+/* Los ajustes de responsive.css se aplican primero. Estos son overrides o adiciones. */
+
+@media (max-width: 768px) {
+    .contact-wrapper { flex-direction: column; gap: 30px; }
+    .section-container { padding: 25px; }
+    .section-container h2 { font-size: 1.6rem; margin-bottom: 1.5rem; } /* Override de responsive.css si es necesario */
+
+    .map-container { margin-top: 2rem; }
+    .map-container iframe { height: 300px; }
+
+    .job-listing { padding: 20px; }
+    .job-listing h3 { font-size: 1.2rem; } /* Override de responsive.css si es necesario */
+    .job-description { font-size: 0.9rem; }
+    .job-apply-button { padding: 8px 18px; font-size: 0.8rem; } /* Mantener !important con precaución */
+    .job-listings-container { gap: 20px; }
+
+    #como-postular { padding: 25px; }
+    #como-postular h2 { font-size: 1.6rem; } /* Override de responsive.css si es necesario */
+}
+
+@media (max-width: 480px) {
+    .section-container { padding: 20px; }
+    .section-container h2 { font-size: 1.4rem; margin-bottom: 1.2rem; }
+
+    #contact-form input[type="text"],
+    #contact-form input[type="email"],
+    #contact-form input[type="tel"],
+    #contact-form textarea { padding: 12px; }
+
+    #contact-form ::placeholder,
+    #contact-form ::-moz-placeholder,
+    #contact-form :-ms-input-placeholder,
+    #contact-form ::-webkit-input-placeholder { font-size: 0.9rem; }
+
+    .job-listing h3 { font-size: 1.1rem; }
+    .job-location { font-size: 0.85rem; }
+    .job-description { font-size: 0.85rem; }
+
+    .contact-email a { font-size: 1rem; padding: 10px 20px; gap: 10px; }
+    .contact-email a i { font-size: 1.1em; }
+
+    .no-vacancies p { font-size: 1rem; }
+
+    #como-postular { padding: 20px; }
+    #como-postular h2 { font-size: 1.4rem; }
+}

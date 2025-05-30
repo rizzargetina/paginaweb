@@ -1,0 +1,84 @@
+
+.cta-button {
+    /* Propiedades de visualización y caja */
+    display: inline-block; /* Hace que el elemento se comporte como un bloque (acepta padding, margin, width, height)
+                              pero fluye con el texto como un elemento en línea. */
+    padding: 12px 28px;    /* Relleno interno: 12px arriba/abajo, 28px izquierda/derecha. Crea espacio entre el texto y el borde del botón. */
+    border-radius: var(--border-radius); /* Radio de los bordes para esquinas redondeadas. Usa una variable CSS (--border-radius)
+                                            que probablemente está definida en otro lugar (ej. un archivo de variables globales). */
+    border: 2px solid transparent; /* Borde transparente de 2px. Esto es una buena práctica para evitar que el botón
+                                      "salte" o cambie de tamaño si se añade un borde visible en estados como :hover o :focus. */
+
+    /* Colores */
+    background-color: var(--dhl-yellow); /* Color de fondo. Utiliza una variable CSS (custom property) llamada --dhl-yellow
+                                            para el amarillo característico de DHL. */
+    color: var(--dhl-black, #111111);    /* Color del texto. Utiliza la variable --dhl-black o un negro (#111111) por defecto
+                                            si la variable no está definida. */
+
+    /* Tipografía */
+    font-family: var(--font-primary); /* Fuente principal del texto, definida en una variable CSS. */
+    font-weight: 700;                 /* Grosor de la fuente (700 equivale a 'bold' o negrita). */
+    font-size: 0.95rem;               /* Tamaño de la fuente (0.95 veces el tamaño de fuente raíz del HTML). */
+    text-decoration: none;            /* Quita cualquier decoración de texto, como el subrayado (común en enlaces <a> que se usan como botones). */
+    text-transform: uppercase;        /* Transforma todo el texto del botón a mayúsculas. */
+    letter-spacing: 0.8px;            /* Espaciado adicional entre las letras del texto. */
+    text-align: center;               /* Alinea el texto al centro dentro del botón (útil si el botón tiene un ancho fijo y el texto es más corto). */
+
+    /* Efectos y comportamiento */
+    transition: background-color 0.3s ease, transform 0.2s ease, box-shadow 0.3s ease, color 0.3s ease;
+                                      /* Define una transición suave para los cambios en estas propiedades.
+                                         Cuando cambien (ej. en :hover), la animación durará el tiempo especificado
+                                         con una curva de aceleración 'ease' (empieza lento, acelera, termina lento). */
+    cursor: pointer;                  /* Cambia el cursor del ratón a una mano para indicar que el elemento es clickeable. */
+    box-shadow: 0 2px 4px rgba(0,0,0,0.15); /* Añade una sombra sutil debajo del botón para darle profundidad.
+                                               Formato: desplazamiento-x desplazamiento-y difuminado color(con_transparencia). */
+}
+
+/* ESTADO HOVER: Estilos cuando el cursor del ratón está sobre el botón. */
+.cta-button:hover {
+    background-color: var(--color-header-bg);             /* Fondo azul cuando el mouse está encima. */
+    color: white;                       /* Texto blanco cuando el mouse está encima. */
+    transform: translateY(-2px) scale(1.02); /* Efecto visual: mueve el botón 2px hacia arriba (translateY)
+                                                y lo agranda ligeramente a un 102% de su tamaño original (scale). */
+    box-shadow: 0 4px 8px rgba(0,0,0,0.2); /* Sombra un poco más pronunciada para el efecto de "elevación". */
+    text-decoration: none; /* Asegúrate de que no haya subrayado en hover (por si algún estilo global lo añade). */
+    /* outline: none;  -- Esta línea está comentada. Podrías quitarla si no quieres un 'outline' (contorno)
+                         en hover, pero para el foco (focus), es mejor manejarlo con :focus-visible
+                         para mantener la accesibilidad. El estado hover no suele necesitar un outline explícito. */
+}
+
+/* ESTADO FOCUS: Estilos cuando el botón recibe el foco.
+ * Esto ocurre cuando se hace clic en él o cuando se llega a él navegando con el teclado (ej. tecla Tab).
+ * Es crucial para la accesibilidad.
+ */
+.cta-button:focus {
+    background-color: #ffd633; /* Mantenemos el amarillo original para el foco, o puedes cambiarlo a otro color si prefieres. */
+    color: var(--dhl-black, #111111); /* Mantenemos el negro original para el foco, o puedes cambiarlo. */
+    transform: translateY(-2px) scale(1.02); /* Puedes mantener los mismos efectos de transformación que en :hover
+                                                o quitarlos/modificarlos para el estado de foco. */
+    box-shadow: 0 4px 8px rgba(0,0,0,0.2); /* Puedes mantener la misma sombra que en :hover
+                                              o quitarla/modificarla para el estado de foco. */
+    outline: none; /* Quita el 'outline' (contorno) por defecto que los navegadores aplican a los elementos enfocados.
+                      Esto es aceptable SIEMPRE Y CUANDO se proporcione un indicador de foco alternativo y claro
+                      usando la pseudo-clase :focus-visible (ver más abajo). Si no se usa :focus-visible,
+                      NO se debe quitar el outline por defecto sin ofrecer otra indicación clara de foco. */
+    text-decoration: none; /* Asegura que no haya subrayado al estar enfocado. */
+}
+
+/* ESTADO FOCUS-VISIBLE: Estilos específicos para el foco que se aplican SOLO cuando el navegador determina
+ * que el usuario se beneficiaría de un indicador de foco visible (típicamente, cuando se navega con el teclado).
+ * No se activa (o es menos prominente) si el foco se obtiene por un clic de ratón.
+ * Esto mejora mucho la accesibilidad para usuarios de teclado sin molestar a los usuarios de ratón con outlines innecesarios.
+ */
+.cta-button:focus-visible {
+    /* box-shadow: var(--shadow-focus), 0 4px 8px rgba(0,0,0,0.2); */ /* Esta era una opción original comentada,
+                                                                        probablemente usando una variable (--shadow-focus) para el foco. */
+    outline: 2px solid blue; /* Define un contorno azul claro y sólido de 2px de grosor como indicador de foco visible.
+                                Este es un indicador de foco muy común y claro. */
+    outline-offset: 2px;     /* Añade un pequeño espacio (2px) entre el borde del botón y el contorno del foco,
+                                para que no se solapen y sea visualmente más agradable. */
+    /* También puedes combinar el 'outline' con 'box-shadow' si quieres un efecto más elaborado: */
+    box-shadow: 0 0 0 3px rgba(0, 118, 255, 0.5), /* Crea un "anillo" de foco azul semitransparente alrededor del botón. */
+                0 4px 8px rgba(0,0,0,0.2);       /* Mantiene la sombra de elevación que teníamos en :hover/:focus. */
+                                                 /* Usar múltiples box-shadows (separados por comas) es una técnica válida. */
+}

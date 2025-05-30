@@ -1,0 +1,21 @@
+/* css/layout/_grid.css */
+.container {
+    width: 90%; /* Mantenemos el ancho relativo */
+    max-width: var(--max-width);
+    margin-left: auto;
+    margin-right: auto;
+    padding-left: calc(var(--spacing-unit) * 3);  /* 24px (aumentado de 16px) */
+    padding-right: calc(var(--spacing-unit) * 3); /* 24px */
+}
+
+/* Opcional: Clases helper para grid si las usas a menudo */
+/* .grid-container {
+    display: grid;
+    gap: calc(var(--spacing-unit) * 3);
+} */
+
+/* .grid-cols-2 { grid-template-columns: repeat(2, 1fr); }
+.grid-cols-3 { grid-template-columns: repeat(3, 1fr); }
+@media (max-width: 768px) {
+    .grid-cols-2, .grid-cols-3 { grid-template-columns: 1fr; }
+} */

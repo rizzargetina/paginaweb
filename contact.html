@@ -1,0 +1,205 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contacto - TRANSPORTE JGT Y TIMOL</title>
+    <meta name="description" content="Póngase en contacto con Transporte JGT y Timol para consultas, cotizaciones y servicios logísticos en Añelo, Cipolletti y la región de Vaca Muerta.">
+    <link rel="icon" type="image/x-icon" href="img/ico.ico">
+
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto+Condensed:wght@400;700&family=Roboto:wght@400;500;700&display=swap" rel="stylesheet">
+    <!-- <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700&display=swap" rel="stylesheet"> REMOVED as it's not used -->
+
+    <!-- CSS -->
+    <link rel="stylesheet" href="css/main.css">
+    <link rel="stylesheet" href="css/forms-jobs.css">
+
+    <!-- Bootstrap Icons (ya incluido en global.css o aquí si es específico) -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+
+
+</head>
+<body>
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TRANSPORTE JGT Y TIMOL - Logística y Transporte en Añelo</title>
+    <meta name="description" content="Transporte JGT y Timol ofrecen soluciones logísticas, alquiler de equipamiento y transporte especializado para la industria petrolera en Añelo y la región de Vaca Muerta.">
+    <link rel="icon" type="image/x-icon" href="img/ico.ico">
+
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto+Condensed:wght@400;700&family=Roboto:wght@400;500;700&display=swap" rel="stylesheet">
+
+    <!-- CSS -->
+    <link rel="stylesheet" href="css/global.css"> <!-- Global styles FIRST -->
+    <link rel="stylesheet" href="css/page-specific.css"> <!-- Index-specific styles SECOND -->
+
+    <!-- Bootstrap Icons CDN -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+
+</head>
+<body>
+
+<div class="top-bar">
+    <div class="container top-bar-container">
+        <div class="top-bar-left">
+            <a href="home.html#quienes-somos">Acerca de Nosotros</a>
+ 	    <a href="jobs.html#quienes-somos">Oportunidades laborales</a>
+        </div>
+        <div class="top-bar-right">
+            <a href="https://linkedin.com" target="_blank" aria-label="LinkedIn"><i class="bi bi-linkedin"></i></a>
+            <span class="language-selector">
+                <a href="#" class="lang-active" aria-label="Idioma actual Español">ES</a> | <a href="#" aria-label="Cambiar idioma a Inglés">EN</a>
+            </span>
+        </div>
+    </div>
+</div>
+
+<header class="header" id="main-header">
+    <div class="container header-container">
+        <div class="logos-left">
+            <a href="home.html" aria-label="Ir a la página de inicio de JGT">
+                 <img src="img/JGT.png" alt="Logo JGT" id="logo1">
+            </a>
+            <a href="home.html" aria-label="Ir a la página de inicio de TIMOL">
+                 <img src="img/TIMOL.svg" alt="Logo TIMOL" id="logo2">
+            </a>
+        </div>
+
+        <button id="mobile-menu-button" class="mobile-menu-button" aria-label="Abrir menú principal" aria-expanded="false" aria-controls="main-navigation">
+            <span class="hamburger-line"></span>
+            <span class="hamburger-line"></span>
+            <span class="hamburger-line"></span>
+        </button>
+
+        <nav class="rulenav" id="main-navigation" aria-label="Navegación principal">
+             <!-- "Inicio" link removed -->
+	     <a class="navlink" href="services.html">Servicios</a>
+             <a class="navlink" href="contact.html">Contacto</a>
+        </nav>
+    </div>
+</header>
+
+    <main>
+        <div class="container page-container fade-in-section">
+            <h1>Póngase en Contacto</h1>
+            <p class="page-intro">
+                ¿Tiene alguna pregunta, necesita una cotización o desea discutir sus necesidades logísticas y de alquiler de equipamiento?
+                Complete el formulario a continuación o utilice nuestros datos de contacto directo. ¡Estamos aquí para ayudarle!
+            </p>
+
+            <div class="contact-wrapper section-container fade-in-element">
+
+                <div class="contact-form-container">
+                    <h2>Enviar un Mensaje</h2>
+                    <form id="contact-form" action="TU_ENDPOINT_DE_PROCESAMIENTO" method="POST">
+                        <p style="font-size: 0.8em; color: var(--color-secondary-text); margin-bottom: 1rem;">(Reemplaza 'TU_ENDPOINT_DE_PROCESAMIENTO' con tu URL real para que el formulario funcione)</p>
+
+                        <div class="form-group">
+                            <label for="name">Nombre Completo:</label>
+                            <input type="text" id="name" name="name" placeholder="Ej: Juan Pérez" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="email">Correo Electrónico:</label>
+                            <input type="email" id="email" name="email" placeholder="Ej: juan.perez@ejemplo.com" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="phone">Teléfono (Opcional):</label>
+                            <input type="tel" id="phone" name="phone" placeholder="Ej: +54 9 299 1234567">
+                        </div>
+                        <div class="form-group">
+                            <label for="subject">Asunto:</label>
+                            <input type="text" id="subject" name="subject" placeholder="Ej: Solicitud de Cotización" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="message">Mensaje:</label>
+                            <textarea id="message" name="message" rows="6" placeholder="Escriba su consulta aquí..." required></textarea>
+                        </div>
+                        <div class="form-group">
+                            <button type="submit" class="cta-button">Enviar Mensaje</button>
+                        </div>
+                         <p id="form-status"></p>
+                    </form>
+                </div>
+
+                <div class="contact-info-container">
+                    <h2>Información Directa</h2>
+                    <div class="info-item">
+                        <i class="fas fa-phone"></i>
+                        <div class="info-text">
+                            <strong>Teléfonos:</strong>
+                            <p>Administración Central (Gerencia): <a href="tel:+5492994114234">+54 9 299 411 4234</a> (Sr. Gabriel Tarifa)</p>
+                            <p>Logística y Operaciones: <a href="tel:+5492995134134">+54 9 299 513 4134</a> (Sr. Gabriel Morales)</p>
+                            <p>Administración Contable: <a href="tel:+5492994533120">+54 9 299 453 3120</a> (Sra. Sheila Mora)</p>
+                        </div>
+                    </div>
+                    <div class="info-item">
+                         <i class="fas fa-envelope"></i>
+                         <div class="info-text">
+                            <strong>Correos Electrónicos:</strong>
+                            <p>Consultas Generales: <a href="mailto:info@jgttimol.com">info@jgttimol.com</a></p>
+                            <p>Gerencia: <a href="mailto:juangabrieltarifa@hotmail.com">juangabrieltarifa@hotmail.com</a></p>
+                            <p>Logística: <a href="mailto:gmorales@timolsrl.com">gmorales@timolsrl.com</a></p>
+                             <p>Administración: <a href="mailto:smora@timolsrl.com">smora@timolsrl.com</a></p>
+                        </div>
+                    </div>
+                    <div class="info-item">
+                         <i class="fas fa-map-marker-alt"></i>
+                         <div class="info-text">
+                            <strong>Domicilio Comercial y Oficinas Administrativas:</strong>
+                            <p>Pastor J. A. Bowdler 502<br>(8324) Cipolletti, Río Negro<br>Argentina <span role="img" aria-label="Bandera de Argentina">🇦🇷</span></p>
+                             <p style="margin-top: 0.5rem;"><strong>Bases Operativas:</strong> Añelo (Neuquén) y Cipolletti (Río Negro)</p>
+                        </div>
+                    </div>
+                     <div class="info-item">
+                         <i class="fas fa-clock"></i>
+                         <div class="info-text">
+                            <strong>Horario de Atención Oficinas:</strong>
+                            <p>Lunes a Viernes: 8:00 - 18:00 hs</p>
+                            <p>Guardia Operativa: 24/7</p>
+                        </div>
+                    </div>
+
+                    <h2 style="margin-top: 2rem;">Ubicación Oficinas (Cipolletti)</h2>
+                    <div class="map-container">
+                        <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3103.33422278555!2d-67.97921281983801!3d-38.939192347635235!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x960a30f4bf8d5e3f%3A0xedb9ab9bd2137249!2sPastor%20J.%20A.%20Bowdler%20502%2C%20R8324%20Cipolletti%2C%20R%C3%ADo%20Negro!5e0!3m2!1ses-419!2sar!4v1746221449119!5m2!1ses-419!2sar"
+                            width="100%"
+                            height="350"
+                            style="border:0;"
+                            allowfullscreen=""
+                            loading="lazy"
+                            referrerpolicy="no-referrer-when-downgrade">
+                        </iframe>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </main>
+
+    <footer class="footer">
+       <div class="container footer-container">
+            <div class="footer-left">
+                 <p><i class="bi bi-geo-alt-fill"></i> Domicilio: Pastor J. A. Bowdler 502 - (8324) Cipolletti. Rio Negro. Argentina <span role="img" aria-label="Bandera de Argentina">🇦🇷</span></p>
+                 <p>© <span id="footer-year">2024</span> TRANSPORTE JGT S.R.L. y TIMOL S.R.L. Todos los derechos reservados.</p>
+            </div>
+            <div class="footer-right">
+                <p>
+                    <i class="bi bi-envelope-fill"></i> <a href="mailto:info@jgttimol.com">info@jgttimol.com</a> |
+                    <i class="bi bi-telephone-fill"></i> <a href="tel:+5492994114234">+54 9 299 411 4234</a>
+                </p>
+                <p>Última actualización: <time datetime="2024-11-08">8 Nov. 2024</time></p>
+            </div>
+        </div>
+    </footer>
+
+ <script src="js/script.js"></script>
+
+</body>
+</html>

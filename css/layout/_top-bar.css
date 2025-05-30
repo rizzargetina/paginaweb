@@ -1,0 +1,88 @@
+/* css/layout/_top-bar.css */
+.top-bar {
+    background-color: var(--color-top-bar-bg);
+    color: var(--color-top-bar-text);
+    height: var(--top-bar-height);
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 1001; /* Higher than main header */
+    font-size: 0.825rem; /* Un poco más pequeño para un look más fino */
+    display: flex;
+    align-items: center;
+    transition: transform 0.3s ease-in-out, background-color 0.2s ease;
+    /* border-bottom: 1px solid rgba(255,255,255,0.08); /* Borde inferior muy sutil */
+}
+
+.top-bar.is-hidden {
+    transform: translateY(-100%);
+}
+/* Podríamos añadir un ligero cambio de color o sombra si interactúa con el scroll,
+   aunque generalmente la top-bar es más estática o se oculta. */
+
+.top-bar-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: 100%;
+    width: 100%; /* Ocupa todo el ancho, el padding está en .container si se usa aquí */
+    /* Si no se usa .container dentro, aplicar max-width y padding aquí como en el header */
+    max-width: var(--max-width);
+    margin-left: auto;
+    margin-right: auto;
+    padding-left: calc(var(--spacing-unit) * 3); /* Asegurar consistencia con header */
+    padding-right: calc(var(--spacing-unit) * 3); /* Asegurar consistencia con header */
+}
+
+.top-bar-left, .top-bar-right {
+    display: flex;
+    align-items: center;
+    gap: calc(var(--spacing-unit) * 2.5); /* Un poco más de espacio */
+}
+
+.top-bar a {
+    color: var(--color-top-bar-text);
+    text-decoration: none;
+    transition: color 0.2s ease, opacity 0.2s ease;
+    padding: calc(var(--spacing-unit) * 0.5) calc(var(--spacing-unit) * 0.75); /* Padding también horizontal */
+    border-radius: var(--border-radius-small); /* Para el :focus-visible */
+}
+
+.top-bar a:hover, .top-bar a:focus {
+    color: var(--color-top-bar-link-hover);
+    opacity: 0.85; /* Sutil desvanecimiento en hover */
+}
+.top-bar a:focus-visible {
+    outline: 1.5px solid var(--dhl-yellow);
+    outline-offset: 2px; /* Mejor visibilidad del outline */
+    opacity: 1;
+}
+
+.top-bar .bi { /* Iconos de Bootstrap */
+    font-size: 1.1rem; /* Un poco más grandes */
+    vertical-align: -0.15em; /* Mejor alineación vertical */
+    margin-right: calc(var(--spacing-unit) * 0.25); /* Pequeño espacio si el texto sigue al icono */
+}
+
+.language-selector {
+    display: flex; /* Para alinear bien los elementos */
+    align-items: center;
+}
+.language-selector span { /* Si hay un pipe | separador */
+    margin: 0 calc(var(--spacing-unit) * 0.5);
+    opacity: 0.7;
+}
+.language-selector a {
+    padding: 3px 6px; /* Padding más generoso */
+    border-radius: var(--border-radius-small);
+    font-weight: 500;
+}
+.language-selector a.lang-active {
+    font-weight: 700;
+    color: var(--dhl-white);
+    background-color: rgba(255, 255, 255, 0.15); /* Fondo sutil para el activo */
+}
+.language-selector a:not(.lang-active):hover {
+    background-color: rgba(255, 255, 255, 0.08);
+}

@@ -125,11 +125,24 @@
                     <h2>Información Directa</h2>
                     <div class="info-item">
                         <i class="fas fa-phone"></i>
-                        <div class="info-text">
-                            <strong>Teléfonos y Correos Electronicos:</strong>
-                            <p>Gabriel Tarifa: <a href="tel:"></a></p>
-                            <p>Gabriel Morales: gmorales@timolsrl.com</p>
-                        </div>
+			<div class="info-text">
+			    <strong>Teléfonos y Correos Electrónicos:</strong>
+			    <p>Gabriel Tarifa: <span id="correo-tarifa"></span></p>
+			    <p>Gabriel Morales: <span id="correo-morales"></span></p>
+			</div>
+			
+			<script>
+			    function mostrarCorreo(id, usuario, dominio) {
+			        const correo = `${usuario}@${dominio}`;
+			        const span = document.getElementById(id);
+			        span.innerHTML = `<a href="mailto:${correo}">${correo}</a>`;
+			    }
+			
+			    // Mostrar correos
+			    mostrarCorreo("correo-tarifa", "juangabrieltarifa", "hotmail.com");
+			    mostrarCorreo("correo-morales", "gmorales", "timolsrl.com");
+			</script>
+	
                     </div>
                      <div class="info-item">
                          <i class="fas fa-clock"></i>

@@ -104,12 +104,23 @@
                 <p>
                     Si ninguna de las vacantes actuales se ajusta a tu perfil, o si prefieres enviarnos tu postulación espontánea para futuras oportunidades en áreas como Administración, Logística, RRHH, Compras, Seguridad e Higiene, entre otras, por favor envía tu Currículum Vitae actualizado a la siguiente dirección de correo electrónico:
                 </p>
-                <p class="contact-email">
-                    <a href="mailto:rrhh@jgttimol.com?subject=CV%20Postulaci%C3%B3n%20Espont%C3%A1nea">
-                        <i class="fas fa-envelope"></i>
-                        rrhh@jgttimol.com
-                    </a>
-                </p>
+		<p class="contact-email">
+		    <script type="text/javascript">
+		        // Separar partes del email
+		        var user = "mcampos";
+		        var domain = "timolsrl.com";
+		        var subject = "CV Postulación Espontánea";
+		        
+		        // Crear el enlace mailto completo
+		        var email = user + "@" + domain;
+		        var mailto = "mailto:" + email + "?subject=" + encodeURIComponent(subject);
+		        
+		        // Insertar el enlace en el HTML
+		        document.write('<a href="' + mailto + '"><i class="fas fa-envelope"></i> ' + email + '</a>');
+		    </script>
+		    <noscript>Habilita JavaScript para ver el correo.</noscript>
+		</p>
+
                 <p>
                     Asegúrate de indicar en el asunto del correo tu área de interés o el puesto al que te gustaría aplicar (Ej: "CV - Chofer", "CV - Administración", "CV - Técnico Mecánico", "CV - Operador de Hidrogrúa").
                 </p>

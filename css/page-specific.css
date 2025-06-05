@@ -13,7 +13,7 @@
     justify-content: center;
     align-items: center;
     overflow: hidden;
-    padding-bottom: 33vh; /* Empuja contenido hacia arriba en móvil/tablet, se anula en desktop */
+    padding-bottom: 30vh; /* Empuja contenido hacia arriba en móvil/tablet, se anula en desktop */
 }
 
 .hero-slider-container {
@@ -402,18 +402,6 @@
     .text-content li { margin-bottom: 1.2rem; }
     .section-image { max-width: 90%; margin: 0 auto; /* Centra la imagen si es más estrecha */ }
 }
-
-/* --- Ajustes Específicos para ESCRITORIO (min-width: 769px) --- */
-@media (min-width: 769px) {
-    #hero {
-        padding-bottom: 0; /* Permite que justify-content: center funcione para centrar verticalmente .hero-content */
-        /* La altura del #hero ya está definida arriba como calc(100vh - var(--total-fixed-header-height))
-           y se ajusta en @media (max-width: 768px) a calc(100vh - var(--header-height)).
-           Aquí, para >=769px, la altura original con --total-fixed-header-height es la correcta.
-           El `transform: translateY(-37px);` original es un ajuste muy específico que podría desalinear
-           el contenido o interferir con el scroll-padding-top. Se omite a menos que sea estrictamente necesario
-           y se haya probado su impacto. */
-    }
 
     /* Asegura que las imágenes de fondo de escritorio se usen (si fueron sobrescritas en móvil) */
     #hero-slide-1 { background-image: url('../img/fondo.jpg'); }

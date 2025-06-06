@@ -34,7 +34,7 @@
     /* Accents & Links */
     --color-accent: var(--dhl-yellow);
     --color-link: var(--dhl-red);
-    --color-link-hover: #a0000c;
+    --color-link-hover: #223a71;
 
     /* Footer Specific */
     --color-footer-bg: #263238;

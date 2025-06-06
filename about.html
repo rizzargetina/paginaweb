@@ -1,0 +1,229 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Quiénes Somos - Transporte JGT y Timol</title>
+    <meta name="description" content="Conozca la historia y el compromiso de Transporte JGT y Timol, líderes en logística para la industria petrolera en Vaca Muerta, con más de 16 años de trayectoria.">
+    <link rel="icon" type="image/x-icon" href="img/ico.ico">
+
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto+Condensed:wght@400;700&family=Roboto:wght@400;500;700&display=swap" rel="stylesheet">
+
+    <!-- CSS -->
+    <link rel="stylesheet" href="css/main.css"> 
+    <link rel="stylesheet" href="css/page-specific.css">
+
+    <!-- Bootstrap Icons CDN -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+
+    <!-- Estilos específicos para esta página (About) -->
+    <style>
+        /* --- Estilos para la sección de introducción --- */
+        #about-intro .content-panel h1 {
+            text-align: center;
+            color: var(--dhl-red);
+            margin-bottom: 1.5rem;
+            font-size: 2.2rem;
+        }
+
+        #about-intro .content-panel p {
+            font-size: 1.05rem;
+            line-height: 1.7;
+            color: var(--color-text-secondary);
+            max-width: 850px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+        
+        /* --- Estilos para el carrusel de logos de clientes --- */
+        #client-logos {
+            padding: calc(var(--spacing-unit) * 5) 0;
+            margin-top: calc(var(--spacing-unit) * 4);
+        }
+
+        #client-logos h2 {
+            color: var(--dhl-red);
+            margin-bottom: 2.5em;
+            font-size: 2rem;
+            text-align: center;
+        }
+
+        .client-logo-slider {
+            width: 100%;
+            overflow: hidden;
+            position: relative;
+            /* Máscara con gradiente para un efecto de desvanecimiento en los bordes */
+            -webkit-mask-image: linear-gradient(to right, rgba(0,0,0,0), rgba(0,0,0,1) 15%, rgba(0,0,0,1) 85%, rgba(0,0,0,0));
+            mask-image: linear-gradient(to right, rgba(0,0,0,0), rgba(0,0,0,1) 15%, rgba(0,0,0,1) 85%, rgba(0,0,0,0));
+        }
+
+        .client-logo-track {
+            display: flex;
+            align-items: center;
+            /* Ancho total: (Nº de logos) x 2 (para duplicar) x (ancho del logo + gap) */
+            /* (8 logos * 2) * 250px = 4000px */
+            width: calc(250px * 16); 
+            animation: scroll-logos 45s linear infinite;
+            gap: 80px; /* Espacio entre logos */
+        }
+
+        @keyframes scroll-logos {
+            from { transform: translateX(0); }
+            to {
+                /* Desplaza hacia la izquierda el ancho del set original de logos */
+                transform: translateX(calc(-250px * 8));
+            }
+        }
+
+        .client-logo-slider:hover .client-logo-track {
+            animation-play-state: paused;
+        }
+
+        .client-logo-track img {
+            height: 70px; /* Altura consistente */
+            width: auto;
+            max-width: 170px;
+            object-fit: contain;
+            filter: grayscale(100%) brightness(1.1); /* Grises y un poco más claros */
+            opacity: 0.65;
+            transition: filter 0.3s ease, opacity 0.3s ease;
+        }
+
+        .client-logo-track img:hover {
+            filter: grayscale(0%);
+            opacity: 1;
+        }
+        
+        /* --- Ajustes Responsivos --- */
+        @media (max-width: 768px) {
+            #about-intro .content-panel h1 { font-size: 1.8rem; }
+            #about-intro .content-panel p { font-size: 1rem; }
+            #client-logos h2 { font-size: 1.8rem; }
+            
+            .client-logo-track {
+                gap: 60px;
+                 /* (8 logos * 2) * 200px = 3200px */
+                width: calc(200px * 16);
+                animation-duration: 40s;
+            }
+            @keyframes scroll-logos {
+                to { transform: translateX(calc(-200px * 8)); }
+            }
+            .client-logo-track img { height: 55px; }
+        }
+        @media (max-width: 480px) {
+            #client-logos { padding: calc(var(--spacing-unit) * 3) 0; }
+            #client-logos h2 { font-size: 1.6rem; }
+
+            .client-logo-track {
+                gap: 50px;
+                 /* (8 logos * 2) * 160px = 2560px */
+                width: calc(160px * 16);
+            }
+            @keyframes scroll-logos {
+                to { transform: translateX(calc(-160px * 8)); }
+            }
+            .client-logo-track img { height: 45px; }
+        }
+
+    </style>
+</head>
+<body>
+
+<div class="top-bar">
+    <div class="container top-bar-container">
+        <div class="top-bar-left">
+            <!-- El enlace ahora apunta a esta página -->
+            <a href="info.html">Acerca de Nosotros</a>
+ 	        <a href="jobs.html">Oportunidades laborales</a>
+        </div>
+        <div class="top-bar-right">
+            <a href="https://linkedin.com" target="_blank" aria-label="LinkedIn"><i class="bi bi-linkedin"></i></a>
+            <span class="language-selector">
+                <a href="#" class="lang-active" aria-label="Idioma actual Español">ES</a> | <a href="#" aria-label="Cambiar idioma a Inglés">EN</a>
+            </span>
+        </div>
+    </div>
+</div>
+
+<header class="header" id="main-header">
+    <div class="container header-container">
+        <div class="logos-left">
+            <a href="index.html" aria-label="Ir a la página de inicio de JGT">
+                 <img src="img/JGT.png" alt="Logo JGT" id="logo1">
+            </a>
+            <a href="index.html" aria-label="Ir a la página de inicio de TIMOL">
+                 <img src="img/TIMOL.svg" alt="Logo TIMOL" id="logo2">
+            </a>
+        </div>
+
+        <button id="mobile-menu-button" class="mobile-menu-button" aria-label="Abrir menú principal" aria-expanded="false" aria-controls="main-navigation">
+            <span class="hamburger-line"></span>
+            <span class="hamburger-line"></span>
+            <span class="hamburger-line"></span>
+        </button>
+
+        <nav class="rulenav" id="main-navigation" aria-label="Navegación principal">
+	         <a class="navlink" href="services.html">Servicios</a>
+             <a class="navlink" href="contact.html">Contacto</a>
+        </nav>
+    </div>
+</header>
+
+<main>
+    <div class="container main-content">
+
+        <section id="about-intro" class="fade-in-section" aria-labelledby="about-heading">
+            <div class="content-panel">
+                <h1 id="about-heading">Servicios para la Industria Petrolera</h1>
+                <p>
+                    Transporte JGT SRL y Timol SRL (esta última con más de 16 años de trayectoria en el mercado) son empresas dedicadas a brindar servicios de transporte, alquiler de equipamiento y logística integral, orientadas a satisfacer las demandantes necesidades de la industria petrolera en Añelo y la región de Vaca Muerta.
+                </p>
+                <p>
+                    Nuestro compromiso se fundamenta en la calidad, seriedad, idoneidad, responsabilidad y el rendimiento profesional, siendo estos nuestros principales pilares. Buscamos constantemente ofrecer soluciones eficientes, superar las expectativas de nuestros clientes y, de esta manera, cimentar un sólido prestigio y reconocimiento en el rubro, consolidándonos como empresas líderes gracias a la excelencia y la satisfacción del cliente.
+                </p>
+            </div>
+        </section>
+
+        <hr class="fade-in-element">
+
+        <section id="client-logos" class="fade-in-section" aria-labelledby="clients-heading">
+            <h2 id="clients-heading">Confían en Nosotros</h2>
+            <div class="client-logo-slider">
+                <div class="client-logo-track">
+                    <!-- Set de logos original (reemplazar con logos reales) -->
+                    <img src="logos/petreven.png" alt="Logo YPF">
+                    <img src="logos/slb.png">
+                    <img src="logos/superior.png" alt="Logo YPF">
+                    <img src="logos/phoenix.png">
+                    <img src="logos/calfrac.png">
+                    <!-- Set de logos duplicado para el efecto de scroll infinito -->
+                    <img src="logos/petreven.png" alt="Logo YPF">
+                    <img src="logos/slb.png">
+                    <img src="logos/superior.png" alt="Logo YPF">
+                    <img src="logos/phoenix.png">
+                    <img src="logos/calfrac.png">
+                </div>
+            </div>
+        </section>
+
+    </div>
+</main>
+
+<footer class="footer">
+    <div class="container footer-container">
+        <div class="footer-left">
+            <p><i class="bi bi-geo-alt-fill" aria-hidden="true"></i> Domicilio: Pastor J. A. Bowdler 502 - (8324) Cipolletti. Rio Negro. Argentina <span role="img" aria-label="Bandera de Argentina">🇦🇷</span></p>
+        </div>
+        <div class="footer-right">
+             <p>Última actualización: <time datetime="2024-05-26">26 May. 2024</time></p>
+        </div>
+    </div>
+</footer>
+
+<script src="js/script.js"></script>
+</body>
+</html>

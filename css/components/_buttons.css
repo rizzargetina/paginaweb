@@ -52,7 +52,6 @@
  * Es crucial para la accesibilidad.
  */
 .cta-button:focus {
-    background-color: #ffd633; /* Mantenemos el amarillo original para el foco, o puedes cambiarlo a otro color si prefieres. */
     color: var(--dhl-black, #111111); /* Mantenemos el negro original para el foco, o puedes cambiarlo. */
     transform: translateY(-2px) scale(1.02); /* Puedes mantener los mismos efectos de transformación que en :hover
                                                 o quitarlos/modificarlos para el estado de foco. */

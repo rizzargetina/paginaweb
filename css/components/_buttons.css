@@ -10,6 +10,7 @@
                                       "salte" o cambie de tamaño si se añade un borde visible en estados como :hover o :focus. */
 
     /* Colores */
+    color: white;  
     background-color: var(--dhl-yellow); /* Color de fondo. Utiliza una variable CSS (custom property) llamada --dhl-yellow
                                             para el amarillo característico de DHL. */  
     /* Tipografía */

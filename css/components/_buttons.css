@@ -11,10 +11,7 @@
 
     /* Colores */
     background-color: var(--dhl-yellow); /* Color de fondo. Utiliza una variable CSS (custom property) llamada --dhl-yellow
-                                            para el amarillo característico de DHL. */
-    color: var(--dhl-black, #111111);    /* Color del texto. Utiliza la variable --dhl-black o un negro (#111111) por defecto
-                                            si la variable no está definida. */
-
+                                            para el amarillo característico de DHL. */  
     /* Tipografía */
     font-family: var(--font-primary); /* Fuente principal del texto, definida en una variable CSS. */
     font-weight: 700;                 /* Grosor de la fuente (700 equivale a 'bold' o negrita). */

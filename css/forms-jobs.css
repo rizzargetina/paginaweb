@@ -159,7 +159,6 @@
 
 /* Mapa de Ubicación */
 .map-container {
-    margin-top: 2.5rem;
     border-radius: var(--border-radius-medium);
     overflow: hidden; /* Para que el iframe respete el border-radius */
     border: 1px solid var(--color-border-subtle); /* Asume var de _variables.css */

@@ -408,3 +408,145 @@
     #hero-slide-2 { background-image: url('../img/white-truck.jpg'); }
     /* #hero-slide-3 { background-image: url('../img/desktop-image3.jpg'); } */
 }
+
+        /* Reutilizamos clases de page-specific.css para consistencia */
+        
+        /* --- Sección de Métricas Clave --- */
+        #key-metrics {
+            background-color: var(--color-content-bg-lighter);
+            padding: calc(var(--spacing-unit) * 4) 0;
+            border-radius: var(--border-radius-medium);
+            margin: calc(var(--spacing-unit) * 6) 0;
+        }
+        .metrics-container {
+            display: flex;
+            justify-content: space-around;
+            flex-wrap: wrap;
+            gap: 20px;
+            text-align: center;
+        }
+        .metric-item {
+            flex: 1;
+            min-width: 200px;
+            padding: 20px;
+        }
+        .metric-item .icon {
+            font-size: 2.8rem;
+            color: var(--dhl-red);
+            margin-bottom: 0.5rem;
+            display: block;
+        }
+        .metric-item .number {
+            font-size: 2.5rem;
+            font-weight: 700;
+            color: var(--color-heading-text);
+            font-family: var(--font-headings);
+        }
+        .metric-item .label {
+            font-size: 1rem;
+            color: var(--color-text-secondary);
+        }
+
+        /* --- Sección Nuestros Pilares --- */
+        #nuestros-pilares {
+            text-align: center;
+            margin-bottom: calc(var(--spacing-unit) * 6);
+        }
+        #nuestros-pilares h2 {
+            color: var(--dhl-red);
+            margin-bottom: 2em;
+        }
+        .pillars-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+            gap: calc(var(--spacing-unit) * 3.5);
+            text-align: left;
+        }
+        .pillar-card {
+            background-color: var(--color-primary-bg);
+            padding: 30px;
+            border-radius: var(--border-radius-medium);
+            box-shadow: var(--shadow-soft);
+            border: 1px solid var(--color-border-subtle);
+            border-top: 4px solid var(--dhl-yellow);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+        .pillar-card:hover {
+            transform: translateY(-5px);
+            box-shadow: var(--shadow-medium);
+        }
+        .pillar-card .pillar-icon {
+            font-size: 2.5rem;
+            color: var(--dhl-red);
+            margin-bottom: 1rem;
+        }
+        .pillar-card h3 {
+            font-size: 1.25rem;
+            margin-top: 0;
+            margin-bottom: 0.5rem;
+            color: var(--color-heading-text);
+        }
+        .pillar-card p {
+            font-size: 0.95rem;
+            color: var(--color-text-secondary);
+            line-height: 1.6;
+        }
+
+        /* --- Sección de logos de clientes (sin cambios) --- */
+        #client-logos {
+            padding: calc(var(--spacing-unit) * 5) 0;
+            margin-top: calc(var(--spacing-unit) * 4);
+        }
+        #client-logos h2 {
+            color: var(--dhl-red);
+            margin-bottom: 2.5em;
+            font-size: 2rem;
+            text-align: center;
+        }
+        .client-logo-slider {
+            width: 100%;
+            overflow: hidden;
+            position: relative;
+            -webkit-mask-image: linear-gradient(to right, rgba(0,0,0,0), rgba(0,0,0,1) 15%, rgba(0,0,0,1) 85%, rgba(0,0,0,0));
+            mask-image: linear-gradient(to right, rgba(0,0,0,0), rgba(0,0,0,1) 15%, rgba(0,0,0,1) 85%, rgba(0,0,0,0));
+        }
+        .client-logo-track {
+            display: flex;
+            align-items: center;
+            width: calc(250px * 16); 
+            animation: scroll-logos 45s linear infinite;
+            gap: 80px;
+        }
+        @keyframes scroll-logos {
+            from { transform: translateX(0); }
+            to { transform: translateX(calc(-250px * 8)); }
+        }
+        .client-logo-slider:hover .client-logo-track {
+            animation-play-state: paused;
+        }
+        .client-logo-track img {
+            height: 70px;
+            width: auto;
+            max-width: 170px;
+            object-fit: contain;
+            filter: grayscale(100%) brightness(1.1);
+            opacity: 0.65;
+            transition: filter 0.3s ease, opacity 0.3s ease;
+        }
+        .client-logo-track img:hover {
+            filter: grayscale(0%);
+            opacity: 1;
+        }
+
+        /* --- Ajustes Responsivos --- */
+        @media (max-width: 768px) {
+            .client-logo-track { gap: 60px; width: calc(200px * 16); animation-duration: 40s; }
+            @keyframes scroll-logos { to { transform: translateX(calc(-200px * 8)); } }
+            .client-logo-track img { height: 55px; }
+        }
+        @media (max-width: 480px) {
+            .client-logo-track { gap: 50px; width: calc(160px * 16); }
+            @keyframes scroll-logos { to { transform: translateX(calc(-160px * 8)); } }
+            .client-logo-track img { height: 45px; }
+            .metric-item .number { font-size: 2rem; }
+            .

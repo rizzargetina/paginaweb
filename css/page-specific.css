@@ -250,7 +250,7 @@
 
 #lineas-servicio h2 {
     color: var(--dhl-red); /* Override */
-    margin-bottom: 2em; /* Override */
+    margin-bottom: 1em; /* Override */
     font-size: 2rem; /* Override o ajuste a _typography.css */
     text-align: center;
 }

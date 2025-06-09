@@ -242,4 +242,15 @@ document.addEventListener('DOMContentLoaded', () => {
             intersectionObserver.observe(el);
         });
     }
+    
+document.addEventListener('DOMContentLoaded', function() {
+    const track = document.querySelector('.client-logo-track');
+    if (track) {
+        const logos = track.querySelectorAll('img');
+        // Duplicar los logos para crear el efecto infinito
+        logos.forEach(logo => {
+            const clone = logo.cloneNode(true);
+            track.appendChild(clone);
+        });
+    }
 });

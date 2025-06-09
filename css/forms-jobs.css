@@ -114,7 +114,7 @@
 
 /* Información de Contacto Directa */
 .contact-info-container .info-item {
-    margin-bottom: 1.8rem;
+    margin-bottom: 1.3rem;
     line-height: 1.6; /* Puede heredar de body o ser específico */
     display: flex;
     align-items: flex-start; /* Alinea icono y texto al inicio */

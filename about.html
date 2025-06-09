@@ -89,6 +89,41 @@
             object-fit: contain;
             opacity: 0.65;
         }
+	        #key-metrics {
+            background-color: var(--color-content-bg-lighter);
+            padding: calc(var(--spacing-unit) * 4) 0;
+            border-radius: var(--border-radius-medium);
+            margin: calc(var(--spacing-unit) * 6) 0;
+        }
+        .metrics-container {
+            display: flex;
+            justify-content: space-around;
+            flex-wrap: wrap;
+            gap: 20px;
+            text-align: center;
+        }
+        .metric-item {
+            flex: 1;
+            min-width: 200px;
+            padding: 20px;
+        }
+        .metric-item .icon {
+            font-size: 2.8rem;
+            color: var(--dhl-red);
+            margin-bottom: 0.5rem;
+            display: block;
+        }
+        .metric-item .number {
+            font-size: 2.5rem;
+            font-weight: 700;
+            color: var(--color-heading-text);
+            font-family: var(--font-headings);
+        }
+        .metric-item .label {
+            font-size: 1rem;
+            color: var(--color-text-secondary);
+        }
+
 
         
         /* --- Ajustes Responsivos --- */

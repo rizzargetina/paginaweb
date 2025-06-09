@@ -1,11 +1,10 @@
 /* css/layout/_grid.css */
 .container {
-    width: 90%; /* Mantenemos el ancho relativo */
+    width: 92%; /* Mantenemos el ancho relativo */
     max-width: var(--max-width);
     margin-left: auto;
     margin-right: auto;
-    padding-left: calc(var(--spacing-unit) * 3);  /* 24px (aumentado de 16px) */
-    padding-right: calc(var(--spacing-unit) * 3); /* 24px */
+
 }
 
 /* Opcional: Clases helper para grid si las usas a menudo */

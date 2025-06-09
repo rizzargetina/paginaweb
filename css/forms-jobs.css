@@ -39,7 +39,7 @@
    Asume que contact.html tiene <div class="container page-container">.
    .container ya provee padding lateral y max-width. */
 .page-container {
-    padding-top: calc(var(--spacing-unit) * 6);
+    padding-top: calc(var(--spacing-unit) * 4);
     padding-bottom: calc(var(--spacing-unit) * 8);
 }
 

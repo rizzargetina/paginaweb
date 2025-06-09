@@ -353,7 +353,7 @@
 
     /* Imágenes de fondo móviles (específicas para esta página) */
     #hero-slide-1 { background-image: url('../img/as12.webp'); }
-    #hero-slide-2 { background-image: url('../img/mobile1.jpg'); }
+    #hero-slide-2 { background-image: url('../img/mobile1.webp'); }
     /* #hero-slide-3 { background-image: url('../img/mobile-image3.jpg'); } */
 
     .content-section,

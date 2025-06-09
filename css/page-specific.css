@@ -51,8 +51,9 @@
 }
 
 /* Imágenes de Fondo para el Hero (pueden mantenerse aquí o en HTML si son muy pocas) */
-#hero-slide-1 { background-image: url('../img/fondo.webp'); }
-#hero-slide-2 { background-image: url('../img/white-truck.webp'); }
+#hero-slide-1 { background-image: url('../img/columna.webp'); }
+#hero-slide-2 { background-image: url('../img/fondo.webp'); }
+#hero-slide-3 { background-image: url('../img/white-truck.webp'); }
 /* #hero-slide-3 { background-image: url('../img/desktop-image3.jpg'); } */
 
 .hero-content {

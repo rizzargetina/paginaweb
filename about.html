@@ -20,7 +20,7 @@
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
 
     <!-- Estilos específicos para esta página (About) -->
-        <style>
+    <style>
         /* --- Estilos para la sección de introducción --- */
         #about-intro .content-panel h1 {
             text-align: center;
@@ -65,7 +65,7 @@
             align-items: center;
             /* Ancho total: (Nº de logos) x 2 (para duplicar) x (ancho del logo + gap) */
             /* (8 logos * 2) * 250px = 4000px */
-            width: calc(250px * 16); 
+            width: calc(400px * 16); 
             animation: scroll-logos 45s linear infinite;
             gap: 80px; /* Espacio entre logos */
         }
@@ -86,12 +86,10 @@
             height: 70px; /* Altura consistente */
             width: auto;
             max-width: 170px;
-            transition: filter 0.3s ease, opacity 0.3s ease;
+            object-fit: contain;
+            opacity: 0.65;
         }
 
-        .client-logo-track img:hover {
-            opacity: 1;
-        }
         
         /* --- Ajustes Responsivos --- */
         @media (max-width: 768px) {

@@ -6,5 +6,4 @@
 }
 .fade-in-section.is-visible, .fade-in-element.is-visible {
     opacity: 1;
-    transform: translateY(0);
 }

@@ -7,9 +7,3 @@ main {
        Si body ya tiene --jgt-background-page o --color-secondary-bg, esto podría no ser necesario. */
     /* background-color: var(--color-primary-bg); */ /* Ejemplo: blanco */
 }
-
-.main-content {
-    padding-top: calc(var(--spacing-unit) * 8); /* 64px - Más espacio arriba */
-    padding-bottom: calc(var(--spacing-unit) * 10); /* 80px - Más espacio abajo */
-    /* Esto ayuda a que el contenido respire más y no se sienta apretado contra el footer */
-}

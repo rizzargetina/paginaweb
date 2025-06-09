@@ -404,10 +404,4 @@
     .section-image { max-width: 90%; margin: 0 auto; /* Centra la imagen si es más estrecha */ }
 }
 
-    /* Asegura que las imágenes de fondo de escritorio se usen (si fueron sobrescritas en móvil) */
-    #hero-slide-1 { background-image: url('../img/fondo.jpg'); }
-    #hero-slide-2 { background-image: url('../img/white-truck.jpg'); }
-    /* #hero-slide-3 { background-image: url('../img/desktop-image3.jpg'); } */
-}
-
 

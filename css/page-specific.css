@@ -1,7 +1,3 @@
-/* css/page-specific.css */
-/* Estilos específicos para secciones de la página de inicio (ej. home.html) */
-
-/* --- FONDO PRINCIPAL Section (Hero Section) --- */
 #hero {
     position: relative;
     height: calc(100vh - var(--total-fixed-header-height)); /* Asume --total-fixed-header-height de _variables.css */
@@ -28,7 +24,7 @@
 .hero-slider-track {
     display: flex;
     height: 100%;
-    transition: transform 1s ease-in-out;
+    transition: transform 1s ease-in-out; /* Mantenido para funcionalidad del slider */
 }
 
 .hero-slide {
@@ -47,7 +43,7 @@
     top: 0; left: 0; right: 0; bottom: 0;
     background-color: rgba(0, 0, 0, 0.45);
     z-index: 2;
-    transition: background-color 0.5s ease;
+    transition: background-color 0.5s ease; /* Mantenido para suavidad del slider */
 }
 
 /* Imágenes de Fondo para el Hero (pueden mantenerse aquí o en HTML si son muy pocas) */
@@ -61,56 +57,47 @@
     padding: 20px 30px;
     max-width: 750px;
     border-radius: var(--border-radius); /* Asume --border-radius de _variables.css */
-    opacity: 0;
-    transform: translateY(30px);
-    animation: heroContentLoaded 0.8s 0.4s forwards cubic-bezier(0.23, 1, 0.32, 1);
     text-align: center;
+    /* --- ANIMACIÓN ELIMINADA --- */
+    /* opacity: 0; */
+    /* transform: translateY(30px); */
+    /* animation: heroContentLoaded 0.8s 0.4s forwards cubic-bezier(0.23, 1, 0.32, 1); */
 }
 
-@keyframes heroContentLoaded {
-    to { opacity: 1; transform: translateY(0); }
-}
+/* @keyframes heroContentLoaded ... -> ELIMINADO */
 
 #hero h1 {
-    /* font-family: var(--font-headings); /* Heredado de _typography.css */
-    font-size: 3.2rem; /* Específico para hero */
+    font-size: 3.2rem;
     margin-top: 0;
     margin-bottom: 0.4em;
-    color: var(--dhl-white); /* Específico, asume --dhl-white de _variables.css */
-    text-shadow: 2px 2px 6px rgba(0, 0, 0, 0.6); /* Específico */
+    color: var(--dhl-white);
+    text-shadow: 2px 2px 6px rgba(0, 0, 0, 0.6);
 }
 
 #hero p {
-    /* font-family: var(--font-primary); /* Heredado de _typography.css */
-    font-size: 1.25rem; /* Específico para hero */
+    font-size: 1.25rem;
     margin-bottom: 1.5em;
-    color: var(--dhl-white); /* Específico, asume --dhl-white de _variables.css */
-    text-shadow: 1px 1px 4px rgba(0, 0, 0, 0.5); /* Específico */
-    font-weight: 400; /* Base, pero se puede dejar por claridad si es una elección consciente para hero */
+    color: var(--dhl-white);
+    text-shadow: 1px 1px 4px rgba(0, 0, 0, 0.5);
+    font-weight: 400;
     max-width: 550px;
     margin-left: auto;
     margin-right: auto;
 }
 
-/* Estilo para el botón CTA específico del Hero. HTML: <a class="cta-button hero-cta"> */
-.hero-cta { /* Renombrado para ser una clase adicional a .cta-button */
-    /* Estilos base de .cta-button son heredados */
-    padding: 15px 40px; /* Override */
-    font-size: 1.05rem; /* Override */
-    /* border: none; .cta-button tiene 'border: 2px solid transparent'. Si 'none' es intencional, usar: */
+.hero-cta {
+    padding: 15px 40px;
+    font-size: 1.05rem;
     border-width: 0;
-    box-shadow: 0 4px 10px rgba(0,0,0,0.25); /* Override */
-    opacity: 0; /* Para animación */
-    transform: translateY(20px); /* Para animación */
-    animation: heroCtaButtonAppear 0.7s 0.9s forwards cubic-bezier(0.23, 1, 0.32, 1);
+    box-shadow: 0 4px 10px rgba(0,0,0,0.25);
+    /* --- ANIMACIÓN ELIMINADA --- */
+    /* opacity: 0; */
+    /* transform: translateY(20px); */
+    /* animation: heroCtaButtonAppear 0.7s 0.9s forwards cubic-bezier(0.23, 1, 0.32, 1); */
 }
 
-@keyframes heroCtaButtonAppear {
-    to { opacity: 1; transform: translateY(0); }
-}
+/* @keyframes heroCtaButtonAppear ... -> ELIMINADO */
 
-/* Contenedor con fondo, padding y sombra, si se usa dentro de .main-content > .container
-   Ej: <div class="main-content"><div class="container"><div class="content-panel">...</div></div></div> */
 .content-panel {
     background-color: var(--color-primary-bg);
     padding: calc(var(--spacing-unit) * 5);
@@ -138,7 +125,7 @@
 }
 
 .text-content h2 {
-    color: var(--dhl-red); /* Override */
+    color: var(--dhl-red);
     position: relative;
     display: inline-block;
     padding-bottom: 0.3em;
@@ -149,60 +136,62 @@
     position: absolute;
     bottom: 0;
     left: 0;
-    width: 0; /* Animado con JS */
+    width: 0;
     height: 3px;
     background-color: var(--dhl-yellow);
-    transition: width 0.5s cubic-bezier(0.25, 1, 0.5, 1) 0.3s;
+    /* --- TRANSICIÓN ELIMINADA --- */
+    /* transition: width 0.5s cubic-bezier(0.25, 1, 0.5, 1) 0.3s; */
 }
 
-#quienes-somos .text-content h2 { /* Si "Quiénes Somos" h2 necesita centrado especial */
+#quienes-somos .text-content h2 {
     text-align: center;
-    display: block; /* Para que ocupe ancho y permita centrar */
+    display: block;
 }
-#quienes-somos .text-content h2::after { /* Para centrar la línea */
+#quienes-somos .text-content h2::after {
     left: 50%;
     transform: translateX(-50%);
 }
 
 .text-content h3 {
-    color: var(--color-headings); /* Puede ser el default */
+    color: var(--color-headings);
     padding-bottom: 0.3em;
     display: inline-block;
     position: relative;
-    border-bottom: 2px solid transparent; /* Base para efecto animado */
+    border-bottom: 2px solid transparent;
 }
 
 .text-content h3::after {
     content: "";
     position: absolute;
-    bottom: -2px; /* Alinea con el border-bottom transparente */
+    bottom: -2px;
     left: 0;
-    width: 0; /* Animado con JS */
+    width: 0;
     height: 2px;
     background-color: var(--dhl-yellow);
-    transition: width 0.5s cubic-bezier(0.25, 1, 0.5, 1) 0.3s;
+    /* --- TRANSICIÓN ELIMINADA --- */
+    /* transition: width 0.5s cubic-bezier(0.25, 1, 0.5, 1) 0.3s; */
 }
 
-/* Activación de animación de subrayado para H2 y H3 (requiere JS para añadir .is-visible) */
 .fade-in-section.is-visible .text-content h2::after,
 .fade-in-section.is-visible .text-content h3::after {
-    width: 100%; /* O un ancho fijo, ej: 80px */
+    width: 100%; /* La línea aparecerá instantáneamente */
 }
 .fade-in-section.is-visible #quienes-somos .text-content h2::after {
-    width: 80px; /* Ancho específico para el H2 de "Quiénes Somos" si es diferente */
+    width: 80px;
 }
 
 .text-content p {
-    color: var(--color-text-secondary); /* Override */
+    color: var(--color-text-secondary);
 }
 
 .text-content li {
-    padding-left: 0; /* Anula el padding de _typography.css si se usa un estilo de lista diferente aquí */
-    margin-bottom: 1.5rem; /* Override */
-    transition: transform 0.2s ease-out;
+    padding-left: 0;
+    margin-bottom: 1.5rem;
+    /* --- TRANSICIÓN ELIMINADA --- */
+    /* transition: transform 0.2s ease-out; */
 }
 .text-content li::before {
-    display: none; /* Oculta el ::before de _typography.css si no se desea */
+    display: none;
 }
 .text-content li:hover {
     transform: translateX(5px);
@@ -211,8 +200,9 @@
 .text-content li strong {
     display: block;
     margin-bottom: 0.3em;
-    font-size: 1.1em; /* Override */
-    transition: color 0.3s ease;
+    font-size: 1.1em;
+    /* --- TRANSICIÓN ELIMINADA --- */
+    /* transition: color 0.3s ease; */
 }
 .text-content li strong:hover {
     color: var(--dhl-red);
@@ -220,13 +210,13 @@
 
 .text-content li p {
     margin-bottom: 0;
-    font-size: 0.95rem; /* Override */
-    color: var(--color-text-secondary); /* Puede ser el default */
+    font-size: 0.95rem;
+    color: var(--color-text-secondary);
 }
 
 .image-content {
     text-align: center;
-    overflow: hidden; /* Para contener el scale de la imagen en hover */
+    overflow: hidden;
 }
 
 .section-image {
@@ -234,14 +224,15 @@
     height: auto;
     border-radius: var(--border-radius);
     box-shadow: var(--shadow-medium);
-    transition: transform 0.4s cubic-bezier(0.25, 1, 0.5, 1), box-shadow 0.4s ease;
+    /* --- TRANSICIÓN ELIMINADA --- */
+    /* transition: transform 0.4s cubic-bezier(0.25, 1, 0.5, 1), box-shadow 0.4s ease; */
 }
 .section-image:hover {
     transform: scale(1.04);
     box-shadow: var(--shadow-hard);
 }
 
-/* --- Sección de Tarjetas de Líneas de Servicio --- */
+/* --- Sección de Tarjetas de Líneas de Servicio (ANIMACIONES MANTENIDAS) --- */
 #lineas-servicio {
     padding-top: calc(var(--spacing-unit) * 3);
     padding-bottom: calc(var(--spacing-unit) * 5);
@@ -249,9 +240,9 @@
 }
 
 #lineas-servicio h2 {
-    color: var(--dhl-red); /* Override */
-    margin-bottom: 1em; /* Override */
-    font-size: 2rem; /* Override o ajuste a _typography.css */
+    color: var(--dhl-red);
+    margin-bottom: 1em;
+    font-size: 2rem;
     text-align: center;
 }
 
@@ -262,41 +253,41 @@
 }
 
 .service-card {
-    display: block; /* Para que el <a> ocupe todo el espacio */
+    display: block;
     text-decoration: none;
     border-radius: var(--border-radius-medium);
-    overflow: hidden; /* Clave para recortar la imagen y el título */
+    overflow: hidden;
     box-shadow: var(--shadow-medium);
-    transition: transform 0.3s cubic-bezier(0.25, 1, 0.5, 1), box-shadow 0.3s ease;
+    transition: transform 0.3s cubic-bezier(0.25, 1, 0.5, 1), box-shadow 0.3s ease; /* CONSERVADO */
     position: relative;
-    background-color: var(--color-secondary-bg); /* Fallback si la imagen no carga */
+    background-color: var(--color-secondary-bg);
 }
 
 .service-card:hover,
-.service-card:focus-within { /* focus-within es bueno para la accesibilidad del teclado */
+.service-card:focus-within {
     transform: translateY(-6px) scale(1.02);
     box-shadow: var(--shadow-hard);
-    outline: none; /* :focus-visible se encarga del outline de foco */
+    outline: none;
 }
-.service-card:focus-visible { /* Estilo de foco explícito para accesibilidad */
+.service-card:focus-visible {
     outline: 3px solid var(--dhl-yellow);
     outline-offset: 2px;
-    box-shadow: var(--shadow-hard); /* Mantiene consistencia visual */
+    box-shadow: var(--shadow-hard);
 }
 
 .service-card img {
     width: 100%;
     height: 220px;
-    object-fit: cover; /* Asegura que la imagen cubra sin distorsionarse */
-    display: block; /* Elimina espacio extra debajo de la imagen */
-    transition: transform 0.4s cubic-bezier(0.25, 1, 0.5, 1), filter 0.3s ease;
-    filter: brightness(0.95); /* Ligero oscurecimiento para contraste con título */
+    object-fit: cover;
+    display: block;
+    transition: transform 0.4s cubic-bezier(0.25, 1, 0.5, 1), filter 0.3s ease; /* CONSERVADO */
+    filter: brightness(0.95);
 }
 
 .service-card:hover img,
 .service-card:focus-within img {
     transform: scale(1.08);
-    filter: brightness(1); /* Restaura brillo original */
+    filter: brightness(1);
 }
 
 .service-card-title {
@@ -304,7 +295,7 @@
     bottom: 0;
     left: 0;
     width: 100%;
-    background-color: rgba(10, 20, 50, 0.75); /* Azul oscuro semi-transparente */
+    background-color: rgba(10, 20, 50, 0.75);
     color: var(--dhl-white);
     padding: calc(var(--spacing-unit) * 1.5) calc(var(--spacing-unit) * 2);
     font-family: var(--font-headings);
@@ -312,95 +303,70 @@
     font-size: 1.15rem;
     text-align: center;
     box-sizing: border-box;
-    transition: background-color 0.3s ease, color 0.3s ease, transform 0.3s ease;
+    transition: background-color 0.3s ease, color 0.3s ease, transform 0.3s ease; /* CONSERVADO */
 }
 
 .service-card:hover .service-card-title,
 .service-card:focus-within .service-card-title {
-    background-color: var(--dhl-red); /* Cambia fondo a rojo DHL en hover/focus */
+    background-color: var(--dhl-red);
 }
+
 
 /* --- Ajustes Responsivos (Específicos de page-specific.css) --- */
-/* Los ajustes de responsive.css (tamaños de fuente Hx, etc.) se aplican primero. */
+/* (Sin cambios en esta sección, se mantiene igual) */
 
-@media (max-width: 992px) { /* Tablets grandes y medianas */
+@media (max-width: 992px) {
     #hero { min-height: 400px; }
-    #hero h1 { font-size: 2.8rem; } /* Override de responsive.css si es necesario */
-    #hero p { font-size: 1.15rem; } /* Override de responsive.css si es necesario */
-
-    .service-cards-container {
-        grid-template-columns: repeat(2, 1fr);
-        gap: calc(var(--spacing-unit) * 3);
-    }
-    #lineas-servicio h2 { font-size: 1.8rem; } /* Override de responsive.css si es necesario */
-
-    .content-section,
-    .content-section.reverse { gap: calc(var(--spacing-unit) * 4); }
-    .text-content h2 { font-size: 1.8rem; } /* Override de responsive.css si es necesario */
-    .text-content h3 { font-size: 1.3rem; } /* Override de responsive.css si es necesario */
+    #hero h1 { font-size: 2.8rem; }
+    #hero p { font-size: 1.15rem; }
+    .service-cards-container { grid-template-columns: repeat(2, 1fr); gap: calc(var(--spacing-unit) * 3); }
+    #lineas-servicio h2 { font-size: 1.8rem; }
+    .content-section, .content-section.reverse { gap: calc(var(--spacing-unit) * 4); }
+    .text-content h2 { font-size: 1.8rem; }
+    .text-content h3 { font-size: 1.3rem; }
 }
 
-@media (max-width: 768px) { /* Tablets pequeñas y móviles */
-    #hero {
-        min-height: 350px;
-        height: calc(100vh - var(--header-height)); /* Solo --header-height porque top-bar está oculta (ver responsive.css) */
-    }
+@media (max-width: 768px) {
+    #hero { height: calc(100vh - var(--header-height)); min-height: 350px; }
     .hero-content { padding: 15px 20px; max-width: 90%; }
     #hero h1 { font-size: 2.3rem; }
     #hero p { font-size: 1.0rem; margin-bottom: 1.2em; }
-    .hero-cta { padding: 12px 28px; font-size: 0.95rem; } /* Ajuste al botón específico del hero */
-
-    /* Imágenes de fondo móviles (específicas para esta página) */
+    .hero-cta { padding: 12px 28px; font-size: 0.95rem; }
     #hero-slide-1 { background-image: url('../img/as12.webp'); }
     #hero-slide-2 { background-image: url('../img/mobile1.webp'); }
-    /* #hero-slide-3 { background-image: url('../img/mobile-image3.jpg'); } */
-
-    .content-section,
-    .content-section.reverse {
-        flex-direction: column;
-        gap: calc(var(--spacing-unit) * 3);
-        margin-bottom: calc(var(--spacing-unit) * 6);
-    }
-    .text-content, .image-content {
-        flex-basis: auto; /* Resetea flex-basis */
-        width: 100%;
-        min-width: unset; /* Resetea min-width */
-    }
-    /* Reordenamiento opcional para móvil */
-    .content-section:not(.reverse) .image-content { order: -1; } /* Imagen arriba */
-    .content-section.reverse .text-content { order: -1; } /* Texto arriba en sección reversa */
-
+    .content-section, .content-section.reverse { flex-direction: column; gap: calc(var(--spacing-unit) * 3); margin-bottom: calc(var(--spacing-unit) * 6); }
+    .text-content, .image-content { flex-basis: auto; width: 100%; min-width: unset; }
+    .content-section:not(.reverse) .image-content { order: -1; }
+    .content-section.reverse .text-content { order: -1; }
     .text-content h2 { font-size: 1.7rem; text-align: center; }
     .text-content h3 { font-size: 1.25rem; display: block; text-align: center; border-bottom: none; }
-    .text-content h3::after { left: 50%; transform: translateX(-50%); width: 0; /* Animado con JS */ }
-    .fade-in-section.is-visible .text-content h3::after { width: 80%; max-width: 200px; } /* Ancho de línea H3 en móvil */
-
+    .text-content h3::after { left: 50%; transform: translateX(-50%); width: 0; }
+    .fade-in-section.is-visible .text-content h3::after { width: 80%; max-width: 200px; }
     .text-content p, .text-content li p, .text-content li strong { text-align: center; }
-    .text-content ul { display: flex; flex-direction: column; align-items: center; } /* Para centrar los li si tienen width:fit-content */
+    .text-content ul { display: flex; flex-direction: column; align-items: center; }
     .text-content li { width: fit-content; max-width: 100%; }
 }
 
-@media (max-width: 600px) { /* Móviles más pequeños */
+@media (max-width: 600px) {
     .service-cards-container { grid-template-columns: 1fr; }
     .service-card img { height: 200px; }
     .service-card-title { font-size: 1.1rem; padding: calc(var(--spacing-unit) * 1.25) calc(var(--spacing-unit) * 1.5); }
     #lineas-servicio h2 { font-size: 1.7rem; }
 }
 
-@media (max-width: 480px) { /* Móviles muy pequeños */
+@media (max-width: 480px) {
     #hero { min-height: 320px; }
     .hero-content { padding: 15px 15px; }
     #hero h1 { font-size: 2.1rem; line-height: 1.25; margin-bottom: 0.6em; }
     #hero p { font-size: 0.95rem; line-height: 1.45; margin-bottom: 1.6em; }
     .hero-cta { padding: 12px 25px; font-size: 0.95rem; }
-
     .content-section { padding: 20px 0; margin-bottom: 40px; }
-    .text-content, .image-content { padding: 0 15px; } /* Añade padding lateral al contenido apilado */
+    .text-content, .image-content { padding: 0 15px; }
     .text-content h2 { font-size: 1.6rem; margin-bottom: 0.8em; }
     .text-content h3 { font-size: 1.3rem; margin-bottom: 0.6em; }
     .fade-in-section.is-visible .text-content h3::after { max-width: 150px; }
     .text-content li { margin-bottom: 1.2rem; }
-    .section-image { max-width: 90%; margin: 0 auto; /* Centra la imagen si es más estrecha */ }
+    .section-image { max-width: 90%; margin: 0 auto; }
 }
 
 

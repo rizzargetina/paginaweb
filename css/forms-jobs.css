@@ -1,7 +1,4 @@
-/* css/forms-jobs.css */
-/* Estilos específicos para la página de contacto y oportunidades laborales */
 
-/* --- Estilos Comunes para Contenedores de Sección en estas páginas --- */
 .section-container { /* Clase reutilizable para forms y jobs */
     background-color: var(--color-content-bg-lighter); /* Definida en _variables.css */
     padding: 30px;
@@ -34,10 +31,6 @@
     flex: 1;
     min-width: 300px; /* Evita que se compriman demasiado */
 }
-
-/* Padding para el contenedor principal de la página de contacto.
-   Asume que contact.html tiene <div class="container page-container">.
-   .container ya provee padding lateral y max-width. */
 .page-container {
     padding-top: calc(var(--spacing-unit) * 3);
     padding-bottom: calc(var(--spacing-unit) * 4);
@@ -147,15 +140,6 @@
     font-size: 0.95rem; /* Override */
 }
 
-.contact-info-container .info-item a {
-    /* Estilos base de 'a' heredados de _typography.css */
-    /* color: var(--color-link); /* Heredado */
-}
-/* .contact-info-container .info-item a:hover,
-.contact-info-container .info-item a:focus {
-    color: var(--color-link-hover); /* Heredado */
-    /* text-decoration: underline; /* Heredado */
-/*}*/
 
 /* Mapa de Ubicación */
 .map-container {

@@ -28,56 +28,6 @@
             font-size: 2.5rem;
         }
 
-        /* --- Estilos para la nueva sección de Pilares --- */
-        #nuestros-pilares {
-            text-align: center;
-            padding: calc(var(--spacing-unit) * 4) 0;
-        }
-
-        #nuestros-pilares h2 {
-            color: var(--color-headings);
-            margin-bottom: 2.5rem;
-            font-size: 2rem;
-        }
-
-        .pillars-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
-            gap: calc(var(--spacing-unit) * 3);
-            text-align: center;
-        }
-
-        .pillar-item {
-            background-color: var(--color-content-bg-lighter);
-            padding: calc(var(--spacing-unit) * 3);
-            border-radius: var(--border-radius);
-            transition: transform 0.3s ease, box-shadow 0.3s ease;
-        }
-
-        .pillar-item:hover {
-            transform: translateY(-5px);
-            box-shadow: var(--shadow-medium);
-        }
-
-        .pillar-item .icon {
-            font-size: 2.8rem;
-            color: var(--dhl-red);
-            margin-bottom: 1rem;
-        }
-
-        .pillar-item h3 {
-            font-family: var(--font-headings);
-            font-size: 1.25rem;
-            margin-bottom: 0.5rem;
-            color: var(--color-heading-text);
-        }
-
-        .pillar-item p {
-            font-size: 0.95rem;
-            line-height: 1.6;
-            color: var(--color-text-secondary);
-        }
-        
         /* --- Estilos para el carrusel de logos de clientes --- */
         #client-logos {
             padding: calc(var(--spacing-unit) * 5) 0;
@@ -259,32 +209,7 @@
 
         <hr class="fade-in-element">
 
-        <!-- SECCIÓN DE PILARES CON ICONOS -->
-        <section id="nuestros-pilares" class="fade-in-section">
-            <h2>Nuestros Pilares</h2>
-            <div class="pillars-grid">
-                <div class="pillar-item">
-                    <div class="icon bi bi-patch-check-fill"></div>
-                    <h3>Calidad y Seriedad</h3>
-                    <p>Compromiso total con los más altos estándares en cada operación que realizamos.</p>
-                </div>
-                <div class="pillar-item">
-                    <div class="icon bi bi-person-workspace"></div>
-                    <h3>Idoneidad Profesional</h3>
-                    <p>Un equipo experto y capacitado para enfrentar los desafíos más complejos del sector.</p>
-                </div>
-                <div class="pillar-item">
-                    <div class="icon bi bi-shield-lock-fill"></div>
-                    <h3>Responsabilidad</h3>
-                    <p>Operamos con un enfoque prioritario en la seguridad, el medio ambiente y la comunidad.</p>
-                </div>
-                <div class="pillar-item">
-                    <div class="icon bi bi-graph-up-arrow"></div>
-                    <h3>Rendimiento y Eficiencia</h3>
-                    <p>Buscamos la optimización de recursos para garantizar resultados superiores a nuestros clientes.</p>
-                </div>
-            </div>
-        </section>
+      
 
         <!-- MÉTRICAS CLAVE (Se mantiene y ahora tiene más impacto) -->
         <section id="key-metrics" class="fade-in-section">

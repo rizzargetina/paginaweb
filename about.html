@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Quiénes Somos - Transporte JGT y Timol</title>
-    <meta name="description" content="Conozca la historia y el compromiso de Transporte JGT y Timol, líderes en logística para la industria petrolera en Vaca Muerta, con más de 16 años de trayectoria.">
+    <meta name="description" content="Conozca la historia, los pilares y el compromiso de Transporte JGT y Timol, líderes en logística para la industria petrolera en Vaca Muerta.">
     <link rel="icon" type="image/x-icon" href="img/ico.ico">
 
     <!-- Google Fonts -->
@@ -21,21 +21,61 @@
 
     <!-- Estilos específicos para esta página (About) -->
     <style>
-        /* --- Estilos para la sección de introducción --- */
-        #about-intro .content-panel h1 {
+        .page-title {
             text-align: center;
             color: var(--dhl-red);
-            margin-bottom: 1.5rem;
-            font-size: 2.2rem;
+            margin-bottom: 2rem;
+            font-size: 2.5rem;
         }
 
-        #about-intro .content-panel p {
-            font-size: 1.05rem;
-            line-height: 1.7;
+        /* --- Estilos para la nueva sección de Pilares --- */
+        #nuestros-pilares {
+            text-align: center;
+            padding: calc(var(--spacing-unit) * 4) 0;
+        }
+
+        #nuestros-pilares h2 {
+            color: var(--color-headings);
+            margin-bottom: 2.5rem;
+            font-size: 2rem;
+        }
+
+        .pillars-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+            gap: calc(var(--spacing-unit) * 3);
+            text-align: center;
+        }
+
+        .pillar-item {
+            background-color: var(--color-content-bg-lighter);
+            padding: calc(var(--spacing-unit) * 3);
+            border-radius: var(--border-radius);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .pillar-item:hover {
+            transform: translateY(-5px);
+            box-shadow: var(--shadow-medium);
+        }
+
+        .pillar-item .icon {
+            font-size: 2.8rem;
+            color: var(--dhl-red);
+            margin-bottom: 1rem;
+        }
+
+        .pillar-item h3 {
+            font-family: var(--font-headings);
+            font-size: 1.25rem;
+            margin-bottom: 0.5rem;
+            color: var(--color-heading-text);
+        }
+
+        .pillar-item p {
+            font-size: 0.95rem;
+            line-height: 1.6;
             color: var(--color-text-secondary);
-            max-width: 850px;
-            margin-left: auto;
-            margin-right: auto;
         }
         
         /* --- Estilos para el carrusel de logos de clientes --- */
@@ -55,7 +95,6 @@
             width: 100%;
             overflow: hidden;
             position: relative;
-            /* Máscara con gradiente para un efecto de desvanecimiento en los bordes */
             -webkit-mask-image: linear-gradient(to right, rgba(0,0,0,0), rgba(0,0,0,1) 15%, rgba(0,0,0,1) 85%, rgba(0,0,0,0));
             mask-image: linear-gradient(to right, rgba(0,0,0,0), rgba(0,0,0,1) 15%, rgba(0,0,0,1) 85%, rgba(0,0,0,0));
         }
@@ -63,19 +102,14 @@
         .client-logo-track {
             display: flex;
             align-items: center;
-            /* Ancho total: (Nº de logos) x 2 (para duplicar) x (ancho del logo + gap) */
-            /* (8 logos * 2) * 250px = 4000px */
             width: calc(400px * 16); 
             animation: scroll-logos 45s linear infinite;
-            gap: 80px; /* Espacio entre logos */
+            gap: 80px;
         }
 
         @keyframes scroll-logos {
             from { transform: translateX(0); }
-            to {
-                /* Desplaza hacia la izquierda el ancho del set original de logos */
-                transform: translateX(calc(-250px * 8));
-            }
+            to { transform: translateX(calc(-250px * 8)); }
         }
 
         .client-logo-slider:hover .client-logo-track {
@@ -83,13 +117,14 @@
         }
 
         .client-logo-track img {
-            height: 70px; /* Altura consistente */
+            height: 70px;
             width: auto;
             max-width: 170px;
             object-fit: contain;
         }
-	        #key-metrics {
-            background-color: var(--color-content-bg-lighter);
+
+        #key-metrics {
+            background-color: var(--color-primary-bg); /* Fondo más oscuro para contraste */
             padding: calc(var(--spacing-unit) * 4) 0;
             border-radius: var(--border-radius-medium);
             margin: calc(var(--spacing-unit) * 6) 0;
@@ -122,18 +157,14 @@
             font-size: 1rem;
             color: var(--color-text-secondary);
         }
-
-
         
         /* --- Ajustes Responsivos --- */
         @media (max-width: 768px) {
-            #about-intro .content-panel h1 { font-size: 1.8rem; }
-            #about-intro .content-panel p { font-size: 1rem; }
-            #client-logos h2 { font-size: 1.8rem; }
+            .page-title { font-size: 2.1rem; }
+            #nuestros-pilares h2, #client-logos h2 { font-size: 1.8rem; }
             
             .client-logo-track {
                 gap: 60px;
-                 /* (8 logos * 2) * 200px = 3200px */
                 width: calc(200px * 16);
                 animation-duration: 40s;
             }
@@ -142,13 +173,15 @@
             }
             .client-logo-track img { height: 55px; }
         }
+
         @media (max-width: 480px) {
+            .page-title { font-size: 1.8rem; }
+            .pillars-grid { grid-template-columns: 1fr; }
             #client-logos { padding: calc(var(--spacing-unit) * 3) 0; }
             #client-logos h2 { font-size: 1.6rem; }
 
             .client-logo-track {
                 gap: 50px;
-                 /* (8 logos * 2) * 160px = 2560px */
                 width: calc(160px * 16);
             }
             @keyframes scroll-logos {
@@ -164,15 +197,13 @@
 <div class="top-bar">
     <div class="container top-bar-container">
         <div class="top-bar-left">
-            <!-- El enlace ahora apunta a esta página -->
             <a href="about.html">Acerca de Nosotros</a>
  	        <a href="jobs.html">Oportunidades laborales</a>
         </div>
         <div class="top-bar-right">
-		<a href="https://www.linkedin.com/company/transporte-jgt-s-r-l-y-timol-s-r-l/about/" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn">
-		    <i class="bi bi-linkedin"></i>
-		</a>
-
+		    <a href="https://www.linkedin.com/company/transporte-jgt-s-r-l-y-timol-s-r-l/about/" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn">
+		        <i class="bi bi-linkedin"></i>
+		    </a>
             <span class="language-selector">
                 <a href="#" class="lang-active" aria-label="Idioma actual Español">ES</a> | <a href="#" aria-label="Cambiar idioma a Inglés">EN</a>
             </span>
@@ -207,21 +238,55 @@
 
 <main>
     <div class="container main-content">
+        
+        <h1 class="page-title fade-in-section">Más de 16 Años Impulsando la Industria</h1>
 
-        <section id="about-intro" class="fade-in-section" aria-labelledby="about-heading">
-            <div class="content-panel">
-                <h1 id="about-heading">Servicios para la Industria Petrolera</h1>
+        <!-- SECCIÓN INTRODUCCIÓN CON IMAGEN -->
+        <section class="content-section fade-in-section">
+            <div class="text-content">
                 <p>
-                    Transporte JGT SRL y Timol SRL (esta última con más de 16 años de trayectoria en el mercado) son empresas dedicadas a brindar servicios de transporte, alquiler de equipamiento y logística integral, orientadas a satisfacer las demandantes necesidades de la industria petrolera en Añelo y la región de Vaca Muerta.
+                    <strong>Transporte JGT SRL y Timol SRL</strong> son empresas líderes dedicadas a brindar servicios de transporte, alquiler de equipamiento y logística integral. Nuestra misión es satisfacer las demandantes necesidades de la industria petrolera en Añelo y la estratégica región de Vaca Muerta.
                 </p>
                 <p>
-                    Nuestro compromiso se fundamenta en la calidad, seriedad, idoneidad, responsabilidad y el rendimiento profesional, siendo estos nuestros principales pilares. Buscamos constantemente ofrecer soluciones eficientes, superar las expectativas de nuestros clientes y, de esta manera, cimentar un sólido prestigio y reconocimiento en el rubro, consolidándonos como empresas líderes gracias a la excelencia y la satisfacción del cliente.
+                    Buscamos constantemente ofrecer soluciones eficientes, superar las expectativas de nuestros clientes y, de esta manera, cimentar un sólido prestigio y reconocimiento en el rubro.
                 </p>
             </div>
+            <div class="image-content">
+                <!-- Puedes cambiar 'img/columna.webp' por una imagen de tu equipo o instalaciones -->
+                <img src="img/columna.webp" alt="Equipamiento industrial para el sector petrolero" class="section-image">
+            </div>
         </section>
-	    
+
         <hr class="fade-in-element">
-	    
+
+        <!-- SECCIÓN DE PILARES CON ICONOS -->
+        <section id="nuestros-pilares" class="fade-in-section">
+            <h2>Nuestros Pilares</h2>
+            <div class="pillars-grid">
+                <div class="pillar-item">
+                    <div class="icon bi bi-patch-check-fill"></div>
+                    <h3>Calidad y Seriedad</h3>
+                    <p>Compromiso total con los más altos estándares en cada operación que realizamos.</p>
+                </div>
+                <div class="pillar-item">
+                    <div class="icon bi bi-person-workspace"></div>
+                    <h3>Idoneidad Profesional</h3>
+                    <p>Un equipo experto y capacitado para enfrentar los desafíos más complejos del sector.</p>
+                </div>
+                <div class="pillar-item">
+                    <div class="icon bi bi-shield-lock-fill"></div>
+                    <h3>Responsabilidad</h3>
+                    <p>Operamos con un enfoque prioritario en la seguridad, el medio ambiente y la comunidad.</p>
+                </div>
+                <div class="pillar-item">
+                    <div class="icon bi bi-graph-up-arrow"></div>
+                    <h3>Rendimiento y Eficiencia</h3>
+                    <p>Buscamos la optimización de recursos para garantizar resultados superiores a nuestros clientes.</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- MÉTRICAS CLAVE (Se mantiene y ahora tiene más impacto) -->
         <section id="key-metrics" class="fade-in-section">
             <div class="metrics-container">
                 <div class="metric-item">
@@ -244,20 +309,31 @@
 
         <hr class="fade-in-element">
 
+        <!-- LOGOS DE CLIENTES (Se mantiene) -->
         <section id="client-logos" class="fade-in-section" aria-labelledby="clients-heading">
             <h2 id="clients-heading">Confían en Nosotros</h2>
             <div class="client-logo-slider">
                 <div class="client-logo-track">
-                    <!-- Set de logos original (reemplazar con logos reales) -->
-                    <img src="logos/petreven.png" alt="Logo YPF">
-                    <img src="logos/slb.png">
-                    <img src="logos/superior.png" alt="Logo YPF">
-                    <img src="logos/phoenix.png">
-                    <img src="logos/calfrac.png">
-                    <img src="logos/halliburton.png">
-                    <img src="logos/tronador.png">
-		    <img src="logos/tacker.png">
-		    <img src="logos/rental.png">
+                    <!-- Set de logos original -->
+                    <img src="logos/petreven.png" alt="Logo Petreven">
+                    <img src="logos/slb.png" alt="Logo SLB">
+                    <img src="logos/superior.png" alt="Logo Superior">
+                    <img src="logos/phoenix.png" alt="Logo Phoenix">
+                    <img src="logos/calfrac.png" alt="Logo Calfrac">
+                    <img src="logos/halliburton.png" alt="Logo Halliburton">
+                    <img src="logos/tronador.png" alt="Logo Tronador">
+		            <img src="logos/tacker.png" alt="Logo Tacker">
+		            <img src="logos/rental.png" alt="Logo Rental">
+                    <!-- Set de logos duplicado para el efecto contínuo -->
+                    <img src="logos/petreven.png" alt="Logo Petreven">
+                    <img src="logos/slb.png" alt="Logo SLB">
+                    <img src="logos/superior.png" alt="Logo Superior">
+                    <img src="logos/phoenix.png" alt="Logo Phoenix">
+                    <img src="logos/calfrac.png" alt="Logo Calfrac">
+                    <img src="logos/halliburton.png" alt="Logo Halliburton">
+                    <img src="logos/tronador.png" alt="Logo Tronador">
+		            <img src="logos/tacker.png" alt="Logo Tacker">
+		            <img src="logos/rental.png" alt="Logo Rental">
                 </div>
             </div>
         </section>

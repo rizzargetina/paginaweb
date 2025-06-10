@@ -122,7 +122,7 @@
 .content-section {
     display: flex;
     flex-wrap: wrap;
-    align-items: center;
+    align-items: flex-start; 
     gap: calc(var(--spacing-unit) * 5);
     margin-bottom: calc(var(--spacing-unit) * 8);
     padding: calc(var(--spacing-unit) * 4) 0;

@@ -49,22 +49,17 @@
 /* Imágenes de Fondo para el Hero (pueden mantenerse aquí o en HTML si son muy pocas) */
 #hero-slide-1 { background-image: url('../img/fondo.webp'); }
 #hero-slide-2 { background-image: url('../img/white-truck.webp'); }
-/* #hero-slide-3 { background-image: url('../img/desktop-image3.jpg'); } */
+
 
 .hero-content {
     position: relative;
     z-index: 3;
     padding: 20px 30px;
     max-width: 750px;
-    border-radius: var(--border-radius); /* Asume --border-radius de _variables.css */
+    border-radius: var(--border-radius); 
     text-align: center;
-    /* --- ANIMACIÓN ELIMINADA --- */
-    /* opacity: 0; */
-    /* transform: translateY(30px); */
-    /* animation: heroContentLoaded 0.8s 0.4s forwards cubic-bezier(0.23, 1, 0.32, 1); */
-}
 
-/* @keyframes heroContentLoaded ... -> ELIMINADO */
+}
 
 #hero h1 {
     font-size: 3.2rem;
@@ -90,13 +85,8 @@
     font-size: 1.05rem;
     border-width: 0;
     box-shadow: 0 4px 10px rgba(0,0,0,0.25);
-    /* --- ANIMACIÓN ELIMINADA --- */
-    /* opacity: 0; */
-    /* transform: translateY(20px); */
-    /* animation: heroCtaButtonAppear 0.7s 0.9s forwards cubic-bezier(0.23, 1, 0.32, 1); */
-}
 
-/* @keyframes heroCtaButtonAppear ... -> ELIMINADO */
+}
 
 .content-panel {
     background-color: var(--color-primary-bg);
@@ -139,8 +129,6 @@
     width: 0;
     height: 3px;
     background-color: var(--dhl-yellow);
-    /* --- TRANSICIÓN ELIMINADA --- */
-    /* transition: width 0.5s cubic-bezier(0.25, 1, 0.5, 1) 0.3s; */
 }
 
 #quienes-somos .text-content h2 {
@@ -168,8 +156,6 @@
     width: 0;
     height: 2px;
     background-color: var(--dhl-yellow);
-    /* --- TRANSICIÓN ELIMINADA --- */
-    /* transition: width 0.5s cubic-bezier(0.25, 1, 0.5, 1) 0.3s; */
 }
 
 .fade-in-section.is-visible .text-content h2::after,
@@ -201,8 +187,6 @@
     display: block;
     margin-bottom: 0.3em;
     font-size: 1.1em;
-    /* --- TRANSICIÓN ELIMINADA --- */
-    /* transition: color 0.3s ease; */
 }
 .text-content li strong:hover {
     color: var(--dhl-red);
@@ -224,8 +208,6 @@
     height: auto;
     border-radius: var(--border-radius);
     box-shadow: var(--shadow-medium);
-    /* --- TRANSICIÓN ELIMINADA --- */
-    /* transition: transform 0.4s cubic-bezier(0.25, 1, 0.5, 1), box-shadow 0.4s ease; */
 }
 .section-image:hover {
     transform: scale(1.04);
@@ -310,10 +292,6 @@
 .service-card:focus-within .service-card-title {
     background-color: var(--dhl-red);
 }
-
-
-/* --- Ajustes Responsivos (Específicos de page-specific.css) --- */
-/* (Sin cambios en esta sección, se mantiene igual) */
 
 @media (max-width: 992px) {
     #hero { min-height: 400px; }

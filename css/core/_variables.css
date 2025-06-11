@@ -63,4 +63,10 @@
     --color-content-bg-darker: #010409;
     --color-border-stronger: #444c56;
     --color-border-subtle: var(--color-border);
+    
+    --color-content-bg-lighter: #f8f9fa;
+    --color-content-bg-darker: #e9ecef;
+    --color-border-stronger: #adb5bd;
+    --color-content-bg: #ffffff;
+    --color-content-bg-alt: #f1f3f5;
 }

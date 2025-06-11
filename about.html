@@ -23,7 +23,7 @@
     <style>
         .page-title {
             text-align: center;
-            color: var(--color-headings); /* CHANGED: Was dark blue, now light */
+            color: var(--color-headings);
             margin-bottom: 2rem;
             font-size: 2.5rem;
         }
@@ -35,7 +35,7 @@
         }
 
         #client-logos h2 {
-            color: var(--color-headings); /* CHANGED: Was dark blue, now light */
+            color: var(--color-headings);
             margin-bottom: 2.5em;
             font-size: 2rem;
             text-align: center;
@@ -53,7 +53,7 @@
             transform: translateX(-50%);
             width: 80px;
             height: 3px;
-            background-color: var(--color-accent); /* ADDED: Accent underline */
+            background-color: var(--color-accent);
         }
 
         .client-logo-slider {
@@ -67,14 +67,14 @@
         .client-logo-track {
             display: flex;
             align-items: center;
-            width: calc(400px * 16); 
+            width: calc(250px * 18); /* 18 imágenes, cada una de 250px aprox */
             animation: scroll-logos 45s linear infinite;
             gap: 80px;
         }
 
         @keyframes scroll-logos {
             from { transform: translateX(0); }
-            to { transform: translateX(calc(-250px * 8)); }
+            to { transform: translateX(calc(-250px * 9)); } /* Desplaza el ancho de 9 imágenes */
         }
 
         .client-logo-slider:hover .client-logo-track {
@@ -82,27 +82,26 @@
         }
 
         .client-logo-track img {
-            height: 60px; /* Adjusted size */
+            height: 60px;
             width: auto;
             max-width: 170px;
             object-fit: contain;
-            filter: brightness(0) invert(1) grayscale(0.5); /* UPDATED: Makes logos white and slightly greyed out */
+            filter: brightness(0) invert(1) grayscale(0.5);
             opacity: 0.7;
             transition: filter 0.3s ease, opacity 0.3s ease;
         }
 
         .client-logo-slider:hover .client-logo-track img {
-             filter: brightness(0) invert(1) grayscale(0); /* Full white on hover */
+             filter: brightness(0) invert(1) grayscale(0);
              opacity: 1;
         }
 
-
         #key-metrics {
-            padding: calc(var(--spacing-unit) * 4); /* Added more padding */
+            padding: calc(var(--spacing-unit) * 4);
             border-radius: var(--border-radius-medium);
             margin: calc(var(--spacing-unit) * 6) 0;
-            background-color: var(--color-secondary-bg); /* ADDED: Panel background */
-            border: 1px solid var(--color-border); /* ADDED: Subtle border */
+            background-color: var(--color-secondary-bg);
+            border: 1px solid var(--color-border);
         }
         .metrics-container {
             display: flex;
@@ -118,19 +117,19 @@
         }
         .metric-item .icon {
             font-size: 2.8rem;
-            color: var(--color-accent); /* CHANGED: Was dark blue, now accent color */
+            color: var(--color-accent);
             margin-bottom: 0.5rem;
             display: block;
         }
         .metric-item .number {
             font-size: 2.5rem;
             font-weight: 700;
-            color: var(--color-headings); /* CHANGED: Correct variable for light text */
+            color: var(--color-headings);
             font-family: var(--font-headings);
         }
         .metric-item .label {
             font-size: 1rem;
-            color: var(--color-text-secondary); /* This will work automatically */
+            color: var(--color-text-secondary);
         }
         
         /* --- Ajustes Responsivos --- */
@@ -140,27 +139,26 @@
             
             .client-logo-track {
                 gap: 60px;
-                width: calc(200px * 16);
+                width: calc(160px * 18);
                 animation-duration: 40s;
             }
             @keyframes scroll-logos {
-                to { transform: translateX(calc(-200px * 8)); }
+                to { transform: translateX(calc(-160px * 9)); }
             }
             .client-logo-track img { height: 55px; }
         }
 
         @media (max-width: 480px) {
             .page-title { font-size: 1.8rem; }
-            .pillars-grid { grid-template-columns: 1fr; }
             #client-logos { padding: calc(var(--spacing-unit) * 3) 0; }
             #client-logos h2 { font-size: 1.6rem; }
 
             .client-logo-track {
                 gap: 50px;
-                width: calc(160px * 16);
+                width: calc(120px * 18);
             }
             @keyframes scroll-logos {
-                to { transform: translateX(calc(-160px * 8)); }
+                to { transform: translateX(calc(-120px * 9)); }
             }
             .client-logo-track img { height: 45px; }
         }
@@ -173,12 +171,12 @@
     <div class="container top-bar-container">
         <div class="top-bar-left">
             <a href="about.html">Acerca de Nosotros</a>
- 	        <a href="jobs.html">Oportunidades laborales</a>
+             <a href="jobs.html">Oportunidades laborales</a>
         </div>
         <div class="top-bar-right">
-		    <a href="https://www.linkedin.com/company/transporte-jgt-s-r-l-y-timol-s-r-l/about/" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn">
-		        <i class="bi bi-linkedin"></i>
-		    </a>
+            <a href="https://www.linkedin.com/company/transporte-jgt-s-r-l-y-timol-s-r-l/about/" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn">
+                <i class="bi bi-linkedin"></i>
+            </a>
             <span class="language-selector">
                 <a href="#" class="lang-active" aria-label="Idioma actual Español">ES</a> | <a href="#" aria-label="Cambiar idioma a Inglés">EN</a>
             </span>
@@ -204,8 +202,8 @@
         </button>
 
         <nav class="rulenav" id="main-navigation" aria-label="Navegación principal">
-	     <a class="navlink" href="index.html">Inicio</a>
-	     <a class="navlink" href="services.html">Servicios</a>
+         <a class="navlink" href="index.html">Inicio</a>
+         <a class="navlink" href="services.html">Servicios</a>
              <a class="navlink" href="contact.html">Contacto</a>
         </nav>
     </div>
@@ -233,8 +231,6 @@
         </section>
 
         <hr class="fade-in-element">
-
-      
 
         <!-- MÉTRICAS CLAVE (Se mantiene y ahora tiene más impacto) -->
         <section id="key-metrics" class="fade-in-section">
@@ -272,8 +268,8 @@
                     <img src="logos/calfrac.png" alt="Logo Calfrac">
                     <img src="logos/halliburton.png" alt="Logo Halliburton">
                     <img src="logos/tronador.png" alt="Logo Tronador">
-		            <img src="logos/tacker.png" alt="Logo Tacker">
-		            <img src="logos/rental.png" alt="Logo Rental">
+                    <img src="logos/tacker.png" alt="Logo Tacker">
+                    <img src="logos/rental.png" alt="Logo Rental">
                     <!-- Set de logos duplicado para el efecto contínuo -->
                     <img src="logos/petreven.png" alt="Logo Petreven">
                     <img src="logos/slb.png" alt="Logo SLB">
@@ -282,8 +278,8 @@
                     <img src="logos/calfrac.png" alt="Logo Calfrac">
                     <img src="logos/halliburton.png" alt="Logo Halliburton">
                     <img src="logos/tronador.png" alt="Logo Tronador">
-		            <img src="logos/tacker.png" alt="Logo Tacker">
-		            <img src="logos/rental.png" alt="Logo Rental">
+                    <img src="logos/tacker.png" alt="Logo Tacker">
+                    <img src="logos/rental.png" alt="Logo Rental">
                 </div>
             </div>
         </section>

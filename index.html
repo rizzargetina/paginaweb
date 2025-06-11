@@ -16,7 +16,14 @@
     
     <!-- Para móvil (usa la imagen móvil de tu CSS) -->
     <link rel="preload" as="image" href="/img/as12.webp" media="(max-width: 768px)">
-    <!-- CSS -->
+    <style>
+    /* Ejemplo de estilos críticos: header, top-bar, hero, fuentes principales */
+    body { font-family: 'Roboto', Arial, sans-serif; margin: 0; }
+    .header { position: fixed; top: 0; width: 100%; background: #fff; z-index: 1000; }
+    .top-bar { background: #222; color: #fff; height: 32px; }
+    .hero-content { text-align: center; padding: 40px 0; }
+    .cta-button { display: inline-block; padding: 12px 28px; border-radius: 6px; border: 1px solid #adb5bd; background: transparent; color: #222; font-weight: 700; }
+    </style>
     <link rel="stylesheet" href="css/main.css"> 
 	
     <link rel="stylesheet" href="css/page-specific.css">

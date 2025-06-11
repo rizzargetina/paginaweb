@@ -41,7 +41,7 @@
     content: '';
     position: absolute;
     top: 0; left: 0; right: 0; bottom: 0;
-    background-color: rgba(0, 0, 0, 0.45);
+    background-color: rgba(0, 0, 0, 0.55); /* Darker overlay */
     z-index: 2;
     transition: background-color 0.5s ease; /* Mantenido para suavidad del slider */
 }
@@ -66,14 +66,14 @@
     margin-top: 0;
     margin-bottom: 0.4em;
     color: var(--dhl-white);
-    text-shadow: 2px 2px 6px rgba(0, 0, 0, 0.6);
+    text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.8);
 }
 
 #hero p {
     font-size: 1.25rem;
     margin-bottom: 1.5em;
     color: var(--dhl-white);
-    text-shadow: 1px 1px 4px rgba(0, 0, 0, 0.5);
+    text-shadow: 1px 1px 6px rgba(0, 0, 0, 0.7);
     font-weight: 400;
     max-width: 550px;
     margin-left: auto;
@@ -89,7 +89,7 @@
 }
 
 .content-panel {
-    background-color: var(--color-primary-bg);
+    background-color: var(--color-secondary-bg);
     padding: calc(var(--spacing-unit) * 5);
     border-radius: var(--border-radius-medium);
     box-shadow: var(--shadow-medium);
@@ -115,7 +115,7 @@
 }
 
 .text-content h2 {
-    color: var(--dhl-red);
+    color: var(--color-headings);
     position: relative;
     display: inline-block;
     padding-bottom: 0.3em;
@@ -128,7 +128,7 @@
     left: 0;
     width: 0;
     height: 3px;
-    background-color: var(--dhl-yellow);
+    background-color: var(--color-accent); /* Reddit-like bright blue accent */
 }
 
 #quienes-somos .text-content h2 {
@@ -155,7 +155,7 @@
     left: 0;
     width: 0;
     height: 2px;
-    background-color: var(--dhl-yellow);
+    background-color: var(--color-accent); /* Reddit-like bright blue accent */
 }
 
 .fade-in-section.is-visible .text-content h2::after,
@@ -187,9 +187,10 @@
     display: block;
     margin-bottom: 0.3em;
     font-size: 1.1em;
+    color: var(--color-text);
 }
 .text-content li strong:hover {
-    color: var(--dhl-red);
+    color: var(--color-link-hover);
 }
 
 .text-content li p {
@@ -208,10 +209,13 @@
     height: auto;
     border-radius: var(--border-radius);
     box-shadow: var(--shadow-medium);
+    border: 1px solid var(--color-border); /* Subtle border like Reddit images */
+    filter: brightness(.9);
 }
 .section-image:hover {
     transform: scale(1.04);
     box-shadow: var(--shadow-hard);
+    filter: brightness(1);
 }
 
 /* --- Sección de Tarjetas de Líneas de Servicio (ANIMACIONES MANTENIDAS) --- */
@@ -222,7 +226,7 @@
 }
 
 #lineas-servicio h2 {
-    color: var(--dhl-red);
+    color: var(--color-headings);
     margin-bottom: 1em;
     font-size: 2rem;
     text-align: center;
@@ -243,16 +247,18 @@
     transition: transform 0.3s cubic-bezier(0.25, 1, 0.5, 1), box-shadow 0.3s ease; /* CONSERVADO */
     position: relative;
     background-color: var(--color-secondary-bg);
+    border: 1px solid var(--color-border);
 }
 
 .service-card:hover,
 .service-card:focus-within {
     transform: translateY(-6px) scale(1.02);
     box-shadow: var(--shadow-hard);
+    border-color: #555;
     outline: none;
 }
 .service-card:focus-visible {
-    outline: 3px solid var(--dhl-yellow);
+    outline: 3px solid var(--color-link);
     outline-offset: 2px;
     box-shadow: var(--shadow-hard);
 }
@@ -263,7 +269,7 @@
     object-fit: cover;
     display: block;
     transition: transform 0.4s cubic-bezier(0.25, 1, 0.5, 1), filter 0.3s ease; /* CONSERVADO */
-    filter: brightness(0.95);
+    filter: brightness(0.85);
 }
 
 .service-card:hover img,
@@ -277,7 +283,7 @@
     bottom: 0;
     left: 0;
     width: 100%;
-    background-color: rgba(10, 20, 50, 0.75);
+    background-color: rgba(16, 22, 36, 0.85);
     color: var(--dhl-white);
     padding: calc(var(--spacing-unit) * 1.5) calc(var(--spacing-unit) * 2);
     font-family: var(--font-headings);
@@ -346,5 +352,3 @@
     .text-content li { margin-bottom: 1.2rem; }
     .section-image { max-width: 90%; margin: 0 auto; }
 }
-
-

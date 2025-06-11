@@ -173,24 +173,14 @@
 .text-content li {
     padding-left: 0;
     margin-bottom: 1.5rem;
-    /* --- TRANSICIÓN ELIMINADA --- */
-    /* transition: transform 0.2s ease-out; */
 }
-.text-content li::before {
-    display: none;
-}
-.text-content li:hover {
-    transform: translateX(5px);
-}
+
 
 .text-content li strong {
     display: block;
     margin-bottom: 0.3em;
     font-size: 1.1em;
     color: var(--color-text);
-}
-.text-content li strong:hover {
-    color: var(--color-link-hover);
 }
 
 .text-content li p {
@@ -211,11 +201,6 @@
     box-shadow: var(--shadow-medium);
     border: 1px solid var(--color-border); /* Subtle border like Reddit images */
     filter: brightness(.9);
-}
-.section-image:hover {
-    transform: scale(1.04);
-    box-shadow: var(--shadow-hard);
-    filter: brightness(1);
 }
 
 /* --- Sección de Tarjetas de Líneas de Servicio (ANIMACIONES MANTENIDAS) --- */

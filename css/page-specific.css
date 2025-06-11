@@ -203,6 +203,17 @@
     filter: brightness(.9);
 }
 
+.hero-lcp-img {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  z-index: 1;
+  pointer-events: none;
+  user-select: none;
+}
+
 /* --- Sección de Tarjetas de Líneas de Servicio (ANIMACIONES MANTENIDAS) --- */
 #lineas-servicio {
     padding-top: calc(var(--spacing-unit) * 3);

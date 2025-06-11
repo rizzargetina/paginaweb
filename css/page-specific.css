@@ -295,6 +295,12 @@
     background-color: var(--dhl-red);
 }
 
+.text-content ul {
+    list-style: none;
+    padding-left: 0;
+    margin-left: 0;
+}
+
 @media (max-width: 992px) {
     #hero { min-height: 400px; }
     #hero h1 { font-size: 2.8rem; }

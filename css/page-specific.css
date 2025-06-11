@@ -189,6 +189,12 @@
     color: var(--color-text-secondary);
 }
 
+.text-content ul {
+    list-style: none !important;
+    padding-left: 0 !important;
+    margin-left: 0 !important;
+}
+
 .image-content {
     text-align: center;
     overflow: hidden;
@@ -295,11 +301,6 @@
     background-color: var(--dhl-red);
 }
 
-.text-content ul {
-    list-style: none;
-    padding-left: 0;
-    margin-left: 0;
-}
 
 @media (max-width: 992px) {
     #hero { min-height: 400px; }

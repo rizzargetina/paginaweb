@@ -8,6 +8,8 @@
     .navlink { padding: 0 12px; font-size: 0.9rem;} /* Movido de _header.css MQs */
     .top-bar { font-size: 0.8rem; } /* Movido de _top-bar.css MQs */
     .top-bar-left, .top-bar-right { gap: calc(var(--spacing-unit) * 1.5); } /* Movido de _top-bar.css MQs */
+    .mobile-menu-button { display: block;}
+    .rulenav { display: none; }
 }
 
 /* Tablet & Mobile (<= 768px) */
@@ -82,7 +84,8 @@
         pointer-events: auto;
     }
 
-    .rulenav .navlink { /* Movido de _header.css MQs */
+    /* --- NAVLINKS EN MENÚ HAMBURGUESA: SIN ANIMACIONES --- */
+    .rulenav .navlink {
         width: 100%;
         padding: calc(var(--spacing-unit) * 1.8) calc(var(--spacing-unit) * 2.5);
         text-align: left;
@@ -94,21 +97,34 @@
         text-transform: none;
         letter-spacing: normal;
         background-color: rgba(255, 255, 255, 0.05);
-        transition: background-color 0.2s ease, color 0.2s ease;
+        /* Elimina animaciones y efectos de línea */
+        transition: none !important;
+        box-shadow: none !important;
+    }
+    .rulenav .navlink::before,
+    .rulenav .navlink::after {
+        display: none !important;
+        width: 0 !important;
+        background: none !important;
+        content: none !important;
+        transition: none !important;
     }
     .rulenav .navlink:last-child { border-bottom: none; } /* Movido de _header.css MQs */
-    .rulenav .navlink::after { display: none; } /* Movido de _header.css MQs */
 
     .rulenav .navlink:hover,
-    .rulenav .navlink:focus { /* Movido de _header.css MQs */
+    .rulenav .navlink:focus {
        background-color: rgba(255, 255, 255, 0.1);
        color: var(--color-header-link-hover);
        transform: none;
+       /* Elimina animaciones */
+       transition: none !important;
     }
-    .rulenav .navlink.active { /* Movido de _header.css MQs */
+    .rulenav .navlink.active {
        background-color: rgba(255, 255, 255, 0.15);
        color: var(--color-header-link-hover);
        font-weight: 700;
+       /* Elimina animaciones */
+       transition: none !important;
     }
 
     .main-content { /* Movido de _main.css MQs */
@@ -172,7 +188,6 @@
     .hamburger-line:nth-child(3) { top: calc(50% + 7px - 1.25px); } /* Movido de _header.css MQs */
     .mobile-menu-button.menu-active .hamburger-line:nth-child(1) { top: calc(50% - 1.25px); transform: translateX(-50%) rotate(45deg); } /* Movido de _header.css MQs */
     .mobile-menu-button.menu-active .hamburger-line:nth-child(3) { top: calc(50% - 1.25px); transform: translateX(-50%) rotate(-45deg); } /* Movido de _header.css MQs */
-
 
     .rulenav .navlink { padding: 12px 15px; font-size: 0.95rem; } /* Movido de _header.css MQs */
 

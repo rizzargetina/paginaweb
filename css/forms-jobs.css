@@ -1,8 +1,4 @@
 /* ---- General Page & Section Setup ---- */
-.page-container {
-    padding-bottom: calc(var(--spacing-unit) * 4);
-}
-
 /* CAMBIO CLAVE: Estilos para el título y la introducción de la página */
 .page-container h1 {
     color: var(--color-headings);

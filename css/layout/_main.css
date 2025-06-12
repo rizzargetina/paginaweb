@@ -4,7 +4,6 @@ main {
 
 }
 
-main > .container,
-main > .container.page-container {
+main > .container {
     padding-top: calc(var(--spacing-unit) * 3);
 }

@@ -1,10 +1,9 @@
 /* css/main.css */
 
 /* --- Core --- */
-@import url("core/_variables.css");
+@import 'core/core.css';
 
-/* --- Base --- */
-@import url("base/_reset.css"); /* Incluye la importación de Google Fonts */
+/* Incluye la importación de Google Fonts */
 @import url("base/_typography.css");
 
 /* --- Layout --- */

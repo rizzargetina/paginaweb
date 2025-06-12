@@ -25,7 +25,6 @@
     }
     body {
         font-size: 15px;
-        padding-top: var(--header-height);
     }
     html {
          scroll-padding-top: calc(var(--header-height) + 15px) !important;
@@ -127,11 +126,6 @@
        transition: none !important;
     }
 
-    .main-content { /* Movido de _main.css MQs */
-        padding-top: calc(var(--spacing-unit) * 8);
-        padding-bottom: calc(var(--spacing-unit) * 6);
-    }
-
     .footer-container { /* Movido de _footer.css MQs */
         flex-direction: column;
         text-align: center;
@@ -174,7 +168,6 @@
      h1 { font-size: 1.8rem; }
      h2 { font-size: 1.6rem; }
      .container, .header-container, .footer-container, .main-content { /* Modificaciones a .container, .header-container, .footer-container, .main-content MQs */
-         width: 95%;
          padding-left: 10px;
          padding-right: 10px;
      }
@@ -190,11 +183,6 @@
     .mobile-menu-button.menu-active .hamburger-line:nth-child(3) { top: calc(50% - 1.25px); transform: translateX(-50%) rotate(-45deg); } /* Movido de _header.css MQs */
 
     .rulenav .navlink { padding: 12px 15px; font-size: 0.95rem; } /* Movido de _header.css MQs */
-
-    .main-content { /* Movido de _main.css MQs */
-        padding-top: calc(var(--spacing-unit) * 6);
-        padding-bottom: calc(var(--spacing-unit) * 5);
-    }
 
     .footer { font-size: 0.85rem; padding: 30px 0; } /* Movido de _footer.css MQs */
     .footer-container { gap: 15px; } /* Movido de _footer.css MQs */

@@ -102,7 +102,6 @@
     align-items: flex-start; 
     gap: calc(var(--spacing-unit) * 5);
     margin-bottom: calc(var(--spacing-unit) * 8);
-    padding: calc(var(--spacing-unit) * 4) 0;
 }
 
 .content-section.reverse {

@@ -25,6 +25,7 @@
     }
     body {
         font-size: 15px;
+        padding-top: var(--header-height);
     }
     html {
          scroll-padding-top: calc(var(--header-height) + 15px) !important;
@@ -57,13 +58,16 @@
         flex-shrink: 0;
     }
 
-    .rulenav { /* Movido de _header.css MQs */
+    .rulenav {
         display: none;
-        position: absolute;
+        position: fixed; /* Fija el menú respecto a la ventana */
         top: var(--header-height);
         left: 0;
-        width: 100%;
+        width: 100vw; /* Cubre todo el ancho de la ventana */
+        height: calc(100vh - var(--header-height)); /* Cubre todo el alto menos el header */
+        min-height: 0;
         background-color: var(--color-header-bg);
+        overflow-y: auto; /* Permite scroll si hay muchos links */
         flex-direction: column;
         align-items: stretch;
         padding: calc(var(--spacing-unit)) 0;
@@ -86,17 +90,16 @@
     /* --- NAVLINKS EN MENÚ HAMBURGUESA: SIN ANIMACIONES --- */
     .rulenav .navlink {
         width: 100%;
-        padding: calc(var(--spacing-unit) * 1.8) calc(var(--spacing-unit) * 2.5);
+        padding: 24px 32px; /* MÁS ALTO Y MÁS ANCHO */
         text-align: left;
         height: auto;
         border-bottom: 1px solid var(--color-header-border);
-        font-size: 1rem;
+        font-size: 1.25rem; /* MÁS GRANDE */
         color: var(--color-header-text);
         font-weight: 500;
         text-transform: none;
         letter-spacing: normal;
         background-color: rgba(255, 255, 255, 0.05);
-        /* Elimina animaciones y efectos de línea */
         transition: none !important;
         box-shadow: none !important;
     }
@@ -124,6 +127,11 @@
        font-weight: 700;
        /* Elimina animaciones */
        transition: none !important;
+    }
+
+    .main-content { /* Movido de _main.css MQs */
+        padding-top: calc(var(--spacing-unit) * 8);
+        padding-bottom: calc(var(--spacing-unit) * 6);
     }
 
     .footer-container { /* Movido de _footer.css MQs */
@@ -168,6 +176,7 @@
      h1 { font-size: 1.8rem; }
      h2 { font-size: 1.6rem; }
      .container, .header-container, .footer-container, .main-content { /* Modificaciones a .container, .header-container, .footer-container, .main-content MQs */
+         width: 95%;
          padding-left: 10px;
          padding-right: 10px;
      }
@@ -182,7 +191,20 @@
     .mobile-menu-button.menu-active .hamburger-line:nth-child(1) { top: calc(50% - 1.25px); transform: translateX(-50%) rotate(45deg); } /* Movido de _header.css MQs */
     .mobile-menu-button.menu-active .hamburger-line:nth-child(3) { top: calc(50% - 1.25px); transform: translateX(-50%) rotate(-45deg); } /* Movido de _header.css MQs */
 
-    .rulenav .navlink { padding: 12px 15px; font-size: 0.95rem; } /* Movido de _header.css MQs */
+    .rulenav {
+        width: 100vw;
+        height: calc(100vh - var(--header-height));
+    }
+    
+    .rulenav .navlink {
+        padding: 20px 20px;
+        font-size: 1.15rem;
+    } /* Movido de _header.css MQs */
+
+    .main-content { /* Movido de _main.css MQs */
+        padding-top: calc(var(--spacing-unit) * 6);
+        padding-bottom: calc(var(--spacing-unit) * 5);
+    }
 
     .footer { font-size: 0.85rem; padding: 30px 0; } /* Movido de _footer.css MQs */
     .footer-container { gap: 15px; } /* Movido de _footer.css MQs */

@@ -12,6 +12,11 @@
     padding-bottom: 22vh; /* Empuja contenido hacia arriba en móvil/tablet, se anula en desktop */
 }
 
+.hero-title, #hero h1 {
+    font-family: 'Poppins', sans-serif;
+    font-weight: 700;
+}
+
 .hero-slider-container {
     position: absolute;
     top: 0;

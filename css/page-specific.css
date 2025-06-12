@@ -312,7 +312,9 @@
     .text-content h3 { font-size: 1.3rem; }
 }
 
-@media (max-width: 768px) {
+
+@media (max-width: 600px) {
+
     #hero { height: calc(100vh - var(--header-height)); min-height: 350px; }
     .hero-content { padding: 15px 20px; max-width: 90%; }
     #hero h1 { font-size: 2.3rem; }
@@ -329,69 +331,49 @@
     .text-content h3::after { left: 50%; transform: translateX(-50%); width: 0; }
     .fade-in-section.is-visible .text-content h3::after { width: 80%; max-width: 200px; }
     .text-content p, .text-content li p, .text-content li strong { text-align: center; }
-    .text-content ul { display: flex; flex-direction: column; align-items: center; }
-    .text-content li { width: fit-content; max-width: 100%; }
-}
-
-/* --- Mobile layout fix for services content-section --- */
-@media (max-width: 600px) {
-  .content-section,
-  .content-section.reverse {
-    flex-direction: column !important;
-    align-items: center !important;
-    gap: calc(var(--spacing-unit) * 2.5);
-    text-align: center;
-  }
-  .content-section .image-content,
-  .content-section.reverse .image-content {
-    order: 0 !important;
-    width: 100%;
-    max-width: 400px;
-    margin: 0 auto 10px auto;
-    display: flex;
-    justify-content: center;
-  }
-  .content-section .section-image,
-  .content-section.reverse .section-image {
-    width: 100%;
-    height: auto;
-    max-width: 100%;
-    border-radius: var(--border-radius-medium);
-    box-shadow: var(--shadow-medium);
-    margin-bottom: 0;
-  }
-  .content-section .text-content,
-  .content-section.reverse .text-content {
-    width: 100%;
-    max-width: 700px;
-    margin: 0 auto;
-    text-align: center;
-  }
-  .content-section ul,
-  .content-section.reverse ul {
-    align-items: center;
-    padding-left: 0;
-  }
-  .content-section li,
-  .content-section.reverse li {
-    text-align: left;
-    margin-left: auto;
-    margin-right: auto;
-    max-width: 95vw;
-  }
-}
-
-@media (max-width: 480px) {
-    #hero { min-height: 320px; }
-    .hero-content { padding: 15px 15px; }
-    #hero h1 { font-size: 2.1rem; line-height: 1.25; margin-bottom: 0.6em; }
-    #hero p { font-size: 0.95rem; line-height: 1.45; margin-bottom: 1.6em; }
-    .hero-cta { padding: 12px 25px; font-size: 0.95rem; }
-    .content-section { padding: 20px 0; margin-bottom: 40px; }
-    .text-content, .image-content { padding: 0 15px; }
-    .text-content h2 { font-size: 1.6rem; margin-bottom: 0.8em; }
-    .text-content h3 { font-size: 1.3rem; margin-bottom: 0.6em; }
-    .fade-in-section.is-visible .text-content h3::after { max-width: 150px; }
-    .text-content li { margin-bottom: 1.2rem; }
-    .section-image { max-width: 90%; margin: 0 auto; }
+    .text-content ul { 
+        display: block; 
+        text-align: center; 
+        margin: 0 auto; 
+        padding-left: 0; 
+    }
+    .text-content li { 
+        width: 100%; 
+        max-width: 100%; 
+        text-align: center; 
+        margin-left: 0; 
+        margin-right: 0; 
+    }
+    .content-section,
+    .content-section.reverse {
+        flex-direction: column !important;
+        align-items: center !important;
+        gap: calc(var(--spacing-unit) * 2.5);
+        text-align: center;
+    }
+    .content-section .image-content,
+    .content-section.reverse .image-content {
+        order: 0 !important;
+        width: 100%;
+        max-width: 400px;
+        margin: 0 auto 10px auto;
+        display: flex;
+        justify-content: center;
+    }
+    .content-section .section-image,
+    .content-section.reverse .section-image {
+        width: 100%;
+        height: auto;
+        max-width: 100%;
+        border-radius: var(--border-radius-medium);
+        box-shadow: var(--shadow-medium);
+        margin-bottom: 0;
+    }
+    .content-section .text-content,
+    .content-section.reverse .text-content {
+        width: 100%;
+        max-width: 700px;
+        margin: 0 auto;
+        text-align: center;
+    }
 }

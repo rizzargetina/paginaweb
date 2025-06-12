@@ -312,29 +312,9 @@
     .text-content h3 { font-size: 1.3rem; }
 }
 
-@media (max-width: 768px) {
-    #hero { height: calc(100vh - var(--header-height)); min-height: 350px; }
-    .hero-content { padding: 15px 20px; max-width: 90%; }
-    #hero h1 { font-size: 2.3rem; }
-    #hero p { font-size: 1.0rem; margin-bottom: 1.2em; }
-    .hero-cta { padding: 12px 28px; font-size: 0.95rem; }
-    #hero-slide-1 { background-image: url('../img/as12.webp'); }
-    #hero-slide-2 { background-image: url('../img/mobile1.webp'); }
-    .content-section, .content-section.reverse { flex-direction: column; gap: calc(var(--spacing-unit) * 3); margin-bottom: calc(var(--spacing-unit) * 6); }
-    .text-content, .image-content { flex-basis: auto; width: 100%; min-width: unset; }
-    .content-section:not(.reverse) .image-content { order: -1; }
-    .content-section.reverse .text-content { order: -1; }
-    .text-content h2 { font-size: 1.7rem; text-align: center; }
-    .text-content h3 { font-size: 1.25rem; display: block; text-align: center; border-bottom: none; }
-    .text-content h3::after { left: 50%; transform: translateX(-50%); width: 0; }
-    .fade-in-section.is-visible .text-content h3::after { width: 80%; max-width: 200px; }
-    .text-content p, .text-content li p, .text-content li strong { text-align: center; }
-    .text-content ul { display: flex; flex-direction: column; align-items: center; }
-    .text-content li { width: fit-content; max-width: 100%; }
-}
 
 /* --- Mobile layout fix for services content-section --- */
-@media (max-width: 600px) {
+@media (max-width: 768px) {
   .content-section,
   .content-section.reverse {
     flex-direction: column !important;

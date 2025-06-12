@@ -333,11 +333,52 @@
     .text-content li { width: fit-content; max-width: 100%; }
 }
 
+/* --- Mobile layout fix for services content-section --- */
 @media (max-width: 600px) {
-    .service-cards-container { grid-template-columns: 1fr; }
-    .service-card img { height: 200px; }
-    .service-card-title { font-size: 1.1rem; padding: calc(var(--spacing-unit) * 1.25) calc(var(--spacing-unit) * 1.5); }
-    #lineas-servicio h2 { font-size: 1.7rem; }
+  .content-section,
+  .content-section.reverse {
+    flex-direction: column !important;
+    align-items: center !important;
+    gap: calc(var(--spacing-unit) * 2.5);
+    text-align: center;
+  }
+  .content-section .image-content,
+  .content-section.reverse .image-content {
+    order: 0 !important;
+    width: 100%;
+    max-width: 400px;
+    margin: 0 auto 10px auto;
+    display: flex;
+    justify-content: center;
+  }
+  .content-section .section-image,
+  .content-section.reverse .section-image {
+    width: 100%;
+    height: auto;
+    max-width: 100%;
+    border-radius: var(--border-radius-medium);
+    box-shadow: var(--shadow-medium);
+    margin-bottom: 0;
+  }
+  .content-section .text-content,
+  .content-section.reverse .text-content {
+    width: 100%;
+    max-width: 700px;
+    margin: 0 auto;
+    text-align: center;
+  }
+  .content-section ul,
+  .content-section.reverse ul {
+    align-items: center;
+    padding-left: 0;
+  }
+  .content-section li,
+  .content-section.reverse li {
+    text-align: left;
+    margin-left: auto;
+    margin-right: auto;
+    max-width: 95vw;
+  }
 }
 
 @media (max-width: 480px) {

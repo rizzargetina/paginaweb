@@ -87,34 +87,71 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     }
 
-    // --- Slider (Carrusel) de la Sección Hero ---
-    const sliderTrack = document.querySelector('.hero-slider-track'); // CORREGIDO: Usar querySelector para mayor consistencia
+    // --- Slider (Carrusel) de la Sección Hero --- 
+    const sliderTrack = document.querySelector('.hero-slider-track');
     if (sliderTrack) {
         const slides = sliderTrack.querySelectorAll('.hero-slide');
         const slideCount = slides.length;
-        if (slideCount > 1) { // Lógica solo si hay más de 1 slide
-            let currentSlide = 0;
-            let slideInterval;
+        if (slideCount > 1) {
+            // Clona el primer y último slide para efecto infinito
+            const firstClone = slides[0].cloneNode(true);
+            const lastClone = slides[slideCount - 1].cloneNode(true);
+            firstClone.classList.add('clone');
+            lastClone.classList.add('clone');
+            sliderTrack.appendChild(firstClone);
+            sliderTrack.insertBefore(lastClone, slides[0]);
 
-            function goToSlide(slideIndex) {
-                // Lógica de bucle simplificada usando el operador módulo (%)
-                currentSlide = (slideIndex + slideCount) % slideCount;
-                sliderTrack.style.transform = `translateX(-${currentSlide * 100}%)`;
+            // Ajusta el ancho del track y posición inicial
+            const allSlides = sliderTrack.querySelectorAll('.hero-slide');
+            sliderTrack.style.width = `${allSlides.length * 100}%`;
+            allSlides.forEach(slide => slide.style.width = `${100 / allSlides.length}%`);
+
+            let currentSlide = 1; // Empieza en el primer slide real
+            let slideInterval;
+            let isTransitioning = false;
+
+            function goToSlide(slideIndex, withTransition = true) {
+                if (withTransition) {
+                    sliderTrack.style.transition = 'transform 0.6s cubic-bezier(.4,0,.2,1)';
+                } else {
+                    sliderTrack.style.transition = 'none';
+                }
+                sliderTrack.style.transform = `translateX(-${currentSlide * (100 / allSlides.length)}%)`;
             }
 
             function nextSlide() {
-                goToSlide(currentSlide + 1);
+                if (isTransitioning) return;
+                isTransitioning = true;
+                currentSlide++;
+                goToSlide(currentSlide, true);
             }
+
+            // Cuando termina la transición, revisa si hay que saltar al inicio real
+            sliderTrack.addEventListener('transitionend', () => {
+                if (currentSlide === allSlides.length - 1) {
+                    // Si estamos en el clon del primero, saltamos al primero real
+                    currentSlide = 1;
+                    goToSlide(currentSlide, false);
+                }
+                if (currentSlide === 0) {
+                    // Si estamos en el clon del último, saltamos al último real
+                    currentSlide = allSlides.length - 2;
+                    goToSlide(currentSlide, false);
+                }
+                isTransitioning = false;
+            });
 
             function startSlider() {
                 clearInterval(slideInterval);
-                slideInterval = setInterval(nextSlide, 6000);
+                slideInterval = setInterval(nextSlide, 3000);
             }
 
             function stopSlider() {
                 clearInterval(slideInterval);
             }
 
+            // Inicializa posición
+            goToSlide(currentSlide, false);
             startSlider();
 
             const sliderContainer = document.querySelector('.hero-slider-container');

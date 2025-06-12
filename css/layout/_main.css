@@ -1,9 +1,9 @@
 /* css/layout/_main.css */
-/* css/layout/_main.css */
 main {
     display: block;
-    /* Considera un fondo muy sutil para el main si la página no tiene un color de fondo global
-       o si quieres diferenciar el área de contenido principal.
-       Si body ya tiene --jgt-background-page o --color-secondary-bg, esto podría no ser necesario. */
-    /* background-color: var(--color-primary-bg); */ /* Ejemplo: blanco */
+
+}
+
+main > .container {
+    padding-top: calc(var(--spacing-unit) * 3);
 }

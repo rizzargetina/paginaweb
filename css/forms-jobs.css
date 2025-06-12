@@ -1,6 +1,5 @@
 /* ---- General Page & Section Setup ---- */
 .page-container {
-    padding-top: calc(var(--spacing-unit) * 3);
     padding-bottom: calc(var(--spacing-unit) * 4);
 }
 

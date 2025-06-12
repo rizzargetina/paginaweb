@@ -1,0 +1,99 @@
+:root {
+    /* Fonts */
+    --font-primary: 'Roboto', sans-serif;
+    --font-headings: 'Roboto Condensed', sans-serif;
+
+    /* Core Colors - Reddit-Inspired Dark Theme */
+    --color-primary-bg: #0d1117;      /* Very dark charcoal/blue background, like GitHub/Reddit */
+    --color-secondary-bg: #161b22;    /* Lighter dark shade for content panels */
+    --color-text: #c9d1d9;            /* Primary text color (light grey) */
+    --color-text-secondary: #8b949e;  /* Secondary text color (muted grey) */
+    --color-headings: #f0f2f5;        /* Brighter off-white for headings */
+    --color-border: #30363d;          /* Subtle border for elements like <hr> */
+
+    /* DHL Branding Colors (Maintained as per request for header) */
+    --dhl-yellow: #2d437f;
+    --dhl-red: #16274a;
+    --dhl-black: #000000;
+    --dhl-white: #FFFFFF;
+
+    /* Header Colors (Maintained as requested) */
+    --color-header-bg: #2d437f;
+    --color-header-text: var(--dhl-white);
+    --color-header-link-hover: #d1e7f3;
+    --color-header-border: #1a2c58;
+    --color-header-scrolled-bg: rgba(34, 58, 113, 0.97);
+
+    /* Top Bar Specific Colors (Maintained as requested) */
+    --top-bar-height: 35px;
+    --color-top-bar-bg: #101828;
+    --color-top-bar-text: #c0c8d8;
+    --color-top-bar-link-hover: var(--dhl-white);
+
+    /* Accents & Links for Reddit-like Theme */
+    --color-accent: #58a6ff;            /* Bright, accessible blue for accents like underlines */
+    --color-link: var(--color-accent);  /* Links use the same bright blue */
+    --color-link-hover: #79b8ff;        /* Lighter blue for link hover */
+
+    /* Footer Specific */
+    --color-footer-bg: #0d1117;
+    --color-footer-text: #8b949e;
+    --color-footer-link: var(--color-link);
+    --color-footer-link-hover: var(--color-link-hover);
+    --color-footer-border: #21262d;
+
+    /* Sizes & Spacing */
+    --header-height: 60px;
+    --border-radius: 6px; /* Slightly more rounded like Reddit */
+    --border-radius-small: 4px;
+    --border-radius-medium: 8px;
+    --spacing-unit: 8px;
+
+    --total-fixed-header-height: calc(var(--top-bar-height) + var(--header-height));
+
+    /* Shadows for Dark Theme */
+    --shadow-soft: 0 1px 2px rgba(0, 0, 0, 0.2);
+    --shadow-medium: 0 3px 6px rgba(0, 0, 0, 0.3);
+    --shadow-hard: 0 6px 12px rgba(0,0,0,0.4);
+    --shadow-focus: 0 0 0 3px rgba(88, 166, 255, 0.4); /* Blue focus ring */
+
+    /* Specific for forms-jobs */
+    --color-content-bg-lighter: var(--color-secondary-bg);
+    --color-content-bg-darker: #010409;
+    --color-border-stronger: #444c56;
+    --color-border-subtle: var(--color-border);
+    
+    --color-content-bg-lighter: #f8f9fa;
+    --color-content-bg-darker: #e9ecef;
+    --color-border-stronger: #adb5bd;
+    --color-content-bg: #ffffff;
+    --color-content-bg-alt: #f1f3f5;
+}
+@import url('https://fonts.googleapis.com/css2?family=Roboto+Condensed:wght@400;700&family=Roboto:wght@400;500;700&display=swap');
+
+/* --- Base & Reset --- */
+html {
+    box-sizing: border-box;
+    scroll-behavior: smooth;
+    scroll-padding-top: calc(var(--header-height) + var(--top-bar-height) + 20px);
+}
+html.top-bar-is-hidden {
+    scroll-padding-top: calc(var(--header-height) + 20px);
+}
+
+*, *:before, *:after {
+    box-sizing: inherit;
+}
+
+body {
+    margin: 0;
+    padding-top: calc(var(--header-height) + var(--top-bar-height));
+    font-family: var(--font-primary);
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 1.65;
+    color: var(--color-text);
+    background-color: var(--color-secondary-bg);
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}

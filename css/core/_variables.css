@@ -13,13 +13,13 @@
     --color-border: #30363d;          /* Subtle border for elements like <hr> */
 
     /* DHL Branding Colors (Maintained as per request for header) */
-    --dhl-yellow: #223a71;
+    --dhl-yellow: #2d437f;
     --dhl-red: #16274a;
     --dhl-black: #000000;
     --dhl-white: #FFFFFF;
 
     /* Header Colors (Maintained as requested) */
-    --color-header-bg: #223A71;
+    --color-header-bg: #2d437f;
     --color-header-text: var(--dhl-white);
     --color-header-link-hover: #d1e7f3;
     --color-header-border: #1a2c58;
@@ -27,7 +27,7 @@
 
     /* Top Bar Specific Colors (Maintained as requested) */
     --top-bar-height: 35px;
-    --color-top-bar-bg: #16274a;
+    --color-top-bar-bg: #101828;
     --color-top-bar-text: #c0c8d8;
     --color-top-bar-link-hover: var(--dhl-white);
 

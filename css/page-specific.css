@@ -179,6 +179,15 @@
     margin-bottom: 1.5rem;
 }
 
+.text-content li > strong {
+    position: static;
+}
+.text-content li > strong::before,
+.text-content li:has(> strong)::before {
+    content: none !important;
+    background: none !important;
+}
+
 
 .text-content li strong {
     display: block;

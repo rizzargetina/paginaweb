@@ -7,9 +7,11 @@
     <meta name="description" content="Transporte JGT y Timol ofrecen soluciones logísticas, alquiler de equipamiento y transporte especializado para la industria petrolera en Añelo y la región de Vaca Muerta.">
     <link rel="icon" type="image/x-icon" href="logos/icono.ico">
 
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Roboto+Condensed:wght@400;700&family=Roboto:wght@400;500;700&family=Poppins:wght@700&display=swap" rel="stylesheet" media="print" onload="this.media='all'">
+<!-- ...existing code... -->
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Roboto+Condensed:wght@400;700&family=Roboto:wght@400;500;700&family=Poppins:wght@700&display=swap" rel="stylesheet">
+<!-- ...existing code... -->
     <noscript>
     <link href="https://fonts.googleapis.com/css2?family=Roboto+Condensed:wght@400;700&family=Roboto:wght@400;500;700&family=Poppins:wght@700&display=swap" rel="stylesheet">
     </noscript>
@@ -19,6 +21,12 @@
     <style>
     /* Ejemplo de estilos críticos: header, top-bar, hero, fuentes principales */
     body { font-family: 'Roboto', Arial, sans-serif; margin: 0; }
+
+    body.preload .header,
+    body.preload .top-bar {
+    visibility: hidden;
+    }
+    
     #hero {
         position: relative;
         min-height: 450px;

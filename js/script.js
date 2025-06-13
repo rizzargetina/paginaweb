@@ -1,8 +1,10 @@
 document.addEventListener('DOMContentLoaded', () => {
+     document.body.classList.remove('preload');
     // --- Ocultar Automáticamente la Barra Superior (Top Bar) al Hacer Scroll ---
     const header = document.getElementById('main-header');
     const topBar = document.querySelector('.top-bar');
     const htmlElement = document.documentElement;
+
 
     if (topBar && header && htmlElement) {
         let lastScrollTop = 0;

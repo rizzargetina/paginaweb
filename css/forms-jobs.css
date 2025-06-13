@@ -109,7 +109,23 @@
 #form-status.success { background-color: rgba(40, 167, 69, 0.2); color: #2ecc71; border: 1px solid rgba(40, 167, 69, 0.5); }
 #form-status.error { background-color: rgba(220, 53, 69, 0.2); color: #e74c3c; border: 1px solid rgba(220, 53, 69, 0.5); }
 
+.info-item {
+    display: flex;
+    align-items: flex-start; /* o center si prefieres centrado exacto */
+    gap: 12px; /* Espacio entre icono y texto */
+    margin-bottom: 1.5em;
+}
 
+.info-item i {
+    font-size: 1.5em;
+    margin-top: 3px; /* Ajusta según el tamaño del icono */
+    color: #3498db; /* O el color que uses para los íconos */
+    flex-shrink: 0;
+}
+
+.info-text {
+    flex: 1;
+}
 /* Información de Contacto Directa */
 .contact-info-container .info-item i {
     color: var(--color-accent);

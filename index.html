@@ -18,6 +18,27 @@
     <style>
     /* Ejemplo de estilos críticos: header, top-bar, hero, fuentes principales */
     body { font-family: 'Roboto', Arial, sans-serif; margin: 0; }
+    #hero {
+        position: relative;
+        min-height: 450px;
+        color: #fff;
+        text-align: center;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        overflow: hidden;
+    }
+    .hero-lcp-img {
+        position: absolute;
+        inset: 0;
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        z-index: 1;
+        pointer-events: none;
+        user-select: none;
+    }
     .header { position: fixed; top: 0; width: 100%; background: #fff; z-index: 1000; }
     .top-bar { background: #222; color: #fff; height: 32px; }
     .hero-content { text-align: center; padding: 40px 0; }
@@ -85,7 +106,7 @@
                 <img 
                     src="img/fondo.webp"
                     srcset="img/as12.webp 768w, img/fondo.webp 1200w"
-                    sizes="(max-width: 768px) 100vw, 100vw"
+                    sizes="100vw"
                     alt="Camiones cisterna y grúas de transporte JGT"
                     class="hero-lcp-img"
                     decoding="async"

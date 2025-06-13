@@ -332,7 +332,6 @@
         height: 100svh !important;   /* Ocupa toda la pantalla visible, sin saltos */
         min-height: 100svh !important;
         max-height: 100svh !important;
-        padding-bottom: 0 !important;
         position: relative;
         overflow: hidden;
     }

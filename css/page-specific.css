@@ -329,9 +329,10 @@
 
 @media (max-width: 600px) {
     #hero {
-        height: 100svh !important;   /* Ocupa toda la pantalla visible, sin saltos */
-        min-height: 100svh !important;
-        max-height: 100svh !important;
+        height: 100dvh !important;
+        min-height: 100dvh !important;
+        max-height: 100dvh !important;
+        padding-bottom: 22vh !important; /* <-- Cambia 22vh por 0 */
         position: relative;
         overflow: hidden;
     }

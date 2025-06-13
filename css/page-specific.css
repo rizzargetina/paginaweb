@@ -328,11 +328,35 @@
 
 
 @media (max-width: 600px) {
-
-    #hero { height: calc(100vh - var(--header-height)); min-height: 350px; }
-    .hero-content { padding: 15px 20px; max-width: 90%; }
+    #hero {
+        height: 100svh !important;   /* Ocupa toda la pantalla visible, sin saltos */
+        min-height: 100svh !important;
+        max-height: 100svh !important;
+        padding-bottom: 0 !important;
+        position: relative;
+        overflow: hidden;
+    }
+    .hero-lcp-img {
+        object-fit: cover;
+        width: 100vw;
+        height: 100svh;
+        min-height: 100svh;
+        max-height: 100svh;
+        position: absolute;
+        inset: 0;
+        z-index: 1;
+        pointer-events: none;
+        user-select: none;
+    }
+    .hero-content {
+        position: relative;
+        z-index: 2;
+        padding: 15px 20px;
+        max-width: 90%;
+    }
     #hero h1 { font-size: 2.3rem; }
     #hero p { font-size: 1.0rem; margin-bottom: 1.2em; }
+    .cta-button { padding: 12px 28px; font-size: 0.95rem; }
     .hero-cta { padding: 12px 28px; font-size: 0.95rem; }
     #hero-slide-1 { background-image: url('../img/as12.webp'); }
     #hero-slide-2 { background-image: url('../img/mobile1.webp'); }

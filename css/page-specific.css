@@ -60,7 +60,6 @@
     position: relative;
     z-index: 3;
     padding: 20px 30px;
-    max-width: 750px;
     border-radius: var(--border-radius); 
     text-align: center;
 
@@ -115,7 +114,6 @@
 
 .text-content, .image-content {
     flex: 1 1 45%;
-    min-width: 300px;
 }
 
 .text-content h2 {
@@ -133,15 +131,6 @@
     width: 0;
     height: 3px;
     background-color: var(--color-accent); /* Reddit-like bright blue accent */
-}
-
-#quienes-somos .text-content h2 {
-    text-align: center;
-    display: block;
-}
-#quienes-somos .text-content h2::after {
-    left: 50%;
-    transform: translateX(-50%);
 }
 
 .text-content h3 {
@@ -410,7 +399,6 @@
     .content-section .text-content,
     .content-section.reverse .text-content {
         width: 100%;
-        max-width: 700px;
         margin: 0 auto;
         text-align: center;
     }

@@ -59,9 +59,18 @@
         background: transparent; 
         color: #fff;    
         font-weight: 700; 
-        margin: 10px 25px;
+        margin: 0px 18px;
         backdrop-filter: blur(60px);   
     }
+
+    @media (max-width: 600px) {
+    .cta-button {
+        display: block;      /* Hace que los botones se apilen verticalmente */
+        width: 100%;          /* Ocupa el 90% del contenedor para no pegarse a los bordes */
+        margin: 12px auto;   /* 12px de espacio vertical y 'auto' para centrarlo horizontalmente */
+        text-align: center;  /* Asegura que el texto dentro del botón siga centrado */
+    }
+}
     </style>
     <link rel="stylesheet" href="css/main.css"> 
     <link rel="stylesheet" href="css/page-specific.css">

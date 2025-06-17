@@ -32,9 +32,9 @@
     --color-top-bar-link-hover: var(--dhl-white);
 
     /* Accents & Links for Reddit-like Theme */
-    --color-accent: #3b82f6;            /* Bright, accessible blue for accents like underlines */
+    --color-accent: #58a6ff;            /* Bright, accessible blue for accents like underlines */
     --color-link: var(--color-accent);  /* Links use the same bright blue */
-    --color-link-hover: #3b82f6;        /* Lighter blue for link hover */
+    --color-link-hover: #79b8ff;        /* Lighter blue for link hover */
 
     /* Footer Specific */
     --color-footer-bg: #0d1117;

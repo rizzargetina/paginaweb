@@ -9,7 +9,7 @@
     justify-content: center;
     align-items: center;
     overflow: hidden;
-    padding-bottom: 27vh; /* Empuja contenido hacia arriba en móvil/tablet, se anula en desktop */
+    padding-bottom: 29vh; /* Empuja contenido hacia arriba en móvil/tablet, se anula en desktop */
 }
 
 .hero-title, #hero h1 {

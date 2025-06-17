@@ -7,11 +7,10 @@
     <meta name="description" content="Transporte JGT y Timol ofrecen soluciones logísticas, alquiler de equipamiento y transporte especializado para la industria petrolera en Añelo y la región de Vaca Muerta.">
     <link rel="icon" type="image/x-icon" href="logos/icono.ico">
 
-<!-- ...existing code... -->
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Roboto+Condensed:wght@400;700&family=Roboto:wght@400;500;700&family=Poppins:wght@700&display=swap" rel="stylesheet">
-<!-- ...existing code... -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto+Condensed:wght@400;700&family=Roboto:wght@400;500;700&family=Poppins:wght@700&display=swap" rel="stylesheet">
+
     <noscript>
     <link href="https://fonts.googleapis.com/css2?family=Roboto+Condensed:wght@400;700&family=Roboto:wght@400;500;700&family=Poppins:wght@700&display=swap" rel="stylesheet">
     </noscript>
@@ -24,7 +23,7 @@
 
     body.preload .header,
     body.preload .top-bar {
-    visibility: hidden;
+        visibility: hidden;
     }
     
     #hero {
@@ -52,12 +51,19 @@
     .header { position: fixed; top: 0; width: 100%; background: #fff; z-index: 1000; }
     .top-bar { background: #222; color: #fff; height: 32px; }
     .hero-content { text-align: center; padding: 40px 0; }
-    .cta-button { display: inline-block; padding: 12px 28px; border-radius: 6px; border: 1px solid #adb5bd; background: transparent; color: #222; font-weight: 700; }
+    .cta-button { 
+        display: inline-block; 
+        padding: 12px 28px; 
+        border-radius: 6px; 
+        border: 1px solid #adb5bd; 
+        background: transparent; 
+        color: #222; 
+        font-weight: 700; 
+        margin: 10px 25px;
+    }
     </style>
     <link rel="stylesheet" href="css/main.css"> 
-	
     <link rel="stylesheet" href="css/page-specific.css">
-
 
 </head>
 <body>
@@ -66,19 +72,17 @@
     <div class="container top-bar-container">
         <div class="top-bar-left">
             <a href="about.html">Acerca de Nosotros</a>
- 	    <a href="jobs.html#quienes-somos">Oportunidades laborales</a>
+            <a href="jobs.html">Oportunidades laborales</a>
         </div>
-	<div class="top-bar-right">
-		<a href="https://www.linkedin.com/company/transporte-jgt-s-r-l-y-timol-s-r-l/about/" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn">
-		    <i class="bi bi-linkedin"></i>
-		</a>
-
-	    <span class="language-selector">
-	        <a href="#" class="lang-active" aria-label="Idioma actual: Español">ES</a> | 
-	        <a href="#" aria-label="Cambiar idioma a Inglés">EN</a>
-	    </span>
-	</div>
-
+        <div class="top-bar-right">
+            <a href="https://www.linkedin.com/company/transporte-jgt-s-r-l-y-timol-s-r-l/about/" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn">
+                <i class="bi bi-linkedin"></i>
+            </a>
+            <span class="language-selector">
+                <a href="#" class="lang-active" aria-label="Idioma actual: Español">ES</a> | 
+                <a href="#" aria-label="Cambiar idioma a Inglés">EN</a>
+            </span>
+        </div>
     </div>
 </div>
 
@@ -100,8 +104,8 @@
         </button>
 
         <nav class="rulenav" id="main-navigation" aria-label="Navegación principal">
-	     <a class="navlink" href="index.html">Inicio</a>
-	     <a class="navlink" href="services.html">Servicios</a>
+             <a class="navlink" href="index.html">Inicio</a>
+             <a class="navlink" href="services.html">Servicios</a>
              <a class="navlink" href="contact.html">Contacto</a>
         </nav>
     </div>
@@ -111,7 +115,6 @@
     <section id="hero" role="region" aria-label="Presentación principal con imágenes deslizantes">
         <div class="hero-slider-container">
             <div class="hero-slider-track" id="hero-slider-track">
-                <!-- IDs añadidos y style quitado -->
                 <div id="hero-slide-1" class="hero-slide" role="group" aria-roledescription="slide" aria-label="Camiones cisterna y grúas de transporte JGT">
                 <img 
                     src="img/fondo.webp"
@@ -125,24 +128,22 @@
                 />
                 </div>
                 <div id="hero-slide-2" class="hero-slide" role="group" aria-roledescription="slide" aria-label="Camión blanco de Timol en ruta"></div>
-                <!-- Add more slides as needed, giving them unique IDs like hero-slide-3, hero-slide-4 etc. -->
             </div>
         </div>
         <div class="hero-content">
-            <h1 class="hero-title">TRANSPORTE JGT SRL </h1>
-            <h1 class="hero-title">TIMOL SRL</h1>
-            <p>Soluciones Logísticas y Alquiler de Equipamiento para la Industria Petrolera</p>
-            <a href="services.html" class="cta-button">Ver Servicios</a>
+            <h1 class="hero-title">TRANSPORTE JGT SRL y TIMOL SRL</h1>
+            <p>Consultar servicios</p>
+            <a href="services.html" class="cta-button">Transporte JGT</a>
+            <a href="services.html" class="cta-button">Timol</a>
         </div>
     </section>
 
     <div class="container">
-
         <section id="lineas-servicio" class="fade-in-section" aria-labelledby="lineas-servicio-heading">
             <h2 id="lineas-servicio-heading" class="text-center">Nuestras Líneas de Servicio</h2>
             <div class="service-cards-container">
                 <a href="services.html#transporte-equipamiento-pesado" class="service-card" aria-label="Ver detalles de Transporte Especializado y Alquiler de Equipamiento Pesado">
-                    <img src="img/grid1.webp" alt="..." loading="lazy">
+                    <img src="img/grid1.webp" alt="Equipamiento pesado en operación" loading="lazy">
                     <div class="service-card-title">Transporte y Equip. Pesado</div>
                 </a>
                 <a href="services.html#soluciones-modulares-soporte" class="service-card" aria-label="Ver detalles de Soluciones Modulares y Soporte Operativo">

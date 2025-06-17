@@ -23,7 +23,7 @@ a.cta-button {
 .cta-button i,
 a.cta-button i {
     font-size: 1.2em;
-    color: var(--color-accent);
+    backdrop-filter: blur(20px); 
     transition: color 0.3s ease;
 }
 
@@ -31,8 +31,7 @@ a.cta-button i {
 .cta-button:focus,
 a.cta-button:hover,
 a.cta-button:focus {
-    background-color: var(--color-accent);
-    border-color: var(--color-accent);
+    backdrop-filter: blur(60px); 
     text-decoration: none;
     outline: none;
     box-shadow: 0 4px 8px rgba(0,0,0,0.2);

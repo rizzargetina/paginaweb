@@ -7,8 +7,6 @@ a.cta-button {
     padding: 12px 28px;
     border-radius: var(--border-radius);
     border: 1px solid var(--color-border-stronger);
-    background-color: transparent;
-    color: var(--color-headings);
     font-family: var(--font-primary);
     font-weight: 700;
     font-size: 1.05rem;
@@ -35,9 +33,3 @@ a.cta-button:focus {
 }
 
 
-.cta-button:focus-visible,
-a.cta-button:focus-visible {
-    outline: 2px solid var(--color-accent);
-    outline-offset: 2px;
-    box-shadow: 0 0 0 3px rgba(88, 166, 255, 0.4), 0 4px 8px rgba(0,0,0,0.2);
-}

@@ -4,11 +4,6 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Transporte JGT y Timol  // Logística y Transporte en Añelo</title>
-    <link rel="preload" 
-        href="img/fondo.webp" 
-        as="image"
-        type="image/webp"
-        fetchpriority="high">
     <meta name="description" content="Transporte JGT y Timol ofrecen soluciones logísticas, alquiler de equipamiento y transporte especializado para la industria petrolera en Añelo y la región de Vaca Muerta.">
     <link rel="icon" type="image/x-icon" href="logos/icono.ico">
 
@@ -19,6 +14,8 @@
     <noscript>
     <link href="https://fonts.googleapis.com/css2?family=Roboto+Condensed:wght@400;700&family=Roboto:wght@400;500;700&family=Poppins:wght@700&display=swap" rel="stylesheet">
     </noscript>
+        
+    <link rel="preload" as="image" href="img/fondo.webp" imagesrcset="img/as12.webp 768w, img/fondo.webp 1200w" imagesizes="100vw">
 
     <style>
     /* Ejemplo de estilos críticos: header, top-bar, hero, fuentes principales */
@@ -28,39 +25,28 @@
     body.preload .top-bar {
         visibility: hidden;
     }
-    #hero::before {
-    content: '';
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background-color: rgba(0, 0, 0, 0.5); /* Ajusta el 0.5 para más o menos oscuridad */
-    z-index: 2;
-    }
-    .hero-content {
-        position: relative;
-        z-index: 3;
-        /* ...existing code... */
-    }
-        
+    
     #hero {
         position: relative;
         min-height: 450px;
         color: #fff;
         text-align: center;
         display: flex;
-        align-items: center;
+        flex-direction: column;
         justify-content: center;
+        align-items: center;
+        overflow: hidden;
+        padding-bottom: 22vh;
     }
     .hero-lcp-img {
         position: absolute;
-        top: 0;
-        left: 0;
+        inset: 0;
         width: 100%;
         height: 100%;
         object-fit: cover;
         z-index: 1;
+        pointer-events: none;
+        user-select: none;
     }
     .header { position: fixed; top: 0; width: 100%; background: #fff; z-index: 1000; }
     .top-bar { background: #222; color: #fff; height: 32px; }
@@ -137,14 +123,24 @@
 </header>
 
 <main>
-    <section id="hero">
-    <img src="img/fondo.webp"
-         alt="Camiones cisterna y grúas de transporte JGT"
-         class="hero-lcp-img"
-         width="1200"
-         height="675"
-         decoding="async"
-         fetchpriority="high">
+    <section id="hero" role="region" aria-label="Presentación principal con imágenes deslizantes">
+        <div class="hero-slider-container">
+            <div class="hero-slider-track" id="hero-slider-track">
+                <div id="hero-slide-1" class="hero-slide" role="group" aria-roledescription="slide" aria-label="Camiones cisterna y grúas de transporte JGT">
+                <img 
+                    src="img/fondo.webp"
+                    srcset="img/as12.webp 768w, img/fondo.webp 1200w"
+                    sizes="100vw"
+                    alt="Camiones cisterna y grúas de transporte JGT"
+                    class="hero-lcp-img"
+                    decoding="async"
+                    loading="eager"
+                    fetchpriority="high"
+                />
+                </div>
+                <div id="hero-slide-2" class="hero-slide" role="group" aria-roledescription="slide" aria-label="Camión blanco de Timol en ruta"></div>
+            </div>
+        </div>
         <div class="hero-content">
             <h1 class="hero-title">TRANSPORTE JGT SRL y TIMOL SRL</h1>
             <p>Soluciones Logísticas y Alquiler de Equipamiento para la Industria Petrolera. Consulta nuestros servicios</p>

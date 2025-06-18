@@ -122,13 +122,17 @@
 </header>
 
 <main>
-    <section id="hero" role="region" aria-label="Presentación principal con imágenes deslizantes">
-        <div class="hero-slider-container">
-            <div class="hero-slider-track" id="hero-slider-track">
-                <div id="hero-slide-1" class="hero-slide" role="group" aria-roledescription="slide" aria-label="Camión blanco de Timol en ruta"></div>
-                <div id="hero-slide-2" class="hero-slide" role="group" aria-roledescription="slide" aria-label="Camión blanco de Timol en ruta"></div>
-            </div>
-        </div>
+    <section id="hero" role="region" aria-label="Presentación principal">
+        <picture>
+            <source media="(max-width: 768px)" srcset="img/as12.webp">
+            <source media="(min-width: 769px)" srcset="img/fondo.webp">
+            <img src="img/fondo.webp" alt="Camión de Timol en la ruta patagónica" class="hero-lcp-img" 
+                 fetchpriority="high" loading="eager" width="1200" height="800">
+        </picture>
+        
+        <!-- El overlay para oscurecer la imagen y que el texto se lea mejor -->
+        <div class="hero-overlay"></div>
+
         <div class="hero-content">
             <h1 class="hero-title">TRANSPORTE JGT SRL y TIMOL SRL</h1>
             <p>Soluciones Logísticas y Alquiler de Equipamiento para la Industria Petrolera. Consulta nuestros servicios</p>

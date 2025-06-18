@@ -17,6 +17,13 @@
     font-weight: 700;
 }
 
+.hero-overlay {
+    position: absolute;
+    inset: 0;
+    background-color: rgba(0, 0, 0, 0.48); /* Un azul oscuro con 60% de opacidad. ¡Ajusta el color y la opacidad! */
+    z-index: 2; /* Se pone encima de la imagen */
+}
+
 .hero-slider-container {
     position: absolute;
     top: 0;
@@ -300,9 +307,6 @@
         padding-bottom: 0; 
     }
 
-    .hero-lcp-img {
-        display: none; /* Oculta imagen estática para que funcione el slider */
-    }
     
     .hero-content {
         z-index: 3; 

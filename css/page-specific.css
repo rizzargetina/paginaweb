@@ -29,7 +29,7 @@
 .hero-slider-track {
     display: flex;
     height: 100%;
-    transition: transform 1s ease-in-out; /* Mantenido para funcionalidad del slider */
+    transition: transform 1s ease-in-out;
 }
 
 .hero-slide {
@@ -48,13 +48,23 @@
     top: 0; left: 0; right: 0; bottom: 0;
     background-color: rgba(0, 0, 0, 0.48); /* Darker overlay */
     z-index: 2; 
-    transition: background-color 0.5s ease; /* Mantenido para suavidad del slider */
+    transition: background-color 0.5s ease;
 }
 
-/* Imágenes de Fondo para el Hero (pueden mantenerse aquí o en HTML si son muy pocas) */
+/* Imágenes de Fondo para el Hero (Desktop) */
 #hero-slide-1 { background-image: url('../img/fondo.webp'); }
 #hero-slide-2 { background-image: url('../img/white-truck.webp'); }
 
+.hero-lcp-img {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  z-index: 1;
+  pointer-events: none;
+  user-select: none;
+}
 
 .hero-content {
     position: relative;
@@ -62,7 +72,6 @@
     padding: 20px 30px;
     border-radius: var(--border-radius); 
     text-align: center;
-
 }
 
 #hero h1 {
@@ -89,17 +98,9 @@
     font-size: 1.05rem;
     border-width: 0;
     box-shadow: 0 4px 10px rgba(0,0,0,0.25);
-
 }
 
-.content-panel {
-    background-color: var(--color-secondary-bg);
-    padding: calc(var(--spacing-unit) * 5);
-    border-radius: var(--border-radius-medium);
-    box-shadow: var(--shadow-medium);
-}
-
-/* --- Secciones de Contenido Genéricas (Texto e Imagen) --- */
+/* --- SECCIONES DE CONTENIDO GENÉRICAS --- */
 .content-section {
     display: flex;
     flex-wrap: wrap;
@@ -130,7 +131,7 @@
     left: 0;
     width: 0;
     height: 3px;
-    background-color: var(--color-accent); /* Reddit-like bright blue accent */
+    background-color: var(--color-accent);
 }
 
 .text-content h3 {
@@ -148,13 +149,14 @@
     left: 0;
     width: 0;
     height: 2px;
-    background-color: var(--color-accent); /* Reddit-like bright blue accent */
+    background-color: var(--color-accent);
 }
 
 .fade-in-section.is-visible .text-content h2::after,
 .fade-in-section.is-visible .text-content h3::after {
-    width: 100%; /* La línea aparecerá instantáneamente */
+    width: 100%;
 }
+
 .fade-in-section.is-visible #quienes-somos .text-content h2::after {
     width: 80px;
 }
@@ -163,20 +165,16 @@
     color: var(--color-text-secondary);
 }
 
+.text-content ul {
+    list-style: none !important;
+    padding-left: 0 !important;
+    margin-left: 0 !important;
+}
+
 .text-content li {
     padding-left: 0;
     margin-bottom: 1.5rem;
 }
-
-.text-content li > strong {
-    position: static;
-}
-.text-content li > strong::before,
-.text-content li:has(> strong)::before {
-    content: none !important;
-    background: none !important;
-}
-
 
 .text-content li strong {
     display: block;
@@ -191,10 +189,11 @@
     color: var(--color-text-secondary);
 }
 
-.text-content ul {
-    list-style: none !important;
-    padding-left: 0 !important;
-    margin-left: 0 !important;
+.text-content li > strong { position: static; }
+.text-content li > strong::before,
+.text-content li:has(> strong)::before {
+    content: none !important;
+    background: none !important;
 }
 
 .image-content {
@@ -207,22 +206,11 @@
     height: auto;
     border-radius: var(--border-radius);
     box-shadow: var(--shadow-medium);
-    border: 1px solid var(--color-border); /* Subtle border like Reddit images */
+    border: 1px solid var(--color-border);
     filter: brightness(.9);
 }
 
-.hero-lcp-img {
-  position: absolute;
-  inset: 0;
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-  z-index: 1;
-  pointer-events: none;
-  user-select: none;
-}
-
-/* --- Sección de Tarjetas de Líneas de Servicio (ANIMACIONES MANTENIDAS) --- */
+/* --- SECCIÓN DE TARJETAS DE SERVICIOS --- */
 #lineas-servicio {
     padding-top: calc(var(--spacing-unit) * 3);
     padding-bottom: calc(var(--spacing-unit) * 5);
@@ -248,7 +236,7 @@
     border-radius: var(--border-radius-medium);
     overflow: hidden;
     box-shadow: var(--shadow-medium);
-    transition: transform 0.3s cubic-bezier(0.25, 1, 0.5, 1), box-shadow 0.3s ease; /* CONSERVADO */
+    transition: transform 0.3s cubic-bezier(0.25, 1, 0.5, 1), box-shadow 0.3s ease;
     position: relative;
     background-color: var(--color-secondary-bg);
     border: 1px solid var(--color-border);
@@ -261,6 +249,7 @@
     border-color: #555;
     outline: none;
 }
+
 .service-card:focus-visible {
     outline: 3px solid var(--color-link);
     outline-offset: 2px;
@@ -272,7 +261,7 @@
     height: 220px;
     object-fit: cover;
     display: block;
-    transition: transform 0.4s cubic-bezier(0.25, 1, 0.5, 1), filter 0.3s ease; /* CONSERVADO */
+    transition: transform 0.4s cubic-bezier(0.25, 1, 0.5, 1), filter 0.3s ease;
     filter: brightness(0.85);
 }
 
@@ -295,7 +284,7 @@
     font-size: 1.15rem;
     text-align: center;
     box-sizing: border-box;
-    transition: background-color 0.3s ease, color 0.3s ease, transform 0.3s ease; /* CONSERVADO */
+    transition: background-color 0.3s ease, color 0.3s ease, transform 0.3s ease;
 }
 
 .service-card:hover .service-card-title,
@@ -303,35 +292,21 @@
     background-color: var(--dhl-red);
 }
 
-
-@media (max-width: 992px) {
-    #hero { min-height: 400px; }
-    #hero h1 { font-size: 2.8rem; }
-    #hero p { font-size: 1.15rem; }
-    .service-cards-container { grid-template-columns: repeat(2, 1fr); gap: calc(var(--spacing-unit) * 3); }
-    #lineas-servicio h2 { font-size: 1.8rem; }
-    .content-section, .content-section.reverse { gap: calc(var(--spacing-unit) * 4); }
-    .text-content h2 { font-size: 1.8rem; }
-    .text-content h3 { font-size: 1.3rem; }
-}
-
-
+/* --- ÚNICA MEDIA QUERY PARA MÓVILES --- */
 @media (max-width: 600px) {
+    /* --- HERO --- */
     #hero {
         height: 100dvh; 
         min-height: 100dvh;
         max-height: 100dvh;
         padding-bottom: 0; 
-        position: relative;
-        overflow: hidden;
     }
 
     .hero-lcp-img {
-        display: none;
+        display: none; /* Oculta imagen estática para que funcione el slider */
     }
     
     .hero-content {
-        position: relative;
         z-index: 3; 
         padding: 15px 20px;
         max-width: 90%;
@@ -339,12 +314,20 @@
     
     #hero h1 { font-size: 2.3rem; }
     #hero p { font-size: 1.0rem; margin-bottom: 1.2em; }
-    .cta-button, .hero-cta { padding: 12px 28px; font-size: 0.95rem; }
+    .hero-cta { padding: 12px 28px; font-size: 0.95rem; }
 
+    /* Imágenes de slider para móvil */
     #hero-slide-1 { background-image: url('../img/as12.webp'); }
     #hero-slide-2 { background-image: url('../img/mobile1.webp'); }
 
-    .content-section, .content-section.reverse { 
+    /* --- SERVICIOS --- */
+    #lineas-servicio h2 { 
+        font-size: 1.8rem; 
+    }
+
+    /* --- SECCIONES DE CONTENIDO --- */
+    .content-section, 
+    .content-section.reverse { 
         flex-direction: column; 
         gap: calc(var(--spacing-unit) * 3); 
         margin-bottom: calc(var(--spacing-unit) * 6);
@@ -352,47 +335,26 @@
         text-align: center;
     }
 
-    .text-content, .image-content { 
+    .text-content, 
+    .image-content { 
         flex-basis: auto; 
         width: 100%; 
         min-width: unset;
     }
 
-    .content-section .image-content {
-        order: -1;
-    }
+    /* Imagen siempre arriba del texto en móvil */
+    .content-section .image-content,
     .content-section.reverse .image-content {
-        order: -1; 
+        order: 1; 
+        max-width: 400px; /* Limita el ancho de la imagen */
+        margin-left: auto;
+        margin-right: auto;
     }
 
+    /* Estilos de texto centrados */
     .text-content h2 { font-size: 1.7rem; }
     .text-content h3 { font-size: 1.25rem; display: block; border-bottom: none; }
     .text-content h3::after { left: 50%; transform: translateX(-50%); width: 0; }
     .fade-in-section.is-visible .text-content h3::after { width: 80%; max-width: 200px; }
     .text-content ul { padding-left: 0; }
-    
-    .content-section .image-content,
-    .content-section.reverse .image-content {
-        order: 0 !important;
-        width: 100%;
-        max-width: 400px;
-        margin: 0 auto 10px auto;
-        display: flex;
-        justify-content: center;
-    }
-    .content-section .section-image,
-    .content-section.reverse .section-image {
-        width: 100%;
-        height: auto;
-        max-width: 100%;
-        border-radius: var(--border-radius-medium);
-        box-shadow: var(--shadow-medium);
-        margin-bottom: 0;
-    }
-    .content-section .text-content,
-    .content-section.reverse .text-content {
-        width: 100%;
-        margin: 0 auto;
-        text-align: center;
-    }
 }

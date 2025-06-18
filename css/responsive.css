@@ -1,76 +1,69 @@
-/* css/responsive.css */
-
-/* Tablet (<= 992px) */
 @media (max-width: 992px) {
-    :root { --max-width: 960px; }
-    h1 { font-size: 2.4rem; }
-    h2 { font-size: 2.0rem; }
-    .navlink { padding: 0 12px; font-size: 0.9rem;} /* Movido de _header.css MQs */
-    .top-bar { font-size: 0.8rem; } /* Movido de _top-bar.css MQs */
-    .top-bar-left, .top-bar-right { gap: calc(var(--spacing-unit) * 1.5); } /* Movido de _top-bar.css MQs */
-    .mobile-menu-button { display: block;}
-    .rulenav { display: none; }
-}
-
-/* Tablet & Mobile (<= 768px) */
-@media (max-width: 768px) {
     :root {
-        --header-height: 70px;
+        --max-width: 960px; /* Ancho máximo del contenedor en tablet */
+        --header-height: 70px; /* Altura del header en móvil */
     }
-    .top-bar {
-        display: none;
-    }
-    .header {
-        top: 0;
-    }
+
+    /* --- ESTILOS GENERALES Y TIPOGRAFÍA --- */
     body {
         font-size: 15px;
-        padding-top: var(--header-height);
+        padding-top: var(--header-height); /* Espacio para el header fijo */
     }
     html {
+         /* Asegura que los anclajes no queden ocultos por el header */
          scroll-padding-top: calc(var(--header-height) + 15px) !important;
     }
-
-    h1 { font-size: 2rem; }
+    h1 { font-size: 2.0rem; }
     h2 { font-size: 1.8rem; }
     h3 { font-size: 1.4rem; }
 
-    .header-container { /* Movido de _header.css MQs */
+    /* --- HEADER Y NAVEGACIÓN --- */
+    .top-bar {
+        display: none; /* La barra superior se oculta */
+    }
+
+    .header {
+        top: 0; /* El header se pega arriba al no haber top-bar */
+    }
+
+    .header-container {
         width: 90%;
         padding-left: 15px;
         padding-right: 15px;
     }
-    .logos-left { /* Movido de _header.css MQs */
+
+    .logos-left {
         flex-grow: 1;
         justify-content: flex-start;
         min-width: 100px;
         gap: var(--spacing-unit);
     }
-    #logo1, #logo2 { /* Movido de _header.css MQs */
+
+    #logo1, #logo2 {
         height: 35px;
         max-width: 120px;
     }
 
-    .mobile-menu-button { /* Movido de _header.css MQs */
-        display: flex;
+    .mobile-menu-button {
+        display: flex; /* Muestra el botón de hamburguesa */
         align-items: center;
         justify-content: center;
         flex-shrink: 0;
     }
 
+    /* Definición del menú de navegación móvil */
     .rulenav {
-        display: none;
-        position: fixed; /* Fija el menú respecto a la ventana */
+        display: none; /* Oculto por defecto */
+        position: fixed;
         top: var(--header-height);
         left: 0;
-        width: 100vw; /* Cubre todo el ancho de la ventana */
-        height: calc(100vh - var(--header-height)); /* Cubre todo el alto menos el header */
-        min-height: 0;
+        width: 100vw;
+        height: calc(100vh - var(--header-height));
         background-color: var(--color-header-bg);
-        overflow-y: auto; /* Permite scroll si hay muchos links */
+        overflow-y: auto;
         flex-direction: column;
         align-items: stretch;
-        padding: calc(var(--spacing-unit)) 0;
+        padding: var(--spacing-unit) 0;
         box-shadow: var(--shadow-medium);
         border-top: 1px solid var(--color-header-border);
         transform: translateY(-10px);
@@ -80,21 +73,22 @@
         z-index: 999;
     }
 
-    .rulenav.mobile-menu-open { /* Movido de _header.css MQs */
+    /* Estado visible del menú móvil */
+    .rulenav.mobile-menu-open {
         display: flex;
         transform: translateY(0);
         opacity: 1;
         pointer-events: auto;
     }
 
-    /* --- NAVLINKS EN MENÚ HAMBURGUESA: SIN ANIMACIONES --- */
+    /* Estilo de los enlaces dentro del menú móvil */
     .rulenav .navlink {
         width: 100%;
-        padding: 24px 32px; /* MÁS ALTO Y MÁS ANCHO */
+        padding: 24px 32px;
         text-align: left;
         height: auto;
         border-bottom: 1px solid var(--color-header-border);
-        font-size: 1.25rem; /* MÁS GRANDE */
+        font-size: 1.25rem;
         color: var(--color-header-text);
         font-weight: 500;
         text-transform: none;
@@ -103,38 +97,35 @@
         transition: none !important;
         box-shadow: none !important;
     }
+    .rulenav .navlink:last-child { 
+        border-bottom: none; 
+    }
     .rulenav .navlink::before,
     .rulenav .navlink::after {
         display: none !important;
-        width: 0 !important;
-        background: none !important;
-        content: none !important;
-        transition: none !important;
     }
-    .rulenav .navlink:last-child { border-bottom: none; } /* Movido de _header.css MQs */
 
     .rulenav .navlink:hover,
     .rulenav .navlink:focus {
        background-color: rgba(255, 255, 255, 0.1);
        color: var(--color-header-link-hover);
        transform: none;
-       /* Elimina animaciones */
        transition: none !important;
     }
     .rulenav .navlink.active {
        background-color: rgba(255, 255, 255, 0.15);
        color: var(--color-header-link-hover);
        font-weight: 700;
-       /* Elimina animaciones */
        transition: none !important;
     }
-
-    .main-content { /* Movido de _main.css MQs */
+    
+    /* --- CONTENIDO PRINCIPAL Y FOOTER --- */
+    .main-content {
         padding-top: calc(var(--spacing-unit) * 8);
         padding-bottom: calc(var(--spacing-unit) * 6);
     }
 
-    .footer-container { /* Movido de _footer.css MQs */
+    .footer-container {
         flex-direction: column;
         text-align: center;
         align-items: center;
@@ -142,27 +133,25 @@
         padding-left: 15px;
         padding-right: 15px;
     }
-    .footer-left, .footer-right { /* Movido de _footer.css MQs */
+    .footer-left, .footer-right {
         flex-basis: auto;
         width: 100%;
         text-align: center;
     }
-    .footer-right { /* Movido de _footer.css MQs */
+    .footer-right {
         margin-top: var(--spacing-unit);
     }
-    .footer-left p, .footer-right p { /* Movido de _footer.css MQs */
+    .footer-left p, .footer-right p {
         text-align: center;
-    }
-    .footer-right p i { /* Movido de _footer.css MQs */
-        margin-left: 0;
-        margin-right: calc(var(--spacing-unit) * 0.5);
     }
 }
 
-/* Mobile Small (<= 480px) */
-@media (max-width: 480px) {
+
+/* --- Móvil Pequeño (<= 600px) --- */
+/* Ajustes finos para pantallas más pequeñas. */
+@media (max-width: 600px) {
      :root {
-         --header-height: 65px;
+         --header-height: 65px; /* Header ligeramente más pequeño */
      }
      body {
          font-size: 14px;
@@ -173,39 +162,55 @@
          scroll-padding-top: calc(var(--header-height) + 10px) !important;
      }
 
+     /* --- TIPOGRAFÍA Y CONTENEDORES --- */
      h1 { font-size: 1.8rem; }
      h2 { font-size: 1.6rem; }
-     .container, .header-container, .footer-container, .main-content { /* Modificaciones a .container, .header-container, .footer-container, .main-content MQs */
+     
+     .container, .header-container, .footer-container, .main-content {
          width: 95%;
          padding-left: 10px;
          padding-right: 10px;
      }
 
-    #logo1, #logo2 { height: 32px; max-width: 100px; } /* Movido de _header.css MQs */
-    .logos-left { gap: 10px; } /* Movido de _header.css MQs */
-
-    .mobile-menu-button { width: 40px; height: 40px; margin-left: var(--spacing-unit); } /* Movido de _header.css MQs */
-    .mobile-menu-button .hamburger-line { width: 22px; height: 2.5px; } /* Movido de _header.css MQs */
-    .hamburger-line:nth-child(1) { top: calc(50% - 7px - 1.25px); } /* Movido de _header.css MQs */
-    .hamburger-line:nth-child(3) { top: calc(50% + 7px - 1.25px); } /* Movido de _header.css MQs */
-    .mobile-menu-button.menu-active .hamburger-line:nth-child(1) { top: calc(50% - 1.25px); transform: translateX(-50%) rotate(45deg); } /* Movido de _header.css MQs */
-    .mobile-menu-button.menu-active .hamburger-line:nth-child(3) { top: calc(50% - 1.25px); transform: translateX(-50%) rotate(-45deg); } /* Movido de _header.css MQs */
-
-    .rulenav {
-        width: 100vw;
-        height: calc(100vh - var(--header-height));
+    /* --- HEADER Y NAVEGACIÓN --- */
+    #logo1, #logo2 { 
+        height: 32px; 
+        max-width: 100px; 
     }
+    .logos-left { 
+        gap: 10px; 
+    }
+
+    .mobile-menu-button { 
+        width: 40px; 
+        height: 40px; 
+        margin-left: var(--spacing-unit); 
+    }
+    .mobile-menu-button .hamburger-line { 
+        width: 22px; 
+        height: 2.5px; 
+    }
+    .hamburger-line:nth-child(1) { top: calc(50% - 7px - 1.25px); }
+    .hamburger-line:nth-child(3) { top: calc(50% + 7px - 1.25px); }
+    .mobile-menu-button.menu-active .hamburger-line:nth-child(1) { top: calc(50% - 1.25px); transform: translateX(-50%) rotate(45deg); }
+    .mobile-menu-button.menu-active .hamburger-line:nth-child(3) { top: calc(50% - 1.25px); transform: translateX(-50%) rotate(-45deg); }
     
     .rulenav .navlink {
         padding: 20px 20px;
         font-size: 1.15rem;
-    } /* Movido de _header.css MQs */
-
-    .main-content { /* Movido de _main.css MQs */
+    }
+    
+    /* --- CONTENIDO PRINCIPAL Y FOOTER --- */
+    .main-content {
         padding-top: calc(var(--spacing-unit) * 6);
         padding-bottom: calc(var(--spacing-unit) * 5);
     }
 
-    .footer { font-size: 0.85rem; padding: 30px 0; } /* Movido de _footer.css MQs */
-    .footer-container { gap: 15px; } /* Movido de _footer.css MQs */
+    .footer { 
+        font-size: 0.85rem; 
+        padding: 30px 0; 
+    }
+    .footer-container { 
+        gap: 15px; 
+    }
 }

@@ -5,140 +5,77 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Transporte JGT y Timol  // Logística y Transporte en Añelo</title>
     <meta name="description" content="Transporte JGT y Timol ofrecen soluciones logísticas, alquiler de equipamiento y transporte especializado para la industria petrolera en Añelo y la región de Vaca Muerta.">
+    <link rel="icon" type="image/x-icon" href="logos/icono.ico">
 
-    <link 
-    rel="preload" 
-    as="image" 
-    href="img/fondo.webp" 
-    imagesrcset="img/as12.webp 768w, img/fondo.webp 1200w" 
-    imagesizes="100vw"
-    fetchpriority="high">
-    
-    <!-- Previene FOUC -->
-    <style>
-        html {visibility: hidden; opacity: 0;}
-    </style>
-
-    <!-- Preloads críticos -->
-    <link rel="preload" href="logos/icono.ico" as="image">
-    <link rel="preload" href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap" as="style">
-    <link rel="preload" as="image" href="img/fondo.webp" imagesrcset="img/as12.webp 768w, img/fondo.webp 1200w" imagesizes="100vw" fetchpriority="high">
-    
-    <!-- CSS Crítico -->
-    <style>
-        :root {
-            --top-bar-height: 35px;
-            --header-height: 60px;
-            --dhl-white: #FFFFFF;
-            --color-header-bg: #2d437f;
-            --color-border: #30363d;
-        }
-        
-        body {
-            margin: 0;
-            padding-top: calc(var(--header-height) + var(--top-bar-height));
-            font-family: 'Roboto', sans-serif;
-            background-color: #0d1117;
-            color: #c9d1d9;
-        }
-
-        .header {
-            position: fixed;
-            top: var(--top-bar-height);
-            left: 0;
-            width: 100%;
-            height: var(--header-height);
-            background-color: var(--color-header-bg);
-            z-index: 1000;
-            color: var(--dhl-white);
-        }
-
-        .header a {
-            color: var(--color-link-header);
-            text-decoration: none;
-        }
-
-        .top-bar {
-            position: fixed;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: var(--top-bar-height);
-            background-color: #101828;
-            z-index: 1001;
-            color: var(--color-text-light);
-        }
-       .top-bar a {
-            color: var(--color-link-header);
-            text-decoration: none;
-       }
-
-        #hero {
-            min-height: 450px;
-            position: relative;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            color: var(--dhl-white);
-            text-align: center;
-        }
-
-        .hero-lcp-img {
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            object-fit: cover;
-            z-index: 1;
-        }
-
-        .hero-content {
-            position: relative;
-            z-index: 3;
-            padding: 20px 30px;
-        }
-
-        .cta-button { 
-            display: inline-block; 
-            padding: 12px 28px; 
-            border-radius: 6px; 
-            border: 1px solid rgba(255, 255, 255, 0.3);
-            background: transparent; 
-            color: var(--dhl-white);    
-            font-weight: 700; 
-            margin: 0px 18px;
-            backdrop-filter: blur(25px);
-            text-decoration: none;
-            transition: all 0.3s ease;   
-        }
-
-        @media (max-width: 600px) {
-            .cta-button {
-                backdrop-filter: blur(0px);   
-                display: block;
-                width: 100%;
-                margin: 12px auto;
-                text-align: center;
-            }
-        }
-    </style>
-
-    <!-- Carga optimizada de fuentes -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Roboto+Condensed:wght@400;700&family=Roboto:wght@400;500;700&family=Poppins:wght@700&display=swap">
-    
-    <!-- CSS no crítico -->
-    <link rel="stylesheet" href="css/main.css" media="print" onload="this.media='all'; document.documentElement.style.visibility='visible'; document.documentElement.style.opacity='1'">
-    <link rel="stylesheet" href="css/page-specific.css" media="print" onload="this.media='all'">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto+Condensed:wght@400;700&family=Roboto:wght@400;500;700&family=Poppins:wght@700&display=swap" rel="stylesheet">
 
     <noscript>
-        <link rel="stylesheet" href="css/main.css">
-        <link rel="stylesheet" href="css/page-specific.css">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto+Condensed:wght@400;700&family=Roboto:wght@400;500;700&family=Poppins:wght@700&display=swap" rel="stylesheet">
     </noscript>
+        
+    <link rel="preload" as="image" href="img/fondo.webp" imagesrcset="img/as12.webp 768w, img/fondo.webp 1200w" imagesizes="100vw">
 
-    <link rel="icon" type="image/x-icon" href="logos/icono.ico">
+    <style>
+    /* Ejemplo de estilos críticos: header, top-bar, hero, fuentes principales */
+    body { font-family: 'Roboto', Arial, sans-serif; margin: 0; }
+
+    body.preload .header,
+    body.preload .top-bar {
+        visibility: hidden;
+    }
+    
+    #hero {
+        position: relative;
+        min-height: 450px;
+        color: #fff;
+        text-align: center;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        overflow: hidden;
+        padding-bottom: 22vh;
+    }
+    .hero-lcp-img {
+        position: absolute;
+        inset: 0;
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        z-index: 1;
+        pointer-events: none;
+        user-select: none;
+    }
+    .header { position: fixed; top: 0; width: 100%; background: #fff; z-index: 1000; }
+    .top-bar { background: #222; color: #fff; height: 32px; }
+    .hero-content { text-align: center; padding: 40px 0; }
+    .cta-button { 
+        display: inline-block; 
+        padding: 12px 28px; 
+        border-radius: 6px; 
+        border: 1px solid rgba(255, 255, 255, 0.3);
+        background: transparent; 
+        color: #fff;    
+        font-weight: 700; 
+        margin: 0px 18px;
+        backdrop-filter: blur(25px);   
+    }
+
+    @media (max-width: 600px) {
+    .cta-button {
+        backdrop-filter: blur(0px);   
+        display: block;      /* Hace que los botones se apilen verticalmente */
+        width: 100%;          /* Ocupa el 90% del contenedor para no pegarse a los bordes */
+        margin: 12px auto;   /* 12px de espacio vertical y 'auto' para centrarlo horizontalmente */
+        text-align: center;  /* Asegura que el texto dentro del botón siga centrado */
+    }
+}
+    </style>
+    <link rel="stylesheet" href="css/main.css"> 
+    <link rel="stylesheet" href="css/page-specific.css">
+
 </head>
 <body>
 
@@ -189,19 +126,17 @@
     <section id="hero" role="region" aria-label="Presentación principal con imágenes deslizantes">
         <div class="hero-slider-container">
             <div class="hero-slider-track" id="hero-slider-track">
-                <div id="hero-slide-1" class="hero-slide">
-                    <img 
-                        src="img/fondo.webp"
-                        srcset="img/as12.webp 768w, img/fondo.webp 1200w"
-                        sizes="100vw"
-                        alt="Camiones cisterna y grúas de transporte JGT"
-                        class="hero-lcp-img"
-                        width="1200"
-                        height="675"
-                        decoding="async"
-                        loading="eager"
-                        fetchpriority="high"
-                    >
+                <div id="hero-slide-1" class="hero-slide" role="group" aria-roledescription="slide" aria-label="Camiones cisterna y grúas de transporte JGT">
+                <img 
+                    src="img/fondo.webp"
+                    srcset="img/as12.webp 768w, img/fondo.webp 1200w"
+                    sizes="100vw"
+                    alt="Camiones cisterna y grúas de transporte JGT"
+                    class="hero-lcp-img"
+                    decoding="async"
+                    loading="eager"
+                    fetchpriority="high"
+                />
                 </div>
                 <div id="hero-slide-2" class="hero-slide" role="group" aria-roledescription="slide" aria-label="Camión blanco de Timol en ruta"></div>
             </div>
@@ -251,15 +186,5 @@
 </footer>
 
 <script src="js/script.js" defer></script>
-
-<script>
-// Asegura que el contenido sea visible incluso si los CSS fallan en cargar
-setTimeout(function() {
-    if (document.documentElement.style.visibility === 'hidden') {
-        document.documentElement.style.visibility = 'visible';
-        document.documentElement.style.opacity = '1';
-    }
-}, 3000);
-</script>
 </body>
 </html>

@@ -255,13 +255,11 @@
 }
 
 /* --- Media Queries --- */
-@media (max-width: 768px) {
+
+@media (max-width: 600px) {
+    .section-container, #como-postular { padding: 20px; }
+    .section-container h2, #como-postular h2 { font-size: 1.4rem; }
     .contact-wrapper { flex-direction: column; gap: 30px; }
     .section-container, #como-postular { padding: 25px; }
     .section-container h2, #como-postular h2 { font-size: 1.6rem; }
-}
-
-@media (max-width: 480px) {
-    .section-container, #como-postular { padding: 20px; }
-    .section-container h2, #como-postular h2 { font-size: 1.4rem; }
 }

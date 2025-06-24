@@ -368,18 +368,16 @@
     padding-top: 0 !important;
 
 }
-#tras.section-image.small-section-image {
+  #tras.section-image.small-section-image {
     width: 100vw;
-    height: 100vh;
+    height: 60vh !important;
+    max-height: 60vh !important;
     object-fit: cover;
     object-position: center center;
     display: block;
-    max-width: 100%;
-    max-height: 60vh;
     margin: 0 auto;
     background: #000;
-    
-}
+  }
 
 
     #transporte-equipamiento-pesado .text-content {
@@ -388,12 +386,12 @@
         text-align: left;
     }
     /* --- HERO --- */
-    #hero {
-        height: 100dvh; 
-        min-height: 100dvh;
-        max-height: 100dvh;
-        padding-bottom: 0; 
-    }
+  #hero {
+    height: 100vh !important;
+    min-height: 100vh !important;
+    max-height: 100vh !important;
+    padding-bottom: 0 !important;
+  }
 
     
     .hero-content {

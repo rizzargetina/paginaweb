@@ -21,36 +21,64 @@
     <!-- Bootstrap Icons CDN -->
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
     <style>
-        body {
-    padding-top: calc(var(--header-height) + var(--top-bar-height));
+
+        .logo-h1 {
+    height: 1.2em;
+    vertical-align: middle;
+    margin-right: 12px;
 }
-        body.preload .header,
-        body.preload .top-bar {
-            visibility: hidden;
-        }
 .pepito {
-    background: #d32f2f;
-    color: #fff;
+    margin: 0;
+    background: #101828;
+    color: #fafdff;
     text-align: center;
-    padding: 24px 0 18px 0;
-    font-size: 3.5rem;
-    font-family: var(--font-headings, 'Roboto Condensed', sans-serif);
-    letter-spacing: 1px;
+    padding: 16px 0 16px 0;
+    font-size: 2.8rem;
     font-weight: 700;
-    border-radius: 8px;
-} 
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 12px;
+}
+.logo-h1 {
+    height: 1.2em;
+    vertical-align: middle;
+}
+
+.small-section-image {
+    width: 100%;
+
+
+    
+}
+
+#tras.section-image.small-section-image {
+    width: 100vw;
+    height: 100vh;
+    object-fit: cover;
+    object-position: center center;
+    display: block;
+    max-width: 100%;
+    max-height: 71vh;
+    margin: 0 auto;
+    background: #000;
+}
+
+
+
+
 @media (max-width: 600px) {
+
     .pepito {
-    background: #d32f2f;
-    color: #fff;
-    text-align: center;
-    padding: 24px 0 18px 0;
-    font-size: 2.4rem;
-    font-family: var(--font-headings, 'Roboto Condensed', sans-serif);
-    letter-spacing: 1px;
-    font-weight: 700;
-    border-radius: 8px;
+        margin: 0;
+        
     }
+
+    .pepito .logo-h1 {
+         display: none;
+    }
+
+    
 } 
 </style>
 </head>
@@ -77,9 +105,12 @@
 
 <header class="header" id="main-header">
     <div class="container header-container">
-        <div class="logos-left">
+                <div class="logos-left">
             <a href="index.html" aria-label="Ir a la página de inicio de JGT">
                  <img src="img/JGT1.webp" alt="Logo JGT" id="logo1">
+            </a>
+            <a href="index.html" aria-label="Ir a la página de inicio de TIMOL">
+                 <img src="img/TIMOL.svg" alt="Logo TIMOL" id="logo2">
             </a>
         </div>
 
@@ -98,59 +129,47 @@
 </header>
 
 <main>
-    <div class="container page-container">
-        <h1 class="pepito">Servicios de TRANSPORTE JGT  </h1>
 
-    
-    <section id="transporte-equipamiento-pesado" class="content-section fade-in-section" aria-labelledby="transporte-equipamiento-heading">
-        <div class="text-content">
-            <h2 id="transporte-equipamiento-heading">Nuestra Oferta Incluye</h2>
-            <ul>
-                <li>
-                    <strong>Transporte de Cargas:</strong>
-                    <p>Servicio versátil para clientes críticos y ocasionales, incluyendo la movilización de nuestros propios equipos periféricos y de terceros, cumpliendo normativas para cargas generales y peligrosas.</p>
-                </li>
-                <li>
-                    <strong>Alquiler de Cisternas:</strong>
-                    <p>Unidades para transporte y almacenamiento de agua y gas oil (desde 3m³ hasta 20m³), cumpliendo con altos estándares de seguridad.</p>
-                </li>
-                <li>
-                    <strong>Generadores Eléctricos de Alta Potencia:</strong>
-                    <p>Equipos de diversas capacidades (hasta 350 KVA) para asegurar la continuidad energética de sus operaciones.</p>
-                </li>
-                <li>
-                    <strong>Plantas de Agua y Motocompresores:</strong>
-                    <p>Plantas de agua (hasta 30m³) y motocompresores (5m³ y 10m³, con presiones de 7kg y 10kg) para diversas necesidades industriales.</p>
-                </li>
-            </ul>
-        </div>
-        <div class="image-content">
-            <img class="section-image" alt="Flota de camiones y cisternas para transporte y alquiler de equipamiento pesado" src="img/piola.webp" loading="lazy">
-        </div>
-    </section>
+<h1 class="pepito">
+    <img src="img/JGT1.webp" alt="Logo JGT" class="logo-h1">
+    Servicios de TRANSPORTE JGT
+</h1>
+
+
+
+
+<section id="transporte-equipamiento-pesado" class="content-section fade-in-section" aria-labelledby="transporte-equipamiento-heading">
+    <div class="text-content panel-overlay">
+        <h2 id="transporte-equipamiento-heading">DTM</h2>
+    </div>
+<!-- ...existing code... -->
+<video id="tras" class="section-image small-section-image" src="img/video1.webm" autoplay loop muted playsinline poster="img/la-primera.png" alt="Flota de camiones y cisternas para transporte y alquiler de equipamiento pesado"></video>
+<!-- ...existing code... -->
+</section>   
 
     <hr class="fade-in-element">
-
+        <div class="container page-container">
     <section id="soluciones-modulares-soporte" class="content-section reverse fade-in-section" aria-labelledby="soluciones-modulares-heading">
         <div class="text-content">
-            <h2 id="soluciones-modulares-heading">Soluciones Modulares y Soporte Operativo en Campo</h2>
+            <h2 id="soluciones-modulares-heading">Carretones</h2>
             <ul>
                 <li>
-                    <strong>Trailers Habitacionales y de Servicios:</strong>
-                    <p>Trailers vivienda (6 mts y 12 mts, con uno o dos baños), comedor (12 mts), taller (6 mts), laboratorio (6 mts), sanitario (6 mts) y lavandería (6 mts).</p>
+                    <strong>Carretones Deprimidos y de Cuello Desmontable (RGN)</strong>
+                    <p>Solución para maquinaria rodante y cargas de gran altura</p>
                 </li>
                 <li>
-                    <strong>Iluminación y Energía Auxiliar:</strong>
-                    <p>Torres de iluminación (LED y halógenas), tableros eléctricos (250 amp, con 6, 8 y 12 tomas, para distribución).</p>
+                    <strong>Carretones Equipados con Malacate</strong>
+                    <p>Potencia y autonomía para las cargas más difíciles</p>
                 </li>
-                <li>
-                    <strong>Equipos Periféricos Adicionales:</strong>
-                    <p>Piletas de acumulación, ensayo y mezcladoras. Cabinas de vigilancia (2x2 mts y 2.40x2.40 mts), manifold, motobombas e hidrolavadoras industriales (frío-calor).</p>
+
+                    <li>
+                    <strong>Carretones con Plato de 3 ½ Pulgadas</strong>
+                    <p>Máxima Capacidad de Arrastre</p>
                 </li>
             </ul>
         </div>
         <div class="image-content">
-            <img class="section-image" alt="Trailers y equipamiento de soporte operativo en locación petrolera" src="img/SA-1.webp" loading="lazy">
+            <img class="section-image" alt="Trailers y equipamiento de soporte operativo en locación petrolera" src="img/carreton.webp" loading="lazy">
         </div>
     </section>
 
@@ -158,47 +177,78 @@
 
     <section id="mantenimiento-integral-flotas" class="content-section fade-in-section" aria-labelledby="mantenimiento-flotas-heading">
         <div class="text-content">
-            <h2 id="mantenimiento-flotas-heading">Servicios de Mantenimiento</h2>
-            <ul>
-                <li>
-                    <strong>Mantenimiento Vehicular y Maquinaria Pesada:</strong>
-                    <p>Servicios completos para flotas, incluyendo reparaciones en campo, soldadura especializada y metalúrgica.</p>
-                </li>
-                <li>
-                    <strong>Mantenimiento de Bases e Inmuebles:</strong>
-                    <p>Restauración edilicia, cambio de plafones, pintura profesional, trabajos de soldadura en estructuras, limpieza general y desmalezamiento de predios.</p>
-                </li>
-            </ul>
+      
+<h2 id="mantenimiento-flotas-heading">Hidrogrúas</h2>
+<!-- Descripción general del servicio -->
+<p><strong>Servicio integral: Izaje, carga y transporte en una sola operación.</strong> Optimizamos su logística combinando nuestras hidrogrúas con semirremolques si hace falta</p>
+
+<ul>
+    <li>
+        <strong>Hidrogrúa PM 27.5</strong>
+        <p>Versatilidad para cargas generales y montajes rápidos</p>
+    </li>
+    <li>
+        <strong>Hidrogrúa PM 38.5</strong>
+        <p>Potencia y alcance para proyectos de mayor envergadura</p>
+    </li>
+     <li>
+        <strong>Hidrogrúa PM 47.5</strong>
+        <p>Máxima capacidad para las cargas más pesadas y críticas</p>
+    </li>
+</ul>
+
+    
         </div>
         <div class="image-content">
-            <img class="section-image" alt="Taller de mantenimiento y servicios para equipos industriales y vehículos" src="img/bc-2.webp" loading="lazy">
+            <img class="section-image" alt="Taller de mantenimiento y servicios para equipos industriales y vehículos" src="img/hidro1.webp" loading="lazy">
         </div>
     </section>
 
     <hr class="fade-in-element">
 
-    <section id="servicios-moviles-complementarios" class="content-section reverse fade-in-section" aria-labelledby="servicios-moviles-heading">
-        <div class="text-content">
-            <h2 id="servicios-moviles-heading">Servicios Especializados:</h2>
-            <ul>
-                <li>
-                    <strong>Gomería Móvil:</strong>
-                    <p>Servicio ágil y oportuno para empresas: cambio de cubiertas (rotación y balanceo), parcheo, vulcanizado, arme y desarme de llantas para flotas y maquinaria pesada.</p>
-                </li>
-                <li>
-                    <strong>Lavadero Industrial:</strong>
-                    <p>Limpieza profunda de unidades industriales, desde vehículos livianos hasta equipos especiales, asegurando el cuidado de sus activos y cumpliendo con estándares ambientales.</p>
-                </li>
-                <li>
-                    <strong>Lubricentro:</strong>
-                    <p>Cambio de aceites, filtros y fluidos con estándares internacionales para el mantenimiento preventivo de vehículos y equipos, asegurando su óptimo rendimiento.</p>
-                </li>
-            </ul>
-        </div>
-        <div class="image-content">
-            <img class="section-image" alt="Servicio de gomería móvil de Timol atendiendo maquinaria pesada en campo" src="img/gomeria-movil-1.webp" loading="lazy">
-        </div>
-    </section>
+        <section id="servicios-moviles-complementarios" class="content-section reverse fade-in-section" aria-labelledby="servicios-moviles-heading">
+             <div class="text-content">
+                <h2 id="servicios-moviles-heading">Servicios Especializados:</h2>
+                <ul>
+                    <li>
+                        <strong>Gomería Móvil:</strong>
+                        <p>Servicio ágil y oportuno para empresas: cambio de cubiertas (rotación y balanceo), parcheo, vulcanizado, arme y desarme de llantas para flotas y maquinaria pesada.</p>
+                    </li>
+                    <li>
+                        <strong>Lavadero Industrial:</strong>
+                        <p>Limpieza profunda de unidades industriales, desde vehículos livianos hasta equipos especiales, asegurando el cuidado de sus activos y cumpliendo con estándares ambientales.</p>
+                    </li>
+                    <li>
+                        <strong>Lubricentro:</strong>
+                         <p>Cambio de aceites, filtros y fluidos con estándares internacionales para el mantenimiento preventivo de vehículos y equipos, asegurando su óptimo rendimiento.</p>
+                    </li>
+                </ul>
+            </div>
+             <div class="image-content">
+                <img class="section-image" alt="Servicio de gomería móvil de Timol atendiendo maquinaria pesada en campo" src="img/gomeria-movil-1.webp" loading="lazy">
+            </div>
+        </section>
+
+                <hr class="fade-in-element">
+
+        <section id="mantenimiento-integral-flotas" class="content-section fade-in-section" aria-labelledby="mantenimiento-flotas-heading">
+            <div class="text-content">
+                <h2 id="mantenimiento-flotas-heading">Servicios de Mantenimiento</h2>
+                <ul>
+                    <li>
+                        <strong>Mantenimiento Vehicular y Maquinaria Pesada:</strong>
+                        <p>Servicios completos para flotas, incluyendo reparaciones en campo, soldadura especializada y metalúrgica.</p>
+                    </li>
+                    <li>
+                        <strong>Mantenimiento de Bases e Inmuebles:</strong>
+                        <p>Restauración edilicia, cambio de plafones, pintura profesional, trabajos de soldadura en estructuras, limpieza general y desmalezamiento de predios.</p>
+                    </li>
+                </ul>
+            </div>
+            <div class="image-content">
+                <img class="section-image" alt="Taller de mantenimiento y servicios para equipos industriales y vehículos" src="img/bc-2.webp" loading="lazy">
+            </div>
+        </section>
 </div>
 </main>
 

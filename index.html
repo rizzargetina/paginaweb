@@ -50,27 +50,7 @@
     .header { position: fixed; top: 0; width: 100%; background: #fff; z-index: 1000; }
     .top-bar { background: #222; color: #fff; height: 32px; }
     .hero-content { text-align: center; padding: 40px 0; }
-    .cta-button { 
-        display: inline-block; 
-        padding: 12px 28px; 
-        border-radius: 6px; 
-        border: 1px solid rgba(255, 255, 255, 0.3);
-        background: #112e4e;
-        color: #f3f4f6;    
-        font-weight: 700; 
-        margin: 0px 18px;
-
-    }
-
-    @media (max-width: 600px) {
-    .cta-button {
-        background: transparent;
-        display: block;      /* Hace que los botones se apilen verticalmente */
-        width: 100%;          /* Ocupa el 90% del contenedor para no pegarse a los bordes */
-        margin: 12px auto;   /* 12px de espacio vertical y 'auto' para centrarlo horizontalmente */
-        text-align: center;  /* Asegura que el texto dentro del botón siga centrado */
-    }
-}
+    
     </style>
     <link rel="stylesheet" href="css/main.css"> 
     <link rel="stylesheet" href="css/page-specific.css">
@@ -115,7 +95,7 @@
 
         <nav class="rulenav" id="main-navigation" aria-label="Navegación principal">
              <a class="navlink" href="index.html">Inicio</a>
-             <a class="navlink" href="services.html">Servicios</a>
+             <a class="navlink" href="services1.html">Servicios</a>
              <a class="navlink" href="contact.html">Contacto</a>
         </nav>
     </div>
@@ -125,8 +105,8 @@
     <section id="hero" role="region" aria-label="Presentación principal">
         <picture>
             <source media="(max-width: 768px)" srcset="img/as12.webp">
-            <source media="(min-width: 769px)" srcset="img/fondo.webp">
-            <img src="img/fondo.webp" alt="Camión de Timol en la ruta patagónica" class="hero-lcp-img" 
+            <source media="(min-width: 769px)" srcset="img/fondo3.webp">
+            <img src="img/fondo3.webp" alt="Camión de Timol en la ruta patagónica" class="hero-lcp-img" 
                  fetchpriority="high" loading="eager" width="1200" height="800">
         </picture>
         
@@ -136,8 +116,8 @@
         <div class="hero-content">
             <h1 class="hero-title">TRANSPORTE JGT SRL y TIMOL SRL</h1>
             <p>Soluciones Logísticas y Alquiler de Equipamiento para la Industria Petrolera. Consulta nuestros servicios</p>
-            <a href="services.html" class="cta-button">Transporte JGT</a>
-            <a href="services.html" class="cta-button">Timol</a>
+            <a href="services1.html" class="cta-button">Transporte JGT</a>
+            <a href="services1.html" class="cta-button">Timol</a>
         </div>
     </section>
 
@@ -145,21 +125,22 @@
         <section id="lineas-servicio" class="fade-in-section" aria-labelledby="lineas-servicio-heading">
             <h2 id="lineas-servicio-heading" class="text-center">Nuestras Líneas de Servicio</h2>
             <div class="service-cards-container">
-                <a href="services.html#transporte-equipamiento-pesado" class="service-card" aria-label="Ver detalles de Transporte Especializado y Alquiler de Equipamiento Pesado">
+                <a href="services1.html#transporte-equipamiento-pesado" class="service-card" aria-label="Ver detalles de Transporte Especializado y Alquiler de Equipamiento Pesado">
                     <img src="img/grid1.webp" alt="Equipamiento pesado en operación" loading="lazy">
-                    <div class="service-card-title">Transporte y Equip. Pesado</div>
+                    <div class="service-card-title">Desmontaje Traslado Montaje</div>
                 </a>
-                <a href="services.html#soluciones-modulares-soporte" class="service-card" aria-label="Ver detalles de Soluciones Modulares y Soporte Operativo">
-                    <img src="img/SA.webp" alt="Trailers y módulos habitacionales para soporte en campo" loading="lazy">
-                    <div class="service-card-title">Soluciones Modulares y Soporte</div>
+                <a href="services1.html#soluciones-modulares-soporte" class="service-card" aria-label="Ver detalles de Soluciones Modulares y Soporte Operativo">
+                    <img src="img/carreton.webp" alt="Trailers y módulos habitacionales para soporte en campo" loading="lazy">
+                    <div class="service-card-title">Carretones</div>
                 </a>
-                <a href="services.html#mantenimiento-integral-flotas" class="service-card" aria-label="Ver detalles de Mantenimiento Integral de Flotas e Infraestructura">
-                    <img src="img/bc-2.webp" alt="Taller mecánico realizando mantenimiento a maquinaria pesada" loading="lazy">
-                    <div class="service-card-title">Mantenimiento Integral</div>
-                </a>
-                <a href="services.html#servicios-moviles-complementarios" class="service-card" aria-label="Ver detalles de Servicios Móviles y Complementarios">
+
+                <a href="services1.html#servicios-moviles-complementarios" class="service-card" aria-label="Ver detalles de Servicios Móviles y Complementarios">
                     <img src="img/gomeria-movil.webp" alt="Unidad de gomería móvil atendiendo un vehículo industrial" loading="lazy">
                     <div class="service-card-title">Servicios Móviles</div>
+                </a>
+                 <a href="services1.html#mantenimiento-integral-flotas" class="service-card" aria-label="Ver detalles de Mantenimiento Integral de Flotas e Infraestructura">
+                    <img src="img/bc-2.webp" alt="Taller mecánico realizando mantenimiento a maquinaria pesada" loading="lazy">
+                    <div class="service-card-title">Mantenimiento Integral</div>
                 </a>
             </div>
         </section>

@@ -1,7 +1,6 @@
 @media (max-width: 992px) {
     :root {
         --max-width: 960px; /* Ancho máximo del contenedor en tablet */
-        --header-height: 70px; /* Altura del header en móvil */
     }
 
     /* --- ESTILOS GENERALES Y TIPOGRAFÍA --- */
@@ -151,7 +150,7 @@
 /* Ajustes finos para pantallas más pequeñas. */
 @media (max-width: 600px) {
      :root {
-         --header-height: 65px; /* Header ligeramente más pequeño */
+         --header-height: 70px; /* Header ligeramente más pequeño */
      }
      body {
          font-size: 14px;

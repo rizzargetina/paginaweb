@@ -22,7 +22,7 @@
     --color-header-bg: #2d437f;
     --color-header-text: var(--dhl-white);
     --color-header-link-hover: #d1e7f3;
-    --color-header-border: #1a2c58;
+    --color-header-border: #2d437f;
     --color-header-scrolled-bg: rgba(34, 58, 113, 0.97);
 
     /* Top Bar Specific Colors (Maintained as requested) */
@@ -34,7 +34,7 @@
     /* Accents & Links for Reddit-like Theme */
     --color-accent: #00cfff;            /* Bright, accessible blue for accents like underlines */
     --color-link: var(--color-accent);  /* Links use the same bright blue */
-    --color-link-hover: #00cfff;        /* Lighter blue for link hover */
+    --color-link-hover: #fff;        /* Lighter blue for link hover */
 
     /* Footer Specific */
     --color-footer-bg: #0d1117;
@@ -45,9 +45,10 @@
 
     /* Sizes & Spacing */
     --header-height: 60px;
-    --border-radius: 6px; /* Slightly more rounded like Reddit */
+    
+    --border-radius: 4px; /* Slightly more rounded like Reddit */
     --border-radius-small: 4px;
-    --border-radius-medium: 8px;
+    --border-radius-medium: 4px;
     --spacing-unit: 8px;
 
     --total-fixed-header-height: calc(var(--top-bar-height) + var(--header-height));

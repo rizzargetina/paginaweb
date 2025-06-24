@@ -20,7 +20,7 @@
 .hero-overlay {
     position: absolute;
     inset: 0;
-    background-color: rgba(0, 0, 0, 0.48); /* Un azul oscuro con 60% de opacidad. ¡Ajusta el color y la opacidad! */
+    background-color: rgba(0, 0, 0, 0.2); /* Un azul oscuro con 60% de opacidad. ¡Ajusta el color y la opacidad! */
     z-index: 2; /* Se pone encima de la imagen */
 }
 
@@ -53,14 +53,14 @@
     content: '';
     position: absolute;
     top: 0; left: 0; right: 0; bottom: 0;
-    background-color: rgba(0, 0, 0, 0.48); /* Darker overlay */
+    background-color: rgba(0, 0, 0, 0.1); /* Darker overlay */
     z-index: 2; 
     transition: background-color 0.5s ease;
 }
 
 /* Imágenes de Fondo para el Hero (Desktop) */
-#hero-slide-1 { background-image: url('../img/fondo.webp'); }
-#hero-slide-2 { background-image: url('../img/white-truck.webp'); }
+#hero-slide-1 { background-image: url('../img/fondo3.webp'); }
+#hero-slide-2 { background-image: url('../img/fondo3.webp'); }
 
 .hero-lcp-img {
   position: absolute;
@@ -86,7 +86,7 @@
     margin-top: 0;
     margin-bottom: 0.4em;
     color: var(--dhl-white);
-    text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.8);
+    text-shadow: 3px 3px 18px rgba(0, 0, 0, 0.7);
 }
 
 #hero p {
@@ -107,6 +107,9 @@
     box-shadow: 0 4px 10px rgba(0,0,0,0.25);
 }
 
+
+
+
 /* --- SECCIONES DE CONTENIDO GENÉRICAS --- */
 .content-section {
     display: flex;
@@ -116,13 +119,22 @@
     margin-bottom: calc(var(--spacing-unit) * 8);
 }
 
+.image-content img,
+.image-content .section-image {
+    max-height: 68vh;
+    width: 100%;
+    height: auto;
+    object-fit: contain;
+    display: block;
+    border: none;
+}
+
 .content-section.reverse {
     flex-direction: row-reverse;
 }
 
-.text-content, .image-content {
-    flex: 1 1 45%;
-}
+.text-content  { flex: 2 1 0; }
+.image-content { flex: 3 1 0; }
 
 .text-content h2 {
     color: var(--color-headings);
@@ -212,10 +224,10 @@
     max-width: 100%;
     height: auto;
     border-radius: var(--border-radius);
-    box-shadow: var(--shadow-medium);
     border: 1px solid var(--color-border);
-    filter: brightness(.9);
 }
+
+
 
 /* --- SECCIÓN DE TARJETAS DE SERVICIOS --- */
 #lineas-servicio {
@@ -296,9 +308,72 @@
 .service-card:focus-within .service-card-title {
     background-color: var(--dhl-red);
 }
+/* ...existing code... */
+#transporte-equipamiento-pesado {
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 60vh;
+    margin: 0px;
+
+}
+
+#transporte-equipamiento-pesado .text-content {
+    position: absolute;
+    z-index: 2;
+    padding: 2rem 2rem;
+    max-width: fit-content;
+    right: 2.5rem;
+    top: 5%;
+    left: 5%;
+    font-size: 1.1rem;
+    font-weight: 400;
+
+    line-height: 1.6;
+    /* Degradado azul oscuro a violeta translúcido */
+    background: #101828;
+    backdrop-filter: blur(16px);
+    color: #fafdff;
+}
+
+@media (max-width: 992px) {
+    .pepito .logo-h1 {
+         display: none;
+    }
+}
+
 
 /* --- ÚNICA MEDIA QUERY PARA MÓVILES --- */
 @media (max-width: 600px) {
+
+    /* ...existing code... */
+#transporte-equipamiento-pesado {
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 60vh;
+    margin: 0px;
+
+}
+
+#tras.section-image.small-section-image {
+    width: 100vw;
+    height: 100vh;
+    object-fit: cover;
+    display: block;
+    max-width: 100%;
+    max-height: 70vh;
+    margin: 0 auto;
+    background: #000;
+}
+
+    #transporte-equipamiento-pesado .text-content {
+        padding: 1rem 1rem;
+        font-size: 1rem;
+        text-align: left;
+    }
     /* --- HERO --- */
     #hero {
         height: 100dvh; 
@@ -348,7 +423,7 @@
     .content-section .image-content,
     .content-section.reverse .image-content {
         order: 1; 
-        max-width: 400px; /* Limita el ancho de la imagen */
+        max-width: 700px; /* Limita el ancho de la imagen */
         margin-left: auto;
         margin-right: auto;
     }

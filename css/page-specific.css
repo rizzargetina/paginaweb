@@ -370,8 +370,8 @@
 }
   #tras.section-image.small-section-image {
     width: 100vw;
-    height: 60vh !important;
-    max-height: 60vh !important;
+    height: 61vh !important;
+    max-height: 61vh !important;
     object-fit: cover;
     object-position: center center;
     display: block;
@@ -388,20 +388,29 @@
     /* --- HERO --- */
   #hero {
     height: 90vh !important;
-    padding-bottom: 31vh;
+    padding-bottom: 25vh;
   }
 
 
     
     .hero-content {
         z-index: 3; 
-        padding: 15px 20px;
-        max-width: 90%;
+        padding: 15px 0px;
+        max-width: 100%;
     }
+      .hero-content .cta-button {
+    width: 90%;
+    max-width: 90%;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    margin-bottom: 1em;
+    box-sizing: border-box;
+  }
+    
     
     #hero h1 { font-size: 2.3rem; }
     #hero p { font-size: 1.0rem; margin-bottom: 1.2em; }
-    .hero-cta { padding: 12px 28px; font-size: 0.95rem; }
 
     /* Imágenes de slider para móvil */
     #hero-slide-1 { background-image: url('../img/as12.webp'); }

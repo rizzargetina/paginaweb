@@ -387,7 +387,10 @@
     }
     /* --- HERO --- */
   #hero {
+    min-height: 350px;
     height: 90vh !important;
+    /* Mejor soporte en móviles modernos */
+    height: 90svh !important;
     padding-bottom: 25vh;
   }
 
@@ -396,17 +399,9 @@
     .hero-content {
         z-index: 3; 
         padding: 15px 0px;
-        max-width: 100%;
+        max-width: 90%;
+                text-align: left;
     }
-      .hero-content .cta-button {
-    width: 90%;
-    max-width: 90%;
-    display: block;
-    margin-left: auto;
-    margin-right: auto;
-    margin-bottom: 1em;
-    box-sizing: border-box;
-  }
     
     
     #hero h1 { font-size: 2.3rem; }

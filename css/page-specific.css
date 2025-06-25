@@ -24,43 +24,7 @@
     z-index: 2; /* Se pone encima de la imagen */
 }
 
-.hero-slider-container {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    z-index: 1;
-}
 
-.hero-slider-track {
-    display: flex;
-    height: 100%;
-    transition: transform 1s ease-in-out;
-}
-
-.hero-slide {
-    flex-shrink: 0;
-    width: 100%;
-    height: 100%;
-    background-size: cover;
-    background-position: center center;
-    background-repeat: no-repeat;
-    position: relative;
-}
-
-.hero-slide::before {
-    content: '';
-    position: absolute;
-    top: 0; left: 0; right: 0; bottom: 0;
-    background-color: rgba(0, 0, 0, 0.1); /* Darker overlay */
-    z-index: 2; 
-    transition: background-color 0.5s ease;
-}
-
-/* Imágenes de Fondo para el Hero (Desktop) */
-#hero-slide-1 { background-image: url('../img/fondo3.webp'); }
-#hero-slide-2 { background-image: url('../img/fondo3.webp'); }
 
 .hero-lcp-img {
   position: absolute;
@@ -354,11 +318,7 @@
     }
 }
 
-
-/* --- ÚNICA MEDIA QUERY PARA MÓVILES --- */
 @media (max-width: 600px) {
-
-    /* ...existing code... */
 #transporte-equipamiento-pesado {
     position: relative;
     display: flex;
@@ -385,13 +345,11 @@
         font-size: 1rem;
         text-align: left;
     }
-    /* --- HERO --- */
   #hero {
     min-height: 350px;
-    height: 90vh !important;
-    /* Mejor soporte en móviles modernos */
-    height: 90svh !important;
-    padding-bottom: 25vh;
+    height: 90vh;
+    height: 90svh;
+    padding-bottom: 27vh;
   }
 
 
@@ -407,16 +365,10 @@
     #hero h1 { font-size: 2.3rem; }
     #hero p { font-size: 1.0rem; margin-bottom: 1.2em; }
 
-    /* Imágenes de slider para móvil */
-    #hero-slide-1 { background-image: url('../img/as12.webp'); }
-    #hero-slide-2 { background-image: url('../img/mobile1.webp'); }
-
-    /* --- SERVICIOS --- */
     #lineas-servicio h2 { 
         font-size: 1.8rem; 
     }
 
-    /* --- SECCIONES DE CONTENIDO --- */
     .content-section, 
     .content-section.reverse { 
         flex-direction: column; 
@@ -433,16 +385,14 @@
         min-width: unset;
     }
 
-    /* Imagen siempre arriba del texto en móvil */
     .content-section .image-content,
     .content-section.reverse .image-content {
         order: 1; 
-        max-width: 700px; /* Limita el ancho de la imagen */
+        max-width: 700px;
         margin-left: auto;
         margin-right: auto;
     }
 
-    /* Estilos de texto centrados */
     .text-content h2 { font-size: 1.7rem; }
     .text-content h3 { font-size: 1.25rem; display: block; border-bottom: none; }
     .text-content h3::after { left: 50%; transform: translateX(-50%); width: 0; }

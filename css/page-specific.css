@@ -387,10 +387,8 @@
     }
     /* --- HERO --- */
   #hero {
-    height: 100vh !important;
-    min-height: 100vh !important;
-    max-height: 100vh !important;
-    padding-bottom: 36vh;
+    height: 90vh !important;
+    padding-bottom: 31vh;
   }
 
 

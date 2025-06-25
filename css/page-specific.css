@@ -291,7 +291,7 @@
     left: 5%;
     font-size: 1.1rem;
     font-weight: 400;
-
+    border-radius: 2px;
     line-height: 1.6;
     /* Degradado azul oscuro a violeta translúcido */
     background: #101828;
@@ -324,6 +324,7 @@
     justify-content: center;
         margin-top: 0 !important;
     padding-top: 0 !important;
+    
 
 }
   #tras.section-image.small-section-image {
@@ -342,6 +343,7 @@
         padding: 1rem 1rem;
         font-size: 1rem;
         text-align: left;
+            border-radius: 2px;
     }
   #hero {
     min-height: 350px;

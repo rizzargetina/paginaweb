@@ -390,8 +390,9 @@
     height: 100vh !important;
     min-height: 100vh !important;
     max-height: 100vh !important;
-    padding-bottom: 0 !important;
+    padding-bottom: 36vh;
   }
+
 
     
     .hero-content {

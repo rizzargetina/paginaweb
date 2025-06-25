@@ -20,7 +20,7 @@
 .hero-overlay {
     position: absolute;
     inset: 0;
-    background-color: rgba(0, 0, 0, 0.2); /* Un azul oscuro con 60% de opacidad. ¡Ajusta el color y la opacidad! */
+    background-color: rgba(0, 0, 0, 0.8); /* Un azul oscuro con 60% de opacidad. ¡Ajusta el color y la opacidad! */
     z-index: 2; /* Se pone encima de la imagen */
 }
 

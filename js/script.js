@@ -141,4 +141,27 @@ document.addEventListener('DOMContentLoaded', () => {
             track.setAttribute('data-cloned', 'true');
         }
     }
+
+        const anchorLinks = document.querySelectorAll('a[href^="#"]');
+
+    anchorLinks.forEach(link => {
+        link.addEventListener('click', function(e) {
+            // Prevenimos el comportamiento por defecto (el salto brusco)
+            e.preventDefault();
+
+            // Obtenemos el ID del destino (ej: '#lineas-servicio')
+            let targetId = this.getAttribute('href');
+            
+            // Verificamos si el elemento de destino existe
+            let targetElement = document.querySelector(targetId);
+
+            if (targetElement) {
+                // Hacemos el scroll suave hacia el elemento
+                targetElement.scrollIntoView({
+                    behavior: 'smooth',
+                    block: 'start'
+                });
+            }
+        });
+    });
 });

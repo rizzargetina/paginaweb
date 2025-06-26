@@ -312,6 +312,52 @@
 }
 
 
+.scroll-down-arrow {
+  /* Posicionamiento absoluto relativo a la sección #hero */
+  position: absolute;
+  bottom: 30px; /* Distancia desde el borde inferior */
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 5; /* Asegura que esté por encima del contenido */
+  cursor: pointer;
+}
+
+.scroll-down-arrow svg {
+  width: 40px;  /* Tamaño del icono */
+  height: 40px;
+  stroke: #ffffff; /* Color de la flecha */
+  transition: transform 0.3s ease, opacity 0.3s ease;
+}
+
+.scroll-down-arrow:hover svg {
+  transform: translateY(5px); /* Mueve la flecha un poco hacia abajo al pasar el mouse */
+  opacity: 0.8;
+}
+
+/* --- ANIMACIÓN DE REBOTE --- */
+
+@keyframes bounce {
+  0%, 20%, 50%, 80%, 100% {
+    transform: translateY(0);
+  }
+  40% {
+    transform: translateY(-10px); /* El punto más alto del rebote */
+  }
+  60% {
+    transform: translateY(-5px);
+  }
+}
+
+/* Aplicamos la animación a la flecha */
+.scroll-down-arrow {
+  animation: bounce 2.5s infinite ease-in-out;
+}
+
+/* Opcional: Detener la animación al pasar el mouse por encima */
+.scroll-down-arrow:hover {
+    animation-play-state: paused;
+}
+
 
 /* --- MEDIA QUERIES --- */
 @media (max-width: 992px) {

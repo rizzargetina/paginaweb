@@ -227,7 +227,7 @@
   }
   .client-logo-track {
     display: grid;
-    grid-template-columns: repeat(3, 1fr);
+    grid-template-columns: repeat(2, 1fr);
     gap: 18px 10px;
     width: 100% !important;
     animation: none !important;
@@ -236,8 +236,8 @@
     padding: 0 8vw;
   }
   .client-logo-track img {
-    height: 48px !important;
-    max-width: 90px;
+    height: 70px !important;
+    max-width: 120px;
     opacity: 0.85;
     filter: brightness(0) invert(1) grayscale(0.2);
     margin: 0 auto;
@@ -462,7 +462,7 @@
 }
 
 
-/* --- MEDIA QUERIES SOLO MOBILE --- */
+/* --- MEDIA QUERY ÚNICO --- */
 @media (max-width: 600px) {
   /* HERO ajustes mobile */
   #hero {
@@ -574,7 +574,7 @@
   .text-content ul {
     padding-left: 0;
   }
-  /* Métricas clave mobile */
+  /* Métricas clave: columna */
   .metrics-container {
     flex-direction: column;
     gap: 10px;

@@ -520,6 +520,20 @@
   }
 
   #hero {
+    width: 100vw;
+    min-width: 0;
+    padding-left: 0;
+    padding-right: 0;
+    position: relative;
+  }
+  .scroll-down-arrow {
+    left: 50% !important;
+    right: auto !important;
+    transform: translateX(-50%) !important;
+    margin: 0 !important;
+  }
+
+  #hero {
     height: 90vh;
     height: 90svh;
   }

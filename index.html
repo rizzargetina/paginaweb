@@ -21,17 +21,18 @@
         visibility: hidden;
     }
 
-    /* --- HERO SECTION --- */
+    /* --- HER
+    O SECTION --- */
 #hero {
+    background: #000 !important;
   position: relative;
-  height: calc(100vh - var(--total-fixed-header-height));
+  min-height: calc(100vh - var(--total-fixed-header-height));
   color: var(--dhl-white);
   text-align: center;
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
-    padding-bottom: 29vh;
 }
 
 .hero-title,
@@ -56,6 +57,7 @@
   z-index: 1;
   pointer-events: none;
   user-select: none;
+    display: none !important;
 }
 
 .hero-content {
@@ -106,6 +108,7 @@
 @media (max-width: 600px) {
 
     #hero {
+      
     height: 90vh;
     height: 90svh;
   }
@@ -194,36 +197,39 @@
 
         <div class="hero-content">
             <h1 class="hero-title">TRANSPORTE JGT SRL y TIMOL SRL</h1>
-            <p><strong>Nos Dedicamos a TRANSPORTE PESADO</strong></p>
-            <a href="services1.html" class="cta-button">Transporte JGT</a>
-           <a href="services1.html" class="cta-button">Timol</a> 
+            <p>Ofrecemos soluciones seguras y eficientes para los proyectos más exigentes. Con <strong>más de 16 años de experiencia.</strong> </p>
+              <!--      <a href="services1.html" class="cta-button">Transporte JGT</a>
+           <a href="services1.html" class="cta-button">Timol</a> -->
         </div>
     </section>
+<div class="container">
+    <section id="lineas-servicio" class="fade-in-section" aria-labelledby="lineas-servicio-heading">
+        <h2 id="lineas-servicio-heading" class="text-center">Nuestras Líneas de Servicio</h2>
+        <div class="service-cards-container grid-container grid-cols-4" aria-label="Tarjetas de servicios principales">
+            <a href="services1.html#transporte-equipamiento-pesado" class="service-card" aria-label="Desmontaje, traslado y montaje de equipamiento pesado">
+                <img src="img/grid1.webp" alt="Equipamiento pesado en operación" loading="lazy">
+                <div class="service-card-title">Desmontaje, Traslado y Montaje</div>
+            </a>
+            <a href="services1.html#soluciones-modulares-soporte" class="service-card" aria-label="Carretones y soluciones modulares">
+                <img src="img/carreton.webp" alt="Carretones y módulos habitacionales" loading="lazy">
+                <div class="service-card-title">Carretones</div>
 
-    <div class="container">
-        <section id="lineas-servicio" class="fade-in-section" aria-labelledby="lineas-servicio-heading">
-            <h2 id="lineas-servicio-heading" class="text-center">Nuestras Líneas de Servicio</h2>
-            <div class="service-cards-container">
-                <a href="services1.html#transporte-equipamiento-pesado" class="service-card" aria-label="Ver detalles de Transporte Especializado y Alquiler de Equipamiento Pesado">
-                    <img src="img/grid1.webp" alt="Equipamiento pesado en operación" loading="lazy">
-                    <div class="service-card-title">Desmontaje Traslado Montaje</div>
-                </a>
-                <a href="services1.html#soluciones-modulares-soporte" class="service-card" aria-label="Ver detalles de Soluciones Modulares y Soporte Operativo">
-                    <img src="img/carreton.webp" alt="Trailers y módulos habitacionales para soporte en campo" loading="lazy">
-                    <div class="service-card-title">Carretones</div>
-                </a>
-
-                <a href="services1.html#servicios-moviles-complementarios" class="service-card" aria-label="Ver detalles de Servicios Móviles y Complementarios">
-                    <img src="img/gomeria-movil.webp" alt="Unidad de gomería móvil atendiendo un vehículo industrial" loading="lazy">
-                    <div class="service-card-title">Servicios Móviles</div>
-                </a>
-                 <a href="services1.html#mantenimiento-integral-flotas" class="service-card" aria-label="Ver detalles de Mantenimiento Integral de Flotas e Infraestructura">
-                    <img src="img/bc-2.webp" alt="Taller mecánico realizando mantenimiento a maquinaria pesada" loading="lazy">
-                    <div class="service-card-title">Mantenimiento Integral</div>
-                </a>
-            </div>
-        </section>
-    </div>
+            </a>
+            <a href="services1.html#servicios-moviles-complementarios" class="service-card" aria-label="Servicios móviles y complementarios">
+                <img src="img/gomeria-movil.webp" alt="Gomería móvil atendiendo maquinaria pesada" loading="lazy">
+                <div class="service-card-title">Servicios Móviles</div>
+            </a>
+            <a href="services1.html#mantenimiento-integral-flotas" class="service-card" aria-label="Mantenimiento integral de flotas e infraestructura">
+                <img src="img/bc-2.webp" alt="Taller de mantenimiento de maquinaria pesada" loading="lazy">
+                <div class="service-card-title">Mantenimiento Integral</div>
+            </a>
+        </div>
+        <!-- Botón para ver más servicios -->
+        <div class="text-center" style="margin-top:2rem;">
+            <a href="services1.html" class="cta-button">Ver todos los servicios</a>
+        </div>
+    </section>
+</div>
 </main>
 
 <footer class="footer">
@@ -236,11 +242,11 @@
         </div>
     </div>
 </footer>
-<!--
+
 <a href="https://wa.me/5492991234567" class="whatsapp-float" target="_blank" aria-label="Contactar por WhatsApp">
   <img src="img/whatsapp.svg" alt="WhatsApp" width="48" height="48">
 </a>
--->
+
 
 
 <script src="js/script.js" defer></script>

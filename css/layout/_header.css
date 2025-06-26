@@ -29,15 +29,6 @@
     padding-left: calc(var(--spacing-unit) * 3); /* Un poco más de padding lateral */
     padding-right: calc(var(--spacing-unit) * 3);
 }
-
-.header.scrolled {
-    background-color: var(--color-header-scrolled-bg);
-    box-shadow: var(--shadow-medium); /* Sombra más notable al hacer scroll */
-    border-bottom-color: transparent; /* Ocultar borde al hacer scroll si la sombra es suficiente */
-    backdrop-filter: blur(8px); /* Un poco más de blur */
-    -webkit-backdrop-filter: blur(8px);
-}
-
 .logos-left {
     display: flex;
     align-items: center;
@@ -110,25 +101,6 @@
     width: calc(100% - (var(--spacing-unit) * 3)); /* La línea no toca los bordes del padding */
 }
 
-/* El .navlink::after original para la línea de abajo completa si aún se prefiere:
-.navlink::after {
-    content: '';
-    position: absolute;
-    bottom: 0;
-    left: calc(var(--spacing-unit) * 2);
-    right: calc(var(--spacing-unit) * 2);
-    height: 3px;
-    background-color: var(--color-header-link-hover);
-    transform: scaleX(0);
-    transform-origin: center;
-    transition: transform 0.3s ease-out;
-}
-.navlink:hover::after,
-.navlink:focus::after,
-.navlink.active::after {
-    transform: scaleX(1);
-}
-*/
 
 .navlink.active {
     color: var(--color-header-link-hover);

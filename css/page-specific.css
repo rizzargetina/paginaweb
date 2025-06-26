@@ -1,14 +1,14 @@
 /* --- HERO SECTION --- */
 #hero {
   position: relative;
-  height: calc(100vh - var(--total-fixed-header-height));
+  min-height: calc(100vh - var(--total-fixed-header-height));
   color: var(--dhl-white);
   text-align: center;
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
-    padding-bottom: 29vh;
+    padding-bottom: 30vh;
 }
 
 .hero-title,
@@ -310,6 +310,8 @@
   margin: 0 auto;
   background: var(--color-primary-bg);
 }
+
+
 
 /* --- MEDIA QUERIES --- */
 @media (max-width: 992px) {

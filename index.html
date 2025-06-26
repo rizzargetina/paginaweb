@@ -20,20 +20,18 @@
     body.preload .top-bar {
         visibility: hidden;
     }
-    
-/* --- HERO SECTION --- */
+
+    /* --- HERO SECTION --- */
 #hero {
   position: relative;
   height: calc(100vh - var(--total-fixed-header-height));
-  min-height: 450px;
   color: var(--dhl-white);
   text-align: center;
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  overflow: hidden;
-  padding-bottom: 29vh;
+    padding-bottom: 29vh;
 }
 
 .hero-title,
@@ -94,6 +92,7 @@
   box-shadow: 0 4px 10px rgba(0, 0, 0, 0.25);
 }
 
+
 .whatsapp-float {
   position: fixed;
   bottom: 3%;
@@ -105,13 +104,11 @@
   transform: scale(1.1);
 }
 @media (max-width: 600px) {
-  
-    
-  #hero {
+
+    #hero {
     height: 90vh;
     height: 90svh;
   }
-
   .hero-content {
     z-index: 3;
     padding: 15px 0px;
@@ -127,7 +124,6 @@
     font-size: 1rem;
     margin-bottom: 1.2em;
   }
-
     .whatsapp-float {
     display: none;
   }

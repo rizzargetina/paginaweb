@@ -13,8 +13,9 @@
 
 #hero h1 {
   font-family: "Poppins", sans-serif;
-  font-weight: 700;
-    font-size: 3.2rem;
+   font-size: 3.2rem;
+  font-weight: 800;
+    color: white
 }
 
 
@@ -486,9 +487,6 @@
     max-width: 90%;
     text-align: left;
   }
-  #hero h1 {
-    font-size: 2.3rem;
-  }
   #hero p {
     font-size: 1rem;
     margin-bottom: 1.2em;
@@ -590,6 +588,27 @@
     padding: 15px 0;
   }
 }
+
+@media (max-width: 500px) {
+#hero h1 {
+  font-family: "Poppins", sans-serif;
+     font-size: 2.9rem;
+  font-weight: 800;
+    color: white
+}
+  #quienes-somos { display: none !important; }
+}
+
+@media (max-width: 400px) {
+#hero h1 {
+  font-family: "Poppins", sans-serif;
+     font-size: 2.6rem;
+  font-weight: 800;
+    color: white
+}
+  #quienes-somos { display: none !important; }
+}
+
 
 /* --- Fuentes Personalizadas --- */
 @font-face {

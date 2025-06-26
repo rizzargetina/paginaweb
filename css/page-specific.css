@@ -2,15 +2,12 @@
 #hero {
   position: relative;
   height: calc(100vh - var(--total-fixed-header-height));
-  min-height: 450px;
   color: var(--dhl-white);
   text-align: center;
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  overflow: hidden;
-  padding-bottom: 29vh;
 }
 
 .hero-title,
@@ -349,12 +346,9 @@
   }
 
   #hero {
-    min-height: 350px;
     height: 90vh;
     height: 90svh;
-    padding-bottom: 27vh;
   }
-
   .hero-content {
     z-index: 3;
     padding: 15px 0px;

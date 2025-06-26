@@ -128,19 +128,7 @@ document.addEventListener('DOMContentLoaded', () => {
     }
 
     // --- Carrusel de logos de clientes ---
-    const track = document.querySelector('.client-logo-track');
-    if (track) {
-        // Evita clonar logos si ya se ha hecho (útil para entornos de desarrollo con hot-reloading)
-        if (!track.hasAttribute('data-cloned')) { 
-            const logos = track.querySelectorAll('img');
-            logos.forEach(logo => {
-                const clone = logo.cloneNode(true);
-                clone.setAttribute('aria-hidden', 'true'); // Mejora para accesibilidad
-                track.appendChild(clone);
-            });
-            track.setAttribute('data-cloned', 'true');
-        }
-    }
+    // BLOQUE ELIMINADO: ya no se clonan los logos para el carrusel
 
         const anchorLinks = document.querySelectorAll('a[href^="#"]');
 

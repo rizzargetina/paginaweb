@@ -194,8 +194,8 @@
     .client-logo-track {
         display: flex;
         align-items: center;
-        width: calc(250px * 18);
-        animation: scroll-logos 45s linear infinite;
+        width: calc(250px * 9);
+        animation: scroll-logos 22.5s linear infinite;
         gap: 80px;
     }
     @keyframes scroll-logos {
@@ -221,8 +221,8 @@
     @media (max-width: 768px) {
         .client-logo-track {
             gap: 60px;
-            width: calc(160px * 18);
-            animation-duration: 40s;
+            width: calc(160px * 9);
+            animation-duration: 20s;
         }
         @keyframes scroll-logos {
             to { transform: translateX(calc(-160px * 9)); }
@@ -230,17 +230,43 @@
         .client-logo-track img { height: 55px; }
     }
     @media (max-width: 480px) {
-        #client-logos { padding: calc(var(--spacing-unit) * 3) 0; }
-        #client-logos h2 { font-size: 1.6rem; }
         .client-logo-track {
             gap: 50px;
-            width: calc(120px * 18);
+            width: calc(120px * 9);
         }
         @keyframes scroll-logos {
             to { transform: translateX(calc(-120px * 9)); }
         }
         .client-logo-track img { height: 45px; }
     }
+    @media (max-width: 600px) {
+  .client-logo-slider {
+    overflow: visible;
+    -webkit-mask-image: none;
+    mask-image: none;
+    padding: 0;
+  }
+  .client-logo-track {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 18px 10px;
+    width: 100% !important;
+    animation: none !important;
+    justify-items: center;
+    align-items: center;
+    padding: 0 8vw;
+  }
+  .client-logo-track img {
+    height: 48px !important;
+    max-width: 90px;
+    opacity: 0.85;
+    filter: brightness(0) invert(1) grayscale(0.2);
+    margin: 0 auto;
+  }
+  .client-logo-track .logo-duplicate {
+    display: none !important;
+  }
+}
     /* --- Fin carrusel de logos --- */
 
     /* --- MÉTRICAS CLAVE (key-metrics) --- */
@@ -565,4 +591,6 @@
   .text-content ul {
     padding-left: 0;
   }
+
+  
 }

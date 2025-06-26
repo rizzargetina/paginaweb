@@ -491,36 +491,15 @@
 }
 
 @media (max-width: 600px) {
-  #transporte-equipamiento-pesado {
-    position: relative;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    margin-top: 0 !important;
-    padding-top: 0 !important;
-  }
-
-  #tras.section-image.small-section-image {
-    width: 100vw;
-    height: 61vh !important;
-    max-height: 61vh !important;
-    object-fit: cover;
-    object-position: center center;
-    display: block;
-    margin: 0 auto;
-    background: #000;
-  }
-
-  #transporte-equipamiento-pesado .text-content {
-    padding: 1rem 1rem;
-    font-size: 1rem;
-    text-align: left;
-    border-radius: 2px;
-  }
-
+  /* HERO ajustes mobile */
   #hero {
     height: 90vh;
     height: 90svh;
+    width: 100vw;
+    min-width: 0;
+    padding-left: 0;
+    padding-right: 0;
+    position: relative;
   }
   .hero-content {
     z-index: 3;
@@ -528,20 +507,59 @@
     max-width: 90%;
     text-align: left;
   }
-
   #hero h1 {
     font-size: 2.3rem;
   }
-
   #hero p {
     font-size: 1rem;
     margin-bottom: 1.2em;
   }
 
+    #quienes-somos {
+    display: none !important;
+  }
+  .scroll-down-arrow {
+    left: 50vw !important;
+    right: auto !important;
+    margin: 0 !important;
+    transform: translateX(-50%) !important;
+    display: block;
+    width: auto;
+    max-width: none;
+  }
+
+  /* Carrusel de logos: grilla mobile */
+  .client-logo-slider {
+    overflow: visible;
+    -webkit-mask-image: none;
+    mask-image: none;
+    padding: 0;
+  }
+  .client-logo-track {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 18px 10px;
+    width: 100% !important;
+    animation: none !important;
+    justify-items: center;
+    align-items: center;
+    padding: 0 8vw;
+  }
+  .client-logo-track img {
+    height: 48px !important;
+    max-width: 90px;
+    opacity: 0.85;
+    filter: brightness(0) invert(1) grayscale(0.2);
+    margin: 0 auto;
+  }
+  .client-logo-track .logo-duplicate {
+    display: none !important;
+  }
+
+  /* Secciones y textos */
   #lineas-servicio h2 {
     font-size: 1.8rem;
   }
-
   .content-section,
   .content-section.reverse {
     flex-direction: column;
@@ -550,14 +568,12 @@
     align-items: center;
     text-align: center;
   }
-
   .text-content,
   .image-content {
     flex-basis: auto;
     width: 100%;
     min-width: unset;
   }
-
   .content-section .image-content,
   .content-section.reverse .image-content {
     order: 1;
@@ -565,31 +581,24 @@
     margin-left: auto;
     margin-right: auto;
   }
-
   .text-content h2 {
     font-size: 1.7rem;
   }
-
   .text-content h3 {
     font-size: 1.25rem;
     display: block;
     border-bottom: none;
   }
-
   .text-content h3::after {
     left: 50%;
     transform: translateX(-50%);
     width: 0;
   }
-
   .fade-in-section.is-visible .text-content h3::after {
     width: 80%;
     max-width: 200px;
   }
-
   .text-content ul {
     padding-left: 0;
   }
-
-  
 }

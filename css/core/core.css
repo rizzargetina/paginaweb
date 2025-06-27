@@ -2,15 +2,15 @@
     /* Fonts */
     --font-primary: 'Roboto', sans-serif;
     --font-headings: 'Roboto Condensed', sans-serif;
-    --font-hero: 'Poppins', Arial, sans-serif; /* Solo si usas Poppins en el hero */
+    --font-hero: 'Poppins', Arial, sans-serif; 
 
     /* Core Colors - Reddit-Inspired Dark Theme */
-    --color-primary-bg: #0d1117;      /* Very dark charcoal/blue background, like GitHub/Reddit */
-    --color-secondary-bg: #161b22;    /* Lighter dark shade for content panels */
-    --color-text: #c9d1d9;            /* Primary text color (light grey) */
-    --color-text-secondary: #8b949e;  /* Secondary text color (muted grey) */
-    --color-headings: #f0f2f5;        /* Brighter off-white for headings */
-    --color-border: #30363d;          /* Subtle border for elements like <hr> */
+    --color-primary-bg: #0d1117;      
+    --color-secondary-bg: #161b22;   
+    --color-text: #c9d1d9;           
+    --color-text-secondary: #8b949e; 
+    --color-headings: #f0f2f5;        
+    --color-border: #30363d;         
 
     /* DHL Branding Colors (Maintained as per request for header) */
     --dhl-yellow: #2d437f;

@@ -49,15 +49,6 @@
     border-radius: var(--border-radius-small); /* Para el :focus-visible */
 }
 
-.top-bar a:hover, .top-bar a:focus {
-    color: var(--color-top-bar-link-hover);
-    opacity: 0.85; /* Sutil desvanecimiento en hover */
-}
-.top-bar a:focus-visible {
-    outline: 1.5px solid var(--dhl-yellow);
-    outline-offset: 2px; /* Mejor visibilidad del outline */
-    opacity: 1;
-}
 
 
 .language-selector {

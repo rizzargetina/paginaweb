@@ -96,3 +96,12 @@ body {
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
 }
+
+@media (max-width: 600px) {
+  html {
+    scroll-padding-top: var(--header-height); /* Solo el header en móviles, sin top-bar */
+  }
+  body {
+    padding-top: var(--header-height); /* Solo header en móviles */
+  }
+}

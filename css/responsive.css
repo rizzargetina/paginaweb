@@ -145,17 +145,14 @@
     }
 }
 
-
-/* --- Móvil Pequeño (<= 600px) --- */
 /* Ajustes finos para pantallas más pequeñas. */
 @media (max-width: 600px) {
      :root {
-         --header-height: 70px; /* Header ligeramente más pequeño */
+         --header-height: 70px; 
      }
      body {
          font-size: 18px;
          line-height: 1.6;
-         padding-top: var(--header-height);
      }
 
      h1 { font-size: 2rem; }
@@ -169,8 +166,8 @@
 
     /* --- HEADER Y NAVEGACIÓN --- */
     #logo1, #logo2 { 
-        height: 32px; 
-        max-width: 100px; 
+        height: 40px; 
+        max-width: 120px; 
     }
     .logos-left { 
         gap: 10px; 
@@ -189,11 +186,6 @@
     .hamburger-line:nth-child(3) { top: calc(50% + 7px - 1.25px); }
     .mobile-menu-button.menu-active .hamburger-line:nth-child(1) { top: calc(50% - 1.25px); transform: translateX(-50%) rotate(45deg); }
     .mobile-menu-button.menu-active .hamburger-line:nth-child(3) { top: calc(50% - 1.25px); transform: translateX(-50%) rotate(-45deg); }
-    
-    .rulenav .navlink {
-        padding: 20px 20px;
-        font-size: 1.15rem;
-    }
     
     /* --- CONTENIDO PRINCIPAL Y FOOTER --- */
     .main-content {

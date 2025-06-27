@@ -41,9 +41,13 @@
   flex-wrap: wrap;
   align-items: flex-start;
   gap: calc(var(--spacing-unit) * 5);
-  margin-bottom: calc(var(--spacing-unit) * 8);
 }
 
+.content-section:not(:first-of-type) {
+  min-height: 80vh;      /* O el valor que prefieras */
+  padding-top: 7vh;      /* Más espacio arriba */
+  padding-bottom: 7vh;   /* Más espacio abajo */
+}
 .content-section.reverse {
   flex-direction: row-reverse;
 }
@@ -509,14 +513,6 @@
   }
   #lineas-servicio h2 {
     font-size: 1.8rem;
-    text-align: center;
-  }
-  .content-section,
-  .content-section.reverse {
-    flex-direction: column;
-    gap: calc(var(--spacing-unit) * 3);
-    margin-bottom: calc(var(--spacing-unit) * 6);
-    align-items: center;
     text-align: center;
   }
   .text-content,

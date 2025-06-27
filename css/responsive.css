@@ -153,17 +153,13 @@
          --header-height: 70px; /* Header ligeramente más pequeño */
      }
      body {
-         font-size: 14px;
+         font-size: 18px;
          line-height: 1.6;
          padding-top: var(--header-height);
      }
-     html {
-         scroll-padding-top: calc(var(--header-height) + 10px) !important;
-     }
 
-     /* --- TIPOGRAFÍA Y CONTENEDORES --- */
-     h1 { font-size: 1.8rem; }
-     h2 { font-size: 1.6rem; }
+     h1 { font-size: 2rem; }
+     h2 { font-size: 1.8rem; }
      
      .container, .header-container, .footer-container, .main-content {
          width: 95%;

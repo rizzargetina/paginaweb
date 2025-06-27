@@ -512,7 +512,7 @@
     display: none !important;
   }
   #lineas-servicio h2 {
-    font-size: 1.8rem;
+    font-size: 2rem;
     text-align: center;
   }
   .text-content,
@@ -536,10 +536,10 @@
     margin-right: auto;
   }
   .text-content h2 {
-    font-size: 1.7rem;
+    font-size: 2rem;
   }
   .text-content h3 {
-    font-size: 1.25rem;
+    font-size: 1.5rem;
     display: block;
     border-bottom: none;
   }

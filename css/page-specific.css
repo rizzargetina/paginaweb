@@ -468,6 +468,14 @@
   .pepito .logo-h1 {
     display: none;
   }
+    #hero {
+    height: 92svh;
+    width: 100vw;
+    min-width: 0;
+    padding-left: 0;
+    padding-right: 0;
+    position: relative;
+  }
 }
 
 @media (max-width: 600px) {

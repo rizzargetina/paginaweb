@@ -230,9 +230,6 @@
   to { transform: translateX(calc(-250px * 9)); }
 }
 
-.client-logo-slider:hover .client-logo-track {
-  animation-play-state: paused;
-}
 
 .client-logo-track img {
   height: 60px;

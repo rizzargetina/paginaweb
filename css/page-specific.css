@@ -570,22 +570,6 @@
   .service-cards-container {
     text-align: left;
   }
-
-  /* Desactiva animaciones y transiciones visuales en móviles, excepto el menú hamburguesa */
-  .fade-in-section,
-  .fade-in-element,
-  .client-logo-track,
-  .scroll-down-arrow,
-  .service-card,
-  .service-card img,
-  .client-logo-slider,
-  .metric-item .icon,
-  .service-card-title,
-  .text-content h2::after,
-  .text-content h3::after {
-    animation: none !important;
-    transition: none !important;
-  }
 }
 
 @media (max-width: 500px) {

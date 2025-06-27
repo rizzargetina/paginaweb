@@ -473,7 +473,6 @@
 @media (max-width: 600px) {
   /* HERO ajustes mobile */
   #hero {
-    height: 90vh;
     height: 90svh;
     width: 100vw;
     min-width: 0;

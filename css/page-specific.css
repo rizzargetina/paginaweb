@@ -436,7 +436,13 @@
 
 @media (max-width: 600px) {
   #hero {
-    height: 90svh;
+    /* Proporción 4:3 vertical en mobile */
+    aspect-ratio: 3 / 4;
+    height: auto !important;
+    min-height: unset;
+    max-height: 100vh;
+    /* Fallback para navegadores sin aspect-ratio */
+    height: calc(100vw * 4 / 3);
     width: 100vw;
     min-width: 0;
     padding-left: 0;

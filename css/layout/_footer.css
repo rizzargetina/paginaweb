@@ -51,14 +51,8 @@
     margin-right: calc(var(--spacing-unit) * 0.75);
     font-size: 1.1em;
     color: var(--color-text-secondary);
-    transition: color 0.3s ease, transform 0.3s ease;
 }
 .footer-right p i {
     margin-left: calc(var(--spacing-unit) * 1.5);
     margin-right: calc(var(--spacing-unit) * 0.5);
-}
-.footer-left p:hover i,
-.footer-right p:hover i {
-    color: var(--dhl-red);
-    transform: scale(1.1);
 }

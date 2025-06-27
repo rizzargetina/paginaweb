@@ -318,7 +318,6 @@
   border-radius: var(--border-radius-medium);
   overflow: hidden;
   box-shadow: var(--shadow-medium);
-  transition: transform 0.3s cubic-bezier(0.25, 1, 0.5, 1), box-shadow 0.3s ease;
   position: relative;
   border: 1px solid var(--color-border);
 }
@@ -329,7 +328,6 @@
   height: 220px;
   object-fit: cover;
   display: block;
-  transition: transform 0.4s cubic-bezier(0.25, 1, 0.5, 1), filter 0.3s ease;
   filter: brightness(0.85);
 }
 .service-card-title {
@@ -345,7 +343,6 @@
   font-size: 1.15rem;
   text-align: center;
   box-sizing: border-box;
-  transition: background-color 0.3s ease, color 0.3s ease, transform 0.3s ease;
 }
 
 .service-card:hover .service-card-title,

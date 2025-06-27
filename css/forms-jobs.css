@@ -141,10 +141,7 @@
 /* Mapa de Ubicación */
 .map-container {
     border-radius: var(--border-radius-medium);
-    overflow: hidden;
     border: 1px solid var(--color-border);
-    /* Filtro para que el mapa se vea oscuro */
-    filter: invert(90%) hue-rotate(180deg) brightness(1.2);
 }
 .map-container iframe {
     display: block;

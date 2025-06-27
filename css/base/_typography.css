@@ -1,24 +1,21 @@
 /* css/base/_typography.css */
 @font-face {
   font-family: 'Poppins';
-  src: url('../../fonts/Poppins-Regular.woff2') format('woff2'),
-       url('../../fonts/Poppins-Regular.woff') format('woff');
+  src: url('../../fonts/Poppins-Regular.ttf') format('truetype');
   font-weight: 400;
   font-style: normal;
   font-display: swap;
 }
 @font-face {
   font-family: 'Poppins';
-  src: url('../../fonts/Poppins-Bold.woff2') format('woff2'),
-       url('../../fonts/Poppins-Bold.woff') format('woff');
+  src: url('../../fonts/Poppins-Bold.ttf') format('truetype');
   font-weight: 700;
   font-style: normal;
   font-display: swap;
 }
 @font-face {
   font-family: 'Poppins';
-  src: url('../../fonts/Poppins-ExtraBold.woff2') format('woff2'),
-       url('../../fonts/Poppins-ExtraBold.woff') format('woff');
+  src: url('../../fonts/Poppins-ExtraBold.ttf') format('truetype');
   font-weight: 800;
   font-style: normal;
   font-display: swap;

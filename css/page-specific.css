@@ -525,6 +525,13 @@
     width: 100%;
     min-width: unset;
   }
+
+    .text-content {
+    text-align: left;
+  }
+  #transporte-equipamiento-pesado .text-content {
+    text-align: center;
+  }
   .content-section .image-content,
   .content-section.reverse .image-content {
     order: 1;

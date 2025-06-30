@@ -5,5 +5,5 @@ main {
 }
 
 main > .container {
-    padding-top: calc(var(--spacing-unit) * 3);
+    padding-top: calc(var(--spacing-unit) * 4);
 }

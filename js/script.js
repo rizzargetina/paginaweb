@@ -34,19 +34,17 @@ document.addEventListener('DOMContentLoaded', () => {
             }
 
             let scrollTop = window.pageYOffset || document.documentElement.scrollTop;
-            
-            // Lógica simplificada para mayor claridad y robustez
-            if (scrollTop > lastScrollTop && scrollTop > currentTopBarHeight) { // SCROLL HACIA ABAJO y pasado el umbral de la top bar
-                topBar.classList.add('is-hidden');
-                header.classList.add('top-bar-is-hidden');
-                htmlElement.classList.add('top-bar-is-hidden');
-            } else if (scrollTop < lastScrollTop || scrollTop === 0) { // SCROLL HACIA ARRIBA o en la cima
+
+            // Solo mostrar la top bar si el scroll está en la parte más arriba
+            if (scrollTop === 0) {
                 topBar.classList.remove('is-hidden');
                 header.classList.remove('top-bar-is-hidden');
                 htmlElement.classList.remove('top-bar-is-hidden');
+            } else {
+                topBar.classList.add('is-hidden');
+                header.classList.add('top-bar-is-hidden');
+                htmlElement.classList.add('top-bar-is-hidden');
             }
-
-            lastScrollTop = scrollTop <= 0 ? 0 : scrollTop;
         };
 
         const onResizeForTopBar = () => {

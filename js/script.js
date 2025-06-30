@@ -150,4 +150,11 @@ document.addEventListener('DOMContentLoaded', () => {
             }
         });
     });
+
+    // --- Fijar la altura del hero al cargar la página ---
+    const heroSection = document.getElementById('hero');
+    if (heroSection) {
+        const heroHeight = heroSection.offsetHeight;
+        heroSection.style.height = heroHeight + 'px';
+    }
 });

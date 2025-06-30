@@ -3,298 +3,246 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Transporte JGT y Timol - Hidrogruas - Carretones - Cipolletti - Neuquen - Añelo</title>
+    <title>Transporte JGT y Timol - Hidrogruas - Carretones - Cipolletti - Añelo</title>
     <meta name="description" content="Conozca por qué elegir a Transporte JGT y Timol: experiencia, soluciones integrales y confianza en logística y transporte para la industria petrolera en Vaca Muerta.">
     <link rel="icon" type="image/x-icon" href="icons/truck.svg">
     <link rel="preload" href="fonts/Poppins-ExtraBold.ttf" as="font" type="font/ttf" crossorigin>
     <link rel="preload" href="fonts/Poppins-Bold.ttf" as="font" type="font/ttf" crossorigin>
-
-    <link rel="stylesheet" href="css/main.css"> 
+    <link rel="stylesheet" href="css/main.css">
     <link rel="stylesheet" href="css/page-specific.css">
     <!-- <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css"> -->
     <style>
-    /* --- FONT FACE: Poppins --- */
-    @font-face {
-      font-family: 'Poppins';
-      src: url('fonts/Poppins-ExtraBold.ttf') format('truetype');
-      font-weight: 800;
-      font-style: normal;
-      font-display: swap;
-    }
-    @font-face {
-      font-family: 'Poppins';
-      src: url('fonts/Poppins-Bold.ttf') format('truetype');
-      font-weight: 700;
-      font-style: normal;
-      font-display: swap;
-    }
-
-    /* Ejemplo de estilos críticos: header, top-bar, hero, fuentes principales */
-    body { font-family: 'Roboto', Arial, sans-serif; margin: 0; }
-
-    body.preload .header,
-    body.preload .top-bar {
-        visibility: hidden;
-    }
-
-    /* --- HERO SECTION --- */
-#hero {
-    background: #000 !important;
-  position: relative;
-  min-height: 90vh;
-  text-align: center;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  padding-bottom: 33vh;
-}
-
-#hero h1 {
-  font-family: "Poppins", sans-serif;
-   font-size: 3.2rem;
-  font-weight: 800;
-    color: white
-}
-
-.hero-content {
-  position: relative;
-  z-index: 3;
-  padding: 20px 30px;
-}
-
-#hero p {
-  font-size: 1.25rem;
-  margin-bottom: 1.5em;
-  color: white;
-  font-weight: 400;
-  max-width: 550px;
-  margin-left: auto;
-  margin-right: auto;
-}
-
-.scroll-down-arrow {
-  /* Posicionamiento absoluto relativo a la sección #hero */
-  position: absolute;
-  bottom: 30px; /* Distancia desde el borde inferior */
-  left: 50%;
-  z-index: 5; /* Asegura que esté por encima del contenido */
-  cursor: pointer;
-}
-
-@media (max-width: 600px) {
-  #quienes-somos { display: none !important; }
-      @font-face {
-      font-family: 'Poppins';
-      src: url('fonts/Poppins-ExtraBold.ttf') format('truetype');
-      font-weight: 800;
-      font-style: normal;
-      font-display: swap;
-    }
-    @font-face {
-      font-family: 'Poppins';
-      src: url('fonts/Poppins-Bold.ttf') format('truetype');
-      font-weight: 700;
-      font-style: normal;
-      font-display: swap;
-    }
-}
-@media (max-width: 500px) {
-#hero h1 {
-  font-family: "Poppins", sans-serif;
-     font-size: 2.9rem;
-  font-weight: 800;
-    color: white
-}
-  #quienes-somos { display: none !important; }
-}
-
-@media (max-width: 400px) {
-#hero h1 {
-  font-family: "Poppins", sans-serif;
-     font-size: 2.6rem;
-  font-weight: 800;
-    color: white
-}
-  #quienes-somos { display: none !important; }
-}
-
-
-
+        /* Ejemplo de estilos críticos: header, top-bar, hero, fuentes principales */
+        body { font-family: 'Roboto', Arial, sans-serif; margin: 0; }
+        body.preload .header,
+        body.preload .top-bar {
+            visibility: hidden;
+        }
+        /* --- HERO SECTION --- */
+        #hero {
+            background: #000 !important;
+            position: relative;
+            min-height: 90vh;
+            text-align: center;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            padding-bottom: 33vh;
+        }
+        #hero h1 {
+            font-family: "Poppins", sans-serif;
+            font-size: 3.2rem;
+            font-weight: 800;
+            color: white;
+        }
+        .hero-content {
+            position: relative;
+            z-index: 3;
+            padding: 20px 30px;
+        }
+        #hero p {
+            font-size: 1.25rem;
+            margin-bottom: 1.5em;
+            color: white;
+            font-weight: 400;
+            max-width: 550px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+        .scroll-down-arrow {
+            /* Posicionamiento absoluto relativo a la sección #hero */
+            position: absolute;
+            bottom: 30px; /* Distancia desde el borde inferior */
+            left: 50%;
+            z-index: 5; /* Asegura que esté por encima del contenido */
+            cursor: pointer;
+        }
+        @media (max-width: 600px) {
+            #quienes-somos { display: none !important; }
+        }
+        @media (max-width: 500px) {
+            #hero h1 {
+                font-family: "Poppins", sans-serif;
+                font-size: 2.9rem;
+                font-weight: 800;
+                color: white;
+            }
+            #quienes-somos { display: none !important; }
+        }
+        @media (max-width: 400px) {
+            #hero h1 {
+                font-family: "Poppins", sans-serif;
+                font-size: 2.6rem;
+                font-weight: 800;
+                color: white;
+            }
+            #quienes-somos { display: none !important; }
+        }
     </style>
 </head>
 <body>
-
-<div class="top-bar">
-    <div class="container top-bar-container">
-        <div class="top-bar-left">
-            <a href="jobs.html">Oportunidades laborales</a>
+    <div class="top-bar">
+        <div class="container top-bar-container">
+            <div class="top-bar-left">
+                <a href="jobs.html">Oportunidades laborales</a>
+            </div>
+            <div class="top-bar-right">
+                <a href="https://www.linkedin.com/company/transporte-jgt-s-r-l-y-timol-s-r-l/" aria-label="LinkedIn">
+                    <img src="img/linkedin.svg" alt="LinkedIn" id="logo3" width="18" height="18" style="vertical-align:middle;">
+                </a>
+                <span class="language-selector">
+                    <a href="#" class="lang-active" aria-label="Idioma actual: Español">ES</a> |
+                    <a href="#" aria-label="Cambiar idioma a Inglés">EN</a>
+                </span>
+            </div>
         </div>
-        <div class="top-bar-right">
-            <a href="https://www.linkedin.com/company/transporte-jgt-s-r-l-y-timol-s-r-l/" aria-label="LinkedIn">
-                <img src="img/linkedin.svg" alt="LinkedIn" id="logo3" width="18" height="18" style="vertical-align:middle;">
+    </div>
+    <header class="header" id="main-header">
+        <div class="container header-container">
+            <div class="logos-left">
+                <a href="#hero" aria-label="Ir a la sección principal">
+                    <img src="img/JGT1.webp" alt="Logo JGT" id="logo1" width="160" height="40">
+                </a>
+                <a href="#hero" aria-label="Ir a la sección principal">
+                    <img src="img/timol.webp" alt="Logo TIMOL" id="logo2" width="160" height="40">
+                </a>
+            </div>
+            <button id="mobile-menu-button" class="mobile-menu-button" aria-label="Abrir menú principal" aria-expanded="false" aria-controls="main-navigation">
+                <span class="hamburger-line"></span>
+                <span class="hamburger-line"></span>
+                <span class="hamburger-line"></span>
+            </button>
+            <nav class="rulenav" id="main-navigation" aria-label="Navegación principal">
+                <a class="navlink" href="index.html">Inicio</a>
+                <a class="navlink" href="services1.html">Servicios</a>
+                <a class="navlink" href="contact.html">Contacto</a>
+            </nav>
+        </div>
+    </header>
+    <main>
+        <!-- HERO PRINCIPAL -->
+        <section id="hero" class="full-height-section">
+            <div class="hero-content">
+                <h1>TRANSPORTE JGT SRL y TIMOL SRL</h1>
+                <p>Ofrecemos soluciones seguras y eficientes para los proyectos más exigentes.<strong> Con más de 16 años moviendo la industria.</strong></p>
+            </div>
+            <a href="#quienes-somos" class="scroll-down-arrow" aria-label="Ir a la siguiente sección">
+                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="7 13 12 18 17 13"></polyline><polyline points="7 6 12 11 17 6"></polyline></svg>
             </a>
-            <span class="language-selector">
-                <a href="#" class="lang-active" aria-label="Idioma actual: Español">ES</a> | 
-                <a href="#" aria-label="Cambiar idioma a Inglés">EN</a>
-            </span>
-        </div>
-    </div>
-</div>
-
-<header class="header" id="main-header">
-    <div class="container header-container">
-        <div class="logos-left">
-            <a href="#hero" aria-label="Ir a la sección principal">
-                <img src="img/JGT1.webp" alt="Logo JGT" id="logo1" width="160" height="40">
-            </a>
-            <a href="#hero" aria-label="Ir a la sección principal">
-                <img src="img/timol.webp" alt="Logo TIMOL" id="logo2" width="160" height="40">
-            </a>
-        </div>
-        <button id="mobile-menu-button" class="mobile-menu-button" aria-label="Abrir menú principal" aria-expanded="false" aria-controls="main-navigation">
-            <span class="hamburger-line"></span>
-            <span class="hamburger-line"></span>
-            <span class="hamburger-line"></span>
-        </button>
-        <nav class="rulenav" id="main-navigation" aria-label="Navegación principal">
-             <a class="navlink" href="index.html">Inicio</a>
-             <a class="navlink" href="services1.html">Servicios</a>
-             <a class="navlink" href="contact.html">Contacto</a>
-        </nav>
-    </div>
-</header>
-
-<main>
-    <!-- HERO PRINCIPAL -->
-    <section id="hero" class="full-height-section">
-        <div class="hero-content">
-            <h1>TRANSPORTE JGT SRL y TIMOL SRL</h1>
-            <p>Ofrecemos soluciones seguras y eficientes para los proyectos más exigentes.<strong> Con más de 16 años moviendo la industria.</strong></p>
-        </div>
-        <a href="#quienes-somos" class="scroll-down-arrow" aria-label="Ir a la siguiente sección">
-            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="7 13 12 18 17 13"></polyline><polyline points="7 6 12 11 17 6"></polyline></svg>
-        </a>
-    </section>
-
-    <div class="container">
-        <!-- SECCIÓN QUIÉNES SOMOS / INTRODUCCIÓN -->
-        <section id="quienes-somos" class="content-section fade-in-section">
-            <div class="text-content">
-                <h2>Quiénes Somos</h2>
-                <p><strong>Transporte JGT SRL y Timol SRL</strong> son empresas dedicadas a brindar servicios de <strong>cargas de gran porte</strong>, alquiler de equipamiento y logística integral. Nuestra misión es satisfacer las demandantes necesidades de la industria petrolera en Añelo y la estratégica región de Vaca Muerta.</p>
-            </div>
-            <div class="image-content">
-                <img src="img/personas-16-9.webp" alt="Equipo profesional de Transporte JGT y Timol" class="section-image">
-            </div>
         </section>
-
-        <!-- MÉTRICAS CLAVE -->
-        <section id="key-metrics" class="fade-in-section">
-            <div class="metrics-container">
-                <div class="metric-item">
-                    <span class="icon"><img src="icons/calendar-check.svg" alt="Años de Trayectoria" style="width:1.5em;height:1.5em;vertical-align:middle;"></span>
-                    <div class="number">16+</div>
-                    <div class="label">Años de Trayectoria</div>
+        <div class="container">
+            <!-- SECCIÓN QUIÉNES SOMOS / INTRODUCCIÓN -->
+            <section id="quienes-somos" class="content-section fade-in-section">
+                <div class="text-content">
+                    <h2>Quiénes Somos</h2>
+                    <p><strong>Transporte JGT SRL y Timol SRL</strong> son empresas dedicadas a brindar servicios de <strong>cargas de gran porte</strong>, alquiler de equipamiento y logística integral. Nuestra misión es satisfacer las demandantes necesidades de la industria petrolera en Añelo y la estratégica región de Vaca Muerta.</p>
                 </div>
-                <div class="metric-item">
-                    <span class="icon"><img src="icons/geo-alt-fill.svg" alt="Ubicación Añelo" style="width:1.5em;height:1.5em;vertical-align:middle;"></span>
-                    <div class="number">Añelo</div>
-                    <div class="label">Corazón de Vaca Muerta</div>
+                <div class="image-content">
+                    <img src="img/personas-16-9.webp" alt="Equipo profesional de Transporte JGT y Timol" class="section-image">
                 </div>
-                <div class="metric-item">
-                    <span class="icon"><img src="icons/box-seam-fill.svg" alt="Soluciones Logísticas" style="width:1.5em;height:1.5em;vertical-align:middle;"></span>
-                    <div class="number">Holísticas</div>
-                    <div class="label">Soluciones Logísticas</div>
+            </section>
+            <!-- MÉTRICAS CLAVE -->
+            <section id="key-metrics" class="fade-in-section">
+                <div class="metrics-container">
+                    <div class="metric-item">
+                        <span class="icon"><img src="icons/calendar-check.svg" alt="Años de Trayectoria" style="width:1.5em;height:1.5em;vertical-align:middle;"></span>
+                        <div class="number">16+</div>
+                        <div class="label">Años de Trayectoria</div>
+                    </div>
+                    <div class="metric-item">
+                        <span class="icon"><img src="icons/geo-alt-fill.svg" alt="Ubicación Añelo" style="width:1.5em;height:1.5em;vertical-align:middle;"></span>
+                        <div class="number">Añelo</div>
+                        <div class="label">Corazón de Vaca Muerta</div>
+                    </div>
+                    <div class="metric-item">
+                        <span class="icon"><img src="icons/box-seam-fill.svg" alt="Soluciones Logísticas" style="width:1.5em;height:1.5em;vertical-align:middle;"></span>
+                        <div class="number">Holísticas</div>
+                        <div class="label">Soluciones Logísticas</div>
+                    </div>
                 </div>
-            </div>
-        </section>
-
-        <!-- LÍNEAS DE SERVICIO -->
-        <section id="lineas-servicio" class="fade-in-section" aria-labelledby="lineas-servicio-heading">
-            <h2 id="lineas-servicio-heading" class="text-center">Nuestras Líneas de Servicio</h2>
-            <div class="service-cards-container grid-container grid-cols-4" aria-label="Tarjetas de servicios principales">
-                <a href="services1.html#transporte-equipamiento-pesado" class="service-card" aria-label="Desmontaje, traslado y montaje de equipamiento pesado">
-                    <img src="img/grid1.webp" alt="Equipamiento pesado en operación" loading="lazy">
-                    <div class="service-card-title">DTM</div>
-                </a>
-                <a href="services1.html#soluciones-modulares-soporte" class="service-card" aria-label="Carretones y soluciones modulares">
-                    <img src="img/carreton1.webp" alt="Carretones y módulos habitacionales" loading="lazy">
-                    <div class="service-card-title">Carretones</div>
-                </a>
-                <a href="services1.html#servicios-moviles-complementarios" class="service-card" aria-label="Servicios móviles y complementarios">
-                    <img src="img/gomeria-movil.webp" alt="Gomería móvil atendiendo maquinaria pesada" loading="lazy">
-                    <div class="service-card-title">Servicios Móviles</div>
-                </a>
-                <a href="services1.html#hidro-heading" class="service-card" aria-label="Mantenimiento integral de flotas e infraestructura">
-                    <img src="img/hidro1.webp" alt="Taller de mantenimiento de maquinaria pesada" loading="lazy">
-                    <div class="service-card-title">Hidrogrúas</div>
-                </a>
-            </div>
-            <div class="text-center" style="margin-top:2rem;">
-                <a href="services1.html" class="cta-button">Ver todos los servicios</a>
-            </div>
-        </section>
-
-        <!-- LOGOS DE CLIENTES -->
-        <section id="client-logos" class="fade-in-section" aria-labelledby="clients-heading">
-            <h2 id="clients-heading">Confían en Nosotros</h2>
-            <div class="client-logo-slider">
-                <div class="client-logo-track">
-                    <img src="logos/petreven.png" alt="Logo Petreven" width="120" height="40">
-                    <img src="logos/slb.png" alt="Logo SLB" width="120" height="40">
-                    <img src="logos/superior.png" alt="Logo Superior" width="120" height="40">
-                    <img src="logos/phoenix.png" alt="Logo Phoenix" width="120" height="40">
-                    <img src="logos/calfrac.png" alt="Logo Calfrac" width="120" height="40">
-                    <img src="logos/halliburton.png" alt="Logo Halliburton" width="120" height="40">
-                    <img src="logos/tronador.png" alt="Logo Tronador" width="120" height="40">
-                    <img src="logos/tacker.png" alt="Logo Tacker" width="120" height="40">
-                    <!-- Set de logos duplicado para el efecto contínuo -->
-                    <img class="logo-duplicate" src="logos/petreven.png" alt="Logo Petreven" width="120" height="40">
-                    <img class="logo-duplicate" src="logos/slb.png" alt="Logo SLB" width="120" height="40">
-                    <img class="logo-duplicate" src="logos/superior.png" alt="Logo Superior" width="120" height="40">
-                    <img class="logo-duplicate" src="logos/phoenix.png" alt="Logo Phoenix" width="120" height="40">
-                    <img class="logo-duplicate" src="logos/calfrac.png" alt="Logo Calfrac" width="120" height="40">
-                    <img class="logo-duplicate" src="logos/halliburton.png" alt="Logo Halliburton" width="120" height="40">
-                    <img class="logo-duplicate" src="logos/tronador.png" alt="Logo Tronador" width="120" height="40">
-                    <img class="logo-duplicate" src="logos/tacker.png" alt="Logo Tacker" width="120" height="40">
+            </section>
+            <!-- LÍNEAS DE SERVICIO -->
+            <section id="lineas-servicio" class="fade-in-section" aria-labelledby="lineas-servicio-heading">
+                <h2 id="lineas-servicio-heading" class="text-center">Nuestras Líneas de Servicio</h2>
+                <div class="service-cards-container grid-container grid-cols-4" aria-label="Tarjetas de servicios principales">
+                    <a href="services1.html#transporte-equipamiento-pesado" class="service-card" aria-label="Desmontaje, traslado y montaje de equipamiento pesado">
+                        <img src="img/grid1.webp" alt="Equipamiento pesado en operación" loading="lazy">
+                        <div class="service-card-title">DTM</div>
+                    </a>
+                    <a href="services1.html#soluciones-modulares-soporte" class="service-card" aria-label="Carretones y soluciones modulares">
+                        <img src="img/carreton1.webp" alt="Carretones y módulos habitacionales" loading="lazy">
+                        <div class="service-card-title">Carretones</div>
+                    </a>
+                    <a href="services1.html#servicios-moviles-complementarios" class="service-card" aria-label="Servicios móviles y complementarios">
+                        <img src="img/gomeria-movil.webp" alt="Gomería móvil atendiendo maquinaria pesada" loading="lazy">
+                        <div class="service-card-title">Servicios Móviles</div>
+                    </a>
+                    <a href="services1.html#hidro-heading" class="service-card" aria-label="Mantenimiento integral de flotas e infraestructura">
+                        <img src="img/hidro1.webp" alt="Taller de mantenimiento de maquinaria pesada" loading="lazy">
+                        <div class="service-card-title">Hidrogrúas</div>
+                    </a>
                 </div>
-            </div>
-        </section>
-    </div>
-</main>
-
-<footer class="footer">
-    <div class="container footer-container">
-        <div class="footer-left">
-            <p><i class="bi bi-geo-alt-fill" aria-hidden="true"></i> Domicilio: Pastor J. A. Bowdler 502 - (8324) Cipolletti. Rio Negro. Argentina <span role="img" aria-label="Bandera de Argentina">🇦🇷</span></p>
+                <div class="text-center" style="margin-top:2rem;">
+                    <a href="services1.html" class="cta-button">Ver todos los servicios</a>
+                </div>
+            </section>
+            <!-- LOGOS DE CLIENTES -->
+            <section id="client-logos" class="fade-in-section" aria-labelledby="clients-heading">
+                <h2 id="clients-heading">Confían en Nosotros</h2>
+                <div class="client-logo-slider">
+                    <div class="client-logo-track">
+                        <img src="logos/petreven.png" alt="Logo Petreven" width="120" height="40">
+                        <img src="logos/slb.png" alt="Logo SLB" width="120" height="40">
+                        <img src="logos/superior.png" alt="Logo Superior" width="120" height="40">
+                        <img src="logos/phoenix.png" alt="Logo Phoenix" width="120" height="40">
+                        <img src="logos/calfrac.png" alt="Logo Calfrac" width="120" height="40">
+                        <img src="logos/halliburton.png" alt="Logo Halliburton" width="120" height="40">
+                        <img src="logos/tronador.png" alt="Logo Tronador" width="120" height="40">
+                        <img src="logos/tacker.png" alt="Logo Tacker" width="120" height="40">
+                        <!-- Set de logos duplicado para el efecto contínuo -->
+                        <img class="logo-duplicate" src="logos/petreven.png" alt="Logo Petreven" width="120" height="40">
+                        <img class="logo-duplicate" src="logos/slb.png" alt="Logo SLB" width="120" height="40">
+                        <img class="logo-duplicate" src="logos/superior.png" alt="Logo Superior" width="120" height="40">
+                        <img class="logo-duplicate" src="logos/phoenix.png" alt="Logo Phoenix" width="120" height="40">
+                        <img class="logo-duplicate" src="logos/calfrac.png" alt="Logo Calfrac" width="120" height="40">
+                        <img class="logo-duplicate" src="logos/halliburton.png" alt="Logo Halliburton" width="120" height="40">
+                        <img class="logo-duplicate" src="logos/tronador.png" alt="Logo Tronador" width="120" height="40">
+                        <img class="logo-duplicate" src="logos/tacker.png" alt="Logo Tacker" width="120" height="40">
+                    </div>
+                </div>
+            </section>
         </div>
-        <div class="footer-right">
-             <p>Última actualización: <time datetime="2025-06-26">26 Jun. 2025</time></p>
+    </main>
+    <footer class="footer">
+        <div class="container footer-container">
+            <div class="footer-left">
+                <p><i class="bi bi-geo-alt-fill" aria-hidden="true"></i> Domicilio: Pastor J. A. Bowdler 502 - (8324) Cipolletti. Rio Negro. Argentina <span role="img" aria-label="Bandera de Argentina">🇦🇷</span></p>
+            </div>
+            <div class="footer-right">
+                <p>Última actualización: <time datetime="2025-06-26">26 Jun. 2025</time></p>
+            </div>
         </div>
-    </div>
-</footer>
-
-<script src="js/script.js" defer></script>
-
-<script type="application/ld+json">
-{
-  "@context": "https://schema.org",
-  "@type": "TransportCompany",
-  "name": "TRANSPORTE JGT y TIMOL",
-  "image": "https://WWW.transporte-jgt-timol.com/img/JGT1.webp",
-  "address": {
-    "@type": "PostalAddress",
-    "streetAddress": "Pastor J. A. Bowdler 502",
-    "addressLocality": "Cipolletti",
-    "addressRegion": "Rio Negro",
-    "postalCode": "8324",
-    "addressCountry": "AR"
-  },
-  "url": "https://www.transporte-jgt-timol.com",
-  "areaServed": ["Añelo", "Vaca Muerta", "Neuquén", "Río Negro", "Cipolletti"],
-  "description": "Servicio de hidrogrúas, Carretones, Transporte, para la industria petrolera en Vaca Muerta y Añelo. Servicios de Logistica"
-}
-</script>
+    </footer>
+    <script src="js/script.js" defer></script>
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "TransportCompany",
+      "name": "TRANSPORTE JGT y TIMOL",
+      "image": "https://WWW.transporte-jgt-timol.com/img/JGT1.webp",
+      "address": {
+        "@type": "PostalAddress",
+        "streetAddress": "Pastor J. A. Bowdler 502",
+        "addressLocality": "Cipolletti",
+        "addressRegion": "Rio Negro",
+        "postalCode": "8324",
+        "addressCountry": "AR"
+      },
+      "url": "https://www.transporte-jgt-timol.com",
+      "areaServed": ["Añelo", "Vaca Muerta", "Neuquén", "Río Negro", "Cipolletti"],
+      "description": "Servicio de hidrogrúas, Carretones, Transporte, para la industria petrolera en Vaca Muerta y Añelo. Servicios de Logistica"
+    }
+    </script>
 </body>
 </html>

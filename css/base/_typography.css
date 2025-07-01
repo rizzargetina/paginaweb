@@ -43,45 +43,27 @@ h2 { font-size: 2.4rem; }
 h3 { font-size: 1.6rem; margin-top: 2.8em; }
 h4 { font-size: 1.3rem; }
 
-p {
-    margin-top: 0;
-    margin-bottom: calc(var(--spacing-unit) * 2);
+p, ul, ol {
     font-family: var(--font-primary);
     font-weight: 400;
     color: var(--color-text);
 }
+p {
+    margin-top: 0;
+    margin-bottom: calc(var(--spacing-unit) * 2);
+}
 p:last-child {
     margin-bottom: 0;
 }
-
-a {
-    color: var(--color-link);
-    text-decoration: none;
-    transition: color 0.2s ease, text-decoration-thickness 0.2s ease;
-}
-a:hover, a:focus {
-    color: var(--color-link-hover);
-    text-decoration: underline;
-    text-decoration-thickness: 2px;
-    outline: none;
-}
-a:focus-visible {
-    box-shadow: var(--shadow-focus);
-    border-radius: 2px;
-    text-decoration: none;
-}
-
 ul, ol {
     list-style: none;
     padding-left: 0;
     margin-top: 0;
     margin-bottom: calc(var(--spacing-unit) * 2);
-    font-family: var(--font-primary);
 }
 ul:last-child, ol:last-child {
     margin-bottom: 0;
 }
-
 li {
     margin-bottom: var(--spacing-unit);
     padding-left: calc(var(--spacing-unit) * 2.5);
@@ -99,7 +81,6 @@ li::before {
    border-radius: 50%;
    transition: transform 0.2s ease-in-out, background-color 0.2s ease;
 }
-
 ol { counter-reset: list-counter; }
 ol li { counter-increment: list-counter; }
 ol li::before {
@@ -118,6 +99,23 @@ ol li::before {
 strong {
     font-weight: 700;
     color: var(--color-headings);
+}
+
+a {
+    color: var(--color-link);
+    text-decoration: none;
+    transition: color 0.2s ease, text-decoration-thickness 0.2s ease;
+}
+a:hover, a:focus {
+    color: var(--color-link-hover);
+    text-decoration: underline;
+    text-decoration-thickness: 2px;
+    outline: none;
+}
+a:focus-visible {
+    box-shadow: var(--shadow-focus);
+    border-radius: 2px;
+    text-decoration: none;
 }
 
 hr {

@@ -17,32 +17,13 @@ body {
     :root {
         --max-width: 960px;
     }
-    body {
-        font-size: 15px;
-        padding-top: var(--header-height);
-    }
-    html {
-        scroll-padding-top: calc(var(--header-height) + 15px) !important;
-    }
-    h1 { font-size: 2.0rem; }
-    h2 { font-size: 1.8rem; }
-    h3 { font-size: 1.4rem; }
     .top-bar { display: none; }
     .header { top: 0; }
-    .header-container, .footer-container {
-        width: 90%;
-        padding-left: 15px;
-        padding-right: 15px;
-    }
     .logos-left {
         flex-grow: 1;
         justify-content: flex-start;
         min-width: 100px;
         gap: var(--spacing-unit);
-    }
-    #logo1, #logo2 {
-        height: 35px;
-        max-width: 120px;
     }
     .mobile-menu-button {
         display: flex;
@@ -108,33 +89,12 @@ body {
         font-weight: 700;
         transition: none !important;
     }
-    .main-content {
-        padding-top: calc(var(--spacing-unit) * 5);
-        padding-bottom: calc(var(--spacing-unit) * 6);
-    }
-    .footer-left, .footer-right {
-        flex-basis: auto;
-        width: 100%;
-        text-align: center;
-    }
-    .footer-right {
-        margin-top: var(--spacing-unit);
-    }
-    .footer-left p, .footer-right p {
-        text-align: center;
-    }
 }
 
 @media (max-width: 600px) {
     :root {
         --header-height: 70px;
     }
-    body {
-        font-size: 18px;
-        line-height: 1.6;
-    }
-    h1 { font-size: 2rem; }
-    h2 { font-size: 1.8rem; }
     .container, .header-container, .footer-container, .main-content {
         width: 95%;
         padding-left: 10px;
@@ -142,10 +102,6 @@ body {
     }
     .rulenav {
         will-change: transform, opacity;
-    }
-    #logo1, #logo2 {
-        height: 40px;
-        max-width: 120px;
     }
     .logos-left { gap: 10px; }
     .mobile-menu-button {

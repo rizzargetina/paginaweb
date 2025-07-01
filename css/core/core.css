@@ -97,11 +97,30 @@ body {
     -moz-osx-font-smoothing: grayscale;
 }
 
+/* --- RESPONSIVE: AGRUPACIÓN Y LIMPIEZA --- */
+@media (max-width: 992px) {
+    body { font-size: 15px; padding-top: var(--header-height); }
+    html { scroll-padding-top: calc(var(--header-height) + 15px) !important; }
+    h1 { font-size: 2.0rem; }
+    h2 { font-size: 1.8rem; }
+    h3 { font-size: 1.4rem; }
+    .header-container, .footer-container, .container {
+        width: 90%;
+        padding-left: 15px;
+        padding-right: 15px;
+    }
+    #logo1, #logo2 { height: 35px; max-width: 120px; }
+}
 @media (max-width: 600px) {
-  html {
-    scroll-padding-top: var(--header-height); /* Solo el header en móviles, sin top-bar */
-  }
-  body {
-    padding-top: var(--header-height); /* Solo header en móviles */
-  }
+    html { scroll-padding-top: var(--header-height); }
+    :root { --header-height: 70px; }
+    body { font-size: 18px; line-height: 1.6; padding-top: var(--header-height); }
+    h1 { font-size: 2rem; }
+    h2 { font-size: 1.8rem; }
+    .header-container, .footer-container, .container {
+        width: 95%;
+        padding-left: 10px;
+        padding-right: 10px;
+    }
+    #logo1, #logo2 { height: 40px; max-width: 120px; }
 }

@@ -120,7 +120,7 @@
     
     /* --- CONTENIDO PRINCIPAL Y FOOTER --- */
     .main-content {
-        padding-top: calc(var(--spacing-unit) * 8);
+        padding-top: calc(var(--spacing-unit) * 5);
         padding-bottom: calc(var(--spacing-unit) * 6);
     }
 
@@ -187,11 +187,6 @@
     .mobile-menu-button.menu-active .hamburger-line:nth-child(1) { top: calc(50% - 1.25px); transform: translateX(-50%) rotate(45deg); }
     .mobile-menu-button.menu-active .hamburger-line:nth-child(3) { top: calc(50% - 1.25px); transform: translateX(-50%) rotate(-45deg); }
     
-    /* --- CONTENIDO PRINCIPAL Y FOOTER --- */
-    .main-content {
-        padding-top: calc(var(--spacing-unit) * 6);
-        padding-bottom: calc(var(--spacing-unit) * 5);
-    }
 
     .footer { 
         font-size: 0.85rem; 

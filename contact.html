@@ -65,9 +65,7 @@
 
                 <div class="contact-form-container">
                     <h2>Enviar un Mensaje</h2>
-                    <!-- FIX: El atributo 'action' debe ser reemplazado por un endpoint real (ej. un script PHP, un servicio como Formspree, etc.) para que el formulario funcione. -->
-                    <form id="contact-form" action="TU_ENDPOINT_DE_PROCESAMIENTO" method="POST">
-
+                    <form id="contact-form" action="sendmail.php" method="POST">
                         <div class="form-group">
                             <label for="name">Nombre Completo / Empresa:</label>
                             <input type="text" id="name" name="name" required>

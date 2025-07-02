@@ -388,6 +388,19 @@
   background: var(--color-primary-bg);
 }
 
+/* --- FORMATO 4:3 PARA FOTOS DE SERVICIOS (excepto la primera) --- */
+.content-section .image-content img.section-image:not(.small-section-image) {
+  aspect-ratio: 4 / 3;
+  width: 100%;
+  height: auto;
+  object-fit: cover;
+  display: block;
+  max-width: 100%;
+  max-height: 70vh;
+  margin: 0 auto;
+  background: var(--color-primary-bg);
+}
+
 .scroll-down-arrow {
   position: absolute;
   bottom: 30px;

@@ -648,7 +648,7 @@
   background: linear-gradient(120deg, var(--color-primary-bg, #fafdff) 0%, var(--color-secondary-bg, #e6f0fa) 100%);
   border: 1px solid var(--color-border);
   border-radius: var(--border-radius-medium, 16px);
-  box-shadow: 0 2px 8px rgba(0,0,0,0.03);
+  box-shadow: 0 2px 8px rgba(45,30,20,0.7);
   padding: 7rem 2rem;
   margin: 3rem auto;
   display: block;

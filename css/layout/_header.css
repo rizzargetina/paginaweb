@@ -5,9 +5,8 @@
     left: 0;
     width: 100%;
     height: var(--header-height);
-    background: var(--color-header-bg);
+    background: #2A4D69;
     z-index: 1000;
-    border-bottom: 1px solid var(--color-header-border);
 }
 
 .header.top-bar-effects-active {

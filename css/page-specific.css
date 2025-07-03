@@ -617,3 +617,14 @@
 :root {
   --font-headings: 'Poppins', Arial, sans-serif;
 }
+
+.guardia-247-box {
+  background: var(--color-secondary-bg, #fafdff);
+  border: 1px solid var(--color-border, #e0e0e0);
+  border-radius: var(--border-radius-medium, 16px);
+  box-shadow: 0 2px 8px rgba(0,0,0,0.03);
+  padding: 7rem 0.8rem;
+  margin: 3rem auto;
+  display: block;
+  text-align: center;
+}

@@ -5,7 +5,7 @@
     left: 0;
     width: 100%;
     height: var(--header-height);
-    background: var(--color-header-bg);
+    background: var(--color-header-bg); /* #2a4d69  alternativa en proceso*/
     z-index: 1000;
     border-bottom: 1px solid var(--color-header-border);
 }

@@ -9,7 +9,26 @@
   justify-content: center;
   align-items: center;
   padding-bottom: 33vh;
+  background: linear-gradient(120deg, var(--color-primary-bg, #fafdff) 0%, var(--color-secondary-bg, #e6f0fa) 100%);
+  overflow: hidden;
 }
+
+#hero::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    120deg,
+    var(--color-secondary-bg, #e6f0fa) 0%,
+    var(--color-primary-bg, #fafdff) 40%,
+    var(--color-accent, #1c1b22) 60%,
+    var(--color-secondary-bg, #e6f0fa) 100%
+  );
+  opacity: 0.18;
+  z-index: 0;
+  animation: guardia-bg-move 8s linear infinite alternate;
+}
+
 
 #hero h1 {
   font-family: "Poppins", sans-serif;
@@ -255,11 +274,17 @@
   padding: calc(var(--spacing-unit) * 4);
   border-radius: var(--border-radius-medium);
   margin: calc(var(--spacing-unit) * 6) 0;
-  background-color: var(--color-secondary-bg);
   border: 1px solid var(--color-border);
+  background: linear-gradient(
+    120deg,
+    var(--color-secondary-bg, #e6f0fa) 0%,
+    var(--color-primary-bg, #fafdff) 60%,
+    var(--color-secondary-bg, #e6f0fa) 100%
+  );
 }
 
 .metrics-container {
+  
   display: flex;
   justify-content: space-around;
   flex-wrap: wrap;
@@ -619,12 +644,44 @@
 }
 
 .guardia-247-box {
-  background: var(--color-secondary-bg, #fafdff);
-  border: 1px solid var(--color-border, #e0e0e0);
+  background: linear-gradient(120deg, var(--color-primary-bg, #fafdff) 0%, var(--color-secondary-bg, #e6f0fa) 100%);
+  border: 1px solid var(--color-border);
   border-radius: var(--border-radius-medium, 16px);
   box-shadow: 0 2px 8px rgba(0,0,0,0.03);
   padding: 7rem 0.8rem;
   margin: 3rem auto;
   display: block;
   text-align: center;
+  position: relative;
+  overflow: hidden;
+}
+
+.guardia-247-box::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    120deg,
+    var(--color-secondary-bg, #e6f0fa) 0%,
+    var(--color-primary-bg, #fafdff) 40%,
+    var(--color-accent, #1c1b22) 60%,
+    var(--color-secondary-bg, #e6f0fa) 100%
+  );
+  opacity: 0.18;
+  z-index: 0;
+  animation: guardia-bg-move 8s linear infinite alternate;
+}
+
+@keyframes guardia-bg-move {
+  0% {
+    background-position: 0% 50%;
+  }
+  100% {
+    background-position: 100% 50%;
+  }
+}
+
+.guardia-247-box > * {
+  position: relative;
+  z-index: 1;
 }

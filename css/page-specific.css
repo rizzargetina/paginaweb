@@ -532,7 +532,9 @@
     animation: none !important;
     justify-items: center;
     align-items: center;
-    padding: 0 8vw;
+    /* Quitar padding para centrar el grid */
+    padding: 0;
+    margin: 0 auto;
   }
   .client-logo-track img {
     height: 120px !important;
@@ -644,32 +646,37 @@
 }
 
 .guardia-247-box {
-  background: linear-gradient(120deg, var(--color-primary-bg, #fafdff) 0%, var(--color-secondary-bg, #e6f0fa) 100%);
-  border: 1px solid var(--color-border);
-  border-radius: var(--border-radius-medium, 16px);
-  box-shadow: 0 2px 8px rgba(45,30,20,0.7);
-  padding: 7rem 2rem;
+  background: linear-gradient(120deg, var(--color-primary-bg, #fafdff) 60%, var(--color-secondary-bg, #e6f0fa) 100%);
+  border: 4px double var(--color-border, #b0c4d8);
+  border-radius: 2.5rem;
+  box-shadow: 0 6px 32px 0 rgba(16, 24, 40, 0.18);
+  padding: 4rem 1.5rem;
   margin: 3rem auto;
   display: block;
   text-align: center;
   position: relative;
   overflow: hidden;
+  transition: box-shadow 0.3s, border-color 0.3s;
+}
+
+.guardia-247-box:hover {
+  box-shadow: 0 10px 40px 0 rgba(16, 24, 40, 0.28);
+  border-color: var(--color-accent, #1c1b22);
 }
 
 .guardia-247-box::before {
   content: "";
   position: absolute;
   inset: 0;
-  background: linear-gradient(
-    120deg,
-    var(--color-secondary-bg, #e6f0fa) 0%,
-    var(--color-primary-bg, #fafdff) 40%,
-    var(--color-accent, #1c1b22) 60%,
-    var(--color-secondary-bg, #e6f0fa) 100%
-  );
-  opacity: 0.18;
+  background: repeating-linear-gradient(135deg, transparent, transparent 18px, rgba(28,27,34,0.07) 20px, transparent 22px);
+  opacity: 0.25;
   z-index: 0;
   animation: guardia-bg-move 8s linear infinite alternate;
+}
+
+.guardia-247-box > * {
+  position: relative;
+  z-index: 1;
 }
 
 @keyframes guardia-bg-move {
@@ -679,9 +686,4 @@
   100% {
     background-position: 100% 50%;
   }
-}
-
-.guardia-247-box > * {
-  position: relative;
-  z-index: 1;
 }

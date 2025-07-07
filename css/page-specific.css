@@ -63,9 +63,7 @@
 }
 
 .content-section:not(:first-of-type) {
-  min-height: 80vh;      /* O el valor que prefieras */
-  padding-top: 7vh;      /* Más espacio arriba */
-  padding-bottom: 7vh;   /* Más espacio abajo */
+  min-height: 70vh;      /* O el valor que prefieras */
 }
 
 .image-content,
@@ -73,7 +71,6 @@
 .section-image {
   text-align: center;
   overflow: hidden;
-  max-height: 68vh;
   width: 100%;
   height: auto;
   object-fit: contain;
@@ -85,9 +82,6 @@
   flex: 2 1 0;
 }
 
-.image-content {
-  flex: 3 1 0;
-}
 
 .text-content h2 {
   color: var(--color-headings);
@@ -176,9 +170,6 @@
 }
 
 .section-image {
-  max-width: 95%; /* Antes 100% */
-  max-height: 80vh; /* Antes 70vh */
-  width: 100%;
   height: auto;
   border-radius: var(--border-radius);
   border: 1px solid var(--color-border);
@@ -192,7 +183,7 @@
 
 .text-content,
 .image-content {
-  flex: 1 1 0;
+  flex: 1  0;
   display: flex;
   flex-direction: column;
   justify-content: center; /* Centra el contenido verticalmente */
@@ -409,11 +400,6 @@
 /* --- FORMATO 4:3 PARA FOTOS DE SERVICIOS (excepto la primera) --- */
 .content-section .image-content img.section-image:not(.small-section-image) {
   aspect-ratio: 4 / 3;
-  width: 100%;
-  height: auto;
-  max-width: 95%; /* Antes 100% */
-  max-height: 80vh; /* Antes 70vh */
-  margin: 0 auto;
   background: var(--color-primary-bg);
 }
 

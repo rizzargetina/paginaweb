@@ -1,7 +1,9 @@
 /* css/layout/_grid.css */
 .container {
     width: 86%; /* Mantenemos el ancho relativo */
+    max-width: 1200px; /* Limita el ancho máximo en pantallas grandes */
     margin-left: auto;
     margin-right: auto;
 
 }
+

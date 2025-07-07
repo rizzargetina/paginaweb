@@ -179,7 +179,9 @@
 }
 
 .section-image {
-  max-width: 100%;
+  max-width: 95%; /* Antes 100% */
+  max-height: 80vh; /* Antes 70vh */
+  width: 100%;
   height: auto;
   border-radius: var(--border-radius);
   border: 1px solid var(--color-border);
@@ -317,12 +319,6 @@
   color: var(--color-text-secondary);
 }
 
-/* --- SERVICE CARDS SECTION --- */
-#lineas-servicio {
-  padding-top: calc(var(--spacing-unit) * 3);
-  padding-bottom: calc(var(--spacing-unit) * 5);
-  margin-top: calc(var(--spacing-unit) * 4);
-}
 
 #lineas-servicio h2 {
   color: var(--color-headings);
@@ -418,10 +414,8 @@
   aspect-ratio: 4 / 3;
   width: 100%;
   height: auto;
-  object-fit: cover;
-  display: block;
-  max-width: 100%;
-  max-height: 70vh;
+  max-width: 95%; /* Antes 100% */
+  max-height: 80vh; /* Antes 70vh */
   margin: 0 auto;
   background: var(--color-primary-bg);
 }

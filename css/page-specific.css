@@ -63,7 +63,9 @@
 }
 
 .content-section:not(:first-of-type) {
-  min-height: 70vh;      /* O el valor que prefieras */
+  min-height: 80vh;      /* O el valor que prefieras */
+  padding-top: 7vh;      /* Más espacio arriba */
+  padding-bottom: 7vh;   /* Más espacio abajo */
 }
 
 .image-content,
@@ -400,6 +402,7 @@
 /* --- FORMATO 4:3 PARA FOTOS DE SERVICIOS (excepto la primera) --- */
 .content-section .image-content img.section-image:not(.small-section-image) {
   aspect-ratio: 4 / 3;
+
   background: var(--color-primary-bg);
 }
 

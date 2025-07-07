@@ -628,14 +628,12 @@
   border: 2px solid var(--color-border, #b0c4d8);
   color: white;
   border-radius: var(--border-radius);
-  box-shadow: 0 6px 32px 0 rgba(16, 24, 40, 0.18);
   padding: 4rem 1.5rem;
   margin: 3rem auto;
   display: block;
   text-align: center;
   position: relative;
   overflow: hidden;
-  transition: box-shadow 0.3s, border-color 0.3s;
 }
 
 /* --- OPTIMIZACIÓN Y LIMPIEZA PARA MEJOR VELOCIDAD --- */

@@ -401,11 +401,9 @@
 
 /* --- FORMATO 4:3 PARA FOTOS DE SERVICIOS (excepto la primera) --- */
 .content-section .image-content img.section-image:not(.small-section-image) {
-  aspect-ratio: 4 / 3;
+  aspect-ratio: 5 / 4;
   width: 100%;
   height: auto;
-  max-width: 98vw;
-  max-height: 80vh;
   object-fit: cover;
   display: block;
   background: var(--color-primary-bg);
@@ -743,10 +741,3 @@
     grid-template-columns: 1fr;
   }
 }
-
-/* --- FIN DE AJUSTES CRÍTICOS --- */
-
-
-
-
-

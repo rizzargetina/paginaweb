@@ -66,15 +66,14 @@
 /* --- GENERIC CONTENT SECTIONS --- */
 .content-section {
   display: flex;
-  flex-wrap: wrap;
   align-items: flex-start;
-  gap: calc(var(--spacing-unit) * 5);
+  gap: 30px;
 }
 
 .content-section:not(:first-of-type) {
-  min-height: 80vh;      /* O el valor que prefieras */
-  padding-top: 7vh;      /* Más espacio arriba */
-  padding-bottom: 7vh;   /* Más espacio abajo */
+  min-height: 70vh;      /* O el valor que prefieras */
+  padding-top: 40px;;      /* Más espacio arriba */
+  padding-bottom: 40px;   /* Más espacio abajo */
 }
 
 .image-content,
@@ -94,7 +93,7 @@
 }
 
 .image-content {
-  flex: 1.5 1 0;
+  flex: 1.4 1 0;
 }
 
 

@@ -1,3 +1,12 @@
+/* --- CRITICAL CSS (para el <head>) --- */
+#hero{position:relative;min-height:90vh;color:var(--dhl-white);text-align:center;display:flex;flex-direction:column;justify-content:center;align-items:center;padding-bottom:33vh;background:linear-gradient(120deg,var(--color-primary-bg,#fafdff) 0%,var(--color-secondary-bg,#e6f0fa) 100%);overflow:hidden}#hero h1{font-family:"Poppins",sans-serif;font-size:3.2rem;font-weight:800;color:white}.hero-content{position:relative;z-index:3;padding:20px 30px}#hero p{font-size:1.25rem;margin-bottom:1.5em;color:var(--dhl-white);text-shadow:1px 1px 6px rgba(0,0,0,0.7);font-weight:400;max-width:550px;margin-left:auto;margin-right:auto}
+
+/* --- FUENTES PERSONALIZADAS --- */
+@font-face{font-family:'Poppins';src:url('../fonts/Poppins-Regular.ttf') format('truetype');font-weight:400;font-style:normal;font-display:swap}@font-face{font-family:'Poppins';src:url('../fonts/Poppins-Bold.ttf') format('truetype');font-weight:700;font-style:normal;font-display:swap}@font-face{font-family:'Poppins';src:url('../fonts/Poppins-ExtraBold.ttf') format('truetype');font-weight:800;font-style:normal;font-display:swap}
+:root{--font-headings:'Poppins',Arial,sans-serif}
+
+/* --- FIN CRITICAL CSS --- */
+
 /* --- HERO SECTION --- */
 #hero {
   position: relative;
@@ -81,7 +90,11 @@
 }
 
 .text-content {
-  flex: 2 1 0;
+  flex: 1 1 0;
+}
+
+.image-content {
+  flex: 1.5 1 0;
 }
 
 
@@ -183,9 +196,15 @@
   align-items: stretch; /* O center si prefieres centrar */
 }
 
-.text-content,
-.image-content {
-  flex: 1  0;
+.full-height-section .text-content {
+  flex: 1 0;
+  display: flex;
+  flex-direction: column;
+  justify-content: center; /* Centra el contenido verticalmente */
+}
+
+.full-height-section .image-content {
+  flex: 1.5 0;
   display: flex;
   flex-direction: column;
   justify-content: center; /* Centra el contenido verticalmente */
@@ -401,9 +420,10 @@
 
 /* --- FORMATO 4:3 PARA FOTOS DE SERVICIOS (excepto la primera) --- */
 .content-section .image-content img.section-image:not(.small-section-image) {
-  aspect-ratio: 5 / 4;
+  aspect-ratio: 4 / 3;
   width: 100%;
-  height: auto;
+  min-height: 400px;
+  max-height: 500px;
   object-fit: cover;
   display: block;
   background: var(--color-primary-bg);
@@ -540,6 +560,11 @@
     width: 100%;
     min-width: unset;
   }
+  
+  .content-section .image-content img.section-image:not(.small-section-image) {
+    min-height: 300px;
+    max-height: 400px;
+  }
   .text-content {
     text-align: left;
   }
@@ -641,9 +666,9 @@
 .content-section .image-content img.section-image:not(.small-section-image) {
   aspect-ratio: 4 / 3;
   width: 100%;
-  height: auto;
+  min-height: 400px;
+  max-height: 500px;
   max-width: 98vw;
-  max-height: 80vh;
   object-fit: cover;
   display: block;
   background: var(--color-primary-bg);
@@ -682,9 +707,9 @@
 .content-section .image-content img.section-image:not(.small-section-image) {
   aspect-ratio: 4 / 3;
   width: 100%;
-  height: auto;
+  min-height: 400px;
+  max-height: 500px;
   max-width: 98vw;
-  max-height: 80vh;
   object-fit: cover;
   display: block;
   background: var(--color-primary-bg);

@@ -423,6 +423,7 @@
   width: 100%;
   min-height: 400px;
   max-height: 500px;
+  max-width: 98vw;
   object-fit: cover;
   display: block;
   background: var(--color-primary-bg);
@@ -463,17 +464,58 @@
 }
 
 /* --- MEDIA QUERIES ORDENADAS DE MAYOR A MENOR --- */
-@media (max-width: 992px) {
-  #hero {
-    width: 100vw;
-    min-width: 0;
-    padding-left: 0;
-    padding-right: 0;
-    position: relative;
-  }
-}
-
 @media (max-width: 600px) {
+  .content-section {
+    background: #181f2a;
+    border-radius: var(--border-radius);
+    box-shadow: 0 2px 12px rgba(0,0,0,0.13);
+    margin-bottom: 24px;
+    padding: 16px 8px;
+    border: 1px solid #232b3b;
+    display: block;
+    flex-direction: column;
+    align-items: stretch;
+    gap: 0;
+  }
+  .image-content img.section-image {
+    border-radius: var(--border-radius);
+    width: 100%;
+    max-height: 220px;
+    object-fit: cover;
+    margin-bottom: 1rem;
+    box-shadow: 0 1px 6px rgba(0,0,0,0.10);
+  }
+  .text-content h2 {
+    font-size: 1.5rem;
+    color: #00cfff;
+    margin-bottom: 0.5rem;
+    font-weight: 700;
+    text-align: left;
+  }
+  .text-content h3 {
+    font-size: 1.2rem;
+  }
+  .text-content {
+    padding: 0 2px 1.2rem 2px;
+    text-align: left;
+  }
+  hr.fade-in-element {
+    border: none;
+    height: 2px;
+    background: linear-gradient(90deg, #00cfff 0%, #232b3b 100%);
+    margin: 24px 0;
+    opacity: 0.5;
+    border-radius: 2px;
+  }
+  .fade-in-section {
+    opacity: 0;
+    transform: translateY(24px);
+    transition: opacity 0.5s, transform 0.5s;
+  }
+  .fade-in-section.is-visible {
+    opacity: 1;
+    transform: none;
+  }
   #hero {
     height: 90svh;
     width: 100vw;
@@ -559,7 +601,6 @@
     width: 100%;
     min-width: unset;
   }
-  
   .content-section .image-content img.section-image:not(.small-section-image) {
     min-height: 300px;
     max-height: 400px;
@@ -607,15 +648,14 @@
   }
 }
 
-@media (max-width: 500px) {
-  #hero h1 {
-    font-size: 2.9rem;
+@media (max-width: 992px) {
+  .service-cards-container {
+    grid-template-columns: 1fr 1fr;
   }
-}
-
-@media (max-width: 400px) {
-  #hero h1 {
-    font-size: 2.6rem;
+  .content-section {
+    flex-direction: column;
+    gap: 24px;
+    padding: 24px 12px;
   }
 }
 
@@ -658,23 +698,6 @@
   overflow: hidden;
 }
 
-/* --- OPTIMIZACIÓN Y LIMPIEZA PARA MEJOR VELOCIDAD --- */
-
-/* 1. Elimina reglas duplicadas y reduce selectores generales */
-/* Antes: .image-content, .image-content img, .section-image {...} */
-.content-section .image-content img.section-image:not(.small-section-image) {
-  aspect-ratio: 4 / 3;
-  width: 100%;
-  min-height: 400px;
-  max-height: 500px;
-  max-width: 98vw;
-  object-fit: cover;
-  display: block;
-  background: var(--color-primary-bg);
-  border-radius: var(--border-radius);
-  border: 1px solid var(--color-border);
-}
-
 /* 2. Reduce uso de filtros y backdrop-filter pesados */
 #transporte-equipamiento-pesado .text-content {
   /* backdrop-filter: blur(16px); */
@@ -688,20 +711,6 @@
   padding-left: 0;
   margin-left: 0;
 }
-
-/* 4. Agrupa y reutiliza clases donde sea posible */
-/* Ya se usan bien las clases .text-content y .image-content */
-
-/* 5. Minifica y ordena el CSS para producción (esto es solo una muestra, para minificar usa una herramienta externa) */
-
-/* --- AJUSTES CRÍTICOS POST-REORGANIZACIÓN --- */
-
-/* 1. Restaurar visibilidad de #quienes-somos en mobile si es necesario */
-@media (max-width: 600px) {
-  /* Si quieres que #quienes-somos SÍ se muestre en mobile, comenta o elimina la siguiente línea: */
-  /* #quienes-somos { display: none !important; } */
-}
-
 /* 2. Ajustar imágenes de servicios para evitar deformaciones */
 .content-section .image-content img.section-image:not(.small-section-image) {
   aspect-ratio: 4 / 3;
@@ -717,34 +726,12 @@
 }
 
 /* 3. Asegurar que .text-content y .image-content no se colapsen en mobile */
-@media (max-width: 600px) {
-  .content-section {
-    flex-direction: column;
-    align-items: stretch;
-  }
-  .text-content,
-  .image-content {
-    width: 100%;
-    min-width: 0;
-    flex-basis: auto;
-    display: block;
-  }
-}
 
 /* 4. Restaurar paddings y márgenes si se perdieron */
 .text-content {
   padding: 1.5rem 1rem;
 }
 
-/* 5. Mejorar títulos en mobile */
-@media (max-width: 600px) {
-  .text-content h2 {
-    font-size: 1.5rem;
-  }
-  .text-content h3 {
-    font-size: 1.2rem;
-  }
-}
 
 /* 6. Asegurar que las cards de servicios no se deformen */
 .service-card img {
@@ -761,56 +748,60 @@
   }
 }
 
-/* --- MODERNIZACIÓN VISUAL PARA MOBILE EN SERVICIOS --- */
+/* --- DISEÑO SIMPLE Y MODERNO PARA MOBILE EN SERVICIOS --- */
 @media (max-width: 600px) {
 
-    .service-cards-container {
-    grid-template-columns: 1fr;
+    .text-content h2 {
+    font-size: 1.5rem;
+  }
+  .text-content h3 {
+    font-size: 1.2rem;
   }
   .content-section {
     background: #181f2a;
     border-radius: var(--border-radius);
-    box-shadow: 0 4px 24px rgba(0,0,0,0.18);
-    margin-bottom: 28px;
-    padding: 18px 8px 18px 8px;
+    box-shadow: 0 2px 12px rgba(0,0,0,0.13);
+    margin-bottom: 24px;
+    padding: 16px 8px;
     border: 1px solid #232b3b;
-    overflow: hidden;
-    transition: box-shadow 0.3s;
-  }
-  .content-section:active,
-  .content-section:focus-within {
-    box-shadow: 0 8px 32px rgba(0,0,0,0.22);
+    display: block;
+    flex-direction: column;
+    align-items: stretch;
+    gap: 0;
   }
   .image-content img.section-image {
     border-radius: var(--border-radius);
-    box-shadow: 0 2px 12px rgba(0,0,0,0.13);
-    margin-bottom: 1.2rem;
-    max-height: 260px;
+    width: 100%;
+    max-height: 220px;
     object-fit: cover;
+    margin-bottom: 1rem;
+    box-shadow: 0 1px 6px rgba(0,0,0,0.10);
   }
   .text-content h2 {
-    font-size: 1.45rem;
+    font-size: 1.3rem;
     color: #00cfff;
-    letter-spacing: 0.5px;
-    margin-bottom: 0.7rem;
-    text-align: left;
+    margin-bottom: 0.5rem;
     font-weight: 700;
+    text-align: left;
   }
   hr.fade-in-element {
     border: none;
     height: 2px;
     background: linear-gradient(90deg, #00cfff 0%, #232b3b 100%);
-    margin: 32px 0;
+    margin: 24px 0;
     opacity: 0.5;
     border-radius: 2px;
   }
   .fade-in-section {
     opacity: 0;
-    transform: translateY(30px);
-    transition: opacity 0.7s cubic-bezier(.4,0,.2,1), transform 0.7s cubic-bezier(.4,0,.2,1);
+    transform: translateY(24px);
+    transition: opacity 0.5s, transform 0.5s;
   }
   .fade-in-section.is-visible {
     opacity: 1;
     transform: none;
+  }
+  .text-content {
+    padding: 0 2px 1.2rem 2px;
   }
 }

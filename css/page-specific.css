@@ -760,8 +760,57 @@
     grid-template-columns: 1fr 1fr;
   }
 }
+
+/* --- MODERNIZACIÓN VISUAL PARA MOBILE EN SERVICIOS --- */
 @media (max-width: 600px) {
-  .service-cards-container {
+
+    .service-cards-container {
     grid-template-columns: 1fr;
+  }
+  .content-section {
+    background: #181f2a;
+    border-radius: var(--border-radius);
+    box-shadow: 0 4px 24px rgba(0,0,0,0.18);
+    margin-bottom: 28px;
+    padding: 18px 8px 18px 8px;
+    border: 1px solid #232b3b;
+    overflow: hidden;
+    transition: box-shadow 0.3s;
+  }
+  .content-section:active,
+  .content-section:focus-within {
+    box-shadow: 0 8px 32px rgba(0,0,0,0.22);
+  }
+  .image-content img.section-image {
+    border-radius: var(--border-radius);
+    box-shadow: 0 2px 12px rgba(0,0,0,0.13);
+    margin-bottom: 1.2rem;
+    max-height: 260px;
+    object-fit: cover;
+  }
+  .text-content h2 {
+    font-size: 1.45rem;
+    color: #00cfff;
+    letter-spacing: 0.5px;
+    margin-bottom: 0.7rem;
+    text-align: left;
+    font-weight: 700;
+  }
+  hr.fade-in-element {
+    border: none;
+    height: 2px;
+    background: linear-gradient(90deg, #00cfff 0%, #232b3b 100%);
+    margin: 32px 0;
+    opacity: 0.5;
+    border-radius: 2px;
+  }
+  .fade-in-section {
+    opacity: 0;
+    transform: translateY(30px);
+    transition: opacity 0.7s cubic-bezier(.4,0,.2,1), transform 0.7s cubic-bezier(.4,0,.2,1);
+  }
+  .fade-in-section.is-visible {
+    opacity: 1;
+    transform: none;
   }
 }

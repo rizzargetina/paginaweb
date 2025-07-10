@@ -52,16 +52,15 @@
 
     .pepito {
         margin: 0;
-        
+        font-size: 2.2rem;
     }
-
     .pepito .logo-h1 {
          display: none;
     }
 
     
 } 
-</style>
+    </style>
 </head>
 
 <body class="preload">
@@ -275,6 +274,20 @@ window.addEventListener('DOMContentLoaded', function() {
 
 
 <script src="js/script.js"></script>
+<script>
+document.addEventListener("DOMContentLoaded", function() {
+  const faders = document.querySelectorAll('.fade-in-section');
+  const appearOptions = { threshold: 0.15 };
+  const appearOnScroll = new IntersectionObserver(function(entries, observer) {
+    entries.forEach(entry => {
+      if (!entry.isIntersecting) return;
+      entry.target.classList.add('is-visible');
+      observer.unobserve(entry.target);
+    });
+  }, appearOptions);
+  faders.forEach(fader => appearOnScroll.observe(fader));
+});
+</script>
 
 </body>
 </html>

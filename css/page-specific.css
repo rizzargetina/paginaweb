@@ -70,6 +70,13 @@
   gap: 30px;
 }
 
+.content-section .image-content,
+.content-section .text-content {
+  align-self: flex-start;
+  margin-top: 0;
+  padding-top: 0;
+}
+
 .content-section:not(:first-of-type) {
   min-height: 70vh;      /* O el valor que prefieras */
   padding-top: 40px;;      /* Más espacio arriba */
@@ -466,16 +473,22 @@
 /* --- MEDIA QUERIES ORDENADAS DE MAYOR A MENOR --- */
 @media (max-width: 600px) {
   .content-section {
+    display: block;
     background: #181f2a;
     border-radius: var(--border-radius);
     box-shadow: 0 2px 12px rgba(0,0,0,0.13);
     margin-bottom: 24px;
     padding: 16px 8px;
     border: 1px solid #232b3b;
-    display: block;
     flex-direction: column;
     align-items: stretch;
     gap: 0;
+  }
+  .content-section .image-content,
+  .content-section .text-content {
+    align-self: unset;
+    margin-top: 0;
+    padding-top: 0;
   }
   .image-content img.section-image {
     border-radius: var(--border-radius);
@@ -648,17 +661,6 @@
   }
 }
 
-@media (max-width: 992px) {
-  .service-cards-container {
-    grid-template-columns: 1fr 1fr;
-  }
-  .content-section {
-    flex-direction: column;
-    gap: 24px;
-    padding: 24px 12px;
-  }
-}
-
 /* --- Fuentes Personalizadas --- */
 @font-face {
   font-family: 'Poppins';
@@ -741,12 +743,6 @@
   display: block;
 }
 
-/* 7. Restaurar/ajustar reglas de media queries para responsividad */
-@media (max-width: 992px) {
-  .service-cards-container {
-    grid-template-columns: 1fr 1fr;
-  }
-}
 
 /* --- DISEÑO SIMPLE Y MODERNO PARA MOBILE EN SERVICIOS --- */
 @media (max-width: 600px) {

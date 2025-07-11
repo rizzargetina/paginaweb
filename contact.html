@@ -66,6 +66,11 @@
                 <div class="contact-form-container">
                     <h2>Obtenga una Cotización</h2>
                     <form id="contact-form" action="https://formsubmit.co/ptarifa@timolsrl.com" method="POST">
+                        <!-- Honeypot field (oculto para humanos, visible para bots) -->
+                        <div style="display:none;">
+                            <label for="company">Empresa (no completar):</label>
+                            <input type="text" id="company" name="company" autocomplete="off">
+                        </div>
                         <div class="form-group">
                             <label for="name">Nombre Completo / Empresa:</label>
                             <input type="text" id="name" name="name" required>
@@ -85,6 +90,11 @@
                         <div class="form-group">
                             <label for="message">Mensaje:</label>
                             <textarea id="message" name="message" rows="6" placeholder="Escriba su consulta aquí..." required></textarea>
+                        </div>
+                        <!-- Simple checkbox captcha -->
+                        <div class="form-group" style="display: flex; align-items: center; gap: 8px;">
+                            <input type="checkbox" id="human-check" name="human-check" required>
+                            <label for="human-check" style="margin-bottom: 0;">No soy un robot</label>
                         </div>
                         <div class="form-group">
                             <button type="submit" class="cta-button">Enviar Mensaje</button>
@@ -148,6 +158,17 @@
     </footer>
 
  <script src="js/script.js"></script>
-
+<script>
+// Evita el envío si el honeypot está completo
+const form = document.getElementById('contact-form');
+form.addEventListener('submit', function(e) {
+    if (document.getElementById('company').value) {
+        e.preventDefault();
+        document.getElementById('form-status').textContent = 'Error: posible spam detectado.';
+        return;
+    }
+    // El checkbox ya es required, no se necesita validación extra
+});
+</script>
 </body>
 </html>

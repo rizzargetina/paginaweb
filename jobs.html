@@ -145,32 +145,6 @@
                 Asegúrate de indicar en el asunto del correo tu área de interés o el puesto al que te gustaría aplicar (Ej: "CV - Chofer", "CV - Administración", "CV - Técnico Mecánico").
             </p>
             <p><em>Todos los CVs recibidos serán tratados con estricta confidencialidad y considerados para futuras búsquedas.</em></p>
-            <!-- Formulario con honeypot -->
-            <form action="#" method="post" class="cv-form" autocomplete="off" onsubmit="return validarHoneypot();">
-                <label for="nombre">Nombre:</label>
-                <input type="text" id="nombre" name="nombre" required>
-                <label for="email">Email:</label>
-                <input type="email" id="email" name="email" required>
-                <label for="cv">Adjuntar CV (opcional):</label>
-                <input type="file" id="cv" name="cv">
-                <!-- Honeypot: campo invisible para bots -->
-                <div style="display:none;">
-                    <label for="telefono">Teléfono (no completar):</label>
-                    <input type="text" id="telefono" name="telefono" tabindex="-1" autocomplete="off">
-                </div>
-                <button type="submit">Enviar</button>
-            </form>
-            <script>
-            function validarHoneypot() {
-                var hp = document.getElementById('telefono').value;
-                if (hp) {
-                    alert('Error: Bot detectado.');
-                    return false;
-                }
-                return true;
-            }
-            </script>
-        </section>
 
     </div>
 </main>

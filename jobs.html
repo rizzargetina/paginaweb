@@ -20,17 +20,17 @@
 <div class="top-bar">
     <div class="container top-bar-container">
         <div class="top-bar-left">
- 	    <a href="jobs.html">Oportunidades laborales</a>
+        <a href="jobs.html">Oportunidades laborales</a>
         </div>
-	<div class="top-bar-right">
+    <div class="top-bar-right">
     <a href="https://www.linkedin.com/company/transporte-jgt-s-r-l-y-timol-s-r-l/" aria-label="Ir a la página de inicio de TIMOL">
                 <img src="img/linkedin.svg" alt="LinkedIn" id="logo3" width="18" height="18" style="vertical-align:middle;">
             </a>
-	    <span class="language-selector">
-	        <a href="#" class="lang-active" aria-label="Idioma actual: Español">ES</a> | 
-	        <a href="#" aria-label="Cambiar idioma a Inglés">EN</a>
-	    </span>
-	</div>
+        <span class="language-selector">
+            <a href="#" class="lang-active" aria-label="Idioma actual: Español">ES</a> | 
+            <a href="#" aria-label="Cambiar idioma a Inglés">EN</a>
+        </span>
+    </div>
     </div>
 </div>
 
@@ -52,8 +52,8 @@
         </button>
 
         <nav class="rulenav" id="main-navigation" aria-label="Navegación principal">
-	     <a class="navlink" href="index.html">Inicio</a>
-	     <a class="navlink" href="services1.html">Servicios</a>
+         <a class="navlink" href="index.html">Inicio</a>
+         <a class="navlink" href="services1.html">Servicios</a>
              <a class="navlink" href="contact.html">Contacto</a>
         </nav>
     </div>
@@ -92,15 +92,24 @@
                         </p>
                         <!-- Reemplazo ícono de sobre por SVG local -->
                         <div class="contact-email">
-                        <script type="text/javascript">
-                            var user = "mcampos";
-                            var domain = "timolsrl.com";
-                            var subject = "CV Postulación Espontánea";
-                            var email = user + "@" + domain;
-                            var mailto = "mailto:" + email + "?subject=" + encodeURIComponent(subject);
-                            document.write('<a href="' + mailto + '"><img src="icons/envelope-fill.svg" alt="Email" style="width:1em;height:1em;vertical-align:middle;"> Enviar CV a Recursos Humanos</a>');
-                        </script>
+                        <a href="#" id="email-link-1"><img src="icons/envelope-fill.svg" alt="Email" style="width:1em;height:1em;vertical-align:middle;"> Enviar CV a Recursos Humanos</a>
+                        <noscript>Para ver el correo, por favor habilita JavaScript y envía tu CV a mcampos [arroba] timolsrl.com</noscript>
                     </article>
+                        <script type="text/javascript">
+                        // Ofuscación mejorada: partes en data-attributes
+                        document.addEventListener('DOMContentLoaded', function() {
+                            var link = document.getElementById('email-link-1');
+                            var user = link.getAttribute('data-user') || 'mcampos';
+                            var domain = link.getAttribute('data-domain') || 'timolsrl.com';
+                            var subject = link.getAttribute('data-subject') || 'CV Postulación Espontánea';
+                            link.addEventListener('click', function(e) {
+                                e.preventDefault();
+                                var email = user + '@' + domain;
+                                var mailto = 'mailto:' + email + '?subject=' + encodeURIComponent(subject);
+                                window.location.href = mailto;
+                            });
+                        });
+                        </script>
                 
                 </div>
             </section>
@@ -114,21 +123,53 @@
                Si actualmente no tenemos búsquedas activas, no importa, siempre estamos interesados en conocer profesionales talentosos. Si deseas formar parte de nuestro equipo en el futuro, por favor envía tu Currículum Vitae actualizado a la siguiente dirección de correo electrónico:
             </p>
             <div class="contact-email">
-                <script type="text/javascript">
-                    var user = "mcampos";
-                    var domain = "timolsrl.com";
-                    var subject = "CV Postulación Espontánea";
-                    var email = user + "@" + domain;
-                    var mailto = "mailto:" + email + "?subject=" + encodeURIComponent(subject);
-                    document.write('<a href="' + mailto + '"><img src="icons/envelope-fill.svg" alt="Email" style="width:1em;height:1em;vertical-align:middle;"> Enviar CV a Recursos Humanos</a>');
-                </script>
+                <a href="#" id="email-link-2" data-user="mcampos" data-domain="timolsrl.com" data-subject="CV Postulación Espontánea"><img src="icons/envelope-fill.svg" alt="Email" style="width:1em;height:1em;vertical-align:middle;"> Enviar CV a Recursos Humanos</a>
                 <noscript>Para ver el correo, por favor habilita JavaScript y envía tu CV a mcampos [arroba] timolsrl.com</noscript>
             </div>
+            <script type="text/javascript">
+            document.addEventListener('DOMContentLoaded', function() {
+                var link = document.getElementById('email-link-2');
+                var user = link.getAttribute('data-user');
+                var domain = link.getAttribute('data-domain');
+                var subject = link.getAttribute('data-subject');
+                link.addEventListener('click', function(e) {
+                    e.preventDefault();
+                    var email = user + '@' + domain;
+                    var mailto = 'mailto:' + email + '?subject=' + encodeURIComponent(subject);
+                    window.location.href = mailto;
+                });
+            });
+            </script>
 
             <p>
                 Asegúrate de indicar en el asunto del correo tu área de interés o el puesto al que te gustaría aplicar (Ej: "CV - Chofer", "CV - Administración", "CV - Técnico Mecánico").
             </p>
             <p><em>Todos los CVs recibidos serán tratados con estricta confidencialidad y considerados para futuras búsquedas.</em></p>
+            <!-- Formulario con honeypot -->
+            <form action="#" method="post" class="cv-form" autocomplete="off" onsubmit="return validarHoneypot();">
+                <label for="nombre">Nombre:</label>
+                <input type="text" id="nombre" name="nombre" required>
+                <label for="email">Email:</label>
+                <input type="email" id="email" name="email" required>
+                <label for="cv">Adjuntar CV (opcional):</label>
+                <input type="file" id="cv" name="cv">
+                <!-- Honeypot: campo invisible para bots -->
+                <div style="display:none;">
+                    <label for="telefono">Teléfono (no completar):</label>
+                    <input type="text" id="telefono" name="telefono" tabindex="-1" autocomplete="off">
+                </div>
+                <button type="submit">Enviar</button>
+            </form>
+            <script>
+            function validarHoneypot() {
+                var hp = document.getElementById('telefono').value;
+                if (hp) {
+                    alert('Error: Bot detectado.');
+                    return false;
+                }
+                return true;
+            }
+            </script>
         </section>
 
     </div>

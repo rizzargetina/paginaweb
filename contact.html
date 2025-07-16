@@ -20,7 +20,7 @@
 <div class="top-bar">
     <div class="container top-bar-container">
         <div class="top-bar-left">
- 	    <a href="jobs.html">Oportunidades laborales</a> <!-- FIX: Removido el ancla #quienes-somos que no parece aplicar aquí -->
+        <a href="jobs.html">Oportunidades laborales</a> <!-- FIX: Removido el ancla #quienes-somos que no parece aplicar aquí -->
         </div>
         <div class="top-bar-right">
     <a href="https://www.linkedin.com/company/transporte-jgt-s-r-l-y-timol-s-r-l/" aria-label="Ir a la página de inicio de TIMOL">
@@ -52,8 +52,8 @@
         </button>
 
         <nav class="rulenav" id="main-navigation" aria-label="Navegación principal">
-	     <a class="navlink" href="index.html">Inicio</a>
-	     <a class="navlink" href="services1.html">Servicios</a>
+         <a class="navlink" href="index.html">Inicio</a>
+         <a class="navlink" href="services1.html">Servicios</a>
              <a class="navlink" href="contact.html">Contacto</a>
         </nav>
     </div>
@@ -109,10 +109,14 @@
                         <img src="icons/telephone-fill.svg" alt="Teléfono" style="width:1em;height:1em;vertical-align:middle;">
                         <div class="info-text">
                             <strong>Teléfonos y Correos Electrónicos:</strong>
+                            <p>
+                                +54 9 299 467-4943 &nbsp;|&nbsp; +54 299 513-4134
+                            </p>
                             <p>Juan Gabriel Tarifa: <span id="correo-tarifa"></span></p>
                             <p>Gabriel Morales: <span id="correo-morales"></span></p>
                         </div>
                         <script>
+                            // Correos
                             function mostrarCorreo(id, usuario, dominio) {
                                 const correo = `${usuario}@${dominio}`;
                                 const span = document.getElementById(id);

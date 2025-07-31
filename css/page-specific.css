@@ -1,4 +1,48 @@
 /* Archivo desminificado para facilitar edición y lectura */
+#main-navigation {
+  display: flex;
+  flex-direction: row;
+  gap: 2rem;
+}
+
+@media (max-width: 900px) {
+  #main-navigation {
+    display: none;
+    flex-direction: column;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    width: 100vw;
+    background: #181f2a;
+    box-shadow: 0 2px 12px rgba(0,0,0,0.13);
+    z-index: 1000;
+    padding: 1.5rem 0;
+    border-radius: 0 0 12px 12px;
+  }
+  #main-navigation.mobile-menu-open {
+    display: flex;
+  }
+  .mobile-menu-button {
+    display: inline-flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 44px;
+    height: 44px;
+    background: none;
+    border: none;
+    cursor: pointer;
+    z-index: 1100;
+  }
+  .hamburger-line {
+    width: 28px;
+    height: 4px;
+    background: #fff;
+    margin: 4px 0;
+    border-radius: 2px;
+    transition: all 0.3s;
+  }
+}
 
 #hero {
   position: relative;

@@ -752,26 +752,36 @@
   .rulenav {
     display: none !important;
   }
-  .rulenav.active {
+  .rulenav.mobile-menu-open {
     display: flex !important;
     flex-direction: column;
-    position: absolute;
-    top: 100%;
-    right: 0;
+    justify-content: center;
+    align-items: center;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 70vw;
+    height: 40vh;
     background: #181f2a;
-    width: 100vw;
-    box-shadow: 0 2px 12px rgba(0,0,0,0.13);
     z-index: 99;
-    padding: 1.5rem 0;
-    gap: 1.2rem;
-    align-items: flex-start;
+    gap: 2.5rem;
+    padding-top: 0;
   }
   .rulenav .navlink {
-    padding: 1rem 2rem;
-    width: 100%;
-    text-align: left;
-    font-size: 1.2rem;
-    border-bottom: 1px solid #232b3b;
+    padding: 1.2rem 0;
+    width: 80vw;
+    text-align: center;
+    font-size: 1.5rem;
+    border-bottom: none;
+    color: #fff;
+    background: none;
+    border-radius: 8px;
+    transition: background 0.2s, color 0.2s;
+    font-weight: 700;
+    letter-spacing: 1px;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+    margin: 0 auto;
+    cursor: pointer;
   }
 }
 @media (min-width: 901px) {

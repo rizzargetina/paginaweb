@@ -796,17 +796,5 @@
     width: auto;
     text-align: center;
   }
-  .top-bar,
-  .top-bar * {
-    display: flex !important;
-    visibility: visible !important;
-    height: auto !important;
-    width: auto !important;
-    padding: initial !important;
-    margin: initial !important;
-    opacity: 1 !important;
-    pointer-events: auto !important;
-    animation: initial !important;
-    transition: initial !important;
-  }
+
 }

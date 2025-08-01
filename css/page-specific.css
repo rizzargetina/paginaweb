@@ -78,7 +78,7 @@
 
 #hero {
   position: relative;
-  min-height: 90vh;
+
   color: var(--dhl-white);
   text-align: center;
   display: flex;

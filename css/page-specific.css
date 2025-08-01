@@ -794,7 +794,7 @@
     top: 0;
     left: 0;
     width: 100vw;
-    height: 100vh;
+    height: 420px !important;
     background: #181f2a;
     z-index: 1100;
     gap: 0.5rem;

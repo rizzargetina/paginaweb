@@ -90,11 +90,6 @@
   overflow: hidden;
 }
 
-/* Bloquea el scroll cuando el menú hamburguesa está abierto */
-.no-scroll {
-  overflow: hidden !important;
-  height: 100vh !important;
-}
 #hero::before {
   content: "";
   position: absolute;

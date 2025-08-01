@@ -794,7 +794,7 @@
     top: 0;
     left: 0;
     width: 100vw;
-    height: 420px !important;
+    height: 450px !important;
     background: #181f2a;
     z-index: 1100;
     gap: 0.5rem;
@@ -817,11 +817,8 @@
     transition: background 0.2s, color 0.2s;
     font-weight: 700;
     letter-spacing: 1px;
-    box-shadow: 0 2px 8px rgba(0,0,0,0.08);
-    cursor: pointer;
     text-decoration: none;
     line-height: 1.2;
-    min-height: 48px;
   }
   .rulenav .navlink:last-child {
     border-bottom: none;

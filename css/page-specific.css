@@ -1,48 +1,54 @@
-/* Archivo desminificado para facilitar edición y lectura */
-#main-navigation {
-  display: flex;
-  flex-direction: row;
-  gap: 2rem;
-}
-
 @media (max-width: 900px) {
-  #main-navigation {
-    display: none;
-    flex-direction: column;
-    position: absolute;
-    top: 100%;
-    left: 0;
-    width: 100vw;
-    background: #181f2a;
-    box-shadow: 0 2px 12px rgba(0,0,0,0.13);
-    z-index: 1000;
-    padding: 1.5rem 0;
-    border-radius: 0 0 12px 12px;
-  }
-  #main-navigation.mobile-menu-open {
+  .rulenav .navlink.only-mobile {
     display: flex;
-  }
-  .mobile-menu-button {
-    display: inline-flex;
-    flex-direction: column;
-    justify-content: center;
     align-items: center;
-    width: 44px;
-    height: 44px;
+    justify-content: center;
+    width: 90vw;
+    max-width: 400px;
+    margin: 0.5rem auto;
+    padding: 1.2rem 0;
+    text-align: center;
+    font-size: 1.5rem;
+    border-bottom: 1px solid #232b3b;
+    color: #fff;
     background: none;
-    border: none;
+    border-radius: 8px;
+    transition: background 0.2s, color 0.2s;
+    font-weight: 700;
+    letter-spacing: 1px;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.08);
     cursor: pointer;
-    z-index: 1100;
+    text-decoration: none;
+    line-height: 1.2;
+    min-height: 48px;
   }
-  .hamburger-line {
-    width: 28px;
-    height: 4px;
-    background: #fff;
-    margin: 4px 0;
-    border-radius: 2px;
-    transition: all 0.3s;
+  .rulenav .navlink::before,
+  .rulenav .navlink::after {
+    display: none !important;
+    content: none !important;
+    width: 0 !important;
+    background: none !important;
+    transition: none !important;
   }
 }
+/* Links solo visibles en el menú hamburguesa móvil */
+.only-mobile {
+  display: none !important;
+}
+@media (max-width: 900px) {
+  /* Quitar animación/subrayado en títulos dentro del menú hamburguesa */
+  .rulenav .navlink h2::after,
+  .rulenav .navlink h3::after {
+    display: none !important;
+    width: 0 !important;
+    background: none !important;
+  }
+  .only-mobile {
+    display: block !important;
+  }
+}
+/* Archivo desminificado para facilitar edición y lectura */
+/* Eliminado #main-navigation y sus media queries para evitar conflictos. Usar solo .rulenav para el menú de navegación. */
 
 #hero {
   position: relative;
@@ -755,24 +761,30 @@
   .rulenav.mobile-menu-open {
     display: flex !important;
     flex-direction: column;
-    justify-content: center;
+    justify-content: flex-start;
     align-items: center;
     position: fixed;
     top: 0;
     left: 0;
-    width: 70vw;
-    height: 40vh;
+    width: 100vw;
+    height: 100vh;
     background: #181f2a;
-    z-index: 99;
-    gap: 2.5rem;
-    padding-top: 0;
+    z-index: 1100;
+    gap: 0.5rem;
+    padding-top: 80px; /* deja espacio para el header fijo */
+    box-shadow: 0 2px 12px rgba(0,0,0,0.13);
   }
   .rulenav .navlink {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 90vw;
+    max-width: 400px;
+    margin: 0.5rem auto;
     padding: 1.2rem 0;
-    width: 80vw;
     text-align: center;
     font-size: 1.5rem;
-    border-bottom: none;
+    border-bottom: 1px solid #232b3b;
     color: #fff;
     background: none;
     border-radius: 8px;
@@ -780,8 +792,19 @@
     font-weight: 700;
     letter-spacing: 1px;
     box-shadow: 0 2px 8px rgba(0,0,0,0.08);
-    margin: 0 auto;
     cursor: pointer;
+    text-decoration: none;
+    line-height: 1.2;
+    min-height: 48px;
+  }
+  .rulenav .navlink:last-child {
+    border-bottom: none;
+  }
+  .rulenav .navlink:active,
+  .rulenav .navlink:focus,
+  .rulenav .navlink:hover {
+    background: #232b3b;
+    color: #00cfff;
   }
 }
 @media (min-width: 901px) {

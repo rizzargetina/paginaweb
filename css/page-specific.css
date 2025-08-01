@@ -45,6 +45,32 @@
   }
   .only-mobile {
     display: block !important;
+    display: flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+    min-height: 48px !important;
+    width: 90vw !important;
+    max-width: 400px !important;
+    margin: 0.5rem auto !important;
+    padding: 1.2rem 0 !important;
+    text-align: center !important;
+    font-size: 1.5rem !important;
+    border-bottom: 1px solid #232b3b !important;
+    color: #fff !important;
+    background: none !important;
+    border-radius: 8px !important;
+    font-weight: 700 !important;
+    letter-spacing: 1px !important;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.08) !important;
+    cursor: pointer !important;
+    text-decoration: none !important;
+    line-height: 1.2 !important;
+  }
+  .only-mobile:active,
+  .only-mobile:focus,
+  .only-mobile:hover {
+    background: #232b3b !important;
+    color: #00cfff !important;
   }
 }
 /* Archivo desminificado para facilitar edición y lectura */
@@ -62,6 +88,12 @@
   padding-bottom: 33vh;
   background: linear-gradient(120deg, var(--color-primary-bg, #fafdff) 0%, var(--color-secondary-bg, #e6f0fa) 100%);
   overflow: hidden;
+}
+
+/* Bloquea el scroll cuando el menú hamburguesa está abierto */
+.no-scroll {
+  overflow: hidden !important;
+  height: 100vh !important;
 }
 #hero::before {
   content: "";
@@ -771,7 +803,6 @@
     background: #181f2a;
     z-index: 1100;
     gap: 0.5rem;
-    padding-top: 80px; /* deja espacio para el header fijo */
     box-shadow: 0 2px 12px rgba(0,0,0,0.13);
   }
   .rulenav .navlink {

@@ -540,12 +540,12 @@
 @media (max-width: 600px) {
   .content-section {
     display: block;
-    background: #181f2a;
-    border-radius: var(--border-radius);
-    box-shadow: 0 2px 12px rgba(0,0,0,0.13);
+    background: none;
+    border-radius: 0;
+    box-shadow: none;
     margin-bottom: 24px;
-    padding: 16px 8px;
-    border: 1px solid #232b3b;
+    padding: 0;
+    border: none;
     flex-direction: column;
     align-items: stretch;
     gap: 0;

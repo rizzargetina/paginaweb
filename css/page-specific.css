@@ -19,7 +19,6 @@
   background: none;
   transition: background 0.2s, color 0.2s;
   font-weight: 700;
-  box-shadow: 0 2px 8px rgba(0,0,0,0.08);
   cursor: pointer;
   text-decoration: none;
   line-height: 1.2;
@@ -34,8 +33,7 @@
 .only-mobile:active,
 .only-mobile:focus,
 .only-mobile:hover {
-  background: #232b3b;
-  color: #00cfff;
+  background: #101828;
 }
 .rulenav .navlink::before,
 .rulenav .navlink::after {

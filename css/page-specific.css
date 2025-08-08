@@ -539,10 +539,6 @@
   }
 }
 @media (max-width: 600px) {
-  body {
-    width: 90%;
-    margin: 0 auto;
-  }
   .content-section {
     display: block;
     background: none;

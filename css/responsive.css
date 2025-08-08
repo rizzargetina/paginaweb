@@ -96,7 +96,7 @@ body {
         --header-height: 70px;
     }
     .container, .header-container, .footer-container, .main-content {
-        width: 95%;
+        width: 96%;
         padding-left: 10px;
         padding-right: 10px;
     }

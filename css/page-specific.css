@@ -653,20 +653,18 @@
     display: flex;
     justify-content: center;
     align-items: center;
-    width: 100vw;
-    box-sizing: border-box;
+    width: 100%;
   }
   .client-logo-track {
     display: grid;
     grid-template-columns: repeat(2, 1fr);
     gap: 18px 10px;
-    width: 100vw !important;
+    width: 100%;
     animation: none !important;
     justify-items: center;
     align-items: center;
     padding: 0;
     margin: 0 auto;
-    box-sizing: border-box;
   }
   .client-logo-track img {
     height: 120px !important;

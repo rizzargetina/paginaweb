@@ -1,80 +1,84 @@
-@media (max-width: 900px) {
-  .rulenav .navlink.only-mobile {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    width: 90vw;
-    max-width: 400px;
-    margin: 0.5rem auto;
-    padding: 1.2rem 0;
-    text-align: center;
-    font-size: 1.5rem;
-    border-bottom: 1px solid #232b3b;
-    color: #fff;
-    background: none;
-    border-radius: 8px;
-    transition: background 0.2s, color 0.2s;
-    font-weight: 700;
-    letter-spacing: 1px;
-    box-shadow: 0 2px 8px rgba(0,0,0,0.08);
-    cursor: pointer;
-    text-decoration: none;
-    line-height: 1.2;
-    min-height: 48px;
-  }
-  .rulenav .navlink::before,
-  .rulenav .navlink::after {
-    display: none !important;
-    content: none !important;
-    width: 0 !important;
-    background: none !important;
-    transition: none !important;
-  }
-}
-/* Links solo visibles en el menú hamburguesa móvil */
+
+/* ========== ESTILOS BASE Y COMPONENTES ========== */
+
+/* ========== BASE: UTILIDADES Y COMPONENTES ========== */
 .only-mobile {
-  display: none !important;
+  display: none;
 }
+.rulenav .navlink, .only-mobile {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 90vw;
+  max-width: 400px;
+  margin: 0.5rem auto;
+  padding: 1.2rem 0;
+  text-align: center;
+  font-size: 1.5rem;
+  border-bottom: 1px solid #232b3b;
+  color: #fff;
+  background: none;
+  border-radius: 8px;
+  transition: background 0.2s, color 0.2s;
+  font-weight: 700;
+  letter-spacing: 1px;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+  cursor: pointer;
+  text-decoration: none;
+  line-height: 1.2;
+  min-height: 48px;
+}
+.rulenav .navlink:last-child {
+  border-bottom: none;
+}
+.rulenav .navlink:active,
+.rulenav .navlink:focus,
+.rulenav .navlink:hover,
+.only-mobile:active,
+.only-mobile:focus,
+.only-mobile:hover {
+  background: #232b3b;
+  color: #00cfff;
+}
+.rulenav .navlink::before,
+.rulenav .navlink::after {
+  display: none;
+  content: none;
+  width: 0;
+  background: none;
+  transition: none;
+}
+
+/* ========== MEDIA QUERIES ========== */
 @media (max-width: 900px) {
-  /* Quitar animación/subrayado en títulos dentro del menú hamburguesa */
+  .only-mobile {
+    display: flex !important;
+  }
+  .rulenav {
+    display: none !important;
+  }
+  .rulenav.mobile-menu-open {
+    display: flex !important;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 450px !important;
+    background: #181f2a;
+    z-index: 1100;
+    gap: 0.5rem;
+    box-shadow: 0 2px 12px rgba(0,0,0,0.13);
+  }
   .rulenav .navlink h2::after,
   .rulenav .navlink h3::after {
-    display: none !important;
-    width: 0 !important;
-    background: none !important;
-  }
-  .only-mobile {
-    display: block !important;
-    display: flex !important;
-    align-items: center !important;
-    justify-content: center !important;
-    min-height: 48px !important;
-    width: 90vw !important;
-    max-width: 400px !important;
-    margin: 0.5rem auto !important;
-    padding: 1.2rem 0 !important;
-    text-align: center !important;
-    font-size: 1.5rem !important;
-    border-bottom: 1px solid #232b3b !important;
-    color: #fff !important;
-    background: none !important;
-    border-radius: 8px !important;
-    font-weight: 700 !important;
-    letter-spacing: 1px !important;
-    box-shadow: 0 2px 8px rgba(0,0,0,0.08) !important;
-    cursor: pointer !important;
-    text-decoration: none !important;
-    line-height: 1.2 !important;
-  }
-  .only-mobile:active,
-  .only-mobile:focus,
-  .only-mobile:hover {
-    background: #232b3b !important;
-    color: #00cfff !important;
+    display: none;
+    width: 0;
+    background: none;
   }
 }
-/* Archivo desminificado para facilitar edición y lectura */
-/* Eliminado #main-navigation y sus media queries para evitar conflictos. Usar solo .rulenav para el menú de navegación. */
 
 #hero {
   position: relative;
@@ -648,17 +652,24 @@
     -webkit-mask-image: none;
     mask-image: none;
     padding: 0;
+    margin: 0 auto;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100vw;
+    box-sizing: border-box;
   }
   .client-logo-track {
     display: grid;
     grid-template-columns: repeat(2, 1fr);
     gap: 18px 10px;
-    width: 100% !important;
+    width: 100vw !important;
     animation: none !important;
     justify-items: center;
     align-items: center;
     padding: 0;
     margin: 0 auto;
+    box-sizing: border-box;
   }
   .client-logo-track img {
     height: 120px !important;
@@ -666,6 +677,7 @@
     opacity: .85;
     filter: brightness(0) invert(1) grayscale(.2);
     margin: 0 auto;
+    display: block;
   }
   .client-logo-track .logo-duplicate {
     display: none !important;
@@ -832,10 +844,10 @@
 }
 @media (min-width: 901px) {
   .mobile-menu-button {
-    display: none !important;
+    display: none;
   }
   .rulenav {
-    display: flex !important;
+    display: flex;
     flex-direction: row;
     position: static;
     background: none;
@@ -852,5 +864,10 @@
     width: auto;
     text-align: center;
   }
-
+  .rulenav .only-mobile {
+    display: none !important;
+  }
+  .only-mobile {
+    display: none !important;
+  }
 }

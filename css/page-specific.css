@@ -153,8 +153,35 @@
   justify-content: center;
   align-items: center;
   padding-bottom: 33vh;
-  background: linear-gradient(120deg, var(--color-primary-bg, #fafdff) 0%, var(--color-secondary-bg, #e6f0fa) 100%);
+  background: none;
   overflow: hidden;
+}
+
+.hero-bg-image {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  background: url('../img/hero1.jpg') center center/cover no-repeat;
+  opacity: 0.45;
+  z-index: 1;
+}
+
+#hero::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(120deg, var(--color-secondary-bg, #e6f0fa) 0%, var(--color-primary-bg, #fafdff) 40%, var(--color-accent, #1c1b22) 60%, var(--color-secondary-bg, #e6f0fa) 100%);
+  opacity: .18;
+  z-index: 2;
+  animation: guardia-bg-move 8s linear infinite alternate;
+}
+
+#hero .hero-content,
+#hero .scroll-down-arrow {
+  position: relative;
+  z-index: 3;
+}
 }
 #hero::before {
   content: "";
@@ -504,18 +531,23 @@
   border: 1px solid var(--color-border);
 }
 .scroll-down-arrow {
-  position: absolute;
-  bottom: 30px;
-  left: 50%;
-  z-index: 2;
+  position: static;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 24px auto 0 auto;
+  z-index: 20;
   cursor: pointer;
   animation: bounce 2.5s infinite ease-in-out;
-  transform: translateX(-50%);
+  width: 40px;
+  height: 40px;
+  transform: none;
 }
 .scroll-down-arrow svg {
   width: 40px;
   height: 40px;
   stroke: #fff;
+  fill: none;
   transition: transform .3s ease, opacity .3s ease;
 }
 .scroll-down-arrow:hover svg {
@@ -616,13 +648,16 @@
     display: none !important;
   }
   .scroll-down-arrow {
-    left: 50vw !important;
-    right: auto !important;
-    margin: 0 !important;
-    transform: translateX(-50%) !important;
-    display: block;
-    width: auto;
-    max-width: none;
+    position: static !important;
+    display: flex !important;
+    justify-content: center !important;
+    align-items: center !important;
+    margin: 18px auto 0 auto !important;
+    width: 40px !important;
+    height: 40px !important;
+    max-width: none !important;
+    z-index: 20 !important;
+    transform: none !important;
   }
   #transporte-equipamiento-pesado .text-content {
     max-width: 95vw;

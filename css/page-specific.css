@@ -39,7 +39,6 @@
   }
 }
 
-/* ========== ESTILOS BASE Y COMPONENTES ========== */
 
 /* ========== BASE: UTILIDADES Y COMPONENTES ========== */
 .only-mobile {
@@ -124,7 +123,6 @@
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  padding-bottom: 33vh;
   background: linear-gradient(120deg, var(--color-primary-bg, #fafdff) 0%, var(--color-secondary-bg, #e6f0fa) 100%);
   overflow: hidden;
 }
@@ -135,11 +133,12 @@
   inset: 0;
   background: linear-gradient(120deg, var(--color-secondary-bg, #e6f0fa) 0%, var(--color-primary-bg, #fafdff) 40%, var(--color-accent, #1c1b22) 60%, var(--color-secondary-bg, #e6f0fa) 100%);
   opacity: .18;
-  z-index: 0;
-  animation: guardia-bg-move 8s linear infinite alternate;
-}
-#hero h1 {
-  font-family: "Poppins", sans-serif;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: center;
+  padding-top: 48px;
+  padding-bottom: 33vh;
   font-size: 3.2rem;
   font-weight: 800;
   color: white;

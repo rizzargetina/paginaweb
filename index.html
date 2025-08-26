@@ -20,14 +20,7 @@
             visibility: hidden;
         }
         /* --- HERO SECTION --- */
-  #hero {
-    height: 420px;
-    width: 100vw;
-    min-width: 0;
-    padding-left: 0;
-    padding-right: 0;
-    position: relative;
-  }
+        /* Regla eliminada para evitar sobrescribir el CSS principal */
         #hero::before {
             content: "";
             position: absolute;
@@ -43,53 +36,20 @@
             z-index: 0;
             animation: guardia-bg-move 8s linear infinite alternate;
         }
-        #hero h1 {
-            font-family: "Poppins", sans-serif;
-            font-size: 3.2rem;
-            font-weight: 800;
-            color: white;
-        }
-        .hero-content {
-            position: relative;
-            z-index: 3;
-            padding: 20px 30px;
-        }
-        #hero p {
-            font-size: 1.25rem;
-            margin-bottom: 1.5em;
-            color: white;
-            font-weight: 400;
-            max-width: 550px;
-            margin-left: auto;
-            margin-right: auto;
-        }
-        .scroll-down-arrow {
-            /* Posicionamiento absoluto relativo a la sección #hero */
-            position: absolute;
-            bottom: 30px; /* Distancia desde el borde inferior */
-            left: 50%;
-            z-index: 5; /* Asegura que esté por encima del contenido */
-            cursor: pointer;
-        }
+        /* El diseño y la estética del hero se controlan desde el CSS principal. Solo se mantienen los media queries para el título y el fondo decorativo. */
         @media (max-width: 600px) {
             #quienes-somos { display: none !important; }
             #seccion-basee { display: none !important; }
         }
         @media (max-width: 500px) {
             #hero h1 {
-                font-family: "Poppins", sans-serif;
                 font-size: 2.9rem;
-                font-weight: 800;
-                color: white;
             }
             #quienes-somos { display: none !important; }
         }
         @media (max-width: 400px) {
             #hero h1 {
-                font-family: "Poppins", sans-serif;
                 font-size: 2.6rem;
-                font-weight: 800;
-                color: white;
             }
             #quienes-somos { display: none !important; }
         }

@@ -106,28 +106,6 @@
 #form-status.success { background-color: rgba(40, 167, 69, 0.2); color: #2ecc71; border: 1px solid rgba(40, 167, 69, 0.5); }
 #form-status.error { background-color: rgba(220, 53, 69, 0.2); color: #e74c3c; border: 1px solid rgba(220, 53, 69, 0.5); }
 
-.info-item {
-    display: flex;
-    align-items: flex-start; /* o center si prefieres centrado exacto */
-    gap: 12px; /* Espacio entre ícono y texto */
-}
-
-
-
-.info-text {
-    flex: 1;
-}
-/* Información de Contacto Directa */
-.contact-info-container .info-item i {
-    color: var(--color-accent);
-}
-.contact-info-container .info-item strong {
-    color: var(--color-headings);
-}
-.contact-info-container .info-item p {
-    color: var(--color-text-secondary);
-}
-
 
 /* Mapa de Ubicación */
 .map-container {

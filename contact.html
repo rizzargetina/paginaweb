@@ -12,7 +12,13 @@
     <!-- FIX: Se unificaron los CSS. Se asume que 'main.css' contiene los estilos globales y 'forms-jobs.css' los específicos para esta página. Se eliminó el enlace a 'global.css' que daba error 404. -->
     <link rel="stylesheet" href="css/main.css">
     <link rel="stylesheet" href="css/forms-jobs.css">
-        <link rel="stylesheet" href="css/page-specific.css">
+    <link rel="stylesheet" href="css/page-specific.css">
+    <style>
+        /* Espaciado entre info-items y párrafos en contacto */
+        .contact-info-container .info-item {
+            margin-bottom: 2.2em;
+        }
+    </style>
 </head>
 <body>
 
@@ -107,9 +113,10 @@
                 <div class="contact-info-container">
                     <h2>Información Directa</h2>
                     <div class="info-item">
-                        <img src="icons/telephone-fill.svg" alt="Teléfono" style="width:1em;height:1em;vertical-align:middle;">
                         <div class="info-text">
-                            <strong>Teléfonos y Correos Electrónicos:</strong>
+                            <strong>
+                                <img src="icons/telephone-fill.svg" alt="Teléfono" style="width:1em;height:1em;vertical-align:middle; margin-right:0.4em;">Teléfonos y Correos Electrónicos:
+                            </strong>
                             <p>Jefe Juan Gabriel Tarifa:  <span id="correo-tarifa"></span> </p>
                             <p>+54 9 299 467-4943</p>
                             <p>Gerente Gabriel Morales:   <span id="correo-morales"></span> </p>
@@ -127,9 +134,10 @@
                         </script>
                     </div>
                     <div class="info-item">
-                        <img src="icons/clock-fill.svg" alt="Horario" style="width:1em;height:1em;vertical-align:middle;">
                         <div class="info-text">
-                            <strong>Horario de Atención Oficina:</strong>
+                            <strong>
+                                <img src="icons/clock-fill.svg" alt="Horario" style="width:1em;height:1em;vertical-align:middle; margin-right:0.4em;">Horario de Atención Oficina:
+                            </strong>
                             <p>Lunes a Viernes: 8:00 - 18:00 hs</p>
                         </div>
                     </div>

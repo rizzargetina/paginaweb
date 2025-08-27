@@ -635,7 +635,6 @@
   }
   .text-content h2 {
     font-size: 1.5rem;
-    color: #00cfff;
     margin-bottom: .5rem;
     font-weight: 700;
     text-align: left;
@@ -711,6 +710,7 @@
   #transporte-equipamiento-pesado .text-content h2 {
     font-size: 1.3rem;
   }
+  
   #transporte-equipamiento-pesado .text-content p,
   #transporte-equipamiento-pesado .text-content strong {
     font-size: 1rem;

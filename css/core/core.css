@@ -115,8 +115,6 @@ body {
     html { scroll-padding-top: var(--header-height); }
     :root { --header-height: 70px; }
     body { font-size: 18px; line-height: 1.6; padding-top: var(--header-height); }
-    h1 { font-size: 2rem; }
-    h2 { font-size: 1.8rem; }
     .header-container, .footer-container, .container {
         width: 95%;
         padding-left: 10px;

@@ -873,10 +873,9 @@
     left: 0;
     width: 100vw;
     height: 450px !important;
-    background: #181f2a;
+    background: #161b22;
     z-index: 1100;
     gap: 0.5rem;
-    box-shadow: 0 2px 12px rgba(0,0,0,0.13);
   }
   .rulenav .navlink {
     display: flex;

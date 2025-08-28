@@ -206,12 +206,6 @@
   z-index: 1;
 }
 
-@media (max-width: 600px) {
-  .hero-bg-image {
-    background: url('../img/movil.jpg') center center/cover no-repeat;
-    opacity: 0.45;
-  }
-}
 
 #hero::before {
   content: "";

@@ -860,50 +860,21 @@
   .mobile-menu-button {
     display: inline-flex !important;
   }
-  .rulenav {
-    display: none !important;
-  }
-  .rulenav.mobile-menu-open {
-    display: flex !important;
-    flex-direction: column;
-    justify-content: flex-start;
-    align-items: right;
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100vw;
-    height: 450px !important;
-    background: #161b22;
-    z-index: 1100;
-    gap: 0.5rem;
-  }
   .rulenav .navlink {
     display: flex;
     align-items: center;
-    justify-content: center;
+    justify-content: right;
     width: 90vw;
     max-width: 400px;
     margin: 0.5rem auto;
-    padding: 1.2rem 0;
-    text-align: center;
+    padding: 0rem 2.5rem;
+    text-align: right;
     font-size: 1.5rem;
     border-bottom: 1px solid #232b3b;
     color: #fff;
-    background: none;
-    transition: background 0.2s, color 0.2s;
-    font-weight: 700;
-    letter-spacing: 1px;
-    text-decoration: none;
-    line-height: 1.2;
   }
   .rulenav .navlink:last-child {
     border-bottom: none;
-  }
-  .rulenav .navlink:active,
-  .rulenav .navlink:focus,
-  .rulenav .navlink:hover {
-    background: #232b3b;
-    color: #00cfff;
   }
 }
 @media (min-width: 901px) {

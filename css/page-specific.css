@@ -206,6 +206,13 @@
   z-index: 1;
 }
 
+@media (max-width: 600px) {
+  .hero-bg-image {
+    background: url('../img/movil.jpg') center center/cover no-repeat;
+    opacity: 0.45;
+  }
+}
+
 #hero::before {
   content: "";
   position: absolute;
@@ -710,7 +717,6 @@
   #transporte-equipamiento-pesado .text-content h2 {
     font-size: 1.3rem;
   }
-  
   #transporte-equipamiento-pesado .text-content p,
   #transporte-equipamiento-pesado .text-content strong {
     font-size: 1rem;

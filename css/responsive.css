@@ -34,7 +34,7 @@ body {
     .rulenav {
         display: none;
         position: fixed;
-        top: var(--header-height);
+        top: var(--header-height) !important;
         left: 0;
         width: 100vw;
         height: calc(100vh - var(--header-height));
@@ -49,7 +49,7 @@ body {
         opacity: 0;
         pointer-events: none;
         transition: transform 0.3s ease-out, opacity 0.3s ease-out;
-        z-index: 999;
+        z-index: 999 !important;
         will-change: transform, opacity;
     }
     .rulenav.mobile-menu-open {

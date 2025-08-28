@@ -91,10 +91,17 @@
                 <span class="hamburger-line"></span>
             </button>
             <nav class="rulenav" id="main-navigation" aria-label="Navegación principal">
-                <a class="navlink" href="index.html">Inicio</a>
-                <a class="navlink" href="services1.html">Servicios</a>
-                <a class="navlink" href="contact.html">Contacto</a>
-                <a class="navlink only-mobile" href="jobs.html">Oportunidades Laborales</a>
+                                <a class="navlink" href="index.html">Inicio</a>
+                                <a class="navlink" href="services1.html">Servicios</a>
+                                <a class="navlink" href="contact.html">Contacto</a>
+                                <a class="navlink only-mobile" href="jobs.html">Oportunidades Laborales</a>
+                                <style>
+                                @media (max-width: 992px) {
+                                    #main-navigation.rulenav {
+                                        top: var(--header-height) !important;
+                                    }
+                                }
+                                </style>
             </nav>
         </div>
     </header>

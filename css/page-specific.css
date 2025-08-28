@@ -862,19 +862,12 @@
   }
   .rulenav .navlink {
     display: flex;
-    align-items: center;
     justify-content: right;
     width: 90vw;
-    max-width: 400px;
-    margin: 0.5rem auto;
     padding: 0rem 2.5rem;
     text-align: right;
     font-size: 1.5rem;
-    border-bottom: 1px solid #232b3b;
     color: #fff;
-  }
-  .rulenav .navlink:last-child {
-    border-bottom: none;
   }
 }
 @media (min-width: 901px) {
@@ -882,20 +875,12 @@
     display: none;
   }
   .rulenav {
-    display: flex;
     flex-direction: row;
-    position: static;
-    background: none;
     width: auto;
-    box-shadow: none;
-    padding: 0;
-    gap: 2rem;
-    align-items: center;
   }
   .rulenav .navlink {
-    padding: 0.5rem 1.2rem;
+    padding: 1.2rem 1.2rem;
     font-size: 1rem;
-    border: none;
     width: auto;
     text-align: center;
   }

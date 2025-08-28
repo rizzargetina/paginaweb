@@ -106,6 +106,17 @@
     gap: 0.5rem;
     box-shadow: 0 2px 12px rgba(0,0,0,0.13);
   }
+  .rulenav.mobile-menu-open .navlink {
+    border-bottom: 2px solid rgba(44,62,80,0.18);
+    box-shadow: none;
+    background: none;
+    margin-bottom: 0;
+    border-radius: 0;
+    padding-bottom: 0.7rem;
+  }
+  .rulenav.mobile-menu-open .navlink:last-child {
+    border-bottom: none;
+  }
   .rulenav .navlink h2::after,
   .rulenav .navlink h3::after {
     display: none;

@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Manual Km otros</title>
+    <style>
+        body {
+            background: #222a35;
+            margin: 0;
+            min-height: 100vh;
+            display: flex;
+            align-items: flex-start;
+            justify-content: center;
+            font-family: 'Poppins', Arial, sans-serif;
+            padding: 3vw 0;
+        }
+        .container {
+            width: 100%;
+            max-width: 820px;
+            margin: 0 auto;
+            background: #2e3746;
+            border-radius: 10px;
+            box-shadow: 0 4px 24px rgba(0,0,0,0.18);
+            padding: 2.5vw 2vw 2vw 2vw;
+        }
+        .img {
+            width: 100%;
+            max-width: 600px;
+            margin: 0 auto 1.2rem auto;
+            display: flex;
+            justify-content: center;
+            border-radius: 12px;
+            overflow: hidden;
+            box-shadow: 0 2px 12px rgba(0,0,0,0.12);
+        }
+        p {
+            font-size: 1.18rem;
+            color: #f3f6fa;
+            text-shadow: 0 1px 8px rgba(0,0,0,0.5);
+            font-family: 'Poppins', Arial, sans-serif;
+            text-align: center;
+            margin-bottom: 2.2rem;
+            line-height: 1.7;
+            letter-spacing: 0.01em;
+        }
+        h1 {
+            color: #fff;
+            font-family: 'Poppins', Arial, sans-serif;
+            font-size: 2.5rem;
+            text-align: center;
+            margin-bottom: 1.5rem;
+            font-weight: 800;
+            letter-spacing: 0.02em;
+        }
+        h2 {
+            color: #e6eaf3;
+            font-size: 1.35rem;
+            margin-top: 2.2rem;
+            margin-bottom: 0.7rem;
+            font-weight: 700;
+            text-align: left;
+            padding-left: 0.5vw;
+        }
+        .caption {
+            text-align:center;
+            color:#cfd8e3;
+            font-size:1.08rem;
+            margin-top:0.7em;
+            font-family:'Poppins',Arial,sans-serif;
+            opacity:0.85;
+        }
+        @font-face {
+            font-family: 'Poppins';
+            src: url('../../fonts/Poppins-Regular.ttf') format('truetype');
+            font-weight: 400;
+            font-style: normal;
+            font-display: swap;
+        }
+        @font-face {
+            font-family: 'Poppins';
+            src: url('../../fonts/Poppins-Bold.ttf') format('truetype');
+            font-weight: 700;
+            font-style: normal;
+            font-display: swap;
+        }
+        @font-face {
+            font-family: 'Poppins';
+            src: url('../../fonts/Poppins-ExtraBold.ttf') format('truetype');
+            font-weight: 800;
+            font-style: normal;
+            font-display: swap;
+        }
+        @media (max-width: 600px) {
+            .container {
+                padding: 4vw 2vw 2vw 2vw;
+            }
+            h1 {
+                font-size: 1.5rem;
+            }
+            h2 {
+                font-size: 1.1rem;
+            }
+            p {
+                font-size: 1rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Calculo de Km para Otras Empresas</h1>
+        <h2>Ej. 1</h2>
+        <p>Se considera que se sale desde <strong>NEUQUEN</strong> al <strong><span style="color:#00ff15">POZO</span></strong>.<br>
+        <span style="color:#ffd700">IDA</span> 160 Km y <span style="color:#ffd700">VUELTA</span> 160 Km.<br>
+        <strong>TOTAL = 320 Km</strong>.</p>
+        <div class="img">
+            <img src="img/km_para_otros.png" style="width:100%;height:auto;max-width:800px;" alt="Mapa cálculo de km otros">
+        </div>
+        <div class="caption">
+            <em>Desde NEUQUEN a <span style="color:#00ff15">PAE APO 001</span></em>
+        </div>
+
+        <h2>Ej. 2</h2>
+        <p>Se considera que se sale desde <strong>NEUQUEN</strong> al <strong><span style="color:#00ff15">POZO</span></strong>.<br>
+        <span style="color:#ffd700">IDA</span> 71 Km y <span style="color:#ffd700">VUELTA</span> 71 Km.<br>
+        <strong>TOTAL = 142 Km</strong>.</p>
+        <div class="img">
+            <img src="img/km_para_otros1.png" style="width:100%;height:auto;max-width:800px;" alt="Mapa cálculo de km otros">
+        </div>
+        <div class="caption">
+            <em>Desde NEUQUEN a <span style="color:#00ff15">PAD 9 MATA MORA PHOENIX</span></em>
+        </div>
+    </div>
+</body>
+</html>

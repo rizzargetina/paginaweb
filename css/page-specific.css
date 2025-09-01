@@ -90,15 +90,7 @@
   display: inline-block;
   padding-bottom: .3em;
 }
-.text-content h2::after {
-  content: "";
-  position: absolute;
-  bottom: 0;
-  left: 0;
-  width: 0;
-  height: 3px;
-  background-color: var(--color-accent);
-}
+
 .text-content h3 {
   color: var(--color-headings);
   padding-bottom: .3em;
@@ -106,15 +98,7 @@
   position: relative;
   border-bottom: 2px solid transparent;
 }
-.text-content h3::after {
-  content: "";
-  position: absolute;
-  bottom: -2px;
-  left: 0;
-  width: 0;
-  height: 2px;
-  background-color: var(--color-accent);
-}
+
 
 .text-content p {
   color: var(--color-text-secondary);

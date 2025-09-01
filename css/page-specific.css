@@ -1,4 +1,26 @@
-/* Layout para la sección BASE CHOFERES, AÑELO */
+@font-face {
+  font-family: 'Poppins';
+  src: url('../fonts/Poppins-Regular.ttf') format('truetype');
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: 'Poppins';
+  src: url('../fonts/Poppins-Bold.ttf') format('truetype');
+  font-weight: 700;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: 'Poppins';
+  src: url('../fonts/Poppins-ExtraBold.ttf') format('truetype');
+  font-weight: 800;
+  font-style: normal;
+  font-display: swap;
+}
+
+
 .base-choferes-flex {
   display: flex;
   align-items: center;
@@ -17,27 +39,7 @@
   flex: 1;
   text-align: left;
 }
-/* Imagen cuadrada en la sección BASE CHOFERES, AÑELO para pantallas <=600px */
-@media (max-width: 600px) {
-  .base-choferes-flex {
-    flex-direction: column;
-    align-items: center;
-    gap: 1em;
-  }
-  .base-choferes-img img {
-    aspect-ratio: 1/1;
-    object-fit: cover;
-    object-position: left;
-    max-width: 350px;
-    max-height: 350px;
-    margin-left: auto;
-    margin-right: auto;
-    display: block;
-  }
-  .base-choferes-info {
-    text-align: center;
-  }
-}
+
 
 
 /* ========== BASE: UTILIDADES Y COMPONENTES ========== */
@@ -83,73 +85,10 @@
   transition: none;
 }
 
-/* ========== MEDIA QUERIES ========== */
-@media (max-width: 900px) {
-  .only-mobile {
-    display: flex !important;
-  }
-  .rulenav {
-    display: none !important;
-  }
-  .rulenav.mobile-menu-open {
-    display: flex !important;
-    flex-direction: column;
-    justify-content: flex-start;
-    align-items: center;
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100vw;
-    height: 450px !important;
-    background: #181f2a;
-    z-index: 1100;
-    gap: 0.5rem;
-    box-shadow: 0 2px 12px rgba(0,0,0,0.13);
-  }
-  .rulenav.mobile-menu-open .navlink {
-    border-bottom: 2px solid rgba(44,62,80,0.18);
-    box-shadow: none;
-    background: none;
-    margin-bottom: 0;
-    border-radius: 0;
-    padding-bottom: 0.7rem;
-  }
-  .rulenav.mobile-menu-open .navlink:last-child {
-    border-bottom: none;
-  }
-  .rulenav .navlink h2::after,
-  .rulenav .navlink h3::after {
-    display: none;
-    width: 0;
-    background: none;
-  }
-}
 
 
-@font-face {
-  font-family: 'Poppins';
-  src: url('../fonts/Poppins-Regular.ttf') format('truetype');
-  font-weight: 400;
-  font-style: normal;
-  font-display: swap;
-}
-@font-face {
-  font-family: 'Poppins';
-  src: url('../fonts/Poppins-Bold.ttf') format('truetype');
-  font-weight: 700;
-  font-style: normal;
-  font-display: swap;
-}
-@font-face {
-  font-family: 'Poppins';
-  src: url('../fonts/Poppins-ExtraBold.ttf') format('truetype');
-  font-weight: 800;
-  font-style: normal;
-  font-display: swap;
-}
-:root {
-  --font-headings: 'Poppins', Arial, sans-serif;
-}
+
+
 #hero {
   position: relative;
   min-height: 90vh;
@@ -207,14 +146,8 @@
   align-items: flex-start;
   gap: 30px;
 }
-.content-section .image-content,
-.content-section .text-content {
-  align-self: flex-start;
-  margin-top: 0;
-  padding-top: 0;
-}
+
 .content-section:not(:first-of-type) {
-  min-height: 70vh;
   padding-top: 40px;
   padding-bottom: 40px;
 }
@@ -760,6 +693,25 @@
     max-width: 120px;
     margin: 0 auto;
   }
+
+  .base-choferes-flex {
+    flex-direction: column;
+    align-items: center;
+    gap: 1em;
+  }
+  .base-choferes-img img {
+    aspect-ratio: 1/1;
+    object-fit: cover;
+    object-position: left;
+    max-width: 350px;
+    max-height: 350px;
+    margin-left: auto;
+    margin-right: auto;
+    display: block;
+  }
+  .base-choferes-info {
+    text-align: center;
+  }
 }
 @media (max-width: 900px) {
   .top-bar,
@@ -810,6 +762,45 @@
     text-align: right;
     font-size: 1.5rem;
     color: #fff;
+  }
+
+  .only-mobile {
+    display: flex !important;
+  }
+  .rulenav {
+    display: none !important;
+  }
+  .rulenav.mobile-menu-open {
+    display: flex !important;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 450px !important;
+    background: #181f2a;
+    z-index: 1100;
+    gap: 0.5rem;
+    box-shadow: 0 2px 12px rgba(0,0,0,0.13);
+  }
+  .rulenav.mobile-menu-open .navlink {
+    border-bottom: 2px solid rgba(44,62,80,0.18);
+    box-shadow: none;
+    background: none;
+    margin-bottom: 0;
+    border-radius: 0;
+    padding-bottom: 0.7rem;
+  }
+  .rulenav.mobile-menu-open .navlink:last-child {
+    border-bottom: none;
+  }
+  .rulenav .navlink h2::after,
+  .rulenav .navlink h3::after {
+    display: none;
+    width: 0;
+    background: none;
   }
 }
 @media (min-width: 901px) {

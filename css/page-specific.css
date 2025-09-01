@@ -138,16 +138,7 @@
   height: 2px;
   background-color: var(--color-accent);
 }
-.fade-in-section.is-visible .text-content h2::after {
-  width: 100%;
-}
-.fade-in-section.is-visible .text-content h3::after {
-  width: 80%;
-  max-width: 200px;
-}
-.fade-in-section.is-visible #quienes-somos .text-content h2::after {
-  width: 80px;
-}
+
 .text-content p {
   color: var(--color-text-secondary);
 }

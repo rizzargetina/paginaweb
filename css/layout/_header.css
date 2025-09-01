@@ -65,56 +65,12 @@
     font-family: var(--font-headings);
     font-weight: 700;
     font-size: 0.9rem; /* Ligeramente más pequeño para un look más refinado si hay muchos items */
-    text-decoration: none;
     color: var(--color-header-text);
     position: relative;
-    transition: color 0.25s ease-out, transform 0.25s ease-out;
     letter-spacing: 0.8px; /* Un poco más de espaciado entre letras para mayúsculas */
     text-transform: uppercase;
-    overflow: hidden; /* Para el efecto del ::before */
 }
 
-/* Efecto de línea inferior más dinámico */
-.navlink::before { /* Usamos ::before para que no interfiera con el ::after original si lo necesitas */
-    content: '';
-    position: absolute;
-    bottom: 10px; /* Sube la línea un poco */
-    left: 50%;
-    width: 0;
-    height: 2px; /* Línea más fina */
-    background-color: var(--color-header-link-hover);
-    transition: all 0.35s cubic-bezier(0.7, 0, 0.3, 1); /* Transición más suave */
-    transform: translateX(-50%);
-}
-
-.navlink:hover,
-.navlink:focus {
-    text-decoration: none;
-    color: var(--color-header-link-hover);
-    outline: none;
-    /* transform: translateY(-1px); /* Sutil elevación al hacer hover */
-}
-
-.navlink:hover::before,
-.navlink:focus::before,
-.navlink.active::before {
-    width: calc(100% - (var(--spacing-unit) * 3)); /* La línea no toca los bordes del padding */
-}
-
-
-.navlink.active {
-    color: var(--color-header-link-hover);
-    /* font-weight: 700; /* Ya lo tiene por defecto */
-}
-.navlink:focus-visible {
-    outline: 2px solid var(--dhl-yellow);
-    outline-offset: 3px; /* Un poco más de offset */
-    color: var(--color-header-link-hover);
-    background-color: rgba(255,255,255,0.05); /* Ligero fondo al focus */
-}
-.navlink.active:focus-visible::before { /* O ::after si usas ese */
-    background-color: var(--dhl-yellow); /* Línea de acento en foco activo */
-}
 
 
 /* --- Mobile Menu Button --- */
@@ -122,28 +78,15 @@
     display: none; /* Se activa por media queries en responsive.css */
     background: transparent; /* Mejor que 'none' */
     border: none;
-    padding: calc(var(--spacing-unit) * 1.25); /* 10px */
-    cursor: pointer;
+    padding: 10px; /* 10px */
     z-index: 1100;
     width: 44px; /* Mantenemos tamaño */
     height: 44px;
     position: relative;
-    border-radius: var(--border-radius-medium); /* Bordes más redondeados */
-    transition: background-color 0.2s ease, transform 0.2s ease;
     margin-left: calc(var(--spacing-unit) * 1.5);
 }
-.mobile-menu-button:hover {
-    background-color: rgba(255, 255, 255, 0.1);
-    transform: scale(1.1); /* Ligeramente más grande al pasar el mouse */
-}
-.mobile-menu-button:active {
-    transform: scale(1.05); /* Efecto al presionar */
-}
-.mobile-menu-button:focus-visible {
-    outline: none;
-    background-color: rgba(255, 255, 255, 0.15);
-    box-shadow: 0 0 0 2px var(--dhl-white), 0 0 0 4px var(--dhl-yellow); /* Doble outline */
-}
+
+
 
 .mobile-menu-button .hamburger-line {
     display: block;

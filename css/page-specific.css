@@ -1,27 +1,4 @@
 
-
-.base-choferes-flex {
-  display: flex;
-  align-items: center;
-  gap: 2em;
-  justify-content: flex-start;
-}
-.base-choferes-img img {
-  max-width: 350px;
-  width: 100%;
-  height: auto;
-  border-radius: 8px;
-  box-shadow: 0 2px 8px rgba(0,0,0,0.12);
-  display: block;
-}
-.base-choferes-info {
-  flex: 1;
-  text-align: left;
-}
-
-
-
-/* ========== BASE: UTILIDADES Y COMPONENTES ========== */
 .only-mobile {
   display: none;
 }

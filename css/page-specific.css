@@ -60,10 +60,13 @@
   display: flex;
   align-items: flex-start;
   gap: 30px;
+  
+}
+
+.content-section:not(:first-of-type) {
   padding-top: 40px;
   padding-bottom: 40px;
 }
-
 .image-content,
 .image-content img,
 .section-image {

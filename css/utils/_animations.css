@@ -1,8 +1,0 @@
-/* css/utils/_animations.css */
-.fade-in-section, .fade-in-element {
-    opacity: 0;
-    transition: opacity 0.6s ease-out, transform 0.6s ease-out;
-}
-.fade-in-section.is-visible, .fade-in-element.is-visible {
-    opacity: 1;
-}

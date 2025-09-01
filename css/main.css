@@ -16,12 +16,6 @@
 
 /* --- Utilities --- */
 @import url("utils/_helpers.css");
-@import url("utils/_animations.css");
-
-.rulenav .navlink:focus {
-  outline: none;
-  box-shadow: none;
-}
 
 /*  Las reglas responsivas globales deben ir al final para sobrescribir si es necesario */
 @import url("responsive.css");

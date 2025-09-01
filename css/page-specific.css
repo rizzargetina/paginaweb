@@ -597,14 +597,6 @@
     padding: 0 2px 1.2rem 2px;
     text-align: left;
   }
-  hr.fade-in-element {
-    border: none;
-    height: 2px;
-    background: linear-gradient(90deg, #00cfff 0%, #232b3b 100%);
-    margin: 24px 0;
-    opacity: .5;
-    border-radius: 2px;
-  }
   .fade-in-section {
     opacity: 0;
     transform: translateY(24px);

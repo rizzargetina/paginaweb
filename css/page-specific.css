@@ -125,50 +125,7 @@
   }
 }
 
-#hero {
-  position: relative;
 
-  color: var(--dhl-white);
-  text-align: center;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  background: linear-gradient(120deg, var(--color-primary-bg, #fafdff) 0%, var(--color-secondary-bg, #e6f0fa) 100%);
-  overflow: hidden;
-}
-
-#hero::before {
-  content: "";
-  position: absolute;
-  inset: 0;
-  background: linear-gradient(120deg, var(--color-secondary-bg, #e6f0fa) 0%, var(--color-primary-bg, #fafdff) 40%, var(--color-accent, #1c1b22) 60%, var(--color-secondary-bg, #e6f0fa) 100%);
-  opacity: .18;
-  display: flex;
-  flex-direction: column;
-  justify-content: flex-start;
-  align-items: center;
-  padding-top: 48px;
-  padding-bottom: 33vh;
-  font-size: 3.2rem;
-  font-weight: 800;
-  color: white;
-}
-.hero-content {
-  position: relative;
-  z-index: 3;
-  padding: 20px 30px;
-}
-#hero p {
-  font-size: 1.25rem;
-  margin-bottom: 1.5em;
-  color: var(--dhl-white);
-  text-shadow: 1px 1px 6px rgba(0,0,0,0.7);
-  font-weight: 400;
-  max-width: 550px;
-  margin-left: auto;
-  margin-right: auto;
-}
 @font-face {
   font-family: 'Poppins';
   src: url('../fonts/Poppins-Regular.ttf') format('truetype');
@@ -218,29 +175,11 @@
 }
 
 
-#hero::before {
-  content: "";
-  position: absolute;
-  inset: 0;
-  background: linear-gradient(120deg, var(--color-secondary-bg, #e6f0fa) 0%, var(--color-primary-bg, #fafdff) 40%, var(--color-accent, #1c1b22) 60%, var(--color-secondary-bg, #e6f0fa) 100%);
-  opacity: .18;
-  z-index: 2;
-  animation: guardia-bg-move 8s linear infinite alternate;
-}
 
 #hero .hero-content,
 #hero .scroll-down-arrow {
   position: relative;
   z-index: 3;
-}
-#hero::before {
-  content: "";
-  position: absolute;
-  inset: 0;
-  background: linear-gradient(120deg, var(--color-secondary-bg, #e6f0fa) 0%, var(--color-primary-bg, #fafdff) 40%, var(--color-accent, #1c1b22) 60%, var(--color-secondary-bg, #e6f0fa) 100%);
-  opacity: .18;
-  z-index: 0;
-  animation: guardia-bg-move 8s linear infinite alternate;
 }
 #hero h1 {
   font-family: "Poppins", sans-serif;

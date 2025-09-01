@@ -206,16 +206,6 @@
   left: 50%;
   transform: translateX(-50%);
 }
-#client-logos h2::after {
-  content: '';
-  position: absolute;
-  bottom: -10px;
-  left: 50%;
-  transform: translateX(-50%);
-  width: 80px;
-  height: 3px;
-  background-color: var(--color-accent);
-}
 .client-logo-slider {
   width: 100%;
   overflow: hidden;
@@ -248,8 +238,7 @@
   transition: filter .3s ease, opacity .3s ease;
 }
 .client-logo-slider:hover .client-logo-track img {
-  filter: brightness(0) invert(1) grayscale(0);
-  opacity: 1;
+  filter: none;
 }
 #key-metrics {
   padding: calc(var(--spacing-unit) * 4);
@@ -532,19 +521,11 @@
     gap: 18px 10px;
     width: 100%;
     animation: none !important;
-    justify-items: center;
     align-items: center;
     padding: 0;
     margin: 0 auto;
   }
-  .client-logo-track img {
-    height: 120px !important;
-    max-width: 140px;
-    opacity: .85;
-    filter: brightness(0) invert(1) grayscale(.2);
-    margin: 0 auto;
-    display: block;
-  }
+
   .client-logo-track .logo-duplicate {
     display: none !important;
   }

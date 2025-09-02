@@ -488,23 +488,7 @@
     display: block;
     border-bottom: none;
   }
-  .text-content h3::after {
-    left: 50%;
-    transform: translateX(-50%);
-    width: 0;
-  }
 
-  .text-content ul {
-    padding-left: 0;
-  }
-  .metrics-container {
-    flex-direction: column;
-    gap: 10px;
-  }
-  .metric-item {
-    min-width: unset;
-    padding: 15px 0;
-  }
   .service-card-title {
     text-align: left;
     padding-left: calc(var(--spacing-unit) * 2);
@@ -525,7 +509,6 @@
   .client-logo-track img {
     height: 80px !important;
     max-width: 120px;
-    margin: 0 auto;
   }
 
   .base-choferes-flex {

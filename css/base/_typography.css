@@ -51,6 +51,7 @@ p, ul, ol {
 p {
     margin-top: 0;
     margin-bottom: calc(var(--spacing-unit));
+    font-size: 1.4;
 }
 p:last-child {
     margin-bottom: 0;

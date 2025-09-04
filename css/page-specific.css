@@ -430,19 +430,6 @@
   }
 }
 @media (max-width: 900px) {
-  .top-bar,
-  .top-bar * {
-    display: none !important;
-    visibility: hidden !important;
-    height: 0 !important;
-    width: 0 !important;
-    padding: 0 !important;
-    margin: 0 !important;
-    opacity: 0 !important;
-    pointer-events: none !important;
-    animation: none !important;
-    transition: none !important;
-  }
   .header {
     position: fixed !important;
     top: 0 !important;

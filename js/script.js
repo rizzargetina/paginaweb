@@ -5,61 +5,80 @@ document.addEventListener('DOMContentLoaded', () => {
     const topBar = document.querySelector('.top-bar');
     const htmlElement = document.documentElement;
 
+    // Solo activar funciones de la top bar si el ancho de pantalla es mayor a 600px
+    function isDesktop() {
+        return window.innerWidth > 600;
+    }
 
-    if (topBar && header && htmlElement) {
-        let lastScrollTop = 0;
-        let currentTopBarHeight = 0;
-        const hideOffsetThreshold = 0.5;
+    function activateTopBarFunctions() {
+        if (topBar && header && htmlElement) {
+            let lastScrollTop = 0;
+            let currentTopBarHeight = 0;
+            const hideOffsetThreshold = 0.5;
 
-        const isTopBarEffectivelyVisible = () => getComputedStyle(topBar).display !== 'none';
+            const isTopBarEffectivelyVisible = () => getComputedStyle(topBar).display !== 'none';
 
-        const updateCurrentTopBarHeight = () => {
-            currentTopBarHeight = isTopBarEffectivelyVisible() ? topBar.offsetHeight : 0;
-        };
+            const updateCurrentTopBarHeight = () => {
+                currentTopBarHeight = isTopBarEffectivelyVisible() ? topBar.offsetHeight : 0;
+            };
 
-        const updateHeaderTransitionClass = () => {
-            if (isTopBarEffectivelyVisible()) {
-                header.classList.add('top-bar-effects-active');
-            } else {
-                header.classList.remove('top-bar-effects-active');
-            }
-        };
+            const updateHeaderTransitionClass = () => {
+                if (isTopBarEffectivelyVisible()) {
+                    header.classList.add('top-bar-effects-active');
+                } else {
+                    header.classList.remove('top-bar-effects-active');
+                }
+            };
 
-        const handleScrollForTopBar = () => {
-            if (!isTopBarEffectivelyVisible()) {
-                topBar.classList.remove('is-hidden');
-                header.classList.remove('top-bar-is-hidden');
-                htmlElement.classList.remove('top-bar-is-hidden');
-                return;
-            }
+            const handleScrollForTopBar = () => {
+                if (!isTopBarEffectivelyVisible()) {
+                    topBar.classList.remove('is-hidden');
+                    header.classList.remove('top-bar-is-hidden');
+                    htmlElement.classList.remove('top-bar-is-hidden');
+                    return;
+                }
 
-            let scrollTop = window.pageYOffset || document.documentElement.scrollTop;
+                let scrollTop = window.pageYOffset || document.documentElement.scrollTop;
 
-            // Solo mostrar la top bar si el scroll está en la parte más arriba
-            if (scrollTop === 0) {
-                topBar.classList.remove('is-hidden');
-                header.classList.remove('top-bar-is-hidden');
-                htmlElement.classList.remove('top-bar-is-hidden');
-            } else {
-                topBar.classList.add('is-hidden');
-                header.classList.add('top-bar-is-hidden');
-                htmlElement.classList.add('top-bar-is-hidden');
-            }
-        };
+                // Solo mostrar la top bar si el scroll está en la parte más arriba
+                if (scrollTop === 0) {
+                    topBar.classList.remove('is-hidden');
+                    header.classList.remove('top-bar-is-hidden');
+                    htmlElement.classList.remove('top-bar-is-hidden');
+                } else {
+                    topBar.classList.add('is-hidden');
+                    header.classList.add('top-bar-is-hidden');
+                    htmlElement.classList.add('top-bar-is-hidden');
+                }
+            };
 
-        const onResizeForTopBar = () => {
+            const onResizeForTopBar = () => {
+                updateCurrentTopBarHeight();
+                updateHeaderTransitionClass();
+                lastScrollTop = window.pageYOffset || document.documentElement.scrollTop;
+                handleScrollForTopBar();
+            };
+
+            window.addEventListener('scroll', handleScrollForTopBar, { passive: true });
+            window.addEventListener('resize', () => {
+                if (isDesktop()) {
+                    onResizeForTopBar();
+                } else {
+                    // Si pasa a móvil, quitar clases y listeners
+                    topBar.classList.remove('is-hidden');
+                    header.classList.remove('top-bar-is-hidden');
+                    htmlElement.classList.remove('top-bar-is-hidden');
+                }
+            });
+
             updateCurrentTopBarHeight();
             updateHeaderTransitionClass();
-            lastScrollTop = window.pageYOffset || document.documentElement.scrollTop;
             handleScrollForTopBar();
-        };
+        }
+    }
 
-        window.addEventListener('scroll', handleScrollForTopBar, { passive: true });
-        window.addEventListener('resize', onResizeForTopBar);
-
-        updateCurrentTopBarHeight();
-        updateHeaderTransitionClass();
-        handleScrollForTopBar();
+    if (isDesktop()) {
+        activateTopBarFunctions();
     }
 
     // --- Menú Móvil (Hamburguesa) ---

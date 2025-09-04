@@ -437,10 +437,6 @@
   }
   .client-logo-slider {
     overflow: visible;
-    -webkit-mask-image: none;
-    mask-image: none;
-    padding: 0;
-    margin: 0 auto;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -449,7 +445,6 @@
   .client-logo-track {
     display: grid;
     grid-template-columns: repeat(2, 1fr);
-    gap: 18px 10px;
     width: 100%;
     animation: none !important;
     align-items: center;
@@ -460,22 +455,10 @@
   .client-logo-track .logo-duplicate {
     display: none !important;
   }
-  #lineas-servicio h2 {
-    font-size: 2rem;
-    text-align: center;
-  }
   .text-content,
   .image-content {
-    flex-basis: auto;
     width: 100%;
     min-width: unset;
-  }
-  .content-section .image-content img.section-image:not(.small-section-image) {
-    min-height: 300px;
-    max-height: 400px;
-  }
-  .text-content {
-    text-align: left;
   }
   #transporte-equipamiento-pesado .text-content {
     text-align: center;

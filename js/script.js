@@ -87,13 +87,6 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     }
 
-    // --- Año en el Pie de Página (Footer) ---
-    const yearSpan = document.getElementById('footer-year');
-    if (yearSpan) {
-        yearSpan.textContent = new Date().getFullYear();
-    }
-
-    // --- Elementos con Efecto Fade-in al Hacer Scroll (Secciones y HRs) ---
     const elementsToFadeIn = document.querySelectorAll('.fade-in-section, .fade-in-element');
     if (elementsToFadeIn.length > 0) {
         const observerOptions = {
@@ -125,36 +118,4 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     }
 
-    // --- Carrusel de logos de clientes ---
-    // BLOQUE ELIMINADO: ya no se clonan los logos para el carrusel
-
-        const anchorLinks = document.querySelectorAll('a[href^="#"]');
-
-    anchorLinks.forEach(link => {
-        link.addEventListener('click', function(e) {
-            // Prevenimos el comportamiento por defecto (el salto brusco)
-            e.preventDefault();
-
-            // Obtenemos el ID del destino (ej: '#lineas-servicio')
-            let targetId = this.getAttribute('href');
-            
-            // Verificamos si el elemento de destino existe
-            let targetElement = document.querySelector(targetId);
-
-            if (targetElement) {
-                // Hacemos el scroll suave hacia el elemento
-                targetElement.scrollIntoView({
-                    behavior: 'smooth',
-                    block: 'start'
-                });
-            }
-        });
-    });
-
-    // --- Fijar la altura del hero al cargar la página ---
-    const heroSection = document.getElementById('hero');
-    if (heroSection) {
-        const heroHeight = heroSection.offsetHeight;
-        heroSection.style.height = heroHeight + 'px';
-    }
 });

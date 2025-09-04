@@ -60,6 +60,12 @@
   padding-top: 40px;
   padding-bottom: 40px;
 }
+
+h2 {
+    color: var(--color-headings);
+    border-bottom: 2px solid var(--color-accent);
+    display: inline-block;
+}
 .image-content,
 .image-content img,
 .section-image {

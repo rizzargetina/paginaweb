@@ -124,6 +124,12 @@
 }
 
 
+.section-container h2 {
+    color: var(--color-headings);
+    border-bottom: 2px solid var(--color-accent);
+    display: inline-block;
+}
+
 #como-postular {
     text-align: center;
     padding: 30px;

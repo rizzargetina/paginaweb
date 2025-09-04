@@ -23,15 +23,6 @@
     border: 1px solid var(--color-border);
 }
 
-.section-container h2 {
-    margin-top: 0;
-    margin-bottom: 1.8rem;
-    font-size: 1.8rem;
-    color: var(--color-headings); /* Asegura texto claro */
-    border-bottom: 2px solid var(--color-accent);
-    padding-bottom: 0.6rem;
-    display: inline-block;
-}
 
 /* --- Estilos Página de Contacto --- */
 .contact-wrapper {
@@ -103,9 +94,6 @@
     border-radius: var(--border-radius);
     text-align: center;
 }
-#form-status.success { background-color: rgba(40, 167, 69, 0.2); color: #2ecc71; border: 1px solid rgba(40, 167, 69, 0.5); }
-#form-status.error { background-color: rgba(220, 53, 69, 0.2); color: #e74c3c; border: 1px solid rgba(220, 53, 69, 0.5); }
-
 
 /* Mapa de Ubicación */
 .map-container {
@@ -121,14 +109,9 @@
 
 /* --- Estilos Página de Oportunidades (Jobs) --- */
 #por-que-jgt li {
-    padding-left: 35px;
     position: relative;
     margin-bottom: 1rem;
     line-height: 1.7;
-    color: var(--color-text); /* CAMBIO: Asegura texto claro */
-}
-#por-que-jgt li::before {
-    display: none;
 }
 
 #por-que-jgt li i {
@@ -137,19 +120,8 @@
     top: 0.3em;
     color: var(--color-accent);
     font-size: 1.1rem;
-    width: 25px;
     text-align: center;
 }
-
-.jobs-hr {
-    border: 0;
-    height: 1px;
-    background-color: var(--color-border);
-    margin: 50px auto;
-    width: 70%;
-}
-
-/* ... Resto de estilos para vacantes (job-listing, etc.) ... */
 
 
 #como-postular {
@@ -161,13 +133,6 @@
     border: 1px solid var(--color-border);
 }
 
-#como-postular h2 {
-    margin-top: 0;
-    margin-bottom: 1.5rem;
-    font-size: 1.8rem;
-    color: var(--color-headings);
-    border-bottom: none; /* Sin subrayado para título centrado */
-}
 
 #como-postular p {
     color: var(--color-text);
@@ -176,6 +141,7 @@
     margin-left: auto;
     margin-right: auto;
     margin-bottom: 1.5rem;
+    padding-top: 20px;
 }
 
 .contact-email a {
@@ -212,20 +178,3 @@
     color: var(--color-primary-bg);
 }
 
-#como-postular p em {
-    color: var(--color-text-secondary);
-    font-size: 0.9rem;
-    display: block;
-    margin-top: 2rem;
-    font-style: normal;
-}
-
-/* --- Media Queries --- */
-
-@media (max-width: 600px) {
-    .section-container, #como-postular { padding: 20px; }
-    .section-container h2, #como-postular h2 { font-size: 1.4rem; }
-    .contact-wrapper { flex-direction: column; gap: 30px; }
-    .section-container, #como-postular { padding: 25px; }
-    .section-container h2, #como-postular h2 { font-size: 1.6rem; }
-}

@@ -19,9 +19,6 @@ button.cta-button {
     text-align: center;
     cursor: pointer;
     border: 1px solid rgba(255,255,255,0.18);
-    box-shadow: 0 2px 8px 0 rgba(13,17,23,0.10);
-    backdrop-filter: blur(8px);
-    -webkit-backdrop-filter: blur(8px);
     transition: background 0.2s, color 0.2s, box-shadow 0.2s, transform 0.2s;
 }
 
@@ -49,11 +46,7 @@ button.cta-button {
         width: 100%;
         margin: 12px auto;
         text-align: center;
-        background: transparent;
-        box-shadow: none;
         border-radius: 6px;
-        backdrop-filter: none;
-        -webkit-backdrop-filter: none;
     }
 }
 

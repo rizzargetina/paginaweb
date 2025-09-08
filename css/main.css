@@ -8,7 +8,6 @@
 /* --- Layout --- */
 @import url("layout/_grid.css");
 @import url("layout/_header.css"); 
-@import url("layout/_main.css");
 @import url("layout/_footer.css");
 
 /* --- Components --- */
@@ -19,7 +18,7 @@
 
 /* --- Global components and layout overrides moved from page-specific --- */
 main > .container {
-		padding-top: calc(var(--spacing-unit) * 4);
+		padding-top: 60px;
 }
 
 .only-mobile {

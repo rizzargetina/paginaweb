@@ -14,10 +14,7 @@
 /*  Las reglas responsivas globales deben ir al final para sobrescribir si es necesario */
 @import url("responsive.css");
 
-/* --- Global components and layout overrides moved from page-specific --- */
-main > .container {
-		padding-top: 60px;
-}
+
 
 .only-mobile {
 	display: none;

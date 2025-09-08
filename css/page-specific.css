@@ -107,5 +107,8 @@ body.preload .header,body.preload .top-bar{visibility:hidden}
 }
 
 @media (max-width:600px){
-  .office-image{height:220px}
+  .office-image{
+      width:100%;
+    aspect-ratio: 1/1; height: auto; max-height: 400px;
+    object-position:center center;}
 }

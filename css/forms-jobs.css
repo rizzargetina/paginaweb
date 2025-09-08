@@ -78,6 +78,20 @@
     min-height: 150px;
 }
 
+/* Minimal checkbox styling: small, uses native accent-color when possible */
+.human-check {
+    display: flex;
+    gap: 8px;
+}
+
+.human-check input[type="checkbox"] {
+    width: 20px;
+    height: 20px;
+    cursor: pointer;
+}
+
+.human-check label { margin: 0; color: var(--color-text); font-weight: 500; cursor: pointer; }
+
 .contact-form-submit {
     width: auto;
     padding: 12px 35px;

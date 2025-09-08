@@ -1,9 +1,3 @@
-/* css/layout/_main.css */
-main {
-    display: block;
-
-}
-
 main > .container {
-    padding-top: calc(var(--spacing-unit) * 4);
+    padding-top: 60px;
 }

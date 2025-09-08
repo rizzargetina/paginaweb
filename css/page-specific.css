@@ -76,7 +76,22 @@
   .service-cards-container{text-align:left}
   .text-content,.image-content{width:100%;min-width:unset}
 }
-    }
 
+  }
 
-}
+/* moved from index.html: critical small styles and helpers */
+/* body base font reset that was inline - keep it non-invasive */
+body{font-family:Roboto, Arial, sans-serif;margin:0}
+body.preload .header,body.preload .top-bar{visibility:hidden}
+
+/* nav responsive tweak moved from inline style */
+@media (max-width:992px){#main-navigation.rulenav{top:var(--header-height) !important}}
+
+.services-cta-wrapper{margin-top:2rem;text-align:center}
+
+.tecnologias-usadas{margin:2.5rem 0;text-align:center}
+.tech-list{display:flex;flex-wrap:wrap;justify-content:center;gap:2.5em;margin-top:1.5em}
+.tech-item{min-width:120px;text-align:center}
+.tech-item img{height:40px;margin-bottom:.5em}
+
+.whatsapp-float img{width:56px;height:56px}

@@ -11,21 +11,7 @@
     <link rel="preload" href="fonts/Poppins-Bold.ttf" as="font" type="font/ttf" crossorigin>
     <link rel="stylesheet" href="css/main.css">
     <link rel="stylesheet" href="css/page-specific.css">
-    <style>
-        /* Ejemplo de estilos críticos: header, top-bar, hero, fuentes principales */
-        body { font-family: 'Roboto', Arial, sans-serif; margin: 0; }
-        body.preload .header,
-        body.preload .top-bar {
-            visibility: hidden;
-        }
-        /* El diseño y la estética del hero se controlan desde el CSS principal. Solo se mantienen los media queries para el título y el fondo decorativo. */
-        @media (max-width: 600px) {
-            #quienes-somos { display: none !important; }
-            .break-mobile {
-                display: block;
-            }
-        }
-    </style>
+    <!-- estilos movidos a css/page-specific.css -->
 </head>
 <body>
     <div class="top-bar">
@@ -64,13 +50,7 @@
                                 <a class="navlink" href="services1.html">Servicios</a>
                                 <a class="navlink" href="contact.html">Contacto</a>
                                 <a class="navlink only-mobile" href="jobs.html">Oportunidades Laborales</a>
-                                <style>
-                                @media (max-width: 992px) {
-                                    #main-navigation.rulenav {
-                                        top: var(--header-height) !important;
-                                    }
-                                }
-                                </style>
+                                <!-- regla responsive movida a css/page-specific.css -->
             </nav>
         </div>
     </header>
@@ -107,7 +87,7 @@
                         <div class="service-card-title">Servicios Móviles</div>
                     </a>
                 </div>
-                <div style="margin-top:2rem;  text-align: center; ">
+                <div class="services-cta-wrapper">
                     <a href="services1.html" class="cta-button">Ver todos los servicios</a>
                 </div>
             </section>
@@ -184,23 +164,23 @@
             </section>
         </div>
             <!-- SECCIÓN TECNOLOGÍAS USADAS -->
-            <section id="tecnologias-usadas" class="fade-in-section" style="margin: 2.5rem 0; text-align:center;">
+            <section id="tecnologias-usadas" class="fade-in-section tecnologias-usadas">
                 <h2 class="text-center">Tecnologías Usadas</h2>
-                <div style="display: flex; flex-wrap: wrap; justify-content: center; gap: 2.5em; margin-top: 1.5em;">
-                    <div style="min-width:120px;">
-                        <img src="icons/python.png" alt="HTML5" style="height:40px; margin-bottom:0.5em;" loading="lazy">
+                <div class="tech-list">
+                    <div class="tech-item">
+                        <img src="icons/python.png" alt="HTML5" loading="lazy">
                         <div>Python</div>
                     </div>
-                    <div style="min-width:120px;">
-                        <img src="icons/mymaps.png" alt="CSS3" style="height:40px; margin-bottom:0.5em;" loading="lazy">
+                    <div class="tech-item">
+                        <img src="icons/mymaps.png" alt="CSS3" loading="lazy">
                         <div>Google My Maps</div>
                     </div>
-                    <div style="min-width:120px;">
-                        <img src="icons/logo-rsv.png" alt="JavaScript" style="height:40px; margin-bottom:0.5em;" loading="lazy">
+                    <div class="tech-item">
+                        <img src="icons/logo-rsv.png" alt="JavaScript" loading="lazy">
                         <div>RSV</div>
                     </div>
-                    <div style="min-width:120px;">
-                        <img src="icons/logo-drivin.webp" alt="VS Code" style="height:37px; margin-bottom:0.5em;" loading="lazy">
+                    <div class="tech-item">
+                        <img src="icons/logo-drivin.webp" alt="VS Code" loading="lazy">
                         <div>Drivin</div>
                     </div>
                 </div>
@@ -220,7 +200,7 @@
 
     <!-- Botón flotante de WhatsApp -->
     <a href="https://wa.me/5492994674943" class="whatsapp-float" target="_blank" rel="noopener" aria-label="WhatsApp">
-        <img src="img/whatsapp.svg" alt="WhatsApp" style="width:56px;height:56px;">
+        <img src="img/whatsapp.svg" alt="WhatsApp">
     </a>
     <style>
         .whatsapp-float {

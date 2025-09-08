@@ -18,6 +18,9 @@
 @import url("responsive.css");
 
 /* --- Global components and layout overrides moved from page-specific --- */
+main > .container {
+		padding-top: calc(var(--spacing-unit) * 4);
+}
 
 .only-mobile {
 	display: none;

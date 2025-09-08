@@ -1,5 +1,9 @@
 /* css/layout/_main.css */
-/* Rely on body padding-top (set in core/core.css) to offset the fixed top-bar + header.
-   Removing extra padding here avoids conflicts/overlap with the topbar. */
-/* spacing for the main content is controlled globally (body padding-top) to avoid
-    conflicts with fixed top-bar/header. */
+main {
+    display: block;
+
+}
+
+main > .container {
+    padding-top: calc(var(--spacing-unit) * 4);
+}

@@ -26,38 +26,7 @@
 /* container/grid */
 .container{width:86%;max-width:1400px;margin-left:auto;margin-right:auto}
 /* Consolidated responsive rules: single blocks per breakpoint to reduce duplication */
-@media (max-width:992px){
-  :root{--max-width:960px}
-  .top-bar{display:none}
-  .header{top:0}
-  .logos-left{flex-grow:1;justify-content:flex-start;min-width:100px;gap:var(--spacing-unit)}
 
-  /* smaller header and hide logo in narrow layouts */
-  .pepito{margin:0}
-  .pepito .logo-h1{display:none}
-
-  /* nav position tweak moved from inline style */
-  #main-navigation.rulenav{top:var(--header-height) !important}
-}
-
-@media (max-width:900px){
-  .header{position:fixed !important;top:0 !important;left:0;width:100vw;z-index:1000}
-  body{padding-top:70px !important}
-  .whatsapp-float{z-index:9999 !important;bottom:16px !important;right:16px !important;width:48px !important;height:48px !important;padding:4px !important}
-  .whatsapp-float img{width:40px !important;height:40px !important}
-  .mobile-menu-button{display:inline-flex !important}
-  .rulenav .navlink{display:flex;justify-content:right;width:90vw;padding:0 2.5rem;text-align:right;font-size:1.5rem;color:#fff}
-  .only-mobile{display:flex !important}
-  .rulenav{display:none !important}
-  .rulenav.mobile-menu-open{display:flex !important;flex-direction:column;justify-content:flex-start;position:fixed;top:0;left:0;width:100vw;height:450px !important;background:#0f141a;z-index:1100}
-}
-
-@media (min-width:901px){
-  .mobile-menu-button{display:none}
-  .rulenav{flex-direction:row;width:auto}
-  .rulenav .only-mobile{display:none !important}
-  .only-mobile{display:none !important}
-}
 
 @media (max-width:600px){
   .container{width:92%}
@@ -99,12 +68,7 @@
 }
 
 
-/* moved from index.html: critical small styles and helpers */
-/* body base font reset that was inline - keep it non-invasive */
-body{font-family:Roboto, Arial, sans-serif;margin:0}
-body.preload .header,body.preload .top-bar{visibility:hidden}
 
-/* nav responsive tweak centralized in css/responsive.css */
 
 .services-cta-wrapper{margin-top:2rem;text-align:center}
 
@@ -123,15 +87,9 @@ body.preload .header,body.preload .top-bar{visibility:hidden}
   object-position:center center;
   display:block;
   border-radius:6px;
-  box-shadow:0 2px 8px rgba(0,0,0,0.12);
 }
 
-/* Styles moved from services1.html to allow stricter CSP (no inline <style>) */
-.logo-h1 {
-  height: 1.2em;
-  vertical-align: middle;
-  margin-right: 12px;
-}
+
 .pepito {
   margin: 0;
   background: #101828;
@@ -145,9 +103,6 @@ body.preload .header,body.preload .top-bar{visibility:hidden}
   justify-content: center;
   gap: 12px;
 }
-/* pepito responsive rules are handled in the consolidated responsive blocks above */
 
-/* ensure logo3 vertical alignment previously set via inline style */
-#logo3 { vertical-align: middle; }
 
 

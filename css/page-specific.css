@@ -25,9 +25,20 @@
 
 /* container/grid */
 .container{width:86%;max-width:1400px;margin-left:auto;margin-right:auto}
+/* Consolidated responsive rules: single blocks per breakpoint to reduce duplication */
+@media (max-width:992px){
+  :root{--max-width:960px}
+  .top-bar{display:none}
+  .header{top:0}
+  .logos-left{flex-grow:1;justify-content:flex-start;min-width:100px;gap:var(--spacing-unit)}
 
-/* Consolidated responsive rules */
-@media (max-width:992px){:root{--max-width:960px} .top-bar{display:none} .header{top:0} .logos-left{flex-grow:1;justify-content:flex-start;min-width:100px;gap:var(--spacing-unit)} }
+  /* smaller header and hide logo in narrow layouts */
+  .pepito{margin:0}
+  .pepito .logo-h1{display:none}
+
+  /* nav position tweak moved from inline style */
+  #main-navigation.rulenav{top:var(--header-height) !important}
+}
 
 @media (max-width:900px){
   .header{position:fixed !important;top:0 !important;left:0;width:100vw;z-index:1000}
@@ -41,10 +52,16 @@
   .rulenav.mobile-menu-open{display:flex !important;flex-direction:column;justify-content:flex-start;position:fixed;top:0;left:0;width:100vw;height:450px !important;background:#0f141a;z-index:1100}
 }
 
-@media (min-width:901px){.mobile-menu-button{display:none}.rulenav{flex-direction:row;width:auto}.rulenav .only-mobile{display:none !important}.only-mobile{display:none !important}}
+@media (min-width:901px){
+  .mobile-menu-button{display:none}
+  .rulenav{flex-direction:row;width:auto}
+  .rulenav .only-mobile{display:none !important}
+  .only-mobile{display:none !important}
+}
 
 @media (max-width:600px){
   .container{width:92%}
+
   /* content-stack adjustments for small screens */
   .content-section{display:block;background:none;border-radius:0;box-shadow:none;margin-bottom:24px;padding:0;border:none;flex-direction:column;align-items:stretch;gap:0}
   .content-section .image-content,.content-section .text-content{align-self:unset;margin-top:0;padding-top:0}
@@ -56,6 +73,7 @@
   .fade-in-section.is-visible{opacity:1;transform:none}
   #hero p{font-size:1rem;margin-bottom:1.2em}
   #quienes-somos{display:none !important}
+
   /* transporte text reposition */
   #transporte-equipamiento-pesado .text-content{max-width:95vw;left:50%;right:auto;transform:translateX(-50%);padding:1.2rem .5rem;text-align:center;position:absolute;top:5%;font-size:.95rem}
   #transporte-equipamiento-pesado .text-content h2{font-size:1.3rem}
@@ -75,6 +93,9 @@
   .service-card-title{text-align:left;padding-left:calc(var(--spacing-unit)*2)}
   .service-cards-container{text-align:left}
   .text-content,.image-content{width:100%;min-width:unset}
+
+  /* pepito smaller font on very small screens */
+  .pepito{margin:0;font-size:2.2rem}
 }
 
 
@@ -83,8 +104,7 @@
 body{font-family:Roboto, Arial, sans-serif;margin:0}
 body.preload .header,body.preload .top-bar{visibility:hidden}
 
-/* nav responsive tweak moved from inline style */
-@media (max-width:992px){#main-navigation.rulenav{top:var(--header-height) !important}}
+/* nav responsive tweak centralized in css/responsive.css */
 
 .services-cta-wrapper{margin-top:2rem;text-align:center}
 
@@ -125,14 +145,7 @@ body.preload .header,body.preload .top-bar{visibility:hidden}
   justify-content: center;
   gap: 12px;
 }
-@media (max-width: 992px) {
-  .pepito { margin: 0; }
-  .pepito .logo-h1 { display: none; }
-}
-@media (max-width: 600px) {
-  .pepito { margin: 0; font-size: 2.2rem; }
-  .pepito .logo-h1 { display: none; }
-}
+/* pepito responsive rules are handled in the consolidated responsive blocks above */
 
 /* ensure logo3 vertical alignment previously set via inline style */
 #logo3 { vertical-align: middle; }

@@ -20,14 +20,29 @@ body {
         justify-content: center;
         flex-shrink: 0;
     }
-
-
-}
-
-@media (max-width: 600px) {
-    :root {
-        --header-height: 70px;
+    body { font-size: 15px; padding-top: var(--header-height); }
+    html { scroll-padding-top: calc(var(--header-height) + 15px) !important; }
+    h1 { font-size: 2.0rem; }
+    h2 { font-size: 1.8rem; }
+    h3 { font-size: 1.4rem; }
+    .header-container, .footer-container, .container {
+        width: 90%;
+        padding-left: 15px;
+        padding-right: 15px;
     }
+    #logo1, #logo2 { height: 35px; max-width: 120px; }
+}
+@media (max-width: 600px) {
+    html { scroll-padding-top: var(--header-height); }
+    :root { --header-height: 70px; }
+    body { font-size: 18px; line-height: 1.6; padding-top: var(--header-height); }
+    .header-container, .footer-container, .container {
+        width: 95%;
+        padding-left: 10px;
+        padding-right: 10px;
+    }
+    #logo1, #logo2 { height: 40px; max-width: 120px; }
+
     .rulenav {
         will-change: transform, opacity;
     }
@@ -37,4 +52,32 @@ body {
         padding: 30px 0;
     }
     .footer-container { gap: 15px; }
+    /* Migrated from layout/_header.css to centralize media queries */
+    .top-bar,
+    .top-bar * {
+        display: none !important;
+        visibility: hidden !important;
+        height: 0 !important;
+        width: 0 !important;
+        padding: 0 !important;
+        margin: 0 !important;
+        opacity: 0 !important;
+        pointer-events: none !important;
+        animation: none !important;
+        transition: none !important;
+    }
+
+    /* Migrated from layout/_grid.css */
+    .container { width: 92%; }
+
+    /* Migrated from components/_buttons.css */
+    .cta-button,
+    a.cta-button,
+    button.cta-button {
+        display: block;
+        width: 100%;
+        margin: 12px auto;
+        text-align: center;
+        border-radius: 6px;
+    }
 }

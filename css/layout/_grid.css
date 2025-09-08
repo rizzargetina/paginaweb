@@ -7,9 +7,3 @@
 
 }
 
-
-@media (max-width: 600px) {
-    .container {
-        width: 92%; 
-    }
-}

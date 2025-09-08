@@ -35,16 +35,4 @@ button.cta-button {
     text-decoration: none;
 }
 
-@media (max-width: 600px) {
-    .cta-button,
-    a.cta-button,
-    button.cta-button {
-        display: block;
-        width: 100%;
-        margin: 12px auto;
-        text-align: center;
-        border-radius: 6px;
-    }
-}
-
 

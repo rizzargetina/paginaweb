@@ -18,7 +18,7 @@
 .service-card:hover .service-card-title,.service-card:focus-within .service-card-title{background-color:var(--dhl-red)}
 
 #transporte-equipamiento-pesado{position:relative;display:flex;align-items:center;justify-content:center;min-height:60vh;margin:0}
-#transporte-equipamiento-pesado .text-content{position:absolute;z-index:2;padding:2rem;max-width:fit-content;right:2.5rem;top:5%;left:5%;font-size:1.1rem;font-weight:400;border-radius:2px;line-height:1.6;background:#101828;backdrop-filter:blur(4px);color:#fafdff}
+#transporte-equipamiento-pesado .text-content{position:absolute;z-index:2;padding:2rem;max-width:fit-content;right:2.5rem;top:5%;left:5%;font-size:1.1rem;font-weight:400;border-radius:2px;line-height:1.6;background:#101828;backdrop-filter:none;color:#fafdff}
 
 .section-image.small-section-image{width:100vw;height:100vh;object-fit:cover;object-position:center center;display:block;max-width:100%;max-height:70vh;margin:0 auto}
 .content-section .image-content img.section-image:not(.small-section-image){aspect-ratio:4/3;width:100%;min-height:400px;max-height:500px;max-width:98vw;object-fit:cover;object-position:left center;display:block;border-radius:var(--border-radius);border:1px solid var(--color-border)}
@@ -34,7 +34,7 @@
   /* content-stack adjustments for small screens */
   .content-section{display:block;background:none;border-radius:0;box-shadow:none;margin-bottom:24px;padding:0;border:none;flex-direction:column;align-items:stretch;gap:0}
   .content-section .image-content,.content-section .text-content{align-self:unset;margin-top:0;padding-top:0}
-  .image-content img.section-image{border-radius:var(--border-radius);width:100%;max-height:220px;object-fit:cover;margin-bottom:1rem;box-shadow:0 1px 6px rgba(0,0,0,.1)}
+  .image-content img.section-image{border-radius:var(--border-radius);width:100%;max-height:220px;object-fit:cover;margin-bottom:1rem;box-shadow:none}
   .text-content h2{font-size:1.5rem;margin-bottom:.5rem;font-weight:700;text-align:left}
   .text-content h3{font-size:1.2rem}
   .text-content{padding:0 2px 1.2rem 2px;text-align:left}
@@ -57,16 +57,12 @@
   .base-choferes-flex{flex-direction:column;align-items:center;gap:1em}
   .base-choferes-img img{aspect-ratio:1/1;object-fit:cover;object-position:left;max-width:350px;max-height:350px;margin-left:auto;margin-right:auto;display:block}
   .base-choferes-info{text-align:center}
-
-  /* small-screen service card tweaks */
   .service-card-title{text-align:left;padding-left:calc(var(--spacing-unit)*2)}
   .service-cards-container{text-align:left}
   .text-content,.image-content{width:100%;min-width:unset}
-
-  /* pepito smaller font on very small screens */
   .pepito{margin:0;font-size:2.2rem}
+  .mobile-only{display:inline}
 }
-
 
 
 
@@ -105,13 +101,7 @@
 /* Utility: show line-break only on small screens */
 .mobile-only{display:none}
 
-@media (max-width:600px){
-  .mobile-only{display:inline}
-}
 
-/* Índice rápido de servicios */
-
-/* Diseño del índice rápido de servicios (services1.html) */
 
 .index-grid{
   display:grid;
@@ -138,9 +128,6 @@
   background-color:var(--dhl-red, rgba(217,75,43,0.95));
 }
 
-
-/* Ensure links inside index items never show an underline on hover/click/focus
-   but keep the focus outline for keyboard users (accessibility). */
 .index-item,
 .index-item,
 .index-item a{
@@ -149,18 +136,8 @@
   text-decoration-thickness: 0 !important;
   text-decoration-color: transparent !important;
 }
-.index-item a:focus,
-.index-item a:hover,
-.index-item a:active{
-  text-decoration: none !important;
-  text-decoration-thickness: 0 !important;
-  text-decoration-color: transparent !important;
-  /* keep link color matching the item */
-  color: inherit !important;
-}
 
 
-/* mobile tweaks (keep single column + touch-friendly sizes) */
 @media (max-width:600px){
   .index-grid{grid-template-columns:repeat(1,1fr);gap:10px}
   .index-item{padding:16px 18px;font-size:1rem;   min-height:25px; justify-content:left;text-align:left;}

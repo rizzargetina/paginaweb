@@ -30,7 +30,7 @@ button.cta-button {
 .cta-button:focus {
     background: rgba(255,255,255,0.18);
     color: #fff;
-    box-shadow: 0 4px 16px rgba(0,0,0,0.18);
+    box-shadow: none;
     transform: translateY(-2px) scale(1.03);
     text-decoration: none;
 }

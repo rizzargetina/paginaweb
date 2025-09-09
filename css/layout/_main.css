@@ -65,7 +65,7 @@ main > .container {
     display: flex;
     align-items: center;
     height: 100%;
-    padding: 0 calc(var(--spacing-unit) * 2.5); /* Un poco más de padding horizontal */
+    padding: 12px; /* Un poco más de padding horizontal */
     font-family: var(--font-headings);
     font-weight: 700;
     font-size: 0.9rem; /* Ligeramente más pequeño para un look más refinado si hay muchos items */

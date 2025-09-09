@@ -102,6 +102,13 @@
   gap: 12px;
 }
 
+/* Utility: show line-break only on small screens */
+.mobile-only{display:none}
+
+@media (max-width:600px){
+  .mobile-only{display:inline}
+}
+
 /* Índice rápido de servicios */
 
 /* Diseño del índice rápido de servicios (services1.html) */

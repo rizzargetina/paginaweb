@@ -115,7 +115,7 @@
 }
 .index-item{
   display:block;
-  padding:14px 18px;
+  padding:10px 10px;
 
   color: #fff;
   background-color:rgba(255, 255, 255, 0.042);
@@ -132,10 +132,31 @@
 }
 
 
+/* Ensure links inside index items never show an underline on hover/click/focus
+   but keep the focus outline for keyboard users (accessibility). */
+.index-item,
+.index-item,
+.index-item a{
+  /* ensure no underline even if base typography rules are loaded later */
+  text-decoration: none !important;
+  text-decoration-thickness: 0 !important;
+  text-decoration-color: transparent !important;
+}
+.index-item a:focus,
+.index-item a:hover,
+.index-item a:active{
+  text-decoration: none !important;
+  text-decoration-thickness: 0 !important;
+  text-decoration-color: transparent !important;
+  /* keep link color matching the item */
+  color: inherit !important;
+}
+
+
 /* mobile tweaks (keep single column + touch-friendly sizes) */
 @media (max-width:600px){
   .index-grid{grid-template-columns:repeat(1,1fr);gap:10px}
-  .index-item{padding:16px 18px;font-size:1rem;  justify-content:left;text-align:left;}
+  .index-item{padding:16px 18px;font-size:1rem;   min-height:25px; justify-content:left;text-align:left;}
 }
 
 

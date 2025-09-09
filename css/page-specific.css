@@ -102,5 +102,43 @@
   gap: 12px;
 }
 
+/* Índice rápido de servicios */
+
+/* Diseño del índice rápido de servicios (services1.html) */
+
+.index-grid{
+  display:grid;
+  grid-template-columns:repeat(auto-fit,minmax(180px,1fr));
+  gap:14px;
+  align-items:stretch;
+  margin-top:1.8rem;
+}
+.index-item{
+  display:block;
+  padding:14px 18px;
+
+  color: #fff;
+  background-color:rgba(255, 255, 255, 0.042);
+  font-weight:700;
+  text-align:center;
+  min-height:64px;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+}
+
+.index-item:hover,.index-item:focus,.index-item:focus-within{
+  background-color:var(--dhl-red, rgba(217,75,43,0.95));
+}
+
+
+/* mobile tweaks (keep single column + touch-friendly sizes) */
+@media (max-width:600px){
+  .index-grid{grid-template-columns:repeat(1,1fr);gap:10px}
+  .index-item{padding:16px 18px;font-size:1rem;  justify-content:left;text-align:left;}
+}
+
+
+
 
 

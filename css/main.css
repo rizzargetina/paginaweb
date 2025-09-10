@@ -12,17 +12,6 @@
 /*  Las reglas responsivas globales deben ir al final para sobrescribir si es necesario */
 @import url("responsive.css");
 
-/* --- Layout --- */
-@import url("layout/_main.css");
-
-/* --- Components --- */
-@import url("components/_buttons.css");
-
-/*  Las reglas responsivas globales deben ir al final para sobrescribir si es necesario */
-@import url("responsive.css");
-
-
-
 .only-mobile {
 	display: none;
 }

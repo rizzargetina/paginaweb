@@ -25,6 +25,8 @@
 
 /* container/grid */
 .container{width:86%;max-width:1400px;margin-left:auto;margin-right:auto}
+/* Utility: hide mobile-only elements by default; shown inside the small-screen media query below */
+.mobile-only{display:none}
 /* Consolidated responsive rules: single blocks per breakpoint to reduce duplication */
 
 
@@ -84,6 +86,7 @@
 }
 
 
+
 .pepito {
   margin: 0;
   background: #101828;
@@ -97,9 +100,6 @@
   justify-content: center;
   gap: 12px;
 }
-
-/* Utility: show line-break only on small screens */
-.mobile-only{display:none}
 
 
 

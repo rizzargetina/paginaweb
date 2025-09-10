@@ -2,7 +2,6 @@ main > .container {
     padding-top: 60px;
 }
 
-/* css/layout/_header.css */
 .header {
     position: fixed;
     top: var(--top-bar-height);

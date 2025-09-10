@@ -21,9 +21,18 @@ document.addEventListener('DOMContentLoaded', function() {
   if (video && container) {
     const showFallback = () => {
       const poster = video.getAttribute('poster') || 'img/chat.webp';
+      // create an accessible background-image fallback to avoid large <img> repaint issues
       const fallback = document.createElement('div');
-      fallback.className = 'video-fallback';
-      fallback.innerHTML = `\n        <img src="${poster}" alt="Imagen representativa del servicio" class="section-image small-section-image">\n        <p><a href="img/video1.webm">Ver o descargar el video</a></p>\n      `;
+      fallback.className = 'video-fallback section-image small-section-image';
+      // provide accessible description since background images are not announced by AT
+      fallback.setAttribute('role', 'img');
+      fallback.setAttribute('aria-label', video.getAttribute('aria-label') || 'Imagen representativa del servicio');
+      // set background image (keeps the styling rules in CSS for sizing)
+      fallback.style.backgroundImage = `url('${poster}')`;
+      // keep a visible link to the video file for users who want to open/download it
+      const p = document.createElement('p');
+      p.innerHTML = `<a href="img/video1.webm">Ver o descargar el video</a>`;
+      fallback.appendChild(p);
       container.replaceChild(fallback, video);
     };
 

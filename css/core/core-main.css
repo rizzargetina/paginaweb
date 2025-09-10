@@ -1,0 +1,451 @@
+/*
+  Archivo combinado: core.css + layout/_main.css
+  Generado: contiene primero el contenido de css/core/core.css y luego css/layout/_main.css
+  NOTA: Coloqué este archivo en css/core/ para mantener las rutas relativas a fonts e imágenes sin cambios.
+*/
+
+@font-face {
+    font-family: 'Poppins';
+    src: url('../../fonts/Poppins-Regular.ttf') format('truetype');
+    font-weight: 400;
+    font-style: normal;
+    font-display: swap;
+}
+@font-face {
+    font-family: 'Poppins';
+    src: url('../../fonts/Poppins-Bold.ttf') format('truetype');
+    font-weight: 700;
+    font-style: normal;
+    font-display: swap;
+}
+@font-face {
+    font-family: 'Poppins';
+    src: url('../../fonts/Poppins-ExtraBold.ttf') format('truetype');
+    font-weight: 800;
+    font-style: normal;
+    font-display: swap;
+}
+
+:root {
+        /* Fonts */
+        --font-primary: 'Roboto', sans-serif;
+        --font-headings: 'Poppins', Arial, sans-serif; /* now using Poppins for headings */
+
+        /* Core Colors */
+        --color-primary-bg: #0d1117;
+        --color-secondary-bg: #161b22;
+        --color-text: #c9d1d9;
+        --color-text-secondary: #8b949e;
+        --color-headings: #f0f2f5;
+        --color-border: #30363d;
+
+        /* Branding colors used across the site */
+        --dhl-yellow: #2d437f;
+        --dhl-red: #004fd8;
+        --dhl-white: #FFFFFF;
+
+        /* Header & Topbar */
+        --color-header-bg: #2d437f;
+        --color-header-text: var(--dhl-white);
+        --color-header-border: #2d437f;
+        --top-bar-height: 35px;
+        --color-top-bar-bg: #101828;
+        --color-top-bar-text: #c0c8d8;
+
+        /* Accents & links */
+        --color-accent: #00cfff;
+        --color-link: var(--color-accent);
+        --color-link-hover: #fff;
+
+        /* Footer */
+        --color-footer-bg: #0d1117;
+        --color-footer-text: #8b949e;
+        --color-footer-link: var(--color-link);
+        --color-footer-link-hover: var(--color-link-hover);
+        --color-footer-border: #21262d;
+
+        /* Sizes & spacing */
+        --header-height: 60px;
+        --border-radius: 4px;
+        --border-radius-small: 4px;
+        --border-radius-medium: 4px;
+        --spacing-unit: 8px;
+
+        /* Focus shadow used in base typography */
+        --shadow-focus: 0 0 0 3px rgba(88, 166, 255, 0.4);
+}
+
+/* --- Base & Reset --- */
+html {
+    box-sizing: border-box;
+    scroll-behavior: smooth;
+    scroll-padding-top: calc(var(--header-height) + var(--top-bar-height) + 20px);
+}
+
+
+*, *:before, *:after {
+    box-sizing: inherit;
+}
+
+body {
+    margin: 0;
+    padding-top: calc(var(--header-height) + var(--top-bar-height));
+    font-family: var(--font-primary);
+    font-weight: 400;
+    font-size: 18px;
+    line-height: 1.65;
+    color: var(--color-text);
+    background-color: var(--color-secondary-bg);
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+
+/* --- Typography rules (moved from base/_typography.css) --- */
+h1, h2, h3, h4, h5, h6 {
+   font-family: var(--font-headings);
+   font-weight: 700;
+   color: var(--color-headings);
+   margin-top: 1em;
+   margin-bottom: 0.5em;
+   line-height: 1.3;
+   letter-spacing: 0.5px;
+}
+h1:first-child, h2:first-child, h3:first-child {
+    margin-top: 0;
+}
+
+h1 { font-size: 2.8rem; line-height: 1.2; color: var(--dhl-red); }
+h2 { font-size: 2.4rem; }
+h3 { font-size: 1.6rem; margin-top: 2.8em; }
+h4 { font-size: 1.3rem; }
+
+p, ul, ol {
+    font-family: var(--font-primary);
+    font-weight: 400;
+    color: var(--color-text);
+}
+p {
+    margin-top: 0;
+    margin-bottom: calc(var(--spacing-unit));
+    font-size: 1.4;
+}
+p:last-child {
+    margin-bottom: 0;
+}
+ul, ol {
+    list-style: none;
+    padding-left: 0;
+    margin-top: 0;
+    margin-bottom: calc(var(--spacing-unit) * 2);
+}
+ul:last-child, ol:last-child {
+    margin-bottom: 0;
+}
+li {
+    position: relative;
+    transition: padding-left 0.3s ease;
+}
+li::before {
+   content: '';
+   position: absolute;
+   background-color: var(--dhl-yellow);
+   border-radius: 50%;
+}
+ol li::before {
+    content: counter(list-counter) ".";
+    background-color: transparent;
+    color: var(--color-text-secondary);
+    font-weight: 700;
+    font-size: 0.9em;
+    width: auto;
+    height: auto;
+    top: 0.1em;
+    left: 0;
+    border-radius: 0;
+}
+
+strong {
+    font-weight: 700;
+    color: var(--color-headings);
+}
+
+a {
+    color: var(--color-link);
+    text-decoration: none;
+    transition: color 0.2s ease, text-decoration-thickness 0.2s ease;
+}
+a:hover, a:focus {
+    color: var(--color-link-hover);
+    text-decoration: underline;
+    text-decoration-thickness: 2px;
+    outline: none;
+}
+a:focus-visible {
+    box-shadow: none;
+    border-radius: 2px;
+    text-decoration: none;
+}
+
+hr {
+   border: 0;
+   height: 1px;
+   background-color: var(--color-border);
+   margin: calc(var(--spacing-unit) * 8) 0;
+   width: 0;
+
+}
+hr.is-visible {
+   width: 100%;
+}
+
+/* ====== contenido de css/layout/_main.css (concatenado) ====== */
+
+main > .container {
+    padding-top: 60px;
+}
+
+.header {
+    position: fixed;
+    top: var(--top-bar-height);
+    left: 0;
+    width: 100%;
+    height: var(--header-height);
+    background: var(--color-header-bg); /* #2a4d69  alternativa en proceso*/
+    z-index: 1000;
+    border-bottom: 1px solid var(--color-header-border);
+}
+
+.header.top-bar-effects-active {
+    transition: top 0.3s ease-in-out, background-color 0.3s ease, box-shadow 0.3s ease, border-color 0.3s ease;
+}
+.header.top-bar-is-hidden {
+    top: 0;
+}
+
+.header-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: 100%;
+    /* width: 90%; No es necesario si .container se usa para el contenido interno y max-width est aqu */
+    max-width: var(--max-width);
+    margin-left: auto;
+    margin-right: auto;
+    padding-left: 24px; /* Un poco m1s de padding lateral */
+    padding-right: 24px;
+}
+.logos-left {
+    display: flex;
+    align-items: center;
+    gap: 24px; /* Un poco m1s de espacio entre logos */
+    flex-shrink: 0;
+}
+
+.logos-left a {
+    display: flex;
+    align-items: center;
+}
+
+#logo1, #logo2 {
+    display: block;
+    height: 40px; /* Ligeramente m1s grandes */
+    width: auto;
+    max-width: 160px;
+}
+
+
+/* --- Navigation --- */
+.rulenav {
+    display: flex;
+    align-items: center;
+    height: 100%;
+    margin-left: auto; /* Mantiene la navegaci a la derecha */
+}
+
+.navlink {
+    display: flex;
+    align-items: center;
+    height: 100%;
+    padding: 12px; /* Un poco m1s de padding horizontal */
+    font-family: var(--font-headings);
+    font-weight: 700;
+    font-size: 0.9rem; /* Ligeramente m1s peque1o para un look m1s refinado si hay muchos items */
+    color: var(--color-header-text);
+    position: relative;
+    letter-spacing: 0.8px; /* Un poco m1s de espaciado entre letras para maysculas */
+    text-transform: uppercase;
+}
+
+
+
+/* --- Mobile Menu Button --- */
+.mobile-menu-button {
+    display: none; /* Se activa por media queries en responsive.css */
+    background: transparent; /* Mejor que 'none' */
+    border: none;
+    padding: 10px; /* 10px */
+    z-index: 1100;
+    width: 44px; /* Mantenemos tama1o */
+    height: 44px;
+    position: relative;
+    margin-left: 12px;
+}
+
+
+
+.mobile-menu-button .hamburger-line {
+    display: block;
+    width: 22px; /* Un poco m1s finas */
+    height: 2.5px;
+    background-color: var(--color-header-text);
+    transition: transform 0.3s cubic-bezier(0.25, 1, 0.5, 1), opacity 0.2s ease, top 0.3s ease; /* Mejor timing */
+    border-radius: 1px;
+    position: absolute;
+    left: 50%;
+    transform-origin: center center; /* Asegurar origen de transformaci3n */
+}
+/* Ajustes para que la X sea m1s perfecta */
+.hamburger-line:nth-child(1) { top: calc(50% - 7px - 1.25px); transform: translateX(-50%) rotate(0deg); }
+.hamburger-line:nth-child(2) { top: calc(50% - 1.25px); transform: translateX(-50%); opacity: 1;}
+.hamburger-line:nth-child(3) { top: calc(50% + 7px - 1.25px); transform: translateX(-50%) rotate(0deg); }
+
+.mobile-menu-button.menu-active .hamburger-line:nth-child(1) { top: calc(50% - 1.25px); transform: translateX(-50%) rotate(45deg); }
+.mobile-menu-button.menu-active .hamburger-line:nth-child(2) { opacity: 0; }
+.mobile-menu-button.menu-active .hamburger-line:nth-child(3) { top: calc(50% - 1.25px); transform: translateX(-50%) rotate(-45deg); }
+
+
+/* css/layout/_top-bar.css */
+.top-bar {
+    background-color: var(--color-top-bar-bg);
+    color: var(--color-top-bar-text);
+    height: var(--top-bar-height);
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 1001; /* Higher than main header */
+    font-size: 0.825rem; /* Un poco m1s peque1o para un look m1s fino */
+    display: flex;
+    align-items: center;
+    transition: transform 0.3s ease-in-out, background-color 0.2s ease;
+}
+
+.top-bar.is-hidden {
+    transform: translateY(-100%);
+}
+
+.top-bar-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: 100%;
+    width: 100%; 
+    max-width: var(--max-width);
+    margin-left: auto;
+    margin-right: auto;
+    padding-left: 24px; /* Asegurar consistencia con header */
+    padding-right: 24px; /* Asegurar consistencia con header */
+}
+
+.top-bar-left, .top-bar-right {
+    display: flex;
+    align-items: center;
+    gap: 20px; /* Un poco m1s de espacio */
+}
+
+.top-bar a {
+    color: var(--color-top-bar-text);
+    text-decoration: none;
+    padding: 4px 6px; /* Padding tambi1n horizontal */
+    border-radius: var(--border-radius-small); /* Para el :focus-visible */
+}
+
+.language-selector {
+    display: flex; /* Para alinear bien los elementos */
+    align-items: center;
+}
+.language-selector span { /* Si hay un pipe | separador */
+    margin: 0 4px;
+    opacity: 0.7;
+}
+.language-selector a {
+    padding: 3px 6px; /* Padding m1s generoso */
+    border-radius: var(--border-radius-small);
+    font-weight: 500;
+}
+.language-selector a.lang-active {
+    font-weight: 700;
+    color: var(--dhl-white);
+    background-color: rgba(255, 255, 255, 0.15); /* Fondo sutil para el activo */
+}
+.language-selector a:not(.lang-active):hover {
+    background-color: rgba(255, 255, 255, 0.08);
+}
+
+/* css/layout/_grid.css */
+.container {
+    width: 86%; 
+    max-width: 1400px; 
+    margin-left: auto;
+    margin-right: auto;
+
+}
+
+/* css/layout/_footer.css */
+.footer {
+   background-color: var(--color-footer-bg, var(--color-secondary-bg));
+   color: var(--color-footer-text, var(--color-text-secondary));
+    padding: 40px 0;
+   font-size: 0.9rem;
+    margin-top: 64px;
+   font-family: var(--font-primary);
+   border-top: 1px solid var(--color-footer-border);
+}
+
+.footer-container {
+   display: flex;
+   flex-wrap: wrap;
+   justify-content: space-between;
+   align-items: flex-start;
+    gap: 24px;
+    width: 90%;
+    max-width: var(--max-width);
+    margin-left: auto;
+    margin-right: auto;
+    padding-left: 16px;
+    padding-right: 16px;
+}
+
+.footer-left, .footer-right {
+    flex: 1 1 300px;
+}
+
+.footer-right {
+    text-align: right;
+}
+
+.footer a {
+    color: var(--color-footer-link);
+    font-weight: 500;
+}
+.footer a:hover, .footer a:focus {
+    color: var(--color-footer-link-hover);
+}
+
+.footer p {
+    margin: 4px 0;
+    font-size: inherit;
+    color: inherit;
+}
+
+.footer-left p i,
+.footer-right p i {
+    vertical-align: -0.15em;
+    margin-right: 6px;
+    font-size: 1.1em;
+    color: var(--color-text-secondary);
+}
+.footer-right p i {
+    margin-left: 12px;
+    margin-right: 4px;
+}

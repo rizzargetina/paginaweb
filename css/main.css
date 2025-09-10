@@ -1,5 +1,3 @@
-@import 'core/core.css';
-
-@import url("layout/_main.css");
+@import 'core/core-main.css';
 
 @import url("responsive.css");

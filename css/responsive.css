@@ -315,6 +315,8 @@ button.cta-button {
 		display: flex;
 		flex-direction: column;
 		justify-content: flex-start; /* place content toward the top on mobile */
+		padding: 0 1rem; /* horizontal padding */
+		padding-top: calc(var(--header-height) * 0.12); /* nudge content below fixed header */
 	}
 
 	/* move/eliminate extra top spacing for the hero title on small screens */

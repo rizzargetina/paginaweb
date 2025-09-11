@@ -328,6 +328,4 @@ button.cta-button {
     .service-cards-container { text-align: left; }
     .text-content, .image-content { width: 100%; min-width: unset; }
 
-    /* pepito smaller font on very small screens */
-    .pepito { margin: 0; font-size: 2rem; }
 }

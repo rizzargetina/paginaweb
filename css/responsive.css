@@ -310,7 +310,7 @@ button.cta-button {
 	/* Make hero fill the remaining viewport on small screens (account for fixed header) */
 	.hero {
 		/* use exact viewport height minus header to avoid extra scroll */
-		height: 80vh;
+		height: 84vh;
 		min-height: unset;
 		display: flex;
 		flex-direction: column;

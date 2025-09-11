@@ -329,5 +329,5 @@ button.cta-button {
     .text-content, .image-content { width: 100%; min-width: unset; }
 
     /* pepito smaller font on very small screens */
-    .pepito { margin: 0; font-size: 2.2rem; }
+    .pepito { margin: 0; font-size: 2rem; }
 }

@@ -5,9 +5,6 @@ body {
 .only-mobile {
 	display: none;
 }
-
-./* Use shared hero utilities from core-main.css and only override specifics here */
-.hero { min-height: 90vh; }
 .hero .hero-bg-image { background-image: url('../img/hero1.webp'); opacity: 0.57; background-position: center center; background-size: cover; }
 .hero .hero-content { position: relative; z-index: 3; }
 .hero h1 { font-family: var(--font-headings); font-size: 3.2rem; font-weight: 800; color: #fff; }

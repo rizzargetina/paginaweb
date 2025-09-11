@@ -289,7 +289,7 @@ button.cta-button {
     .footer-container { gap: 15px; }
 
     .top-bar, .top-bar * { display: none !important; visibility: hidden !important; height: 0 !important; width: 0 !important; padding: 0 !important; margin: 0 !important; opacity: 0 !important; pointer-events: none !important; animation: none !important; transition: none !important; }
-
+   .hero h1 { font-size: 2.1rem; font-weight: 800; color: #fff; }
     /* layout/buttons adjustments */
     .container { width: 92%; }
     .cta-button, a.cta-button, button.cta-button { display: block; width: 100%; margin: 12px auto; text-align: center; border-radius: 6px; }

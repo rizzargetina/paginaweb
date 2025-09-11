@@ -308,6 +308,17 @@ button.cta-button {
 	.hero p { font-size: 1rem; margin-bottom: 1.2em; }
     #quienes-somos { display: none !important; }
 
+	/* Make hero fill the remaining viewport on small screens (account for fixed header) */
+	.hero {
+		/* use exact viewport height minus header to avoid extra scroll */
+		height: 88vh;
+		min-height: unset;
+		display: flex;
+		flex-direction: column;
+		justify-content: center; /* vertically center content */
+		padding: 0 1rem; /* reduce padding to fit nicely */
+	}
+
     /* transporte text reposition */
     #transporte-equipamiento-pesado .text-content { max-width: 95vw; left: 50%; right: auto; transform: translateX(-50%); padding: 1.2rem .5rem; text-align: center; position: absolute; top: 5%; font-size: .95rem; }
     #transporte-equipamiento-pesado .text-content h2 { font-size: 1.3rem; }

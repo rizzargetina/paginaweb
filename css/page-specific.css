@@ -1,8 +1,288 @@
+
 /* -- page-specific condensed styles -- keep visual behavior but remove duplicates */
-.km-guard-inner{display:flex;flex-direction:column;align-items:center;gap:1.2rem;text-align:center}
-.km-guard-title{font-size:2.2rem;color:#fff;font-weight:900;display:inline-flex;align-items:center;gap:.6em}
-.km-guard-title img{width:1.2em;height:1.2em;vertical-align:middle;display:inline-block}
-.km-guard-text{font-size:1.2rem;max-width:800px;color:rgba(255,255,255,.95)}
+
+/* Components & blocks (selectors sorted) */
+.container{
+  margin-left:auto;
+  margin-right:auto;
+  max-width:1400px;
+  width:86%;
+}
+
+.content-section .image-content img.section-image:not(.small-section-image){
+  aspect-ratio:4/3;
+  border:1px solid var(--color-border);
+  display:block;
+  max-height:500px;
+  max-width:98vw;
+  min-height:400px;
+  object-fit:cover;
+  object-position:left center;
+  width:100%;
+  border-radius:var(--border-radius);
+}
+
+.index-grid{
+  align-items:stretch;
+  display:grid;
+  gap:14px;
+  grid-template-columns:repeat(auto-fit,minmax(180px,1fr));
+  margin-top:1.8rem;
+}
+
+.index-item{
+  align-items:center;
+  background-color:rgba(255, 255, 255, 0.042);
+  color:#fff;
+  display:flex;
+  font-weight:700;
+  justify-content:center;
+  min-height:64px;
+  padding:10px 10px;
+  text-align:center;
+}
+
+.index-item,
+.index-item a{
+  /* ensure no underline even if base typography rules are loaded later */
+  text-decoration:none !important;
+  text-decoration-color:transparent !important;
+  text-decoration-thickness:0 !important;
+}
+
+.index-item:focus,
+.index-item:focus-within,
+.index-item:hover{
+  background-color:var(--dhl-red, rgba(217,75,43,0.95));
+}
+
+.km-guard-inner{
+  align-items:center;
+  display:flex;
+  flex-direction:column;
+  gap:1.2rem;
+  text-align:center;
+}
+
+.km-guard-text{
+  color:rgba(255,255,255,.95);
+  font-size:1.2rem;
+  max-width:800px;
+}
+
+.km-guard-title{
+  align-items:center;
+  color:#fff;
+  display:inline-flex;
+  font-size:2.2rem;
+  font-weight:900;
+  gap:.6em;
+}
+
+.km-guard-title img{
+  display:inline-block;
+  height:1.2em;
+  vertical-align:middle;
+  width:1.2em;
+}
+
+.metric-item{
+  flex:1;
+  min-width:200px;
+  padding:20px;
+}
+
+.metric-item .icon{
+  display:block;
+  font-size:2.8rem;
+  margin-bottom:.5rem;
+  color:var(--color-accent);
+}
+
+.metric-item .label{
+  color:var(--color-text-secondary);
+  font-size:1rem;
+}
+
+.metric-item .number{
+  color:var(--color-headings);
+  font-family:var(--font-headings);
+  font-size:2.5rem;
+  font-weight:700;
+}
+
+.metrics-container{
+  display:flex;
+  flex-wrap:wrap;
+  gap:20px;
+  justify-content:space-around;
+  text-align:center;
+}
+
+.office-image{
+  display:block;
+  height:320px; /* fixed height to appear rectangular; adjust if needed */
+  object-position:center center;
+  width:100%;
+}
+
+.pepito{
+  align-items:center;
+  background:#101828;
+  color:#fafdff;
+  display:flex;
+  gap:12px;
+  font-size:2.2rem;
+  font-weight:700;
+  justify-content:center;
+  margin:0;
+  padding:16px 0 16px 0;
+  text-align:center;
+}
+
+.service-cards-container{
+  display:grid;
+  gap:calc(var(--spacing-unit)*3.5);
+  grid-template-columns:repeat(auto-fit,minmax(280px,1fr));
+}
+
+.service-card{
+  align-items:stretch;
+  border:1px solid var(--color-border);
+  border-radius:var(--border-radius-medium);
+  display:block;
+  overflow:hidden;
+  position:relative;
+  text-decoration:none;
+}
+
+.service-card img{
+  display:block;
+  filter:brightness(.85);
+  height:220px;
+  object-fit:cover;
+  width:100%;
+}
+
+.service-card-title{
+  background-color:rgba(16,22,36,.85);
+  box-sizing:border-box;
+  color:var(--dhl-white);
+  font-family:var(--font-headings);
+  font-size:1.15rem;
+  font-weight:700;
+  left:0;
+  padding:calc(var(--spacing-unit)*1.5) calc(var(--spacing-unit)*2);
+  position:absolute;
+  text-align:center;
+  width:100%;
+  bottom:0;
+}
+
+.service-card:focus-within .service-card-title,
+.service-card:hover .service-card-title{
+  background-color:var(--dhl-red);
+}
+
+#transporte-equipamiento-pesado{
+  align-items:center;
+  display:flex;
+  justify-content:center;
+  margin:0;
+  min-height:60vh;
+  position:relative;
+}
+
+#transporte-equipamiento-pesado .text-content{
+  backdrop-filter:none;
+  background:#101828;
+  border-radius:2px;
+  color:#fafdff;
+  font-size:1.1rem;
+  font-weight:400;
+  left:5%;
+  line-height:1.6;
+  max-width:fit-content;
+  padding:2rem;
+  position:absolute;
+  right:2.5rem;
+  top:5%;
+  z-index:2;
+}
+
+.section-image.small-section-image{
+  display:block;
+  height:100vh;
+  margin:0 auto;
+  max-height:70vh;
+  max-width:100%;
+  object-fit:cover;
+  object-position:center center;
+  width:100vw;
+}
+
+.services-cta-wrapper{
+  margin-top:2rem;
+  text-align:center;
+}
+
+.tecnologias-usadas{
+  margin:2.5rem 0;
+  text-align:center;
+}
+
+.tech-item{
+  min-width:120px;
+  text-align:center;
+}
+
+.tech-item img{
+  height:40px;
+  margin-bottom:.5em;
+}
+
+.tech-list{
+  display:flex;
+  gap:2.5em;
+  justify-content:center;
+  margin-top:1.5em;
+  flex-wrap:wrap;
+}
+
+.whatsapp-float img{
+  height:56px;
+  width:56px;
+}
+
+/* Utilities */
+.mobile-only{display:none}
+
+/* index responsive overrides */
+@media (max-width:600px){
+  .base-choferes-flex{flex-direction:column;align-items:center;gap:1em}
+  .base-choferes-img img{aspect-ratio:1/1;display:block;max-height:350px;max-width:350px;margin-left:auto;margin-right:auto;object-fit:cover;object-position:left}
+  .client-logo-slider{align-items:center;display:flex;justify-content:center;overflow:visible;width:100%}
+  .client-logo-track{align-items:center;animation:none !important;display:grid;grid-template-columns:repeat(2,1fr);gap:18px 10px;margin:0 auto;padding:0;width:100%}
+  .client-logo-track .logo-duplicate{display:none !important}
+  .client-logo-track img{height:80px !important;max-width:120px}
+  .container{width:92%}
+  .content-section{align-items:stretch;background:none;border:0;border-radius:0;box-shadow:none;display:block;flex-direction:column;gap:0;margin-bottom:24px;padding:0}
+  .content-section .image-content,.content-section .text-content{align-self:unset;margin-top:0;padding-top:0}
+  .fade-in-section{opacity:0;transform:translateY(24px);transition:opacity .5s,transform .5s}
+  .fade-in-section.is-visible{opacity:1;transform:none}
+  .hero p{font-size:1rem;margin-bottom:1.2em}
+  .image-content img.section-image{border-radius:var(--border-radius);box-shadow:none;margin-bottom:1rem;max-height:220px;object-fit:cover;width:100%}
+  .index-grid{grid-template-columns:repeat(1,1fr);gap:10px}
+  .index-item{font-size:1rem;justify-content:left;min-height:25px;padding:16px 18px;text-align:left}
+  #quienes-somos{display:none !important}
+  #transporte-equipamiento-pesado .text-content{font-size:.95rem;left:50%;padding:1.2rem .5rem;position:absolute;right:auto;text-align:center;top:5%;transform:translateX(-50%);max-width:95vw}
+  #transporte-equipamiento-pesado .text-content h2{font-size:1.3rem}
+  #transporte-equipamiento-pesado .text-content p,#transporte-equipamiento-pesado .text-content strong{font-size:1rem}
+  .mobile-only{display:inline}
+  .service-card-title{text-align:left;padding-left:calc(var(--spacing-unit)*2)}
+  .service-cards-container{text-align:left}
+  .text-content,.image-content{min-width:unset;width:100%}
+}
 
 .metrics-container{display:flex;justify-content:space-around;flex-wrap:wrap;gap:20px;text-align:center}
 .metric-item{flex:1;min-width:200px;padding:20px}

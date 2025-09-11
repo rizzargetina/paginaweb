@@ -290,7 +290,6 @@ button.cta-button {
 
     .top-bar, .top-bar * { display: none !important; visibility: hidden !important; height: 0 !important; width: 0 !important; padding: 0 !important; margin: 0 !important; opacity: 0 !important; pointer-events: none !important; animation: none !important; transition: none !important; }
    .hero h1 { font-size: 2.4rem; font-weight: 800; color: #fff; }
-    /* layout/buttons adjustments */
     .container { width: 92%; }
     .cta-button, a.cta-button, button.cta-button { display: block; width: 100%; margin: 12px auto; text-align: center; border-radius: 6px; }
 
@@ -311,13 +310,21 @@ button.cta-button {
 	/* Make hero fill the remaining viewport on small screens (account for fixed header) */
 	.hero {
 		/* use exact viewport height minus header to avoid extra scroll */
-		height: 88vh;
+		height: calc(100vh - var(--header-height));
 		min-height: unset;
 		display: flex;
 		flex-direction: column;
-		justify-content: center; /* vertically center content */
-		padding: 0 1rem; /* reduce padding to fit nicely */
+		justify-content: flex-start; /* place content toward the top on mobile */
+		padding: 0 1rem; /* horizontal padding */
+		padding-top: calc(var(--header-height) * 0.12); /* nudge content below fixed header */
 	}
+
+	/* move/eliminate extra top spacing for the hero title on small screens */
+	.hero .hero-content {
+		margin-top: 50px;
+		padding-top: 0.25rem;
+	}
+
 
     /* transporte text reposition */
     #transporte-equipamiento-pesado .text-content { max-width: 95vw; left: 50%; right: auto; transform: translateX(-50%); padding: 1.2rem .5rem; text-align: center; position: absolute; top: 5%; font-size: .95rem; }
@@ -337,6 +344,5 @@ button.cta-button {
     /* small-screen service card tweaks */
     .service-card-title { text-align: left; padding-left: calc(var(--spacing-unit) * 2); }
     .service-cards-container { text-align: left; }
-    .text-content, .image-content { width: 100%; min-width: unset; }
 
 }

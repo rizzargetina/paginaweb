@@ -1,8 +1,3 @@
-/* Consolidated responsive styles for the site
-     - All @media rules are centralized here
-     - Breakpoints: 992px, 900px, 601-900 overlap handled, 600px
-*/
-
 body {
     overflow-x: hidden;
 }
@@ -21,11 +16,6 @@ body {
 	display: flex;
 	align-items: flex-start;
 	gap: 30px;
-}
-
-.content-section:not(:first-of-type) {
-	padding-top: 40px;
-	padding-bottom: 40px;
 }
 
 .image-content,

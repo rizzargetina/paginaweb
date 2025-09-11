@@ -198,6 +198,60 @@ hr.is-visible {
    width: 100%;
 }
 
+/* ------------------- Utilities / shared components ------------------- */
+/* Centralizar reglas comunes para header, hero y secciones de contenido */
+.site-header {
+    position: fixed;
+    left: 0;
+    width: 100%;
+    height: var(--header-height);
+    background: var(--color-header-bg);
+    z-index: 1000;
+    border-bottom: 1px solid var(--color-header-border);
+}
+.site-header .header-container { display:flex; align-items:center; justify-content:space-between; height:100%; }
+
+.hero, #hero {
+    position: relative;
+    min-height: 70vh;
+    color: #fff;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 3rem 1rem;
+}
+.hero .hero-bg-image, #hero .hero-bg-image {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    opacity: 0.6;
+    z-index: 1;
+}
+.hero .hero-content, #hero .hero-content { position: relative; z-index: 2; max-width: 1000px; width: 100%; padding: 0 1rem; }
+.hero h1, #hero h1 { font-family: var(--font-headings); font-weight:800; color: var(--color-headings); }
+
+/* sección 'quienes somos' simple y reutilizable */
+.seccion-quienes {
+    display: block;
+    padding: 48px 0;
+    color: var(--color-text);
+    background: transparent;
+}
+.seccion-quienes .container { display:flex; gap:30px; align-items:flex-start; }
+.seccion-quienes .texto { flex:1; }
+.seccion-quienes .imagen { flex:1; }
+
+/* utilidades pequeñas */
+.u-center { display:flex; align-items:center; justify-content:center; }
+.u-stack { display:flex; flex-direction:column; gap:16px; }
+
+
 /* ====== contenido de css/layout/_main.css (concatenado) ====== */
 
 main > .container {

@@ -40,7 +40,7 @@
   .text-content{padding:0 2px 1.2rem 2px;text-align:left}
   .fade-in-section{opacity:0;transform:translateY(24px);transition:opacity .5s,transform .5s}
   .fade-in-section.is-visible{opacity:1;transform:none}
-  #hero p{font-size:1rem;margin-bottom:1.2em}
+  .hero p{font-size:1rem;margin-bottom:1.2em}
   #quienes-somos{display:none !important}
 
   /* transporte text reposition */

@@ -11,12 +11,12 @@ body {
 	display: none;
 }
 
-/* Use shared hero utilities from core-main.css and only override specifics here */
-#hero { min-height: 90vh; }
-#hero .hero-bg-image { background-image: url('../img/hero1.webp'); opacity: 0.57; background-position: center center; background-size: cover; }
-#hero .hero-content { position: relative; z-index: 3; }
-#hero h1 { font-family: var(--font-headings); font-size: 3.2rem; font-weight: 800; color: #fff; }
-#hero p { font-size: 1.25rem; margin-bottom: 1.5em; color: #fff; font-weight: 400; max-width: 550px; margin-left: auto; margin-right: auto; }
+./* Use shared hero utilities from core-main.css and only override specifics here */
+.hero { min-height: 90vh; }
+.hero .hero-bg-image { background-image: url('../img/hero1.webp'); opacity: 0.57; background-position: center center; background-size: cover; }
+.hero .hero-content { position: relative; z-index: 3; }
+.hero h1 { font-family: var(--font-headings); font-size: 3.2rem; font-weight: 800; color: #fff; }
+.hero p { font-size: 1.25rem; margin-bottom: 1.5em; color: #fff; font-weight: 400; max-width: 550px; margin-left: auto; margin-right: auto; }
 .content-section {
 	display: flex;
 	align-items: flex-start;
@@ -284,11 +284,21 @@ button.cta-button {
     .only-mobile { display: none !important; }
 }
 
-/* Desktop tweak: make hero taller and nudge content slightly upward to match previous design */
+/* Desktop tweak: make hero taller and control vertical offset via flex spacer */
 @media (min-width: 901px) {
-	#hero { min-height: 95vh; }
-	/* Move hero content a bit up while keeping it centered horizontally */
-	#hero .hero-content { transform: translateY(-7vh); }
+	.hero { min-height: 95vh; }
+	/* Use flex spacer to push content up on large screens */
+	.hero::after { flex: 1 1 35vh; }
+}
+
+/* Tablet / small-desktop: a bit less push */
+@media (max-width: 900px) {
+	.hero::after { flex: 1 1 30vh; }
+}
+
+/* Mobile: reduce spacer so content sits closer to center */
+@media (max-width: 600px) {
+	.hero::after { flex: 1 1 18vh; }
 }
 
 /* --------------------------------------------------------------------------
@@ -323,7 +333,7 @@ button.cta-button {
     .text-content { padding: 0 2px 1.2rem 2px; text-align: left; }
     .fade-in-section { opacity: 0; transform: translateY(24px); transition: opacity .5s, transform .5s; }
     .fade-in-section.is-visible { opacity: 1; transform: none; }
-    #hero p { font-size: 1rem; margin-bottom: 1.2em; }
+	.hero p { font-size: 1rem; margin-bottom: 1.2em; }
     #quienes-somos { display: none !important; }
 
     /* transporte text reposition */

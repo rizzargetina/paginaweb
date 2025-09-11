@@ -211,18 +211,18 @@ hr.is-visible {
 }
 .site-header .header-container { display:flex; align-items:center; justify-content:space-between; height:100%; }
 
-.hero, #hero {
+.hero {
     position: relative;
     min-height: 70vh;
     color: #fff;
-    text-align: center;
     display: flex;
     flex-direction: column;
-    justify-content: center;
-    align-items: center;
+    justify-content: flex-start; /* place children at start; spacer will control final vertical position */
+    align-items: center;     /* horizontal centering of flex children */
+    text-align: center;      /* center inline text */
     padding: 3rem 1rem;
 }
-.hero .hero-bg-image, #hero .hero-bg-image {
+.hero .hero-bg-image {
     position: absolute;
     inset: 0;
     width: 100%;
@@ -233,8 +233,25 @@ hr.is-visible {
     opacity: 0.6;
     z-index: 1;
 }
-.hero .hero-content, #hero .hero-content { position: relative; z-index: 2; max-width: 1000px; width: 100%; padding: 0 1rem; }
-.hero h1, #hero h1 { font-family: var(--font-headings); font-weight:800; color: var(--color-headings); }
+.hero .hero-content {
+    position: relative;
+    z-index: 2;
+    max-width: 1000px;
+    width: 100%;
+    padding: 0 1rem;
+    margin-left: auto; /* center the content block */
+    margin-right: auto;
+    text-align: center; /* ensure text is centered inside */
+}
+
+/* Flex spacer: pushes the .hero-content slightly upwards by taking flexible space below it.
+   Adjust the flex-basis (40vh) to control how high the content sits. Larger basis => more push up. */
+.hero::after {
+    content: "";
+    display: block;
+    flex: 1 1 7vh;
+}
+.hero h1 { font-family: var(--font-headings); font-weight:800; color: var(--color-headings); }
 
 /* sección 'quienes somos' simple y reutilizable */
 .seccion-quienes {

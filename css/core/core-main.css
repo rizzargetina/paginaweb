@@ -220,7 +220,7 @@ hr.is-visible {
     justify-content: flex-start; /* place children at start; spacer will control final vertical position */
     align-items: center;     /* horizontal centering of flex children */
     text-align: center;      /* center inline text */
-    padding: 3rem 1rem;
+    padding: 6rem 1rem;
 }
 .hero .hero-bg-image {
     position: absolute;
@@ -241,16 +241,9 @@ hr.is-visible {
     padding: 0 1rem;
     margin-left: auto; /* center the content block */
     margin-right: auto;
-    text-align: center; /* ensure text is centered inside */
+    text-align: center; 
 }
 
-/* Flex spacer: pushes the .hero-content slightly upwards by taking flexible space below it.
-   Adjust the flex-basis (40vh) to control how high the content sits. Larger basis => more push up. */
-.hero::after {
-    content: "";
-    display: block;
-    flex: 1 1 7vh;
-}
 .hero h1 { font-family: var(--font-headings); font-weight:800; color: var(--color-headings); }
 
 /* sección 'quienes somos' simple y reutilizable */
@@ -302,13 +295,13 @@ main > .container {
     max-width: var(--max-width);
     margin-left: auto;
     margin-right: auto;
-    padding-left: 24px; /* Un poco m1s de padding lateral */
+    padding-left: 24px; /* Un poc de padding lateral */
     padding-right: 24px;
 }
 .logos-left {
     display: flex;
     align-items: center;
-    gap: 24px; /* Un poco m1s de espacio entre logos */
+    gap: 24px; /* Un pocde espacio entre logos */
     flex-shrink: 0;
 }
 
@@ -319,7 +312,7 @@ main > .container {
 
 #logo1, #logo2 {
     display: block;
-    height: 40px; /* Ligeramente m1s grandes */
+    height: 40px; /* Ligeramente  grandes */
     width: auto;
     max-width: 160px;
 }
@@ -330,20 +323,20 @@ main > .container {
     display: flex;
     align-items: center;
     height: 100%;
-    margin-left: auto; /* Mantiene la navegaci a la derecha */
+    margin-left: auto; /* Mantiene la navega la derecha */
 }
 
 .navlink {
     display: flex;
     align-items: center;
     height: 100%;
-    padding: 12px; /* Un poco m1s de padding horizontal */
+    padding: 12px; /* Un poco  de padding horizontal */
     font-family: var(--font-headings);
     font-weight: 700;
-    font-size: 0.9rem; /* Ligeramente m1s peque1o para un look m1s refinado si hay muchos items */
+    font-size: 0.9rem; /* Ligeramente  p para un look 1s refinado si hay muchos items */
     color: var(--color-header-text);
     position: relative;
-    letter-spacing: 0.8px; /* Un poco m1s de espaciado entre letras para maysculas */
+    letter-spacing: 0.8px; /* Un pocos de espaciado entre letras para msculas */
     text-transform: uppercase;
 }
 
@@ -356,7 +349,7 @@ main > .container {
     border: none;
     padding: 10px; /* 10px */
     z-index: 1100;
-    width: 44px; /* Mantenemos tama1o */
+    width: 44px; /* Mantenemos to */
     height: 44px;
     position: relative;
     margin-left: 12px;
@@ -366,16 +359,16 @@ main > .container {
 
 .mobile-menu-button .hamburger-line {
     display: block;
-    width: 22px; /* Un poco m1s finas */
+    width: 22px; /* Un poco finas */
     height: 2.5px;
     background-color: var(--color-header-text);
     transition: transform 0.3s cubic-bezier(0.25, 1, 0.5, 1), opacity 0.2s ease, top 0.3s ease; /* Mejor timing */
     border-radius: 1px;
     position: absolute;
     left: 50%;
-    transform-origin: center center; /* Asegurar origen de transformaci3n */
+    transform-origin: center center; /* Asegurar origen de trans */
 }
-/* Ajustes para que la X sea m1s perfecta */
+/* Ajustes para que la X se perfecta */
 .hamburger-line:nth-child(1) { top: calc(50% - 7px - 1.25px); transform: translateX(-50%) rotate(0deg); }
 .hamburger-line:nth-child(2) { top: calc(50% - 1.25px); transform: translateX(-50%); opacity: 1;}
 .hamburger-line:nth-child(3) { top: calc(50% + 7px - 1.25px); transform: translateX(-50%) rotate(0deg); }

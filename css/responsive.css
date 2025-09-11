@@ -284,22 +284,7 @@ button.cta-button {
     .only-mobile { display: none !important; }
 }
 
-/* Desktop tweak: make hero taller and control vertical offset via flex spacer */
-@media (min-width: 901px) {
-	.hero { min-height: 95vh; }
-	/* Use flex spacer to push content up on large screens */
-	.hero::after { flex: 1 1 35vh; }
-}
 
-/* Tablet / small-desktop: a bit less push */
-@media (max-width: 900px) {
-	.hero::after { flex: 1 1 30vh; }
-}
-
-/* Mobile: reduce spacer so content sits closer to center */
-@media (max-width: 600px) {
-	.hero::after { flex: 1 1 18vh; }
-}
 
 /* --------------------------------------------------------------------------
      Small / Mobile: <= 600px

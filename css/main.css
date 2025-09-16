@@ -419,11 +419,7 @@ hr {
 .image-content {
     flex: 1.4 1 0;
 }
-.text-content h2 {
-    color: var(--color-headings);
-    display: inline-block;
-    position: relative;
-}
+
 
 .full-height-section {
     align-items: stretch;
@@ -448,13 +444,11 @@ hr {
     width: 100%;
 }
 #client-logos {
-    margin-top: calc(var(--spacing-unit) * 4);
     padding: calc(var(--spacing-unit) * 8);
 }
 #client-logos h2 {
 	color: var(--color-headings);
-	margin-bottom: 2.5em;
-	font-size: 2rem;
+	margin-bottom: 1.2em;
 	text-align: center;
 	position: relative;
 	display: inline-block;
@@ -495,7 +489,7 @@ hr {
     border: 1px solid var(--color-border);
     border-radius: 5px;
     color: inherit;
-    margin: calc(var(--spacing-unit) * 6) 0;
+    margin: 40px;
     padding: calc(var(--spacing-unit) * 4);
 }
 
@@ -511,12 +505,7 @@ hr {
 .metric-item .number { font-size: 2.5rem; font-weight: 700; color: var(--color-headings); font-family: var(--font-headings) }
 .metric-item .label { font-size: 1rem; color: var(--color-text-secondary) }
 
-#lineas-servicio h2 {
-	color: var(--color-headings);
-	margin-bottom: 1em;
-	font-size: 2rem;
-	text-align: center;
-}
+
 .service-cards-container {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
@@ -597,7 +586,6 @@ button.cta-button {
     color:var(--color-accent);
     display:block;
     font-size:2.8rem;
-    margin-bottom:.5rem;
 }
 
 .metric-item .label{
@@ -620,28 +608,7 @@ button.cta-button {
     text-align:center;
 }
 
-.tecnologias-usadas{
-    margin:2.5rem 0;
-    text-align:center;
-}
 
-.tech-item{
-    min-width:120px;
-    text-align:center;
-}
-
-.tech-item img{
-    height:40px;
-    margin-bottom:.5em;
-}
-
-.tech-list{
-    display:flex;
-    flex-wrap:wrap;
-    gap:2.5em;
-    justify-content:center;
-    margin-top:1.5em;
-}
 
 .whatsapp-float img{
     height:56px;
@@ -655,8 +622,6 @@ button.cta-button {
 .metric-item .icon{font-size:2.8rem;color:var(--color-accent);margin-bottom:.5rem;display:block}
 .metric-item .number{font-size:2.5rem;font-weight:700;color:var(--color-headings);font-family:var(--font-headings)}
 .metric-item .label{font-size:1rem;color:var(--color-text-secondary)}
-
-#lineas-servicio h2{color:var(--color-headings);margin-bottom:1em;font-size:2rem;text-align:center}
 
 #transporte-equipamiento-pesado{position:relative;display:flex;align-items:center;justify-content:center;min-height:60vh;margin:0}
 #transporte-equipamiento-pesado .text-content{background:#101828;border-radius:2px;backdrop-filter:none;color:#fafdff;font-size:1.1rem;font-weight:400;line-height:1.6;left:5%;max-width:fit-content;padding:2rem;position:absolute;right:2.5rem;top:5%;z-index:2}

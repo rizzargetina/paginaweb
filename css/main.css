@@ -222,7 +222,7 @@ hr {
     color: #fff; /* apariencia esperada sobre la imagen hero */
 }
 .hero p { font-size: 1.25rem; margin-bottom: 1.5em; color: #fff; font-weight: 400; max-width: 550px; margin-left: auto; margin-right: auto; }
-/* sección 'quienes somos' simple y reutilizable */
+
 .seccion-quienes {
     display: block;
     padding: 48px 0;
@@ -322,7 +322,7 @@ hr {
     left: 0;
     width: 100%;
     z-index: 1001; /* Higher than main header */
-    font-size: 0.825rem; /* Un poco m1s peque1o para un look m1s fino */
+    font-size: 0.825rem;
     display: flex;
     align-items: center;
     transition: transform 0.3s ease-in-out, background-color 0.2s ease;
@@ -348,27 +348,24 @@ hr {
 .top-bar-left, .top-bar-right {
     display: flex;
     align-items: center;
-    gap: 20px; /* Un poco m1s de espacio */
+    gap: 20px; 
 }
 
 .top-bar a {
     color: var(--color-top-bar-text);
     text-decoration: none;
-    padding: 4px 6px; /* Padding tambi1n horizontal */
-    border-radius: var(--border-radius-small); /* Para el :focus-visible */
 }
 
 .language-selector {
     display: flex; /* Para alinear bien los elementos */
     align-items: center;
 }
-.language-selector span { /* Si hay un pipe | separador */
+.language-selector span { 
     margin: 0 4px;
     opacity: 0.7;
 }
 .language-selector a {
-    padding: 3px 6px; /* Padding m1s generoso */
-    border-radius: var(--border-radius-small);
+    padding: 3px 6px; 
     font-weight: 500;
 }
 .language-selector a.lang-active {
@@ -386,7 +383,7 @@ hr {
    font-size: 0.9rem;
     margin-top: 64px;
    font-family: var(--font-primary);
-   border-top: 1px solid var(--color-footer-border);
+
 }
 
 .footer-container {
@@ -435,10 +432,6 @@ hr {
 .footer-right p i {
     margin-left: 12px;
     margin-right: 4px;
-}
-
-.only-mobile {
-    display: none;
 }
 
 .content-section {

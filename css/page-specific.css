@@ -47,7 +47,6 @@
 }
 
 .index-item:focus,
-.index-item:focus-within,
 .index-item:hover{
   background-color:var(--dhl-red, rgba(217,75,43,0.95));
 }
@@ -232,13 +231,7 @@
 
 .whatsapp-float img{width:56px;height:56px}
 
-/* Office image: force rectangular crop and responsive height */
-.office-image{
-  width:100%;
-  height:320px; /* fixed height to appear rectangular; adjust if needed */
-  object-position:center center;
-  display:block;
-}
+
 
 
 .pepito {

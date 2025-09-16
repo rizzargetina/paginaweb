@@ -72,8 +72,6 @@
 /* --- Base & Reset --- */
 html {
     box-sizing: border-box;
-    scroll-behavior: smooth;
-    scroll-padding-top: calc(var(--header-height) + var(--top-bar-height) + 20px);
 }
 
 
@@ -145,15 +143,8 @@ a:focus-visible {
 }
 
 hr {
-   border: 0;
-   height: 1px;
-   background-color: var(--color-border);
-   margin: calc(var(--spacing-unit) * 8) 0;
-   width: 0;
+   color: transparent;
 
-}
-hr.is-visible {
-   width: 100%;
 }
 
 /* ------------------- Utilities / shared components ------------------- */
@@ -686,23 +677,29 @@ button.cta-button {
 
 
 @media (max-width: 600px) {
-    html { scroll-padding-top: var(--header-height); }
-    :root { --header-height: 70px; }
     body { font-size: 18px; line-height: 1.6; padding-top: var(--header-height); }
-    .header-container, .footer-container, .container { width: 95%; padding-left: 10px; padding-right: 10px; }
     #logo1, #logo2 { height: 35px; max-width: 90px; }
 
-    .rulenav { will-change: transform, opacity; }
     .logos-left { gap: 10px; }
+
+    .container { width: 92%;padding-left: 10px; padding-right: 10px; }    
+    .top-bar, .top-bar * { display: none !important; visibility: hidden !important; height: 0 !important; width: 0 !important; padding: 0 !important; margin: 0 !important; opacity: 0 !important; pointer-events: none !important; animation: none !important; transition: none !important; }
+   	.hero {
+		height: 84vh;
+		min-height: unset;
+		display: flex;
+		justify-content: flex-start; /* place content toward the top on mobile */
+		padding-top: 60px; 
+	}
+   
+    .hero h1 { font-size: 2.4rem; font-weight: 800; color: #fff; }
+
+  .hero p{font-size:1rem;margin-bottom:1.2em}
+
     .footer { font-size: 0.85rem; padding: 30px 0; }
     .footer-container { gap: 15px; }
 
-    .top-bar, .top-bar * { display: none !important; visibility: hidden !important; height: 0 !important; width: 0 !important; padding: 0 !important; margin: 0 !important; opacity: 0 !important; pointer-events: none !important; animation: none !important; transition: none !important; }
-   .hero h1 { font-size: 2.4rem; font-weight: 800; color: #fff; }
-    .container { width: 92%; }
     .cta-button, a.cta-button, button.cta-button { display: block; width: 100%; margin: 20px 0 20px; text-align: center; border-radius: 6px; }
-
-    .office-image { aspect-ratio:1/1;object-fit:cover;max-width:350px;max-height:350px;margin-left:auto;margin-right:auto;display:block; border-radius: 8px;}
 
     .content-section { display: block; background: none; border-radius: 0; box-shadow: none; margin-bottom: 24px; padding: 0; border: none; flex-direction: column; align-items: stretch; gap: 0; }
     .content-section .image-content, .content-section .text-content { align-self: unset; margin-top: 0; padding-top: 0; }
@@ -710,58 +707,23 @@ button.cta-button {
     .text-content h2 { font-size: 1.5rem; margin-bottom: .5rem; font-weight: 700; text-align: left; }
     .text-content h3 { font-size: 1.2rem; }
     .text-content { padding: 0 2px 1.2rem 2px; text-align: left; }
-    .fade-in-section { opacity: 0; transform: translateY(24px); transition: opacity .5s, transform .5s; }
-    .fade-in-section.is-visible { opacity: 1; transform: none; }
-	.hero p { font-size: 1rem; margin-bottom: 1.2em; }
+	.hero p { font-size: 1rem;}
     #quienes-somos { display: none !important; }
 
-	.hero {
-		height: 84vh;
-		min-height: unset;
-		display: flex;
-		justify-content: flex-start; /* place content toward the top on mobile */
-		padding-top: 60px; 
-	}
-
-
-    /* logos and client tracks */
     .client-logo-slider { overflow: visible; display: flex; justify-content: center; align-items: center; width: 100%; }
     .client-logo-track { display: grid; grid-template-columns: repeat(2,1fr); width: 100%; animation: none !important; align-items: center; padding: 0; margin: 0 auto; gap: 25px 20px; }
     .client-logo-track .logo-duplicate { display: none !important; }
     .client-logo-track img { height: 80px !important; max-width: 120px; }
 
-    .base-choferes-flex { flex-direction: column; align-items: center; gap: 1em; }
-    .base-choferes-img img { aspect-ratio: 1/1; object-fit: cover; object-position: left; max-width: 350px; max-height: 350px; margin-left: auto; margin-right: auto; display: block; }
-    .base-choferes-info { text-align: center; }
-
-  .base-choferes-flex{flex-direction:column;align-items:center;gap:1em}
-  .base-choferes-img img{aspect-ratio:1/1;display:block;max-height:350px;max-width:350px;margin-left:auto;margin-right:auto;object-fit:cover;object-position:left}
-  .content-section{align-items:stretch;background:none;border:0;border-radius:0;box-shadow:none;display:block;flex-direction:column;gap:0;margin-bottom:24px;padding:0}
-  .content-section .image-content,.content-section .text-content{align-self:unset;margin-top:0;padding-top:0}
-  .hero p{font-size:1rem;margin-bottom:1.2em}
-  .image-content img.section-image{border-radius:var(--border-radius);box-shadow:none;margin-bottom:1rem;max-height:220px;object-fit:cover;width:100%}
-  #quienes-somos{display:none !important}
-  .mobile-only{display:inline}
-  .service-card-title{text-align:left;padding-left:calc(var(--spacing-unit)*2)}
-  .service-cards-container{text-align:left}
-
   .container{width:92%}
   .text-content{padding:0 2px 1.2rem 2px;text-align:left}
-  .fade-in-section{opacity:0;transform:translateY(24px);transition:opacity .5s,transform .5s}
-  .fade-in-section.is-visible{opacity:1;transform:none}
   .hero p{font-size:1.1rem;margin-bottom:1.2em}
   #quienes-somos{display:none !important}
-
-
-  /* logos and client tracks */
-  .client-logo-slider{overflow:visible;display:flex;justify-content:center;align-items:center;width:100%}
-  .client-logo-track{display:grid;grid-template-columns:repeat(2,1fr);width:100%;animation:none !important;align-items:center;padding:0;margin:0 0;}
-  .client-logo-track .logo-duplicate{display:none !important}
-  .client-logo-track img{height:80px !important;}
 
   .base-choferes-flex{flex-direction:column;align-items:center;gap:1em}
   .base-choferes-img img{aspect-ratio:1/1;object-fit:cover;object-position:left;max-width:350px;max-height:350px;margin-left:auto;margin-right:auto;display:block}
   .base-choferes-info{text-align:center}
+  .office-image{aspect-ratio:1/1;object-fit:cover;object-position:left;max-width:350px;max-height:350px;margin-left:auto;margin-right:auto;display:block}
   .service-card-title{text-align:left;padding-left:calc(var(--spacing-unit)*2)}
   .service-cards-container{text-align:left}
   .text-content,.image-content{width:100%;min-width:unset}

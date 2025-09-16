@@ -448,7 +448,7 @@ hr {
 }
 #client-logos h2 {
 	color: var(--color-headings);
-	margin-bottom: 1.2em;
+	margin-bottom: 1em;
 	text-align: center;
 	position: relative;
 	display: inline-block;

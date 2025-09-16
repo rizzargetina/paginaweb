@@ -125,7 +125,6 @@ ul, ol {
 
 strong {
     font-weight: 700;
-    color: var(--color-headings);
 }
 
 a {
@@ -413,11 +412,10 @@ main > .container {
 
 /* css/layout/_grid.css */
 .container {
-    width: 86%; 
-    max-width: 1400px; 
+    width: 86%;
+    max-width: 1400px;
     margin-left: auto;
     margin-right: auto;
-
 }
 
 /* css/layout/_footer.css */
@@ -589,33 +587,16 @@ main > .container {
 }
 
 .metrics-container {
-	display: flex;
-	justify-content: space-around;
-	flex-wrap: wrap;
-	gap: 20px;
-	text-align: center;
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+    gap: 20px;
+    text-align: center;
 }
-.metric-item {
-	flex: 1;
-	min-width: 200px;
-	padding: 20px;
-}
-.metric-item .icon {
-	font-size: 2.8rem;
-	color: var(--color-accent);
-	margin-bottom: .5rem;
-	display: block;
-}
-.metric-item .number {
-	font-size: 2.5rem;
-	font-weight: 700;
-	color: var(--color-headings);
-	font-family: var(--font-headings);
-}
-.metric-item .label {
-	font-size: 1rem;
-	color: var(--color-text-secondary);
-}
+.metric-item { flex: 1; min-width: 200px; padding: 20px }
+.metric-item .icon { font-size: 2.8rem; color: var(--color-accent); margin-bottom: .5rem; display: block }
+.metric-item .number { font-size: 2.5rem; font-weight: 700; color: var(--color-headings); font-family: var(--font-headings) }
+.metric-item .label { font-size: 1rem; color: var(--color-text-secondary) }
 
 #lineas-servicio h2 {
 	color: var(--color-headings);
@@ -628,36 +609,10 @@ main > .container {
 	grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
 	gap: calc(var(--spacing-unit) * 3.5);
 }
-.service-card {
-	display: block;
-	text-decoration: none;
-	border-radius: var(--border-radius-medium);
-	overflow: hidden;
-	position: relative;
-}
-.service-card img {
-	width: 100%;
-	height: 220px;
-	object-fit: cover;
-	display: block;
-}
-.service-card-title {
-	position: absolute;
-	bottom: 0;
-	left: 0;
-	width: 100%;
-	background-color: rgba(16,22,36,.85);
-	color: var(--dhl-white);
-	padding: calc(var(--spacing-unit) * 1.5) calc(var(--spacing-unit) * 2);
-	font-family: var(--font-headings);
-	font-weight: 700;
-	font-size: 1.15rem;
-	text-align: center;
-	box-sizing: border-box;
-}
-.service-card:hover {
-	background-color: var(--dhl-red);
-}
+.service-card{display:block;text-decoration:none;border-radius:var(--border-radius-medium);overflow:hidden;position:relative;border:1px solid var(--color-border)}
+.service-card img{width:100%;height:220px;object-fit:cover;display:block;filter:brightness(.85)}
+.service-card-title{position:absolute;bottom:0;left:0;width:100%;background-color:rgba(16,22,36,.85);color:var(--dhl-white);padding:calc(var(--spacing-unit)*1.5) calc(var(--spacing-unit)*2);font-family:var(--font-headings);font-weight:700;font-size:1.15rem;text-align:center;box-sizing:border-box}
+.service-card:hover .service-card-title{background-color:var(--dhl-red)}
 
 
 /* Botón principal unificado para toda la web */
@@ -808,8 +763,6 @@ button.cta-button {
     .service-card-title { text-align: left; padding-left: calc(var(--spacing-unit) * 2); }
     .service-cards-container { text-align: left; }
 
-  .index-grid{grid-template-columns:repeat(1,1fr);gap:10px}
-  .index-item{padding:16px 18px;font-size:1rem;   min-height:25px; justify-content:left;text-align:left;}
 
   .base-choferes-flex{flex-direction:column;align-items:center;gap:1em}
   .base-choferes-img img{aspect-ratio:1/1;display:block;max-height:350px;max-width:350px;margin-left:auto;margin-right:auto;object-fit:cover;object-position:left}
@@ -817,15 +770,10 @@ button.cta-button {
   .client-logo-track{align-items:center;animation:none !important;display:grid;grid-template-columns:repeat(2,1fr);gap:18px 10px;margin:0 auto;padding:0;width:100%}
   .client-logo-track .logo-duplicate{display:none !important}
   .client-logo-track img{height:80px !important;max-width:120px}
-  .container{width:92%}
   .content-section{align-items:stretch;background:none;border:0;border-radius:0;box-shadow:none;display:block;flex-direction:column;gap:0;margin-bottom:24px;padding:0}
   .content-section .image-content,.content-section .text-content{align-self:unset;margin-top:0;padding-top:0}
-  .fade-in-section{opacity:0;transform:translateY(24px);transition:opacity .5s,transform .5s}
-  .fade-in-section.is-visible{opacity:1;transform:none}
   .hero p{font-size:1rem;margin-bottom:1.2em}
   .image-content img.section-image{border-radius:var(--border-radius);box-shadow:none;margin-bottom:1rem;max-height:220px;object-fit:cover;width:100%}
-  .index-grid{grid-template-columns:repeat(1,1fr);gap:10px}
-  .index-item{font-size:1rem;justify-content:left;min-height:25px;padding:16px 18px;text-align:left}
   #quienes-somos{display:none !important}
   #transporte-equipamiento-pesado .text-content{font-size:.95rem;left:50%;padding:1.2rem .5rem;position:absolute;right:auto;text-align:center;top:5%;transform:translateX(-50%);max-width:95vw}
   #transporte-equipamiento-pesado .text-content h2{font-size:1.3rem}
@@ -833,15 +781,9 @@ button.cta-button {
   .mobile-only{display:inline}
   .service-card-title{text-align:left;padding-left:calc(var(--spacing-unit)*2)}
   .service-cards-container{text-align:left}
-  .text-content,.image-content{min-width:unset;width:100%}
-  
-  .container{width:92%}
 
-  /* content-stack adjustments for small screens */
-  .content-section{display:block;background:none;border-radius:0;box-shadow:none;margin-bottom:24px;padding:0;border:none;flex-direction:column;align-items:stretch;gap:0}
-  .content-section .image-content,.content-section .text-content{align-self:unset;margin-top:0;padding-top:0}
-  .image-content img.section-image{border-radius:var(--border-radius);width:100%;max-height:220px;object-fit:cover;margin-bottom:1rem;box-shadow:none}
-  .text-content h2{font-size:1.5rem;margin-bottom:.5rem;font-weight:700;text-align:left}
+  .container{width:92%}
+.text-content h2{font-size:1.5rem;margin-bottom:.5rem;font-weight:700;text-align:left}
   .text-content h3{font-size:1.2rem}
   .text-content{padding:0 2px 1.2rem 2px;text-align:left}
   .fade-in-section{opacity:0;transform:translateY(24px);transition:opacity .5s,transform .5s}
@@ -856,9 +798,9 @@ button.cta-button {
 
   /* logos and client tracks */
   .client-logo-slider{overflow:visible;display:flex;justify-content:center;align-items:center;width:100%}
-  .client-logo-track{display:grid;grid-template-columns:repeat(2,1fr);width:100%;animation:none !important;align-items:center;padding:0;margin:0 auto;gap:18px 10px}
+  .client-logo-track{display:grid;grid-template-columns:repeat(2,1fr);width:100%;animation:none !important;align-items:center;padding:0;margin:0 auto;}
   .client-logo-track .logo-duplicate{display:none !important}
-  .client-logo-track img{height:80px !important;max-width:120px}
+  .client-logo-track img{height:80px !important;max-width:110px}
 
   .base-choferes-flex{flex-direction:column;align-items:center;gap:1em}
   .base-choferes-img img{aspect-ratio:1/1;object-fit:cover;object-position:left;max-width:350px;max-height:350px;margin-left:auto;margin-right:auto;display:block}

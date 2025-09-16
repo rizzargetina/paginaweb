@@ -122,22 +122,6 @@
   width:100%;
 }
 
-.pepito{
-  align-items:center;
-  background:#101828;
-  color:#fafdff;
-  display:flex;
-  gap:12px;
-  font-size:2.2rem;
-  font-weight:700;
-  justify-content:center;
-  margin:0;
-  padding:16px 0 16px 0;
-  text-align:center;
-}
-
-
-
 #transporte-equipamiento-pesado{
   align-items:center;
   display:flex;

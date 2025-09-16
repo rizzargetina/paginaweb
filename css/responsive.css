@@ -45,14 +45,14 @@
 
     .container { width: 92%;padding-left: 10px; padding-right: 10px; }    
     .top-bar, .top-bar * { display: none !important; visibility: hidden !important; height: 0 !important; width: 0 !important; padding: 0 !important; margin: 0 !important; opacity: 0 !important; pointer-events: none !important; animation: none !important; transition: none !important; }
-   	.hero {
-		height: 70vh;
-		min-height: unset;
-		display: flex;
-		justify-content: flex-start; /* place content toward the top on mobile */
-		padding-top: 60px; 
-	}
-   
+.hero .hero-bg-image{
+    position:absolute;
+    inset:0;
+    height:85vh;
+    background:url('../img/hero1.webp') center left / cover no-repeat;
+    opacity:0.57;
+    z-index:1;
+}
     .hero h1 { font-size: 2.4rem; font-weight: 800; color: #fff; }
 
   .hero p{font-size:1rem;margin-bottom:1.2em}
@@ -77,8 +77,6 @@
 
   .container{width:92%}
   .text-content{padding:0 2px 1.2rem 2px;text-align:left}
-
-  #quienes-somos{display:none !important}
 
   .base-choferes-flex{flex-direction:column;align-items:center;gap:1em}
   .base-choferes-img img{aspect-ratio:1/1;object-fit:cover;object-position:left;max-width:350px;max-height:350px;margin-left:auto;margin-right:auto;display:block}

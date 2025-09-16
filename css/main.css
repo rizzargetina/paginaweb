@@ -1,9 +1,3 @@
-/*
-  Archivo combinado: core.css + layout/_main.css
-  Generado: contiene primero el contenido de css/core/core.css y luego css/layout/_main.css
-  NOTA: Coloqué este archivo en css/core/ para mantener las rutas relativas a fonts e imágenes sin cambios.
-*/
-
 @font-face {
     font-family: 'Poppins';
     src: url('../fonts/Poppins-Regular.ttf') format('truetype');
@@ -94,10 +88,11 @@ body {
     font-weight: 400;
     font-size: 18px;
     line-height: 1.65;
-    color: var(--color-text);
+    color: #f0f2f5;
     background-color: var(--color-secondary-bg);
-    -webkit-font-smoothing: antialiased;
-    -moz-osx-font-smoothing: grayscale;
+
+    /* evita scrollbar horizontal accidental */
+    overflow-x: hidden;
 }
 
 /* --- Typography rules (moved from base/_typography.css) --- */
@@ -105,64 +100,28 @@ h1, h2, h3, h4, h5, h6 {
    font-family: var(--font-headings);
    font-weight: 700;
    color: var(--color-headings);
-   margin-top: 1em;
-   margin-bottom: 0.5em;
-   line-height: 1.3;
-   letter-spacing: 0.5px;
-}
-h1:first-child, h2:first-child, h3:first-child {
-    margin-top: 0;
-}
 
+}
 h1 { font-size: 2.8rem; line-height: 1.2; color: var(--dhl-red); }
 h2 { font-size: 2.4rem; }
 h3 { font-size: 1.6rem; margin-top: 2.8em; }
 h4 { font-size: 1.3rem; }
 
-p, ul, ol {
-    font-family: var(--font-primary);
-    font-weight: 400;
-    color: var(--color-text);
-}
+
 p {
     margin-top: 0;
     margin-bottom: calc(var(--spacing-unit));
     font-size: 1.4;
 }
-p:last-child {
-    margin-bottom: 0;
-}
+
 ul, ol {
     list-style: none;
     padding-left: 0;
     margin-top: 0;
     margin-bottom: calc(var(--spacing-unit) * 2);
 }
-ul:last-child, ol:last-child {
-    margin-bottom: 0;
-}
-li {
-    position: relative;
-    transition: padding-left 0.3s ease;
-}
-li::before {
-   content: '';
-   position: absolute;
-   background-color: var(--dhl-yellow);
-   border-radius: 50%;
-}
-ol li::before {
-    content: counter(list-counter) ".";
-    background-color: transparent;
-    color: var(--color-text-secondary);
-    font-weight: 700;
-    font-size: 0.9em;
-    width: auto;
-    height: auto;
-    top: 0.1em;
-    left: 0;
-    border-radius: 0;
-}
+
+
 
 strong {
     font-weight: 700;
@@ -227,15 +186,16 @@ hr.is-visible {
     inset: 0;
     width: 100%;
     height: 100%;
-    background-position: center center;
+    background-image: url('../img/hero1.webp');
+    background-position: center left;
     background-repeat: no-repeat;
     background-size: cover;
-    opacity: 0.6;
+    opacity: 0.57;
     z-index: 1;
 }
 .hero .hero-content {
     position: relative;
-    z-index: 2;
+    z-index: 3; /* mantener valor consistente con los ajustes responsivos */
     max-width: 1000px;
     width: 100%;
     padding: 0 1rem;
@@ -244,7 +204,12 @@ hr.is-visible {
     text-align: center; 
 }
 
-.hero h1 { font-family: var(--font-headings); font-weight:800; color: var(--color-headings); }
+.hero h1 {
+    font-family: var(--font-headings);
+    font-size: 3.2rem;
+    font-weight: 800;
+    color: #fff; /* apariencia esperada sobre la imagen hero */
+}
 
 /* sección 'quienes somos' simple y reutilizable */
 .seccion-quienes {
@@ -514,16 +479,9 @@ main > .container {
     margin-right: 4px;
 }
 
-body {
-    overflow-x: hidden;
-}
-
 .only-mobile {
-	display: none;
+    display: none;
 }
-.hero .hero-bg-image { background-image: url('../img/hero1.webp'); opacity: 0.57; background-position: center left; background-size: cover; }
-.hero .hero-content { position: relative; z-index: 3; }
-.hero h1 { font-family: var(--font-headings); font-size: 3.2rem; font-weight: 800; color: #fff; }
 .hero p { font-size: 1.25rem; margin-bottom: 1.5em; color: #fff; font-weight: 400; max-width: 550px; margin-left: auto; margin-right: auto; }
 .content-section {
 	display: flex;
@@ -718,7 +676,7 @@ button.cta-button {
     color: #f0f2f5;
     font-family: 'Roboto', Arial, sans-serif;
     font-weight: 700;
-    margin: 0px 20px;
+    margin: 10px 0px 40px;
     font-size: 1.05rem;
     text-transform: uppercase;
     text-align: center;

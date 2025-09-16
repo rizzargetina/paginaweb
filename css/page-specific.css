@@ -136,49 +136,7 @@
   text-align:center;
 }
 
-.service-cards-container{
-  display:grid;
-  gap:calc(var(--spacing-unit)*3.5);
-  grid-template-columns:repeat(auto-fit,minmax(280px,1fr));
-}
 
-.service-card{
-  align-items:stretch;
-  border:1px solid var(--color-border);
-  border-radius:var(--border-radius-medium);
-  display:block;
-  overflow:hidden;
-  position:relative;
-  text-decoration:none;
-}
-
-.service-card img{
-  display:block;
-  filter:brightness(.85);
-  height:220px;
-  object-fit:cover;
-  width:100%;
-}
-
-.service-card-title{
-  background-color:rgba(16,22,36,.85);
-  box-sizing:border-box;
-  color:var(--dhl-white);
-  font-family:var(--font-headings);
-  font-size:1.15rem;
-  font-weight:700;
-  left:0;
-  padding:calc(var(--spacing-unit)*1.5) calc(var(--spacing-unit)*2);
-  position:absolute;
-  text-align:center;
-  width:100%;
-  bottom:0;
-}
-
-.service-card:focus-within .service-card-title,
-.service-card:hover .service-card-title{
-  background-color:var(--dhl-red);
-}
 
 #transporte-equipamiento-pesado{
   align-items:center;

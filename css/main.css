@@ -725,21 +725,14 @@ button.cta-button {
 		height: 84vh;
 		min-height: unset;
 		display: flex;
-		flex-direction: column;
 		justify-content: flex-start; /* place content toward the top on mobile */
-		padding: 0 1rem; /* horizontal padding */
-		padding-top: calc(var(--header-height) * 0.12); /* nudge content below fixed header */
+		padding-top: 60px; 
 	}
 
 
-    /* transporte text reposition */
-    #transporte-equipamiento-pesado .text-content { max-width: 95vw; left: 50%; right: auto; transform: translateX(-50%); padding: 1.2rem .5rem; text-align: center; position: absolute; top: 5%; font-size: .95rem; }
-    #transporte-equipamiento-pesado .text-content h2 { font-size: 1.3rem; }
-    #transporte-equipamiento-pesado .text-content p, #transporte-equipamiento-pesado .text-content strong { font-size: 1rem; }
-
     /* logos and client tracks */
     .client-logo-slider { overflow: visible; display: flex; justify-content: center; align-items: center; width: 100%; }
-    .client-logo-track { display: grid; grid-template-columns: repeat(2,1fr); width: 100%; animation: none !important; align-items: center; padding: 0; margin: 0 auto; gap: 18px 10px; }
+    .client-logo-track { display: grid; grid-template-columns: repeat(2,1fr); width: 100%; animation: none !important; align-items: center; padding: 0; margin: 0 auto; gap: 25px 20px; }
     .client-logo-track .logo-duplicate { display: none !important; }
     .client-logo-track img { height: 80px !important; max-width: 120px; }
 
@@ -747,17 +740,8 @@ button.cta-button {
     .base-choferes-img img { aspect-ratio: 1/1; object-fit: cover; object-position: left; max-width: 350px; max-height: 350px; margin-left: auto; margin-right: auto; display: block; }
     .base-choferes-info { text-align: center; }
 
-    /* small-screen service card tweaks */
-    .service-card-title { text-align: left; padding-left: calc(var(--spacing-unit) * 2); }
-    .service-cards-container { text-align: left; }
-
-
   .base-choferes-flex{flex-direction:column;align-items:center;gap:1em}
   .base-choferes-img img{aspect-ratio:1/1;display:block;max-height:350px;max-width:350px;margin-left:auto;margin-right:auto;object-fit:cover;object-position:left}
-  .client-logo-slider{align-items:center;display:flex;justify-content:center;overflow:visible;width:100%}
-  .client-logo-track{align-items:center;animation:none !important;display:grid;grid-template-columns:repeat(2,1fr);gap:18px 10px;margin:0 auto;padding:0;width:100%}
-  .client-logo-track .logo-duplicate{display:none !important}
-  .client-logo-track img{height:80px !important;max-width:120px}
   .content-section{align-items:stretch;background:none;border:0;border-radius:0;box-shadow:none;display:block;flex-direction:column;gap:0;margin-bottom:24px;padding:0}
   .content-section .image-content,.content-section .text-content{align-self:unset;margin-top:0;padding-top:0}
   .hero p{font-size:1rem;margin-bottom:1.2em}
@@ -777,9 +761,9 @@ button.cta-button {
 
   /* logos and client tracks */
   .client-logo-slider{overflow:visible;display:flex;justify-content:center;align-items:center;width:100%}
-  .client-logo-track{display:grid;grid-template-columns:repeat(2,1fr);width:100%;animation:none !important;align-items:center;padding:0;margin:0 auto;}
+  .client-logo-track{display:grid;grid-template-columns:repeat(2,1fr);width:100%;animation:none !important;align-items:center;padding:0;margin:0 0;}
   .client-logo-track .logo-duplicate{display:none !important}
-  .client-logo-track img{height:80px !important;max-width:110px}
+  .client-logo-track img{height:80px !important;}
 
   .base-choferes-flex{flex-direction:column;align-items:center;gap:1em}
   .base-choferes-img img{aspect-ratio:1/1;object-fit:cover;object-position:left;max-width:350px;max-height:350px;margin-left:auto;margin-right:auto;display:block}

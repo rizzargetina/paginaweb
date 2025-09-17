@@ -69,7 +69,8 @@
     .text-content h3 { font-size: 1.2rem; }
     .text-content { padding: 0 2px 1.2rem 2px; text-align: left; }
     #quienes-somos { display: none !important; }
-    .client-logo-slider { overflow: visible; display: flex; justify-content: center; align-items: center; width: 100%; }
+    
+    .client-logo-slider { overflow: visible; display: flex; justify-content: center;padding-left: 10vw; align-items: center; width: 100%; }
     .client-logo-track { display: grid; grid-template-columns: repeat(2,1fr); width: 100%; animation: none !important; align-items: center; padding: 0; margin: 0 auto; gap: 25px 20px; }
     .client-logo-track .logo-duplicate { display: none !important; }
     .client-logo-track img { height: 80px !important; max-width: 120px; }

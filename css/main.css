@@ -454,15 +454,17 @@ section,
     width: 100%;
 }
 #client-logos {
-    padding-left: 11vw;
+    padding-left: 0; 
+    text-align: center; 
+    margin-top: 40px;
 }
 
 #client-logos h2 {
-	color: var(--color-headings);
-	margin-bottom: 1em;
-	text-align: center;
-	position: relative;
-	display: inline-block;
+    color: var(--color-headings);
+    margin: 0 0 1em 0;
+    text-align: center;
+    position: relative;
+    display: inline-block;
 }
 .client-logo-slider {
 	width: 100%;

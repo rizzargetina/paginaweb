@@ -25,6 +25,26 @@
     .only-mobile { display: flex !important; }
     .rulenav { display: none !important; }
     .rulenav.mobile-menu-open { display: flex !important; flex-direction: column; justify-content: flex-start; position: fixed; top: 0; left: 0; width: 100vw; height: 450px !important; background: #0f141a; z-index: 1100; }
+
+    /* Make images inside .content-section square on small screens */
+    .content-section img,
+    .content-section .image,
+    .content-section .thumb {
+        width: 100%;
+        height: auto;
+        aspect-ratio: 1 / 1; /* keep square */
+        object-fit: cover; /* crop to fill */
+        display: block;
+        max-width: 100%;
+    }
+
+    /* If the image is set as a background on a container, force a square box */
+    .content-section .image-bg {
+        width: 100%;
+        aspect-ratio: 1 / 1;
+        background-size: cover;
+        background-position: center;
+    }
 }
 
 @media (min-width: 901px) {
@@ -72,9 +92,12 @@
     padding:0 2rem;
     z-index:2;
 }
-.content-section { display: block; background: none; border-radius: 0; box-shadow: none; padding: 0; border: none; flex-direction: column; align-items: stretch; gap: 0; }
-    .content-section .image-content, .content-section .text-content { align-self: unset; margin-top: 0; padding-top: 0; }
-    .image-content img.section-image:not(.small-section-image) { border-radius: 5px; width: 100%; object-fit: cover; aspect-ratio: 4 / 5; height: auto; }
+/* Use fixed pixel heights to avoid viewport bar reflows on mobile browsers */
+:root {
+    --section-image-height: 420px; /* ajustar según diseño */
+    --section-min-height: 420px;
+}
+
     #quienes-somos { display: none !important; }
     
     .client-logo-slider { overflow: visible; display: flex; justify-content: center;padding-left: 10vw; align-items: center; width: 100%; }
@@ -89,6 +112,32 @@
   .service-card-title{text-align:left;padding-left:calc(var(--spacing-unit)*2)}
   .service-cards-container{text-align:left}
   .mobile-only{display:inline}
+
+    /* Ensure in small screens the image appears below the text in .content-section */
+    .content-section {
+        display: flex;
+        flex-direction: column;
+        gap: 1rem;
+    }
+
+    /* If .content-section has side-by-side children like .text and .image, force order */
+    .content-section .text,
+    .content-section .content-text,
+    .content-section .copy {
+        order: 1; /* text first */
+    }
+
+    .content-section .image,
+    .content-section .image-bg,
+    .content-section img,
+    .content-section .thumb {
+        order: 2; /* image after text */
+        width: 100%;
+        height: auto;
+        aspect-ratio: 1 / 1;
+        object-fit: cover;
+        display: block;
+    }
 
   .index-grid{grid-template-columns:repeat(1,1fr);gap:10px}
   .index-item{padding:16px 18px;font-size:1rem;   min-height:25px; justify-content:left;text-align:left;}

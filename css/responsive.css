@@ -20,8 +20,6 @@
 
 @media (max-width: 900px) {
     .header { position: fixed !important; top: 0 !important; left: 0; width: 100vw; z-index: 1000; }
-    .whatsapp-float { z-index: 9999 !important; bottom: 16px !important; right: 16px !important; width: 48px !important; height: 48px !important; padding: 4px !important; }
-    .whatsapp-float img { width: 40px !important; height: 40px !important; }
     .mobile-menu-button { display: inline-flex !important; }
     .rulenav .navlink { display: flex; justify-content: right; width: 90vw; padding: 0 2.5rem; text-align: right; font-size: 1.5rem; color: #fff; }
     .only-mobile { display: flex !important; }
@@ -61,13 +59,22 @@
     .footer-container { gap: 15px; }
 
     .cta-button, a.cta-button, button.cta-button { display: block; width: 100%; margin: 20px 0 20px; text-align: center; border-radius: 6px; }
-
-    .content-section { display: block; background: none; border-radius: 0; box-shadow: none; padding: 0; border: none; flex-direction: column; align-items: stretch; gap: 0; }
+#transporte-equipamiento-pesado { position: relative; } /* referencia para el absolute */
+#transporte-equipamiento-pesado .text-content{
+    position: absolute;
+    top: clamp(3%, 1vh, 8%);
+    inset-inline: 0;              
+    margin-inline: auto;           
+    width: min(90%, clamp(640px, 36%, 640px));
+    background:#101828;
+    color:#fafdff;
+    text-align:center;
+    padding:0 2rem;
+    z-index:2;
+}
+.content-section { display: block; background: none; border-radius: 0; box-shadow: none; padding: 0; border: none; flex-direction: column; align-items: stretch; gap: 0; }
     .content-section .image-content, .content-section .text-content { align-self: unset; margin-top: 0; padding-top: 0; }
-    .image-content img.section-image { border-radius: var(--border-radius); width: 100%; max-height: 220px; object-fit: cover; margin-bottom: 1rem; box-shadow: none; }
-    .text-content h2 { font-size: 1.5rem; margin-bottom: .5rem; font-weight: 700; text-align: left; }
-    .text-content h3 { font-size: 1.2rem; }
-    .text-content { padding: 0 2px 1.2rem 2px; text-align: left; }
+    .image-content img.section-image:not(.small-section-image) { border-radius: 5px; width: 100%; object-fit: cover; aspect-ratio: 4 / 5; height: auto; }
     #quienes-somos { display: none !important; }
     
     .client-logo-slider { overflow: visible; display: flex; justify-content: center;padding-left: 10vw; align-items: center; width: 100%; }
@@ -75,16 +82,12 @@
     .client-logo-track .logo-duplicate { display: none !important; }
     .client-logo-track img { height: 80px !important; max-width: 120px; }
 
-
-  .text-content{padding:0 2px 1.2rem 2px;text-align:left}
-
   .base-choferes-flex{flex-direction:column;align-items:center;gap:1em}
   .base-choferes-img img{aspect-ratio:1/1;object-fit:cover;object-position:left;max-width:350px;max-height:350px;margin-left:auto;margin-right:auto;display:block}
   .base-choferes-info{text-align:center}
   .office-image{aspect-ratio:1/1;object-fit:cover;object-position:left;max-width:350px;max-height:350px;margin-left:auto;margin-right:auto;display:block}
   .service-card-title{text-align:left;padding-left:calc(var(--spacing-unit)*2)}
   .service-cards-container{text-align:left}
-  .text-content,.image-content{width:100%;min-width:unset}
   .mobile-only{display:inline}
 
   .index-grid{grid-template-columns:repeat(1,1fr);gap:10px}

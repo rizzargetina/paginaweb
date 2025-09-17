@@ -596,8 +596,23 @@ button.cta-button {
 .metric-item .label{font-size:1rem;color:var(--color-text-secondary)}
 
 #transporte-equipamiento-pesado{position:relative;display:flex;align-items:center;justify-content:center;min-height:60vh;margin:0}
-#transporte-equipamiento-pesado .text-content{background:#101828;border-radius:2px;backdrop-filter:none;color:#fafdff;font-size:1.1rem;font-weight:400;line-height:1.6;left:5%;max-width:fit-content;padding:2rem;position:absolute;right:2.5rem;top:5%;z-index:2}
-
+#transporte-equipamiento-pesado .text-content{
+    background:#101828;
+    color: #fafdff;
+    font-size: clamp(0.95rem, 1.1vw + 0.2rem, 1.25rem);
+    font-weight: 400;
+    line-height: 1.6;
+    padding-left: 2rem;
+    padding-right: 2rem;
+    padding-top: 0;
+    padding-bottom: 0;
+    position: absolute;
+    top: clamp(3%, 4.5vh, 8%);
+    left: clamp(4%, 3vw, 6%);
+    max-width: clamp(640px, 36%, 640px);
+    right: auto;
+    z-index: 2;
+}
 .section-image.small-section-image{width:100vw;height:100vh;object-fit:cover;object-position:center center;display:block;max-width:100%;max-height:70vh;margin:0 auto}
 .content-section .image-content img.section-image:not(.small-section-image){aspect-ratio:4/3;width:100%;min-height:400px;max-height:500px;max-width:98vw;object-fit:cover;object-position:left center;display:block;border-radius: 5px;border:1px solid var(--color-border)}
 

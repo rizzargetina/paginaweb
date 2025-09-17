@@ -359,8 +359,7 @@ section,
 .full-height-section,
 .seccion-quienes,
 .hero{
-    margin-block-start: 0;
-    margin-block-end: 40px;
+    margin-bottom: 50px;
 }
 
 .footer {
@@ -415,19 +414,15 @@ section,
 .image-content img,
 .section-image {
     border: none;
-    display: block;
-        height: clamp(160px, 75vh, 900px);
-    object-fit: contain;
-    overflow: hidden;
-    text-align: center;
-    width: 100%;
+    margin: 20px;
 }
 .text-content {
-    flex: 1 1 0;
+    flex: 0.8 1 0;
 }
 .image-content {
-    flex: 1.4 1 0;
+    flex: 1.2 1 0;
 }
+
 
 
 

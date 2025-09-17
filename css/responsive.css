@@ -92,11 +92,6 @@
     padding:0 2rem;
     z-index:2;
 }
-/* Use fixed pixel heights to avoid viewport bar reflows on mobile browsers */
-:root {
-    --section-image-height: 420px; /* ajustar según diseño */
-    --section-min-height: 420px;
-}
 
     #quienes-somos { display: none !important; }
     
@@ -113,31 +108,31 @@
   .service-cards-container{text-align:left}
   .mobile-only{display:inline}
 
-    /* Ensure in small screens the image appears below the text in .content-section */
     .content-section {
         display: flex;
-        flex-direction: column;
+        flex-direction: column; /* stack text above image on small screens */
         gap: 1rem;
+        align-items: center; /* center content horizontally */
     }
 
-    /* If .content-section has side-by-side children like .text and .image, force order */
-    .content-section .text,
-    .content-section .content-text,
-    .content-section .copy {
-        order: 1; /* text first */
-    }
+    /* ensure text appears first and image below */
+    .content-section .text-content { order: 1; width: 100%; }
+    .content-section .image-content { order: 2; width: 100%; display: block; }
 
-    .content-section .image,
-    .content-section .image-bg,
-    .content-section img,
-    .content-section .thumb {
-        order: 2; /* image after text */
+    /* force images inside the image-content to be square and cover the box */
+    .content-section .image-content img,
+    .content-section .image-content .image,
+    .content-section .image-content .thumb {
         width: 100%;
+        max-width: 420px; /* limit so it doesn't become too large on wider narrow screens */
+        aspect-ratio: 1 / 1; /* keep square */
         height: auto;
-        aspect-ratio: 1 / 1;
-        object-fit: cover;
+        object-fit: cover; /* crop to fill */
         display: block;
+        margin-left: auto;
+        margin-right: auto;
     }
+
 
   .index-grid{grid-template-columns:repeat(1,1fr);gap:10px}
   .index-item{padding:16px 18px;font-size:1rem;   min-height:25px; justify-content:left;text-align:left;}

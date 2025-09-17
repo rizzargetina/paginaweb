@@ -352,13 +352,23 @@ hr {
 .language-selector a:not(.lang-active):hover {
     background-color: rgba(255, 255, 255, 0.08);
 }
-/* css/layout/_footer.css */
+
+section,
+.section,
+.content-section,
+.full-height-section,
+.seccion-quienes,
+.hero{
+    margin-block-start: 0;
+    margin-block-end: 40px;
+}
+
 .footer {
     background-color: var(--color-footer-bg, var(--color-secondary-bg));
     color: var(--color-footer-text, var(--color-text-secondary));
      font-family: var(--font-primary);
      font-size: 0.9rem;
-     margin-top: 64px;
+    margin-top: 40px;
      padding: 40px 0;
 }
 
@@ -399,7 +409,6 @@ hr {
     display: flex;
     gap: 30px;
     align-items: flex-start;
-    margin-top: 45px;
 }
 
 .image-content,
@@ -407,7 +416,7 @@ hr {
 .section-image {
     border: none;
     display: block;
-    height: auto;
+        height: clamp(160px, 75vh, 900px);
     object-fit: contain;
     overflow: hidden;
     text-align: center;
@@ -419,6 +428,7 @@ hr {
 .image-content {
     flex: 1.4 1 0;
 }
+
 
 
 .full-height-section {
@@ -444,16 +454,15 @@ hr {
     width: 100%;
 }
 #client-logos {
-    padding: calc(var(--spacing-unit) * 8);
+    padding-left: 11vw;
 }
+
 #client-logos h2 {
 	color: var(--color-headings);
 	margin-bottom: 1em;
 	text-align: center;
 	position: relative;
 	display: inline-block;
-	left: 50%;
-	transform: translateX(-50%);
 }
 .client-logo-slider {
 	width: 100%;
@@ -559,6 +568,8 @@ button.cta-button {
     text-align:center;
 }
 
+
+
 .km-guard-title{
     align-items:center;
     color:#fff;
@@ -644,17 +655,3 @@ button.cta-button {
 }
 
 
-
-@media (max-width: 600px) {
-    .whatsapp-float {
-        bottom: 16px;
-        right: 16px;
-        width: 48px;
-        height: 48px;
-        padding: 4px;
-    }
-    .whatsapp-float img {
-        width: 40px;
-        height: 40px;
-    }
-}

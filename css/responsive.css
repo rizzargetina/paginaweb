@@ -62,20 +62,19 @@
 
     .cta-button, a.cta-button, button.cta-button { display: block; width: 100%; margin: 20px 0 20px; text-align: center; border-radius: 6px; }
 
-    .content-section { display: block; background: none; border-radius: 0; box-shadow: none; margin-bottom: 24px; padding: 0; border: none; flex-direction: column; align-items: stretch; gap: 0; }
+    .content-section { display: block; background: none; border-radius: 0; box-shadow: none; padding: 0; border: none; flex-direction: column; align-items: stretch; gap: 0; }
     .content-section .image-content, .content-section .text-content { align-self: unset; margin-top: 0; padding-top: 0; }
     .image-content img.section-image { border-radius: var(--border-radius); width: 100%; max-height: 220px; object-fit: cover; margin-bottom: 1rem; box-shadow: none; }
     .text-content h2 { font-size: 1.5rem; margin-bottom: .5rem; font-weight: 700; text-align: left; }
     .text-content h3 { font-size: 1.2rem; }
     .text-content { padding: 0 2px 1.2rem 2px; text-align: left; }
     #quienes-somos { display: none !important; }
-
     .client-logo-slider { overflow: visible; display: flex; justify-content: center; align-items: center; width: 100%; }
     .client-logo-track { display: grid; grid-template-columns: repeat(2,1fr); width: 100%; animation: none !important; align-items: center; padding: 0; margin: 0 auto; gap: 25px 20px; }
     .client-logo-track .logo-duplicate { display: none !important; }
     .client-logo-track img { height: 80px !important; max-width: 120px; }
 
-  .container{width:92%}
+
   .text-content{padding:0 2px 1.2rem 2px;text-align:left}
 
   .base-choferes-flex{flex-direction:column;align-items:center;gap:1em}

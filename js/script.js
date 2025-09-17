@@ -106,35 +106,5 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     }
 
-    const elementsToFadeIn = document.querySelectorAll('.fade-in-section, .fade-in-element');
-    if (elementsToFadeIn.length > 0) {
-        const observerOptions = {
-            root: null,
-            rootMargin: '0px',
-            threshold: 0.15
-        };
-
-        const observerCallback = (entries, observer) => {
-            entries.forEach(entry => {
-                if (entry.isIntersecting) {
-                    // Lógica simplificada y más robusta
-                    entry.target.classList.add('is-visible');
-                    
-                    // Asegura que el contenedor padre .fade-in-section también sea visible si un hijo se activa
-                    const parentSection = entry.target.closest('.fade-in-section');
-                    if (parentSection) {
-                        parentSection.classList.add('is-visible');
-                    }
-                    
-                    observer.unobserve(entry.target);
-                }
-            });
-        };
-
-        const intersectionObserver = new IntersectionObserver(observerCallback, observerOptions);
-        elementsToFadeIn.forEach(el => {
-            intersectionObserver.observe(el);
-        });
-    }
 
 });

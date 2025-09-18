@@ -167,14 +167,15 @@ hr {
 .container{width:86%;max-width:1400px;margin-left:auto;margin-right:auto}
 
 .hero{
-    display:flex;
-    flex-direction:column;
-    align-items:center;
-    justify-content:flex-start;
-    position:relative;
-    padding:1.2rem;
-    text-align:center;
-    color:#fff;
+    display: flex;
+    flex-direction: column;
+    align-items: stretch;
+    justify-content: flex-start;
+    min-height: 100vh;
+    position: relative;
+    padding: 1.2rem;
+    text-align: center;
+    color: #fff;
 }
 .hero .hero-bg-image{
     position:absolute;
@@ -332,6 +333,11 @@ hr {
     color: var(--color-top-bar-text);
     text-decoration: none;
 }
+.top-bar img {
+    vertical-align: middle;
+    width: 16px;
+    height: 16px;
+}
 
 .language-selector {
     align-items: center;
@@ -347,7 +353,8 @@ hr {
 }
 .language-selector a.lang-active {
     font-weight: 700;
-    background-color: rgba(255, 255, 255, 0.15); /* Fondo sutil para el activo */
+    background-color: #232427; 
+    border-radius: 1px;
 }
 .language-selector a:not(.lang-active):hover {
     background-color: rgba(255, 255, 255, 0.08);
@@ -356,7 +363,6 @@ hr {
 section,
 .section,
 .content-section,
-.full-height-section,
 .seccion-quienes,
 .hero{
     margin-bottom: 50px;
@@ -426,23 +432,7 @@ section,
 
 
 
-.full-height-section {
-    align-items: stretch;
-    display: flex;
-    min-height: 100vh;
-}
-.full-height-section .text-content {
-    display: flex;
-    flex-direction: column;
-    flex: 1 0;
-    justify-content: center;
-}
-.full-height-section .image-content {
-    display: flex;
-    flex-direction: column;
-    flex: 1.5 0;
-    justify-content: center;
-}
+/* .full-height-section removed, now handled by .hero */
 .image-content img {
     height: 100%;
     object-fit: cover;

@@ -19,7 +19,7 @@
 }
 
 #contact-form ::placeholder { color:var(--color-text-secondary); opacity:.8; font-style:italic; }
-#contact-form input:focus, #contact-form textarea:focus { outline:none; border-color:var(--color-accent); }
+#contact-form input:focus, #contact-form textarea:focus { outline:none; border-color:var(--color-link); }
 #contact-form textarea { min-height:150px; resize:vertical; }
 
 /* Compact checkbox */
@@ -41,6 +41,7 @@
 /* Office image: force rectangular crop and responsive height */
 .office-image{
   width:100%;
+  border-radius: 8px;
   height:320px; /* fixed height to appear rectangular; adjust if needed */
   object-position:center center;
   display:block;

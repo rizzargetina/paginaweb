@@ -650,7 +650,7 @@ button.cta-button {
     gap: 12px;
     justify-content: center;
     margin: 0;
-    padding: 16px 0 16px 0;
+    padding: 0.4rem 1.2rem;
     text-align: center;
 }
 

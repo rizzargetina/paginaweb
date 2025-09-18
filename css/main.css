@@ -645,7 +645,7 @@ button.cta-button {
     background: var(--color-accent);
     color: #fafdff;
     display: flex;
-    font-size: 2rem;
+    font-size: 2.3rem;
     font-weight: 700;
     gap: 12px;
     justify-content: center;

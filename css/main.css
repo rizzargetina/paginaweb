@@ -49,7 +49,7 @@
     --color-header-bg: #101010;
     --color-header-border: #00081d;
     --color-header-text: var(--dhl-white);
-    --color-top-bar-bg: #101010;
+    --color-top-bar-bg: #000000;
     --color-top-bar-text: #bfc5ce;
     --header-height: 60px;
     --shadow-focus: 0 0 0 3px rgba(0, 179, 214, 0.25);
@@ -172,7 +172,7 @@ hr {
     align-items:center;
     justify-content:flex-start;
     position:relative;
-    padding:6rem 1rem;
+    padding:1.2rem;
     text-align:center;
     color:#fff;
 }
@@ -181,7 +181,7 @@ hr {
     inset:0;
     height:90vh;
     background:url('../img/hero1.webp') center left / cover no-repeat;
-    opacity:0.3;
+    opacity:0.4;
     z-index:1;
 }
 .hero .hero-content{
@@ -623,7 +623,7 @@ button.cta-button {
 
 .section-image.small-section-image {
     width: 100vw;
-    height: 100vh;
+    height: 460px;
     object-fit: cover;
     object-position: center center;
     display: block;
@@ -645,13 +645,18 @@ button.cta-button {
     background: var(--color-accent);
     color: #fafdff;
     display: flex;
-    font-size: 2.2rem;
+    font-size: 2rem;
     font-weight: 700;
     gap: 12px;
     justify-content: center;
     margin: 0;
     padding: 16px 0 16px 0;
     text-align: center;
+}
+
+.pepito img{
+    display:inline-block;
+    height:2.7rem;
 }
 
 .index-grid{

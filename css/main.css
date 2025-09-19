@@ -606,7 +606,7 @@ button.cta-button {
 
 #transporte-equipamiento-pesado{position:relative;display:flex;align-items:center;justify-content:center;min-height:60vh;margin:0}
 #transporte-equipamiento-pesado .text-content{
-    background:#101828;
+    background: var(--color-header-bg);
     color: #fafdff;
     font-size: clamp(0.95rem, 1.1vw + 0.2rem, 1.25rem);
     font-weight: 400;

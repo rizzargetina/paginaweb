@@ -212,11 +212,3 @@
   .index-item{padding:16px 18px;font-size:1rem;   min-height:25px; justify-content:left;text-align:left;}
 }
 
-
-/* Toggle helper: when the menu is open add `menu-open` to body to prevent background scroll */
-body.menu-open {
-        overflow: hidden !important;
-        height: 100% !important;
-        position: fixed !important;
-        width: 100% !important;
-}

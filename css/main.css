@@ -705,15 +705,6 @@ button.cta-button {
     background-color: var(--color-accent);
 }
 
-/* Prevent dragging and selection of protected images (logos) */
-.no-drag {
-    -webkit-user-drag: none;
-    -webkit-user-select: none;
-    -moz-user-select: none;
-    -ms-user-select: none;
-    user-select: none;
-    touch-action: manipulation;
-    cursor: default;
-}
+
 
 

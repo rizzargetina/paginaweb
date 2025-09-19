@@ -149,4 +149,48 @@ document.addEventListener('DOMContentLoaded', () => {
 
     protectNoDragImages();
 
+        // --- Stronger protections specifically for header logos (#logo1, #logo2) ---
+        const protectHeaderLogos = () => {
+            const logoIds = ['logo1', 'logo2'];
+            logoIds.forEach(id => {
+                const img = document.getElementById(id);
+                if (!img) return;
+
+                // Ensure non-draggable
+                try { img.setAttribute('draggable', 'false'); } catch (e) {}
+
+                // Prevent dragstart
+                img.addEventListener('dragstart', (e) => e.preventDefault());
+
+                // Prevent context menu (right-click) on the image
+                img.addEventListener('contextmenu', (e) => e.preventDefault());
+
+                // Prevent copy events when focused or selected
+                img.addEventListener('copy', (e) => e.preventDefault());
+
+                // If the image is inside a link, prevent auxiliary clicks and modifier clicks
+                const parentLink = img.closest('a');
+                if (parentLink) {
+                    // Block middle-click or right-click auxiliary actions
+                    parentLink.addEventListener('auxclick', (e) => {
+                        // auxclick: 1 = middle button, 2 = right button in some browsers
+                        e.preventDefault();
+                    });
+
+                    // Block ctrl/cmd + click or middle-click opening in new tab
+                    parentLink.addEventListener('click', (e) => {
+                        if (e.ctrlKey || e.metaKey || e.button === 1) {
+                            e.preventDefault();
+                            e.stopPropagation();
+                        }
+                    });
+
+                    // Prevent context menu on the link as well
+                    parentLink.addEventListener('contextmenu', (e) => e.preventDefault());
+                }
+            });
+        };
+
+        protectHeaderLogos();
+
 });

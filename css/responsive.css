@@ -46,21 +46,7 @@
         transform: translateY(0) scale(1);
     }
 
-    /* Each menu item fixed height */
-    .rulenav .navlink {
-        height: 85px;
-        min-height: 80px;
-        display: flex;
-        align-items: center;
-        justify-content: flex-end;
-        width: 100%;
-        padding: 0 1.3rem;
-        font-size: 1.1rem;
-        color: #fff;
-        border-bottom: 1px solid #3a3a3a;
-    }
-
-    /* Overlay layer for dimming content behind the menu */
+    /* Unified menu item styles */
     .rulenav::before {
         content: '';
         position: absolute;
@@ -70,25 +56,34 @@
         opacity: 1;
     }
 
-    .rulenav .navlink { display: flex; justify-content: right; width: 90vw; padding: 0 2.5rem; text-align: right; font-size: 1.5rem; color: #fff; }
+    .rulenav .navlink {
+        height: 85px;
+        min-height: 80px;
+        display: flex;
+        align-items: center;
+        justify-content: flex-end;
+        width: 90vw;
+        padding: 0 2.5rem;
+        font-size: 1.5rem;
+        color: #fff;
+        border-bottom: 1px solid #3a3a3a;
+        text-align: right;
+    }
+
     .only-mobile { display: flex !important; }
 
-    /* Make images inside .content-section square on small screens */
+    /* Images inside .content-section: unified small-screen behaviour */
     .content-section img,
     .content-section .image,
-    .content-section .thumb {
+    .content-section .thumb,
+    .content-section .image-bg {
         width: 100%;
-        height: auto;
+        max-width: 420px;
         aspect-ratio: 1 / 1; /* keep square */
         object-fit: cover; /* crop to fill */
         display: block;
-        max-width: 100%;
-    }
-
-    /* If the image is set as a background on a container, force a square box */
-    .content-section .image-bg {
-        width: 100%;
-        aspect-ratio: 1 / 1;
+        margin-left: auto;
+        margin-right: auto;
         background-size: cover;
         background-position: center;
     }
@@ -104,6 +99,7 @@
 
 @media (max-width: 600px) {
     body { font-size: 18px; line-height: 1.6; padding-top: var(--header-height); }
+    /* logos: height shared, max-width tightened for very small screens */
     #logo1, #logo2 { height: 35px; max-width: 90px; }
 
     .logos-left { gap: 10px; }
@@ -158,21 +154,20 @@
         justify-content: center; 
         align-items: center; 
     }
-    .client-logo-track { 
-        display: grid; 
-        grid-template-columns: repeat(2,1fr); 
-        width: 100%; animation: none !important; 
-        align-items: center; 
-        padding: 0; 
-        margin: 0 auto; 
-        gap: 20px 25px; }
+    .client-logo-track {
+        display: grid;
+        grid-template-columns: repeat(2,1fr);
+        width: 100%;
+        animation: none !important;
+        align-items: center;
+        padding: 0;
+        margin: 0 auto;
+        gap: 20px 25px;
+        justify-items: center;
+    }
     .client-logo-track .logo-duplicate { display: none !important; }
-    .client-logo-track img { height: 80px !important; max-width: 120px; }
-
-    /* Ensure logos are centered in their grid cells on small screens */
-    .client-logo-track { justify-items: center; }
     .client-logo-track > * { display: flex; justify-content: center; align-items: center; }
-    .client-logo-track img { margin-left: 0 !important; margin-right: 0 !important; }
+    .client-logo-track img { height: 80px !important; max-width: 120px; margin: 0 !important; }
 
   .base-choferes-flex{flex-direction:column;align-items:center;gap:1em}
   .base-choferes-img img{aspect-ratio:1/1;object-fit:cover;object-position:left;max-width:350px;max-height:350px;margin-left:auto;margin-right:auto;display:block}

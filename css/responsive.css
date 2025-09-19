@@ -94,7 +94,6 @@
 #transporte-equipamiento-pesado { position: relative; } /* referencia para el absolute */
 #transporte-equipamiento-pesado .text-content{
     position: absolute;
-    top: clamp(3%, 1vh, 8%);
     inset-inline: 0;              
     margin-inline: auto;           
     width: min(90%, clamp(640px, 36%, 640px));

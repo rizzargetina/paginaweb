@@ -82,93 +82,42 @@ document.addEventListener('DOMContentLoaded', () => {
     }
 
 
-    // Menú móvil (hamburguesa) - JS toggle: abrir/cerrar y accesibilidad
-    (function setupMobileMenuToggle() {
+    // Menú móvil (simplificado): usar el checkbox existente como fuente de verdad
+    (function setupMobileMenuToggleSimple() {
+        const mobileToggle = document.getElementById('mobile-menu-toggle');
         const mobileBtn = document.querySelector('.mobile-menu-button');
         const nav = document.querySelector('#main-navigation.rulenav, .rulenav');
-        const mobileToggle = document.getElementById('mobile-menu-toggle');
 
-        if (!mobileBtn || !nav) return;
+        if (!mobileToggle || !mobileBtn || !nav) return;
 
-        // Inicializar atributos accesibles
-        if (!mobileBtn.hasAttribute('aria-expanded')) mobileBtn.setAttribute('aria-expanded', 'false');
-        if (nav.id && !mobileBtn.hasAttribute('aria-controls')) {
-            mobileBtn.setAttribute('aria-controls', nav.id);
-        }
-        if (!nav.hasAttribute('aria-hidden')) nav.setAttribute('aria-hidden', 'true');
-
-        function closeMenu() {
-            mobileBtn.classList.remove('open');
-            nav.classList.remove('mobile-menu-open');
-            mobileBtn.setAttribute('aria-expanded', 'false');
-            nav.setAttribute('aria-hidden', 'true');
-            if (mobileToggle) mobileToggle.checked = false;
-            document.body.classList.remove('mobile-menu-open');
+        function applyState(checked) {
+            mobileBtn.classList.toggle('open', checked);
+            nav.classList.toggle('mobile-menu-open', checked);
+            mobileBtn.setAttribute('aria-expanded', String(checked));
+            nav.setAttribute('aria-hidden', String(!checked));
+            document.body.classList.toggle('mobile-menu-open', checked);
         }
 
-        function openMenu() {
-            mobileBtn.classList.add('open');
-            nav.classList.add('mobile-menu-open');
-            mobileBtn.setAttribute('aria-expanded', 'true');
-            nav.setAttribute('aria-hidden', 'false');
-            if (mobileToggle) mobileToggle.checked = true;
-            // prevent background scroll when menu is open
-            document.body.classList.add('mobile-menu-open');
-        }
+        // inicializar
+        applyState(Boolean(mobileToggle.checked));
 
-        // If there's a checkbox toggle in the markup, prefer it as the source of truth.
-        if (mobileToggle) {
-            // Initialize state from checkbox
-            if (mobileToggle.checked) openMenu();
+        // sincronizar cuando cambie el checkbox (label ya lo activa automáticamente)
+        mobileToggle.addEventListener('change', () => applyState(mobileToggle.checked));
 
-            mobileToggle.addEventListener('change', () => {
-                if (mobileToggle.checked) openMenu();
-                else closeMenu();
-            });
-
-            // Clicking the label (which is `.mobile-menu-button`) will toggle the checkbox automatically.
-            // Keep visual sync in case JS needs to set ARIA.
-            mobileBtn.addEventListener('click', () => {
-                // small guard: delay to let the checkbox checked state update
-                setTimeout(() => {
-                    if (mobileToggle.checked) openMenu();
-                    else closeMenu();
-                }, 10);
-            });
-        } else {
-            // No checkbox: fall back to toggling on the button
-            mobileBtn.addEventListener('click', () => {
-                const isOpen = mobileBtn.classList.toggle('open');
-                nav.classList.toggle('mobile-menu-open', isOpen);
-                mobileBtn.setAttribute('aria-expanded', String(isOpen));
-                nav.setAttribute('aria-hidden', String(!isOpen));
-            });
-        }
-
-        // Close on Escape key
-        document.addEventListener('keydown', (ev) => {
-            if (ev.key === 'Escape' && (mobileBtn.classList.contains('open') || (mobileToggle && mobileToggle.checked))) {
-                closeMenu();
+        // cerrar con Escape -> simplemente desmarcar el checkbox
+        document.addEventListener('keydown', (e) => {
+            if (e.key === 'Escape' && mobileToggle.checked) {
+                mobileToggle.checked = false;
+                applyState(false);
             }
         });
 
-        // Close when clicking outside the nav / button
-        document.addEventListener('click', (ev) => {
-            const target = ev.target;
-            const menuIsOpen = mobileBtn.classList.contains('open') || (mobileToggle && mobileToggle.checked);
-            if (!menuIsOpen) return;
-            if (nav.contains(target) || mobileBtn.contains(target) || (mobileToggle && mobileToggle.contains && mobileToggle.contains(target))) {
-                return; // click inside menu or on the toggle -> ignore
-            }
-            // otherwise close
-            closeMenu();
-        }, { passive: true });
-
-        // When a nav link is clicked on small screens, close menu
+        // si se hace click en un enlace del nav en móvil, cerrar
         nav.querySelectorAll('a').forEach((a) => {
             a.addEventListener('click', () => {
-                if (window.innerWidth <= 900 && (mobileBtn.classList.contains('open') || (mobileToggle && mobileToggle.checked))) {
-                    closeMenu();
+                if (window.innerWidth <= 900 && mobileToggle.checked) {
+                    mobileToggle.checked = false;
+                    applyState(false);
                 }
             });
         });

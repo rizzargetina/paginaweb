@@ -86,22 +86,49 @@ document.addEventListener('DOMContentLoaded', () => {
     const navigation = document.getElementById('main-navigation');
 
     if (menuButton && navigation) {
+        // Helper to close menu and reset button state
+        const closeMenu = () => {
+            menuButton.setAttribute('aria-expanded', 'false');
+            menuButton.classList.remove('menu-active');
+            menuButton.classList.remove('open');
+            navigation.classList.remove('mobile-menu-open');
+        };
+
+        // Toggle open/closed on click — keep aria attribute correct
         menuButton.addEventListener('click', (event) => {
             event.stopPropagation(); // Previene que el clic se propague y cierre el menú inmediatamente
             const isOpen = menuButton.getAttribute('aria-expanded') === 'true';
-            menuButton.setAttribute('aria-expanded', !isOpen);
+            const nextOpen = !isOpen;
+            menuButton.setAttribute('aria-expanded', String(nextOpen));
             menuButton.classList.toggle('menu-active');
+            menuButton.classList.toggle('open');
             navigation.classList.toggle('mobile-menu-open');
         });
 
+        // Close when clicking outside the navigation
         document.addEventListener('click', (event) => {
-            const isClickInsideNav = navigation.contains(event.target);
+            const isClickInsideNav = navigation.contains(event.target) || menuButton.contains(event.target);
             const isMenuOpen = navigation.classList.contains('mobile-menu-open');
 
             if (isMenuOpen && !isClickInsideNav) {
-                menuButton.setAttribute('aria-expanded', 'false');
-                menuButton.classList.remove('menu-active');
-                navigation.classList.remove('mobile-menu-open');
+                closeMenu();
+            }
+        });
+
+        // Close on Escape key for accessibility
+        document.addEventListener('keydown', (event) => {
+            if (event.key === 'Escape' || event.key === 'Esc') {
+                const isMenuOpen = navigation.classList.contains('mobile-menu-open');
+                if (isMenuOpen) closeMenu();
+            }
+        });
+
+        // Close when a navigation link is activated (use capture to catch SPA-like behavior)
+        navigation.addEventListener('click', (event) => {
+            const target = event.target;
+            if (target && (target.tagName === 'A' || target.closest('a'))) {
+                // Small delay to allow link focus/active styles if needed, then close
+                setTimeout(closeMenu, 50);
             }
         });
     }

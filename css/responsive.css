@@ -90,7 +90,6 @@
 }
 
 @media (min-width: 901px) {
-    .mobile-menu-button { display: none; }
     .rulenav { flex-direction: row; width: auto; }
     .rulenav .only-mobile { display: none !important; }
     .only-mobile { display: none !important; }

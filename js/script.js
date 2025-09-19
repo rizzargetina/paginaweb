@@ -92,6 +92,7 @@ document.addEventListener('DOMContentLoaded', () => {
             menuButton.classList.remove('menu-active');
             menuButton.classList.remove('open');
             navigation.classList.remove('mobile-menu-open');
+            try { menuButton.blur(); } catch (e) { /* ignore if blur not supported */ }
         };
 
         // Toggle open/closed on click — keep aria attribute correct

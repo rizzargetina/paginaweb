@@ -66,8 +66,14 @@
     
     
     .hero{
+    position: relative;
     padding:4rem 1.4rem;
+    min-height: 600px;
 }
+    .hero-content{
+        position: relative;
+        z-index: 2;
+    }
     .hero .hero-bg-image{
         position:absolute;
         inset:0;
@@ -101,18 +107,15 @@
 
     #quienes-somos { display: none !important; }
     
-    .client-logo-slider { overflow: visible; display: flex; justify-content: center; align-items: center; width: 100%; padding: 0; }
-    .client-logo-track { display: grid; grid-template-columns: repeat(2,1fr); width: 100%; max-width: 80%; animation: none !important; align-items: center; padding: 0; margin: 0 auto; gap: 25px 20px; }
+    .client-logo-slider { overflow: visible; display: flex; justify-content: center;padding-left: 10vw; align-items: center; width: 100%; }
+    .client-logo-track { display: grid; grid-template-columns: repeat(2,1fr); width: 100%; animation: none !important; align-items: center; padding: 0; margin: 0 auto; gap: 25px 20px; }
     .client-logo-track .logo-duplicate { display: none !important; }
     .client-logo-track img { height: 80px !important; max-width: 120px; }
 
   .base-choferes-flex{flex-direction:column;align-items:center;gap:1em}
-  .base-choferes-img img{aspect-ratio:1/1;object-fit:cover;object-position:center;max-width: 420px;margin-left:auto;margin-right:auto;display:block}
+  .base-choferes-img img{aspect-ratio:1/1;object-fit:cover;object-position:left;max-width:350px;max-height:350px;margin-left:auto;margin-right:auto;display:block}
   .base-choferes-info{text-align:center}
-  
-  .office-section{flex-direction:column;align-items:center;gap:1em;display:flex}
-  .office-image{aspect-ratio:1/1;object-fit:cover;object-position:center;max-width: 420px;margin-left:auto;margin-right:auto;display:block}
-  .office-info{text-align:center}
+  .office-image{aspect-ratio:1/1;object-fit:cover;object-position:left;max-width:350px;max-height:350px;margin-left:auto;margin-right:auto;display:block}
   .service-card-title{text-align:left;padding-left:calc(var(--spacing-unit)*2)}
   .service-cards-container{text-align:left}
   .mobile-only{display:inline}
@@ -133,9 +136,10 @@
     .content-section .image-content .image,
     .content-section .image-content .thumb {
         width: 100%;
-        aspect-ratio: 1 / 1; 
+        max-width: 420px; /* limit so it doesn't become too large on wider narrow screens */
+        aspect-ratio: 1 / 1; /* keep square */
         height: auto;
-        object-fit: cover; 
+        object-fit: cover; /* crop to fill */
         display: block;
         margin-left: auto;
         margin-right: auto;

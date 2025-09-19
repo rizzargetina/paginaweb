@@ -122,8 +122,9 @@
     
     .hero{
     position: relative;
-    padding:3rem 1.2rem;
+    padding:3rem 0rem;
     min-height: 600px;
+
 }
     .hero-content{
         position: relative;

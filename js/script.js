@@ -124,13 +124,8 @@ document.addEventListener('DOMContentLoaded', () => {
             });
         }
 
-        // Label fallback: if user clicks the visible label element, toggle
-        if (menuButtonLabel) {
-            menuButtonLabel.addEventListener('click', (e) => {
-                e.preventDefault();
-                toggleMenu();
-            });
-        }
+        // The label is associated with the checkbox; rely on native toggle behavior
+        // and the checkbox `change` listener above to keep state consistent.
 
         // Close when a navigation link is activated
         navigation.addEventListener('click', (event) => {

@@ -430,9 +430,6 @@ section,
 }
 
 
-
-
-/* .full-height-section removed, now handled by .hero */
 .image-content img {
     height: 100%;
     object-fit: cover;
@@ -481,7 +478,7 @@ section,
 
 #key-metrics,
 #key-metrics-guard {
-    background: linear-gradient(120deg, var(--color-secondary-bg, #e6f0fa) 0%, var(--color-primary-bg, #fafdff) 60%, var(--color-secondary-bg, #e6f0fa) 100%);
+background: linear-gradient(140deg, #0a0c10 30%, #101010 100%);
     border: 1px solid var(--color-border);
     border-radius: 5px;
     color: inherit;

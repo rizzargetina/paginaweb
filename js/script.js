@@ -132,6 +132,21 @@ document.addEventListener('DOMContentLoaded', () => {
             }
         });
     }
+        const protectNoDragImages = () => {
+            const imgs = document.querySelectorAll('img.no-drag');
+            imgs.forEach(img => {
+                try { img.setAttribute('draggable', 'false'); } catch (e) {}
+                img.addEventListener('dragstart', (ev) => ev.preventDefault());
+            });
 
+            // Global fallback: block any dragstart originating from a .no-drag ancestor
+            document.addEventListener('dragstart', (ev) => {
+                if (ev.target && ev.target.closest && ev.target.closest('.no-drag')) {
+                    ev.preventDefault();
+                }
+            });
+        };
+
+    protectNoDragImages();
 
 });

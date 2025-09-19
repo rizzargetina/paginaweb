@@ -275,6 +275,40 @@ hr {
     z-index: 1100;
 }
 
+/* Pure-CSS toggle: hide the checkbox and style label as button */
+.mobile-menu-toggle { position: absolute; opacity: 0; pointer-events: none; width: 0; height: 0; }
+.mobile-menu-button { cursor: pointer; display: none; }
+.mobile-menu-button .hamburger-line { transition: transform 0.28s cubic-bezier(0.2,0.8,0.2,1), opacity 0.12s ease, top 0.28s ease; display: block; }
+
+/* Default positions for lines (ensure label has relative positioning) */
+.mobile-menu-button { position: relative; }
+.mobile-menu-button .hamburger-line { background-color: var(--color-header-text); border-radius: 1px; height: 2.5px; width: 22px; left: 50%; position: absolute; transform-origin: center center; }
+.mobile-menu-button .hamburger-line:nth-child(1) { top: calc(50% - 7px - 1.25px); transform: translateX(-50%) rotate(0deg); }
+.mobile-menu-button .hamburger-line:nth-child(2) { top: calc(50% - 1.25px); transform: translateX(-50%); opacity: 1; }
+.mobile-menu-button .hamburger-line:nth-child(3) { top: calc(50% + 7px - 1.25px); transform: translateX(-50%) rotate(0deg); }
+
+/* When the checkbox is checked, transform into a cross */
+#mobile-menu-toggle:checked + .mobile-menu-button .hamburger-line:nth-child(1) {
+    top: calc(50% - 1.25px);
+    transform: translateX(-50%) rotate(45deg);
+}
+#mobile-menu-toggle:checked + .mobile-menu-button .hamburger-line:nth-child(2) {
+    opacity: 0;
+}
+#mobile-menu-toggle:checked + .mobile-menu-button .hamburger-line:nth-child(3) {
+    top: calc(50% - 1.25px);
+    transform: translateX(-50%) rotate(-45deg);
+}
+
+/* When checked, also add a class to the nav nearby using :checked sibling selector
+   We assume nav immediately follows the label's parent container; to be safe,
+   scope rule to header: when toggle checked, show mobile menu */
+header #mobile-menu-toggle:checked ~ .rulenav {
+    pointer-events: auto;
+    opacity: 1;
+    transform: translateY(0) scale(1);
+}
+
 
 
 .mobile-menu-button .hamburger-line {

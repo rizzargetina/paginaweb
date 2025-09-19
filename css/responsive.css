@@ -46,6 +46,17 @@
         transform: translateY(0) scale(1);
     }
 
+    /* Show label button and hide original JS state — now controlled via checkbox */
+    .mobile-menu-button { display: flex !important; }
+    .mobile-menu-toggle { position: absolute; opacity: 0; pointer-events: none; width: 0; height: 0; }
+
+    /* When checkbox is checked, show menu (pure CSS) */
+    header #mobile-menu-toggle:checked ~ .rulenav {
+        pointer-events: auto;
+        opacity: 1;
+        transform: translateY(0) scale(1);
+    }
+
     /* Unified menu item styles */
     .rulenav::before {
         content: '';

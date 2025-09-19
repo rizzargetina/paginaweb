@@ -46,6 +46,14 @@
         transform: translateY(0) scale(1);
     }
 
+    /* When the mobile menu is open, prevent background scrolling */
+    body.mobile-menu-open {
+        overflow: hidden;
+        touch-action: none;
+        position: fixed;
+        width: 100%;
+    }
+
     /* Each menu item fixed height */
     .rulenav .navlink {
         height: 85px;

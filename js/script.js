@@ -86,6 +86,7 @@ document.addEventListener('DOMContentLoaded', () => {
     (function setupMobileMenuToggle() {
         const mobileBtn = document.querySelector('.mobile-menu-button');
         const nav = document.querySelector('#main-navigation.rulenav, .rulenav');
+        const mobileToggle = document.getElementById('mobile-menu-toggle');
 
         if (!mobileBtn || !nav) return;
 
@@ -101,6 +102,8 @@ document.addEventListener('DOMContentLoaded', () => {
             nav.classList.remove('mobile-menu-open');
             mobileBtn.setAttribute('aria-expanded', 'false');
             nav.setAttribute('aria-hidden', 'true');
+            if (mobileToggle) mobileToggle.checked = false;
+            document.body.classList.remove('mobile-menu-open');
         }
 
         function openMenu() {
@@ -108,26 +111,63 @@ document.addEventListener('DOMContentLoaded', () => {
             nav.classList.add('mobile-menu-open');
             mobileBtn.setAttribute('aria-expanded', 'true');
             nav.setAttribute('aria-hidden', 'false');
+            if (mobileToggle) mobileToggle.checked = true;
+            // prevent background scroll when menu is open
+            document.body.classList.add('mobile-menu-open');
         }
 
-        mobileBtn.addEventListener('click', (e) => {
-            const isOpen = mobileBtn.classList.toggle('open');
-            nav.classList.toggle('mobile-menu-open', isOpen);
-            mobileBtn.setAttribute('aria-expanded', String(isOpen));
-            nav.setAttribute('aria-hidden', String(!isOpen));
-        });
+        // If there's a checkbox toggle in the markup, prefer it as the source of truth.
+        if (mobileToggle) {
+            // Initialize state from checkbox
+            if (mobileToggle.checked) openMenu();
+
+            mobileToggle.addEventListener('change', () => {
+                if (mobileToggle.checked) openMenu();
+                else closeMenu();
+            });
+
+            // Clicking the label (which is `.mobile-menu-button`) will toggle the checkbox automatically.
+            // Keep visual sync in case JS needs to set ARIA.
+            mobileBtn.addEventListener('click', () => {
+                // small guard: delay to let the checkbox checked state update
+                setTimeout(() => {
+                    if (mobileToggle.checked) openMenu();
+                    else closeMenu();
+                }, 10);
+            });
+        } else {
+            // No checkbox: fall back to toggling on the button
+            mobileBtn.addEventListener('click', () => {
+                const isOpen = mobileBtn.classList.toggle('open');
+                nav.classList.toggle('mobile-menu-open', isOpen);
+                mobileBtn.setAttribute('aria-expanded', String(isOpen));
+                nav.setAttribute('aria-hidden', String(!isOpen));
+            });
+        }
 
         // Close on Escape key
         document.addEventListener('keydown', (ev) => {
-            if (ev.key === 'Escape' && mobileBtn.classList.contains('open')) {
+            if (ev.key === 'Escape' && (mobileBtn.classList.contains('open') || (mobileToggle && mobileToggle.checked))) {
                 closeMenu();
             }
         });
 
+        // Close when clicking outside the nav / button
+        document.addEventListener('click', (ev) => {
+            const target = ev.target;
+            const menuIsOpen = mobileBtn.classList.contains('open') || (mobileToggle && mobileToggle.checked);
+            if (!menuIsOpen) return;
+            if (nav.contains(target) || mobileBtn.contains(target) || (mobileToggle && mobileToggle.contains && mobileToggle.contains(target))) {
+                return; // click inside menu or on the toggle -> ignore
+            }
+            // otherwise close
+            closeMenu();
+        }, { passive: true });
+
         // When a nav link is clicked on small screens, close menu
         nav.querySelectorAll('a').forEach((a) => {
             a.addEventListener('click', () => {
-                if (window.innerWidth <= 900 && mobileBtn.classList.contains('open')) {
+                if (window.innerWidth <= 900 && (mobileBtn.classList.contains('open') || (mobileToggle && mobileToggle.checked))) {
                     closeMenu();
                 }
             });

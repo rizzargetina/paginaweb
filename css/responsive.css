@@ -20,25 +20,6 @@
 
 @media (max-width: 900px) {
     .header { position: fixed !important; top: 0 !important; left: 0; width: 100vw; z-index: 1000; }
-
-    /* Make the hamburger touch target larger and centered */
-    .mobile-menu-button {
-        display: inline-flex !important;
-        align-items: center;
-        justify-content: center;
-        width: 48px; /* comfortable touch target */
-        height: 48px; /* comfortable touch target */
-        padding: 8px;
-        border-radius: 8px;
-        background: transparent;
-        transition: background .18s ease, transform .18s ease;
-    }
-    .mobile-menu-button:active { transform: scale(.98); }
-    .mobile-menu-button:hover { background: rgba(255,255,255,0.03); }
-
-    /* Keep nav in the flow (hidden by transform) so transitions work. Avoid display:none
-       The menu will appear under the header and size to its content; if content exceeds
-       available space it becomes scrollable. */
     .rulenav {
         position: fixed;
         top: var(--header-height);
@@ -84,13 +65,11 @@
         content: '';
         position: absolute;
         inset: 0;
-        background: linear-gradient(rgba(0,0,0,0.25), rgba(0,0,0,0.25));
         z-index: 1099;
         pointer-events: none;
         opacity: 1;
     }
 
-    /* Menu links layout and spacing */
     .rulenav .navlink { display: flex; justify-content: right; width: 90vw; padding: 0 2.5rem; text-align: right; font-size: 1.5rem; color: #fff; }
     .only-mobile { display: flex !important; }
 
@@ -173,10 +152,27 @@
 
     #quienes-somos { display: none !important; }
     
-    .client-logo-slider { overflow: visible; display: flex; justify-content: center; align-items: center; width: 100%; }
-    .client-logo-track { display: grid; grid-template-columns: repeat(2,1fr); width: 100%; animation: none !important; align-items: center; padding: 0; margin: 0 auto; gap: 25px 20px; }
+    .client-logo-slider { 
+        overflow: visible; 
+        display: flex; 
+        justify-content: center; 
+        align-items: center; 
+    }
+    .client-logo-track { 
+        display: grid; 
+        grid-template-columns: repeat(2,1fr); 
+        width: 100%; animation: none !important; 
+        align-items: center; 
+        padding: 0; 
+        margin: 0 auto; 
+        gap: 20px 25px; }
     .client-logo-track .logo-duplicate { display: none !important; }
     .client-logo-track img { height: 80px !important; max-width: 120px; }
+
+    /* Ensure logos are centered in their grid cells on small screens */
+    .client-logo-track { justify-items: center; }
+    .client-logo-track > * { display: flex; justify-content: center; align-items: center; }
+    .client-logo-track img { margin-left: 0 !important; margin-right: 0 !important; }
 
   .base-choferes-flex{flex-direction:column;align-items:center;gap:1em}
   .base-choferes-img img{aspect-ratio:1/1;object-fit:cover;object-position:left;max-width:350px;max-height:350px;margin-left:auto;margin-right:auto;display:block}
@@ -216,15 +212,6 @@
   .index-item{padding:16px 18px;font-size:1rem;   min-height:25px; justify-content:left;text-align:left;}
 }
 
-/* Accessibility: respect reduced motion preference */
-@media (prefers-reduced-motion: reduce) {
-        .mobile-menu-button,
-        .rulenav,
-        .rulenav.mobile-menu-open {
-                transition: none !important;
-                animation: none !important;
-        }
-}
 
 /* Toggle helper: when the menu is open add `menu-open` to body to prevent background scroll */
 body.menu-open {
@@ -233,27 +220,3 @@ body.menu-open {
         position: fixed !important;
         width: 100% !important;
 }
-
-/* JS snippet (paste into your main JS) to toggle menu and body class
-document.addEventListener('DOMContentLoaded', function(){
-    const btn = document.querySelector('.mobile-menu-button');
-    const nav = document.querySelector('.rulenav');
-    if(!btn || !nav) return;
-    btn.addEventListener('click', function(e){
-        const open = nav.classList.toggle('mobile-menu-open');
-        document.body.classList.toggle('menu-open', open);
-        // optionally toggle aria attributes for accessibility
-        btn.setAttribute('aria-expanded', open ? 'true' : 'false');
-        nav.setAttribute('aria-hidden', open ? 'false' : 'true');
-    });
-    // close when clicking outside the inner menu area
-    nav.addEventListener('click', function(e){
-        if(e.target === nav){
-            nav.classList.remove('mobile-menu-open');
-            document.body.classList.remove('menu-open');
-            btn.setAttribute('aria-expanded','false');
-            nav.setAttribute('aria-hidden','true');
-        }
-    });
-});
-*/

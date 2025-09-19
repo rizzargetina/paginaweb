@@ -46,10 +46,6 @@
         transform: translateY(0) scale(1);
     }
 
-    .mobile-menu-button { display: flex !important; }
-    .mobile-menu-toggle { position: absolute; opacity: 0; pointer-events: none; width: 0; height: 0; }
-
-
     /* Unified menu item styles */
     .rulenav::before {
         content: '';
@@ -113,15 +109,19 @@
     
     .hero{ position: relative; padding:3rem 1.2rem; min-height: 600px;}
     .hero-content{ position: relative; z-index: 2;}
-    .hero .hero-bg-image{ position:absolute; inset:0; height:600px; background:url('../img/hero1.webp') center left / cover no-repeat; opacity:0.5; z-index:1; }
+    .hero .hero-bg-image{ position:absolute; inset:0; height:600px; background:url('../img/hero1.webp') center left / cover no-repeat; opacity:0.5; z-index:1;
+        
+ }
     .hero h1 { font-size: 2.4rem; font-weight: 800; color: #fff; }
+
     .hero p{font-size:1rem;margin-bottom:1.2em}
+
     .footer { font-size: 0.85rem; padding: 30px 0; }
     .footer-container { gap: 15px; }
 
     .cta-button, a.cta-button, button.cta-button { display: block; width: 100%; margin: 20px 0 20px; text-align: center; border-radius: 6px; }
-    #transporte-equipamiento-pesado { position: relative; } 
-    #transporte-equipamiento-pesado .text-content{
+#transporte-equipamiento-pesado { position: relative; } /* referencia para el absolute */
+#transporte-equipamiento-pesado .text-content{
     position: absolute;
     inset-inline: 0;              
     margin-inline: auto;           

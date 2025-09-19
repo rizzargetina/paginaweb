@@ -708,7 +708,6 @@ button.cta-button {
 /* Prevent dragging and selection of protected images (logos) */
 .no-drag {
     -webkit-user-drag: none;
-    user-drag: none;
     -webkit-user-select: none;
     -moz-user-select: none;
     -ms-user-select: none;

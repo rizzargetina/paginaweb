@@ -20,11 +20,79 @@
 
 @media (max-width: 900px) {
     .header { position: fixed !important; top: 0 !important; left: 0; width: 100vw; z-index: 1000; }
-    .mobile-menu-button { display: inline-flex !important; }
+
+    /* Make the hamburger touch target larger and centered */
+    .mobile-menu-button {
+        display: inline-flex !important;
+        align-items: center;
+        justify-content: center;
+        width: 48px; /* comfortable touch target */
+        height: 48px; /* comfortable touch target */
+        padding: 8px;
+        border-radius: 8px;
+        background: transparent;
+        transition: background .18s ease, transform .18s ease;
+    }
+    .mobile-menu-button:active { transform: scale(.98); }
+    .mobile-menu-button:hover { background: rgba(255,255,255,0.03); }
+
+    /* Keep nav in the flow (hidden by transform) so transitions work. Avoid display:none
+       The menu will appear under the header and size to its content; if content exceeds
+       available space it becomes scrollable. */
+    .rulenav {
+        position: fixed;
+        top: var(--header-height);
+        left: 0;
+        width: 100vw;
+        overflow-y: auto;
+        pointer-events: none;
+        opacity: 0;
+        transform: translateY(-6px) scale(.995);
+        transition: opacity .18s cubic-bezier(.2,.9,.2,1), transform .18s cubic-bezier(.2,.9,.2,1);
+        display: flex;
+        flex-direction: column;
+        justify-content: flex-start;
+        background: var(--color-header-bg);
+        z-index: 1100;
+        padding-top: 0.25rem;
+        -webkit-overflow-scrolling: touch;
+    }
+
+    /* Visible state when menu is toggled open via JS adding .mobile-menu-open */
+    .rulenav.mobile-menu-open {
+        pointer-events: auto;
+        opacity: 1;
+        transform: translateY(0) scale(1);
+    }
+
+    /* Each menu item fixed height */
+    .rulenav .navlink {
+        height: 85px;
+        min-height: 80px;
+        display: flex;
+        align-items: center;
+        justify-content: flex-end;
+        width: 100%;
+        padding: 0 1.3rem;
+        font-size: 1.1rem;
+        color: #fff;
+        border-bottom: 1px solid #3a3a3a;
+    }
+
+    /* Overlay layer for dimming content behind the menu */
+    .rulenav::before {
+        content: '';
+        position: absolute;
+        inset: 0;
+        background: linear-gradient(rgba(0,0,0,0.25), rgba(0,0,0,0.25));
+        z-index: 1099;
+        pointer-events: none;
+        opacity: 1;
+    }
+
+    /* Menu links layout and spacing */
     .rulenav .navlink { display: flex; justify-content: right; width: 90vw; padding: 0 2.5rem; text-align: right; font-size: 1.5rem; color: #fff; }
     .only-mobile { display: flex !important; }
-    .rulenav { display: none !important; }
-    .rulenav.mobile-menu-open { display: flex !important; flex-direction: column; justify-content: flex-start; position: fixed; top: 0; left: 0; width: 100vw; height: 450px !important; background: #0f141a; z-index: 1100; }
 
     /* Make images inside .content-section square on small screens */
     .content-section img,
@@ -147,3 +215,45 @@
   .index-grid{grid-template-columns:repeat(1,1fr);gap:10px}
   .index-item{padding:16px 18px;font-size:1rem;   min-height:25px; justify-content:left;text-align:left;}
 }
+
+/* Accessibility: respect reduced motion preference */
+@media (prefers-reduced-motion: reduce) {
+        .mobile-menu-button,
+        .rulenav,
+        .rulenav.mobile-menu-open {
+                transition: none !important;
+                animation: none !important;
+        }
+}
+
+/* Toggle helper: when the menu is open add `menu-open` to body to prevent background scroll */
+body.menu-open {
+        overflow: hidden !important;
+        height: 100% !important;
+        position: fixed !important;
+        width: 100% !important;
+}
+
+/* JS snippet (paste into your main JS) to toggle menu and body class
+document.addEventListener('DOMContentLoaded', function(){
+    const btn = document.querySelector('.mobile-menu-button');
+    const nav = document.querySelector('.rulenav');
+    if(!btn || !nav) return;
+    btn.addEventListener('click', function(e){
+        const open = nav.classList.toggle('mobile-menu-open');
+        document.body.classList.toggle('menu-open', open);
+        // optionally toggle aria attributes for accessibility
+        btn.setAttribute('aria-expanded', open ? 'true' : 'false');
+        nav.setAttribute('aria-hidden', open ? 'false' : 'true');
+    });
+    // close when clicking outside the inner menu area
+    nav.addEventListener('click', function(e){
+        if(e.target === nav){
+            nav.classList.remove('mobile-menu-open');
+            document.body.classList.remove('menu-open');
+            btn.setAttribute('aria-expanded','false');
+            nav.setAttribute('aria-hidden','true');
+        }
+    });
+});
+*/

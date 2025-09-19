@@ -46,7 +46,21 @@
         transform: translateY(0) scale(1);
     }
 
-    /* Unified menu item styles */
+    /* Each menu item fixed height */
+    .rulenav .navlink {
+        height: 85px;
+        min-height: 80px;
+        display: flex;
+        align-items: center;
+        justify-content: flex-end;
+        width: 100%;
+        padding: 0 1.3rem;
+        font-size: 1.1rem;
+        color: #fff;
+        border-bottom: 1px solid #3a3a3a;
+    }
+
+    /* Overlay layer for dimming content behind the menu */
     .rulenav::before {
         content: '';
         position: absolute;
@@ -56,40 +70,32 @@
         opacity: 1;
     }
 
-    .rulenav .navlink {
-        height: 85px;
-        min-height: 80px;
-        display: flex;
-        align-items: center;
-        justify-content: flex-end;
-        width: 90vw;
-        padding: 0 2.5rem;
-        font-size: 1.5rem;
-        color: #fff;
-        border-bottom: 1px solid #3a3a3a;
-        text-align: right;
-    }
-
+    .rulenav .navlink { display: flex; justify-content: right; width: 90vw; padding: 0 2.5rem; text-align: right; font-size: 1.5rem; color: #fff; }
     .only-mobile { display: flex !important; }
 
-    /* Images inside .content-section: unified small-screen behaviour */
+    /* Make images inside .content-section square on small screens */
     .content-section img,
     .content-section .image,
-    .content-section .thumb,
-    .content-section .image-bg {
+    .content-section .thumb {
         width: 100%;
-        max-width: 420px;
+        height: auto;
         aspect-ratio: 1 / 1; /* keep square */
         object-fit: cover; /* crop to fill */
         display: block;
-        margin-left: auto;
-        margin-right: auto;
+        max-width: 100%;
+    }
+
+    /* If the image is set as a background on a container, force a square box */
+    .content-section .image-bg {
+        width: 100%;
+        aspect-ratio: 1 / 1;
         background-size: cover;
         background-position: center;
     }
 }
 
 @media (min-width: 901px) {
+    .mobile-menu-button { display: none; }
     .rulenav { flex-direction: row; width: auto; }
     .rulenav .only-mobile { display: none !important; }
     .only-mobile { display: none !important; }
@@ -98,20 +104,32 @@
 
 @media (max-width: 600px) {
     body { font-size: 18px; line-height: 1.6; padding-top: var(--header-height); }
-
     #logo1, #logo2 { height: 35px; max-width: 90px; }
 
     .logos-left { gap: 10px; }
 
-    .container { width: 96%;padding-left: 10px; padding-right: 10px; }    
+    .container { width: 92%;padding-left: 10px; padding-right: 10px; }    
     .top-bar, .top-bar * { display: none !important; visibility: hidden !important; height: 0 !important; width: 0 !important; padding: 0 !important; margin: 0 !important; opacity: 0 !important; pointer-events: none !important; animation: none !important; transition: none !important; }
     
     
-    .hero{ position: relative; padding:3rem 1.2rem; min-height: 600px;}
-    .hero-content{ position: relative; z-index: 2;}
-    .hero .hero-bg-image{ position:absolute; inset:0; height:600px; background:url('../img/hero1.webp') center left / cover no-repeat; opacity:0.5; z-index:1;
+    .hero{
+    position: relative;
+    padding:3rem 1.2rem;
+    min-height: 600px;
+}
+    .hero-content{
+        position: relative;
+        z-index: 2;
+    }
+    .hero .hero-bg-image{
+        position:absolute;
+        inset:0;
+        height:600px;
+        background:url('../img/hero1.webp') center left / cover no-repeat;
+        opacity:0.5;
+        z-index:1;
         
- }
+    }
     .hero h1 { font-size: 2.4rem; font-weight: 800; color: #fff; }
 
     .hero p{font-size:1rem;margin-bottom:1.2em}
@@ -140,20 +158,21 @@
         justify-content: center; 
         align-items: center; 
     }
-    .client-logo-track {
-        display: grid;
-        grid-template-columns: repeat(2,1fr);
-        width: 100%;
-        animation: none !important;
-        align-items: center;
-        padding: 0;
-        margin: 0 auto;
-        gap: 20px 25px;
-        justify-items: center;
-    }
+    .client-logo-track { 
+        display: grid; 
+        grid-template-columns: repeat(2,1fr); 
+        width: 100%; animation: none !important; 
+        align-items: center; 
+        padding: 0; 
+        margin: 0 auto; 
+        gap: 20px 25px; }
     .client-logo-track .logo-duplicate { display: none !important; }
+    .client-logo-track img { height: 80px !important; max-width: 120px; }
+
+    /* Ensure logos are centered in their grid cells on small screens */
+    .client-logo-track { justify-items: center; }
     .client-logo-track > * { display: flex; justify-content: center; align-items: center; }
-    .client-logo-track img { height: 80px !important; max-width: 120px; margin: 0 !important; }
+    .client-logo-track img { margin-left: 0 !important; margin-right: 0 !important; }
 
   .base-choferes-flex{flex-direction:column;align-items:center;gap:1em}
   .base-choferes-img img{aspect-ratio:1/1;object-fit:cover;object-position:left;max-width:350px;max-height:350px;margin-left:auto;margin-right:auto;display:block}
@@ -192,4 +211,6 @@
   .index-grid{grid-template-columns:repeat(1,1fr);gap:10px}
   .index-item{padding:16px 18px;font-size:1rem;   min-height:25px; justify-content:left;text-align:left;}
 }
+
+
 

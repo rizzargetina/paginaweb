@@ -82,38 +82,75 @@ document.addEventListener('DOMContentLoaded', () => {
     }
 
     // --- Menú Móvil (Hamburguesa) ---
-    const menuButton = document.getElementById('mobile-menu-button');
+    // HTML uses an input#mobile-menu-toggle (checkbox) and a label.mobile-menu-button.
+    const menuToggleCheckbox = document.getElementById('mobile-menu-toggle');
+    const menuButtonLabel = document.querySelector('.mobile-menu-button');
     const navigation = document.getElementById('main-navigation');
 
-    if (menuButton && navigation) {
-        // Helper to close menu and reset button state
-        const closeMenu = () => {
-            menuButton.setAttribute('aria-expanded', 'false');
-            menuButton.classList.remove('menu-active');
-            menuButton.classList.remove('open');
-            navigation.classList.remove('mobile-menu-open');
-            try { menuButton.blur(); } catch (e) { /* ignore if blur not supported */ }
+    if (navigation && (menuToggleCheckbox || menuButtonLabel)) {
+        // Ensure navigation has ARIA and initial state
+        navigation.setAttribute('aria-hidden', 'true');
+
+        const openMenu = () => {
+            navigation.classList.add('mobile-menu-open');
+            navigation.setAttribute('aria-hidden', 'false');
+            if (menuButtonLabel) {
+                menuButtonLabel.classList.add('open');
+                menuButtonLabel.setAttribute('aria-expanded', 'true');
+            }
+            if (menuToggleCheckbox) menuToggleCheckbox.checked = true;
         };
 
-        // Toggle open/closed on click — keep aria attribute correct
-        menuButton.addEventListener('click', (event) => {
-            event.stopPropagation(); // Previene que el clic se propague y cierre el menú inmediatamente
-            const isOpen = menuButton.getAttribute('aria-expanded') === 'true';
-            const nextOpen = !isOpen;
-            menuButton.setAttribute('aria-expanded', String(nextOpen));
-            menuButton.classList.toggle('menu-active');
-            menuButton.classList.toggle('open');
-            navigation.classList.toggle('mobile-menu-open');
-        });
+        const closeMenu = () => {
+            navigation.classList.remove('mobile-menu-open');
+            navigation.setAttribute('aria-hidden', 'true');
+            if (menuButtonLabel) {
+                menuButtonLabel.classList.remove('open');
+                menuButtonLabel.setAttribute('aria-expanded', 'false');
+            }
+            if (menuToggleCheckbox) menuToggleCheckbox.checked = false;
+        };
 
+        const toggleMenu = () => {
+            const isOpen = navigation.classList.contains('mobile-menu-open');
+            if (isOpen) closeMenu(); else openMenu();
+        };
 
+        // If there's a true checkbox in the DOM, bind its change to open/close
+        if (menuToggleCheckbox) {
+            // Keep label click behavior but rely on checkbox state as source-of-truth
+            menuToggleCheckbox.addEventListener('change', (e) => {
+                if (e.target.checked) openMenu(); else closeMenu();
+            });
+        }
 
-        // Close when a navigation link is activated (use capture to catch SPA-like behavior)
+        // Label fallback: if user clicks the visible label element, toggle
+        if (menuButtonLabel) {
+            menuButtonLabel.addEventListener('click', (e) => {
+                e.preventDefault();
+                toggleMenu();
+            });
+        }
+
+        // Close when a navigation link is activated
         navigation.addEventListener('click', (event) => {
             const target = event.target;
             if (target && (target.tagName === 'A' || target.closest('a'))) {
-                // Small delay to allow link focus/active styles if needed, then close
+                // small delay to allow navigation to proceed
                 setTimeout(closeMenu, 50);
+            }
+        });
+
+        // Close when clicking outside the nav (on document) or pressing Escape
+        document.addEventListener('click', (e) => {
+            if (!navigation.classList.contains('mobile-menu-open')) return;
+            if (e.target.closest && (e.target.closest('#main-navigation') || e.target.closest('.mobile-menu-button') || e.target.closest('label[for="mobile-menu-toggle"]'))) return;
+            closeMenu();
+        });
+
+        document.addEventListener('keydown', (e) => {
+            if (e.key === 'Escape' && navigation.classList.contains('mobile-menu-open')) {
+                closeMenu();
             }
         });
     }

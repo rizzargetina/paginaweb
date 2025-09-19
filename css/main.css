@@ -235,10 +235,12 @@ hr {
     height: 40px; /* Ligeramente  grandes */
     max-width: 160px;
     width: auto;
+    filter: drop-shadow(0 0 10px #91888661);
 }
 
 
-/* --- Navigation --- */
+
+
 .rulenav {
     align-items: center;
     display: flex;

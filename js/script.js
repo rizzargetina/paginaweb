@@ -148,6 +148,23 @@ document.addEventListener('DOMContentLoaded', () => {
             closeMenu();
         });
 
+        // Also close when the user taps/clicks inside the nav on mobile
+        // but avoid closing when interacting with form controls or the menu toggle itself.
+        navigation.addEventListener('pointerup', (e) => {
+            if (!navigation.classList.contains('mobile-menu-open')) return;
+
+            const el = e.target;
+
+            // If it's a link, let the navigation click handler handle delayed close.
+            if (el.closest && el.closest('a')) return;
+
+            // Do not close when interacting with inputs, buttons, selects, textareas, or the checkbox toggle
+            if (el.closest && (el.closest('input') || el.closest('button') || el.closest('select') || el.closest('textarea') || el.closest('label[for="mobile-menu-toggle"]') || el.id === 'mobile-menu-toggle')) return;
+
+            // For any other tap inside the open nav (e.g. blank area), close the menu
+            closeMenu();
+        });
+
         document.addEventListener('keydown', (e) => {
             if (e.key === 'Escape' && navigation.classList.contains('mobile-menu-open')) {
                 closeMenu();

@@ -294,9 +294,8 @@ hr {
 .hamburger-line:nth-child(2) { top: calc(50% - 1.25px); transform: translateX(-50%); opacity: 1;}
 .hamburger-line:nth-child(3) { top: calc(50% + 7px - 1.25px); transform: translateX(-50%) rotate(0deg); }
 
-/* Hover / focus / open state: transform into a cross */
+/* Hover / open state: transform into a cross (focus-visible only shows outline) */
 .mobile-menu-button:hover .hamburger-line,
-.mobile-menu-button:focus-visible .hamburger-line,
 .mobile-menu-button.open .hamburger-line {
     transition: transform 0.28s cubic-bezier(0.2, 0.8, 0.2, 1), opacity 0.12s ease, top 0.28s ease;
 }

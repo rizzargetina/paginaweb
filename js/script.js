@@ -81,92 +81,56 @@ document.addEventListener('DOMContentLoaded', () => {
         activateTopBarFunctions();
     }
 
-    // --- Menú Móvil (Hamburguesa) ---
-    // HTML uses an input#mobile-menu-toggle (checkbox) and a label.mobile-menu-button.
-    const menuToggleCheckbox = document.getElementById('mobile-menu-toggle');
-    const menuButtonLabel = document.querySelector('.mobile-menu-button');
-    const navigation = document.getElementById('main-navigation');
 
-    if (navigation && (menuToggleCheckbox || menuButtonLabel)) {
-        // Ensure navigation has ARIA and initial state
-        navigation.setAttribute('aria-hidden', 'true');
+    // Menú móvil (hamburguesa) - JS toggle: abrir/cerrar y accesibilidad
+    (function setupMobileMenuToggle() {
+        const mobileBtn = document.querySelector('.mobile-menu-button');
+        const nav = document.querySelector('#main-navigation.rulenav, .rulenav');
 
-        const openMenu = () => {
-            navigation.classList.add('mobile-menu-open');
-            navigation.setAttribute('aria-hidden', 'false');
-            if (menuButtonLabel) {
-                menuButtonLabel.classList.add('open');
-                menuButtonLabel.setAttribute('aria-expanded', 'true');
-            }
-            if (menuToggleCheckbox) menuToggleCheckbox.checked = true;
-        };
+        if (!mobileBtn || !nav) return;
 
-        const closeMenu = () => {
-            navigation.classList.remove('mobile-menu-open');
-            navigation.setAttribute('aria-hidden', 'true');
-            if (menuButtonLabel) {
-                menuButtonLabel.classList.remove('open');
-                menuButtonLabel.setAttribute('aria-expanded', 'false');
-            }
-            if (menuToggleCheckbox) menuToggleCheckbox.checked = false;
-        };
+        // Inicializar atributos accesibles
+        if (!mobileBtn.hasAttribute('aria-expanded')) mobileBtn.setAttribute('aria-expanded', 'false');
+        if (nav.id && !mobileBtn.hasAttribute('aria-controls')) {
+            mobileBtn.setAttribute('aria-controls', nav.id);
+        }
+        if (!nav.hasAttribute('aria-hidden')) nav.setAttribute('aria-hidden', 'true');
 
-        const toggleMenu = () => {
-            const isOpen = navigation.classList.contains('mobile-menu-open');
-            if (isOpen) closeMenu(); else openMenu();
-        };
-
-        // If there's a true checkbox in the DOM, bind its change to open/close
-        if (menuToggleCheckbox) {
-            // Keep label click behavior but rely on checkbox state as source-of-truth
-            menuToggleCheckbox.addEventListener('change', (e) => {
-                if (e.target.checked) openMenu(); else closeMenu();
-            });
+        function closeMenu() {
+            mobileBtn.classList.remove('open');
+            nav.classList.remove('mobile-menu-open');
+            mobileBtn.setAttribute('aria-expanded', 'false');
+            nav.setAttribute('aria-hidden', 'true');
         }
 
-        // The label is associated with the checkbox; rely on native toggle behavior
-        // and the checkbox `change` listener above to keep state consistent.
+        function openMenu() {
+            mobileBtn.classList.add('open');
+            nav.classList.add('mobile-menu-open');
+            mobileBtn.setAttribute('aria-expanded', 'true');
+            nav.setAttribute('aria-hidden', 'false');
+        }
 
-        // Close when a navigation link is activated
-        navigation.addEventListener('click', (event) => {
-            const target = event.target;
-            if (target && (target.tagName === 'A' || target.closest('a'))) {
-                // small delay to allow navigation to proceed
-                setTimeout(closeMenu, 50);
-            }
+        mobileBtn.addEventListener('click', (e) => {
+            const isOpen = mobileBtn.classList.toggle('open');
+            nav.classList.toggle('mobile-menu-open', isOpen);
+            mobileBtn.setAttribute('aria-expanded', String(isOpen));
+            nav.setAttribute('aria-hidden', String(!isOpen));
         });
 
-        // Close when clicking outside the nav (on document) or pressing Escape
-        document.addEventListener('click', (e) => {
-            if (!navigation.classList.contains('mobile-menu-open')) return;
-            if (e.target.closest && (e.target.closest('#main-navigation') || e.target.closest('.mobile-menu-button') || e.target.closest('label[for="mobile-menu-toggle"]'))) return;
-            closeMenu();
-        });
-
-        // Also close when the user taps/clicks inside the nav on mobile
-        // but avoid closing when interacting with form controls or the menu toggle itself.
-        navigation.addEventListener('pointerup', (e) => {
-            if (!navigation.classList.contains('mobile-menu-open')) return;
-
-            const el = e.target;
-
-            // If it's a link, let the navigation click handler handle delayed close.
-            if (el.closest && el.closest('a')) return;
-
-            // Do not close when interacting with inputs, buttons, selects, textareas, or the checkbox toggle
-            if (el.closest && (el.closest('input') || el.closest('button') || el.closest('select') || el.closest('textarea') || el.closest('label[for="mobile-menu-toggle"]') || el.id === 'mobile-menu-toggle')) return;
-
-            // For any other tap inside the open nav (e.g. blank area), close the menu
-            closeMenu();
-        });
-
-        document.addEventListener('keydown', (e) => {
-            if (e.key === 'Escape' && navigation.classList.contains('mobile-menu-open')) {
+        // Close on Escape key
+        document.addEventListener('keydown', (ev) => {
+            if (ev.key === 'Escape' && mobileBtn.classList.contains('open')) {
                 closeMenu();
             }
         });
-    }
 
-
-
+        // When a nav link is clicked on small screens, close menu
+        nav.querySelectorAll('a').forEach((a) => {
+            a.addEventListener('click', () => {
+                if (window.innerWidth <= 900 && mobileBtn.classList.contains('open')) {
+                    closeMenu();
+                }
+            });
+        });
+    })();
 });

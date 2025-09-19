@@ -66,9 +66,8 @@
     
     
     .hero{
-    padding:4rem 1.4rem;
-}
-    .hero .hero-bg-image{
+    padding:4rem 1.4rem 0rem 1.4rem;
+
         position:absolute;
         inset:0;
         height:600px;
@@ -85,31 +84,22 @@
     .footer-container { gap: 15px; }
 
     .cta-button, a.cta-button, button.cta-button { display: block; width: 100%; margin: 20px 0 20px; text-align: center; border-radius: 6px; }
-#transporte-equipamiento-pesado { position: relative; } /* referencia para el absolute */
-#transporte-equipamiento-pesado .text-content{
-    position: absolute;
-    top: clamp(3%, 1vh, 8%);
-    inset-inline: 0;              
-    margin-inline: auto;           
-    width: min(90%, clamp(640px, 36%, 640px));
-    background:#101828;
-    color:#fafdff;
-    text-align:center;
-    padding:0 2rem;
-    z-index:2;
-}
+
 
     #quienes-somos { display: none !important; }
     
-    .client-logo-slider { overflow: visible; display: flex; justify-content: center; align-items: center; width: 100%; padding: 0; }
+    .client-logo-slider { overflow: visible; display: flex; justify-content: center; align-items: center; padding: 0; }
     .client-logo-track { display: grid; grid-template-columns: repeat(2,1fr); width: 100%; max-width: 80%; animation: none !important; align-items: center; padding: 0; margin: 0 auto; gap: 25px 20px; }
     .client-logo-track .logo-duplicate { display: none !important; }
     .client-logo-track img { height: 80px !important; max-width: 120px; }
 
   .base-choferes-flex{flex-direction:column;align-items:center;gap:1em}
-  .base-choferes-img img{aspect-ratio:1/1;object-fit:cover;object-position:left;max-width: 420px;margin-left:auto;margin-right:auto;display:block}
+  .base-choferes-img img{aspect-ratio:1/1;object-fit:cover;object-position:center;max-width: 420px;margin-left:auto;margin-right:auto;display:block}
   .base-choferes-info{text-align:center}
-  .office-image{aspect-ratio:1/1;object-fit:cover;object-position:left; max-width: 420px;margin-left:auto;margin-right:auto;display:block}
+  
+  .office-section{flex-direction:column;align-items:center;gap:1em;display:flex}
+  .office-image{aspect-ratio:1/1;object-fit:cover;object-position:center;max-width: 420px;margin-left:auto;margin-right:auto;display:block}
+  .office-info{text-align:center}
   .service-card-title{text-align:left;padding-left:calc(var(--spacing-unit)*2)}
   .service-cards-container{text-align:left}
   .mobile-only{display:inline}
@@ -129,8 +119,7 @@
     .content-section .image-content img,
     .content-section .image-content .image,
     .content-section .image-content .thumb {
-        width: 100%;
-        max-width: 420px; 
+        width: 100%;ñ
         aspect-ratio: 1 / 1; 
         height: auto;
         object-fit: cover; 

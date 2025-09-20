@@ -40,9 +40,7 @@
 
 /* Office image: force rectangular crop and responsive height */
 .office-image{
-  width:100%;
-  border-radius: 8px;
-  height:320px; /* fixed height to appear rectangular; adjust if needed */
+  width:100%;  height:320px; /* fixed height to appear rectangular; adjust if needed */
   object-position:center center;
   display:block;
 }

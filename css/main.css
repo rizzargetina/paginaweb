@@ -44,7 +44,7 @@
     --color-footer-border: #181b20;
     --color-footer-link: var(--color-link);
     --color-footer-link-hover: var(--color-link-hover);
-    --color-footer-text: #929eb1;
+    --color-footer-text: #aab7cb;
 
     /* Header & Topbar */
     --color-header-bg: #101010;
@@ -257,6 +257,54 @@ hr {
     padding: 12px; /* Un poco  de padding horizontal */
     position: relative;
     text-transform: uppercase;
+}
+
+/* Prevent default text-decoration (global a:hover) on nav links so
+   only the animated underline appears */
+.rulenav .navlink,
+.rulenav .navlink:hover,
+.rulenav .navlink:focus {
+    text-decoration: none;
+    text-decoration-color: transparent;
+    text-decoration-thickness: 0;
+}
+
+/* Animated underline for desktop nav links: draws left->right on hover
+   and collapses right->left when leaving. Applied only on desktop. */
+@media (min-width: 901px) {
+    /* exclude mobile-only links from the effect */
+    .rulenav .navlink:not(.only-mobile) {
+        --underline-color: var(--color-link);
+    }
+
+    .rulenav .navlink:not(.only-mobile)::after {
+        content: '';
+        position: absolute;
+        left: 50%;
+        bottom: 16px;
+        height: 2px;
+        width: 80%; /* accommodate padding and keep line shorter than full item */
+        background: var(--underline-color);
+        transform-origin: left center;
+        transform: translateX(-50%) scaleX(0);
+        transition: transform 400ms cubic-bezier(.2,.9,.2,1), opacity 200ms ease;
+        will-change: transform, opacity;
+        border-radius: 2px;
+        opacity: 0.95;
+    }
+
+    .rulenav .navlink:not(.only-mobile):hover::after,
+    .rulenav .navlink:not(.only-mobile):focus::after {
+        transform-origin: left center;
+        transform: translateX(-50%) scaleX(1);
+    }
+
+    /* reverse origin on collapse so it animates right->left when leaving */
+    .rulenav .navlink:not(.only-mobile):not(:hover):not(:focus)::after {
+        transform-origin: right center;
+        transform: translateX(-50%) scaleX(0);
+        transition: transform 330ms cubic-bezier(.4,0,.2,1);
+    }
 }
 
 

@@ -176,7 +176,10 @@ hr {
     color: transparent;
 
 }
-.container{width:86%;max-width:1400px;margin-left:auto;margin-right:auto}
+.container{width:86%;max-width:1400px;margin-left:auto;margin-right:auto;}
+.container2{width:100%;max-width:1400px;margin-left:auto;margin-right:auto;text-align: left;}
+.container2 img{ border-radius: 4px;}
+.container2 p {padding-bottom: 1rem}
 
 .hero{
     display: flex;
@@ -185,7 +188,6 @@ hr {
     justify-content: flex-start;
     min-height: 610px;
   padding: clamp(3.8rem, 4vw, 7rem) 0;
-
     text-align: center;
     color: #fff;
 }

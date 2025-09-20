@@ -227,10 +227,10 @@
     .client-logo-track > * { display: flex; justify-content: center; align-items: center; }
     .client-logo-track img { margin-left: 0 !important; margin-right: 0 !important; }
 
-  .base-choferes-flex{flex-direction:column;align-items:center;gap:1em}
-  .base-choferes-img img{aspect-ratio:1/1;object-fit:cover;object-position:left;max-width:350px;max-height:350px;margin-left:auto;margin-right:auto;display:block}
-  .base-choferes-info{text-align:center}
-  .office-image{aspect-ratio:1/1;object-fit:cover;object-position:left;max-width:350px;max-height:350px;margin-left:auto;margin-right:auto;display:block}
+  .office-image{ aspect-ratio:1/1; object-fit:cover; object-position:left; max-width:350px; max-height:350px; margin-left:auto; margin-right:auto; display:block }
+    .base-choferes-flex{flex-direction:column;align-items:center;gap:1em}
+    .base-choferes-img img{aspect-ratio:1/1;object-fit:cover;object-position:left;max-width:350px;max-height:350px;margin-left:auto;margin-right:auto;display:block}
+    .base-choferes-info{text-align:center}
   .service-card-title{text-align:left;padding-left:calc(var(--spacing-unit)*2)}
   .service-cards-container{text-align:left}
   .mobile-only{display:inline}

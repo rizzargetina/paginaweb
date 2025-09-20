@@ -173,12 +173,6 @@ a {
     color: var(--color-link);
     text-decoration: none;
 }
-a:hover, a:focus {
-    outline: none;
-    text-decoration: underline;
-    text-decoration-thickness: 2px;
-}
-
 
 hr {
     color: transparent;

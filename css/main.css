@@ -47,7 +47,7 @@
     --color-footer-text: #aab7cb;
 
     /* Header & Topbar */
-    --color-header-bg: #101010;
+    --color-header-bg: #0f0f0f;
     --color-header-border: #00081d;
     --color-header-text: var(--dhl-white);
     --color-top-bar-bg: #000000;
@@ -232,7 +232,7 @@ hr {
     height: 40px; /* Ligeramente  grandes */
     max-width: 160px;
     width: auto;
-    filter: drop-shadow(0 0 10px #91888661);
+    filter: drop-shadow(0 0 10px #91888629);
 }
 
 

@@ -269,10 +269,8 @@ hr {
     text-decoration-thickness: 0;
 }
 
-/* Animated underline for desktop nav links: draws left->right on hover
-   and collapses right->left when leaving. Applied only on desktop. */
+
 @media (min-width: 901px) {
-    /* exclude mobile-only links from the effect */
     .rulenav .navlink:not(.only-mobile) {
         --underline-color: var(--color-link);
     }

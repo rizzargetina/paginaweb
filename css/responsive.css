@@ -1,3 +1,10 @@
+@media (min-width: 1890px) {
+    .hero{
+    position: relative;
+    padding:5.2rem 0rem;
+}
+}
+
 @media (max-width: 992px) {
     :root { --max-width: 960px; }
     .top-bar { display: none; }
@@ -13,6 +20,11 @@
     #logo1, #logo2 { height: 35px; max-width: 120px; }
     .pepito .logo-h1 { display: none; }
     #main-navigation.rulenav { top: var(--header-height) !important; }
+
+        .hero{
+    position: relative;
+    padding:5.2rem 0rem;
+}
 }
 
 @media (min-width: 901px) {
@@ -252,6 +264,8 @@
   .index-grid{grid-template-columns:repeat(1,1fr);gap:10px}
   .index-item{padding:16px 18px;font-size:1rem;   min-height:25px; justify-content:left;text-align:left;}
 }
+
+
 
 
 

@@ -3,21 +3,21 @@
     font-family: 'Poppins';
     font-style: normal;
     font-weight: 400;
-    src: url('../fonts/Poppins-Regular.ttf') format('truetype');
+    src: local('Poppins Regular'), local('Poppins-Regular'), url('../fonts/Poppins-Regular.ttf') format('truetype');
 }
 @font-face {
     font-display: swap;
     font-family: 'Poppins';
     font-style: normal;
     font-weight: 700;
-    src: url('../fonts/Poppins-Bold.ttf') format('truetype');
+    src: local('Poppins Bold'), local('Poppins-Bold'), url('../fonts/Poppins-Bold.ttf') format('truetype');
 }
 @font-face {
     font-display: swap;
     font-family: 'Poppins';
     font-style: normal;
     font-weight: 800;
-    src: url('../fonts/Poppins-ExtraBold.ttf') format('truetype');
+    src: local('Poppins ExtraBold'), local('Poppins-ExtraBold'), url('../fonts/Poppins-ExtraBold.ttf') format('truetype');
 }
 
 :root {
@@ -130,9 +130,31 @@ h2 { font-size: 2.4rem; }
 h3 { font-size: 1.6rem; }
 h4 { font-size: 1.3rem; }
 
+/* Sectioned page headings: use a responsive clamp and consistent spacing
+   This targets H1s inside .page-container (used on content pages like EMPLEOS)
+   and will not override hero-specific h1 (.hero h1) which is explicitly set. */
+.page-container h1 {
+    font-size: clamp(1.5rem, 2.0vw + 0.8rem, 2.6rem);
+    line-height: 1.15;
+    margin: 0 0 1.25rem 0;
+    font-weight: 700;
+    color: var(--color-headings);
+}
+
+section h1,
+.section h1,
+.content-section h1,
+.seccion-quienes h1 {
+    font-size: clamp(1.5rem, 2.0vw + 0.8rem, 2.6rem);
+    line-height: 1.15; /* tight, consistent with page-container */
+    margin: 0 0 1.25rem 0; /* consistent bottom spacing */
+    font-weight: 700;
+    color: var(--color-headings);
+}
+
 
 p {
-    font-size: 1.4;
+    font-size: 1.4rem;
     margin-bottom: calc(var(--spacing-unit));
     margin-top: 0;
 }
@@ -743,5 +765,4 @@ button.cta-button {
 .index-item:hover{
     background-color: var(--color-accent);
 }
-
 

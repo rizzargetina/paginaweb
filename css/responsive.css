@@ -157,9 +157,9 @@
 
     .logos-left { gap: 10px; }
 
-    .container { width: 92%;} 
-    .container2{width:92%;text-align: center;}
-.container2 img{ border-radius: 4px;}   
+    .container { width: 92%;text-align: left;} 
+    .container2{width:100%;text-align: left;}
+.container2 img{ max-width: 92%; border-radius: 4px;}   
     .top-bar, .top-bar * { display: none !important; visibility: hidden !important; height: 0 !important; width: 0 !important; padding: 0 !important; margin: 0 !important; opacity: 0 !important; pointer-events: none !important; animation: none !important; transition: none !important; }
     
     
@@ -221,9 +221,8 @@
     .client-logo-track img { margin-left: 0 !important; margin-right: 0 !important; }
 
   .office-image{ aspect-ratio:1/1; object-fit:cover; border-radius:4px; object-position:left; display:block }
-    .base-choferes-flex{flex-direction:column;align-items:center;gap:1em}
-    .base-choferes-img img{aspect-ratio:1/1;  border-radius:4px; object-fit:cover;object-position:left;display:block}
-    .base-choferes-info{text-align:center}
+    .base-choferes-flex{flex-direction:column;align-items:center;}
+    .base-choferes-img img{aspect-ratio:1/1;  border-radius:4px; object-fit:cover;object-position:left;display:block;}
   .service-card-title{text-align:left;padding-left:calc(var(--spacing-unit)*2)}
   .service-cards-container{text-align:left}
   .mobile-only{display:inline}
@@ -231,7 +230,6 @@
     .content-section {
         display: flex;
         flex-direction: column; /* stack text above image on small screens */
-        gap: 1rem;
         align-items: center; /* center content horizontally */
     }
 

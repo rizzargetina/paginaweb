@@ -251,6 +251,7 @@ hr {
 
     .hero p{font-size:1rem;margin-bottom:1.2em}
 
+
 }
 
 .seccion-quienes {
@@ -734,4 +735,94 @@ button.cta-button {
 .index-item:focus,
 .index-item:hover{
     background-color: var(--color-accent);
+}
+
+
+
+@media (max-width: 600px) {
+    body { font-size: 18px; line-height: 1.6; padding-top: var(--header-height); }
+    #logo1, #logo2 { height: 35px; max-width: 90px; }
+
+    .logos-left { gap: 10px; }
+
+    .container { width: 92%;text-align: left;} 
+    .container2{width:100%;text-align: left;}
+.container2 img{ max-width: 92%; border-radius: 4px;}   
+    .top-bar, .top-bar * { display: none !important; visibility: hidden !important; height: 0 !important; width: 0 !important; padding: 0 !important; margin: 0 !important; opacity: 0 !important; pointer-events: none !important; animation: none !important; transition: none !important; }
+    
+
+    .footer { font-size: 0.85rem; padding: 30px 0; }
+    .footer-container { gap: 15px; }
+
+    .cta-button, a.cta-button, button.cta-button { display: block; width: 100%; margin: 20px 0 20px; text-align: center; border-radius: 6px; }
+#transporte-equipamiento-pesado { position: relative; } /* referencia para el absolute */
+#transporte-equipamiento-pesado .text-content{
+    position: absolute;
+    inset-inline: 0;              
+    margin-inline: auto;           
+    width: min(90%, clamp(640px, 36%, 640px));
+    color:#fafdff;
+    text-align:center;
+    padding:0 2rem;
+    z-index:2;
+}
+
+    #quienes-somos { display: none !important; }
+    
+    .client-logo-slider { 
+        overflow: visible; 
+        display: flex; 
+        justify-content: center; 
+        align-items: center; 
+    }
+    .client-logo-track { 
+        display: grid; 
+        grid-template-columns: repeat(2,1fr); 
+        width: 100%; animation: none !important; 
+        align-items: center; 
+        padding: 0; 
+        margin: 0 auto; 
+        gap: 20px 25px; }
+    .client-logo-track .logo-duplicate { display: none !important; }
+    .client-logo-track img { height: 80px !important; max-width: 120px; }
+
+    /* Ensure logos are centered in their grid cells on small screens */
+    .client-logo-track { justify-items: center; }
+    .client-logo-track > * { display: flex; justify-content: center; align-items: center; }
+    .client-logo-track img { margin-left: 0 !important; margin-right: 0 !important; }
+
+  .office-image{ aspect-ratio:1/1; object-fit:cover; border-radius:4px; object-position:left; display:block }
+    .base-choferes-flex{flex-direction:column;align-items:center;}
+    .base-choferes-img img{aspect-ratio:1/1;  border-radius:4px; object-fit:cover;object-position:left;display:block;}
+  .service-card-title{text-align:left;padding-left:calc(var(--spacing-unit)*2)}
+  .service-cards-container{text-align:left}
+  .mobile-only{display:inline}
+
+    .content-section {
+        display: flex;
+        flex-direction: column; /* stack text above image on small screens */
+        align-items: center; /* center content horizontally */
+    }
+
+    /* ensure text appears first and image below */
+    .content-section .text-content { order: 1; width: 100%; }
+    .content-section .image-content { order: 2; width: 100%; display: block; }
+
+    /* force images inside the image-content to be square and cover the box */
+    .content-section .image-content img,
+    .content-section .image-content .image,
+    .content-section .image-content .thumb {
+        width: 100%;
+        max-width: 420px; /* limit so it doesn't become too large on wider narrow screens */
+        aspect-ratio: 1 / 1; /* keep square */
+        height: auto;
+        object-fit: cover; /* crop to fill */
+        display: block;
+        margin-left: auto;
+        margin-right: auto;
+    }
+
+
+  .index-grid{grid-template-columns:repeat(1,1fr);gap:10px}
+  .index-item{padding:16px 18px;font-size:1rem;   min-height:25px; justify-content:left;text-align:left;}
 }

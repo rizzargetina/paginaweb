@@ -2,13 +2,14 @@
     .rulenav .navlink:not(.only-mobile) {
         --underline-color: var(--color-link);
     }
+
     .rulenav .navlink:not(.only-mobile)::after {
         content: '';
         position: absolute;
         left: 50%;
         bottom: 16px;
         height: 2px;
-        width: 80%; 
+        width: 80%; /* accommodate padding and keep line shorter than full item */
         background: var(--underline-color);
         transform-origin: left center;
         transform: translateX(-50%) scaleX(0);
@@ -17,25 +18,30 @@
         border-radius: 2px;
         opacity: 0.95;
     }
+
     .rulenav .navlink:not(.only-mobile):hover::after,
     .rulenav .navlink:not(.only-mobile):focus::after {
         transform-origin: left center;
         transform: translateX(-50%) scaleX(1);
     }
+
+    /* reverse origin on collapse so it animates right->left when leaving */
     .rulenav .navlink:not(.only-mobile):not(:hover):not(:focus)::after {
         transform-origin: right center;
         transform: translateX(-50%) scaleX(0);
         transition: transform 330ms cubic-bezier(.4,0,.2,1);
     }
-    .mobile-menu-button { display: none; }
+            .mobile-menu-button { display: none; }
     .rulenav { flex-direction: row; width: auto; }
     .rulenav .only-mobile { display: none !important; }
+
+
     .only-mobile { display: none !important; }
 
 }
 
 @media (max-width: 900px) {
-    :root { --max-width: 960px; }
+        :root { --max-width: 960px; }
     .top-bar { display: none; }
     .header { top: 0; }
     .logos-left { flex-grow: 1; justify-content: flex-start; min-width: 100px; gap: var(--spacing-unit); }
@@ -68,12 +74,14 @@
         padding-top: 0.25rem;
     }
 
+    /* Visible state when menu is toggled open via JS adding .mobile-menu-open */
     .rulenav.mobile-menu-open {
         pointer-events: auto;
         opacity: 1;
         transform: translateY(0) scale(1);
     }
 
+    /* When the mobile menu is open, prevent background scrolling */
     body.mobile-menu-open {
         overflow: hidden;
         touch-action: none;
@@ -81,6 +89,7 @@
         width: 100%;
     }
 
+    /* Each menu item fixed height */
     .rulenav .navlink {
         height: 85px;
         min-height: 80px;
@@ -94,6 +103,7 @@
         border-bottom: 1px solid #3a3a3a;
     }
 
+    /* Overlay layer for dimming content behind the menu */
     .rulenav::before {
         content: '';
         position: absolute;
@@ -106,6 +116,7 @@
     .rulenav .navlink { display: flex; justify-content: right; width: 90vw; padding: 0 2.5rem; text-align: right; font-size: 1.5rem; color: #fff; }
     .only-mobile { display: flex !important; }
 
+    /* Make images inside .content-section square on small screens */
     .content-section img,
     .content-section .image,
     .content-section .thumb {
@@ -117,6 +128,7 @@
         max-width: 100%;
     }
 
+    /* If the image is set as a background on a container, force a square box */
     .content-section .image-bg {
         width: 100%;
         aspect-ratio: 1 / 1;

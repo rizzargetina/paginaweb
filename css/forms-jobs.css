@@ -1,4 +1,4 @@
-
+.page-container { max-width:1300px; margin:0 auto; padding:20px; }
 .page-container h1 { color: var(--color-headings); }
 .page-container .page-intro { margin: 0 auto 2.5rem; line-height: 1.6; }
 

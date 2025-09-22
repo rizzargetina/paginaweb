@@ -93,8 +93,58 @@ document.addEventListener('DOMContentLoaded', () => {
             mobileBtn.classList.toggle('open', open);
             nav.classList.toggle('mobile-menu-open', open);
             mobileBtn.setAttribute('aria-expanded', String(open));
-            nav.setAttribute('aria-hidden', String(!open));
             document.body.classList.toggle('mobile-menu-open', open);
+
+            // Manage aria-hidden and focusability for interactive descendants
+            const isMobile = window.innerWidth <= 900;
+            const focusableSelector = 'a[href], button, input, select, textarea, [tabindex]';
+
+            if (isMobile) {
+                if (!open) {
+                    nav.setAttribute('aria-hidden', 'true');
+                    try { nav.inert = true; } catch (e) {}
+
+                    // Remove focusability from descendants so they are not tabbable
+                    const focusables = nav.querySelectorAll(focusableSelector);
+                    focusables.forEach((el) => {
+                        if (el.hasAttribute('tabindex')) {
+                            el.dataset.prevTabindex = el.getAttribute('tabindex');
+                        } else {
+                            el.dataset.prevTabindex = 'none';
+                        }
+                        el.setAttribute('tabindex', '-1');
+                    });
+                } else {
+                    nav.removeAttribute('aria-hidden');
+                    try { nav.inert = false; } catch (e) {}
+
+                    // Restore previous tabindex state
+                    const focusables = nav.querySelectorAll(focusableSelector);
+                    focusables.forEach((el) => {
+                        const prev = el.dataset.prevTabindex;
+                        if (prev === 'none') {
+                            el.removeAttribute('tabindex');
+                        } else if (prev !== undefined) {
+                            el.setAttribute('tabindex', prev);
+                        }
+                        delete el.dataset.prevTabindex;
+                    });
+                }
+            } else {
+                // On desktop ensure nav is visible and focusable
+                nav.removeAttribute('aria-hidden');
+                try { nav.inert = false; } catch (e) {}
+                const focusables = nav.querySelectorAll(focusableSelector);
+                focusables.forEach((el) => {
+                    const prev = el.dataset.prevTabindex;
+                    if (prev === 'none' || prev === undefined) {
+                        el.removeAttribute('tabindex');
+                    } else {
+                        el.setAttribute('tabindex', prev);
+                    }
+                    delete el.dataset.prevTabindex;
+                });
+            }
         }
 
         // inicializar (cerrado)

@@ -82,32 +82,42 @@ document.addEventListener('DOMContentLoaded', () => {
     }
 
 
-    // Menú móvil (simplificado): usar el checkbox existente como fuente de verdad
-    (function setupMobileMenuToggleSimple() {
-        const mobileToggle = document.getElementById('mobile-menu-toggle');
-        const mobileBtn = document.querySelector('.mobile-menu-button');
+    // Menú móvil: controlar apertura/cierre con botón (sin checkbox)
+    (function setupMobileMenuToggle() {
+        const mobileBtn = document.getElementById('mobile-menu-button');
         const nav = document.querySelector('#main-navigation.rulenav, .rulenav');
 
-        if (!mobileToggle || !mobileBtn || !nav) return;
+        if (!mobileBtn || !nav) return;
 
-        function applyState(checked) {
-            mobileBtn.classList.toggle('open', checked);
-            nav.classList.toggle('mobile-menu-open', checked);
-            mobileBtn.setAttribute('aria-expanded', String(checked));
-            nav.setAttribute('aria-hidden', String(!checked));
-            document.body.classList.toggle('mobile-menu-open', checked);
+        function applyState(open) {
+            mobileBtn.classList.toggle('open', open);
+            nav.classList.toggle('mobile-menu-open', open);
+            mobileBtn.setAttribute('aria-expanded', String(open));
+            nav.setAttribute('aria-hidden', String(!open));
+            document.body.classList.toggle('mobile-menu-open', open);
         }
 
-        // inicializar
-        applyState(Boolean(mobileToggle.checked));
+        // inicializar (cerrado)
+        applyState(false);
 
-        // sincronizar cuando cambie el checkbox (label ya lo activa automáticamente)
-        mobileToggle.addEventListener('change', () => applyState(mobileToggle.checked));
+        mobileBtn.addEventListener('click', (e) => {
+            e.stopPropagation();
+            const isOpen = mobileBtn.classList.contains('open');
+            applyState(!isOpen);
+        });
 
-        // cerrar con Escape -> simplemente desmarcar el checkbox
+        // cerrar con Escape
         document.addEventListener('keydown', (e) => {
-            if (e.key === 'Escape' && mobileToggle.checked) {
-                mobileToggle.checked = false;
+            if (e.key === 'Escape' && mobileBtn.classList.contains('open')) {
+                applyState(false);
+            }
+        });
+
+        // cerrar al hacer click fuera del nav (cuando está abierto)
+        document.addEventListener('click', (e) => {
+            if (!mobileBtn.classList.contains('open')) return;
+            const target = e.target;
+            if (!nav.contains(target) && target !== mobileBtn && !mobileBtn.contains(target)) {
                 applyState(false);
             }
         });
@@ -115,8 +125,7 @@ document.addEventListener('DOMContentLoaded', () => {
         // si se hace click en un enlace del nav en móvil, cerrar
         nav.querySelectorAll('a').forEach((a) => {
             a.addEventListener('click', () => {
-                if (window.innerWidth <= 900 && mobileToggle.checked) {
-                    mobileToggle.checked = false;
+                if (window.innerWidth <= 900 && mobileBtn.classList.contains('open')) {
                     applyState(false);
                 }
             });

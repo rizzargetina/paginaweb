@@ -547,18 +547,7 @@ background: linear-gradient(140deg, #0a0c10 30%, #101010 100%);
 .service-card img{display:block;filter:brightness(.85);height:220px;object-fit:cover;width:100%}
 .service-card-title{background-color:rgba(16,22,36,.85);box-sizing:border-box;color:var(--dhl-white);font-family:var(--font-headings);font-size:1.15rem;font-weight:700;padding:calc(var(--spacing-unit)*1.5) calc(var(--spacing-unit)*2);position:absolute;left:0;bottom:0;text-align:center;width:100%}
 .service-card:hover .service-card-title,.service-card:focus-within .service-card-title{background-color: #004fd8;}
-.mobile-menu-toggle {
-    position: absolute;
-    width: 1px;
-    height: 1px;
-    margin: -1px;
-    padding: 0;
-    border: 0;
-    clip: rect(0 0 0 0);
-    clip-path: inset(50%);
-    overflow: hidden;
-    white-space: nowrap;
-}
+
 
 /* Botón principal unificado para toda la web */
 .cta-button,

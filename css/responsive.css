@@ -182,8 +182,6 @@
     flex-direction: column;
     align-items: stretch;
     justify-content: flex-start;
-    min-height: 610px;
-  padding: clamp(3.8rem, 4vw, 7rem) 0;
     text-align: center;
     color: #fff;
     height:600px;

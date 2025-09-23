@@ -788,32 +788,24 @@ button.cta-button {
 }
 
 @media (min-width: 901px) {
-    .link-animated::after {
-        content: '';
-        position: absolute;
-        left: 50%;
-        bottom: -4px; /* ajustar si se quiere más cerca/lejos del texto */
-        height: 2px;
-        width: 100%;
-        background: var(--color-link);
-        transform-origin: left center;
-        transform: translateX(-50%) scaleX(0);
-        transition: transform 600ms cubic-bezier(.2,.9,.2,1), opacity 200ms ease;
-        will-change: transform, opacity;
-        border-radius: 2px;
-        opacity: 0.95;
+    /* base styling for inline links: allow a subtle background change on hover */
+    .link-animated {
+        border-radius: 0px;
     }
 
     .link-animated:hover::after,
     .link-animated:focus::after {
-        transform-origin: left center;
-        transform: translateX(-50%) scaleX(1);
+        opacity: 1; /* show instantly */
     }
 
     .link-animated:not(:hover):not(:focus)::after {
-        transform-origin: right center;
-        transform: translateX(-50%) scaleX(0);
-        transition: transform 500ms cubic-bezier(.4,0,.2,1);
+        opacity: 0; /* hide instantly */
+    }
+
+    /* Paint background blue on hover and ensure readable text */
+    .link-animated:hover,
+    .link-animated:focus {
+        background: var( --color-accent);
     }
 }
 

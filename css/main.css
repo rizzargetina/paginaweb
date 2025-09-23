@@ -780,6 +780,43 @@ button.cta-button {
 
 }
 
+/* Animación de subrayado idéntica a la navegación para enlaces sueltos */
+.link-animated {
+    position: relative;
+    display: inline-block;
+    text-decoration: none;
+}
+
+@media (min-width: 901px) {
+    .link-animated::after {
+        content: '';
+        position: absolute;
+        left: 50%;
+        bottom: -4px; /* ajustar si se quiere más cerca/lejos del texto */
+        height: 2px;
+        width: 100%;
+        background: var(--color-link);
+        transform-origin: left center;
+        transform: translateX(-50%) scaleX(0);
+        transition: transform 600ms cubic-bezier(.2,.9,.2,1), opacity 200ms ease;
+        will-change: transform, opacity;
+        border-radius: 2px;
+        opacity: 0.95;
+    }
+
+    .link-animated:hover::after,
+    .link-animated:focus::after {
+        transform-origin: left center;
+        transform: translateX(-50%) scaleX(1);
+    }
+
+    .link-animated:not(:hover):not(:focus)::after {
+        transform-origin: right center;
+        transform: translateX(-50%) scaleX(0);
+        transition: transform 500ms cubic-bezier(.4,0,.2,1);
+    }
+}
+
 
 @media (max-width: 900px) {
     .top-bar { display: none; }

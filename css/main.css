@@ -138,7 +138,6 @@ section h1,
 .seccion-quienes h1 {
     font-size: clamp(1.5rem, 2.0vw + 0.8rem, 2.6rem);
     line-height: 1.15; /* tight, consistent with page-container */
-    margin: 0 0 1.25rem 0; /* consistent bottom spacing */
     font-weight: 700;
     color: var(--color-headings);
 }
@@ -436,7 +435,6 @@ hr {
 
 section,
 .section,
-.content-section,
 .seccion-quienes,
 .hero{
     margin-bottom: 50px;
@@ -479,7 +477,6 @@ section,
 
 .content-section {
     display: flex;
-    gap: 30px;
     align-items: flex-start;
 }
 

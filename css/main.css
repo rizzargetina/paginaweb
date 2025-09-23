@@ -15,8 +15,8 @@
 
 :root {
     /* Accents & links */
-   --color-accent: #121c91; 
-    --color-link: #00cfff;
+   --color-accent: #00296f; 
+    --color-link: #0096ff;
     --color-link-hover: #e0e0e0;
     --bott-color: #1b1c1f;
 
@@ -142,6 +142,7 @@ section h1,
 
 p {
     font-size: 1.4rem;
+
 }
 
 ul, ol {
@@ -168,7 +169,8 @@ hr {
 }
 .container{width:86%;margin-left:auto;margin-right:auto;}
 .container img{  height: auto; border-radius: 4px; object-fit: cover; margin-top: 1em;}
-
+.container2{width:100%; margin-left:auto; margin-right:auto;text-align: left;}
+.container2 img{ border-radius: 4px;margin-top: 1em;}
 
 
 .hero{
@@ -577,9 +579,9 @@ background: linear-gradient(140deg, #0a0c10 30%, #101010 100%);
 .metric-item .label { font-size: 1rem; color: var(--color-text-secondary) }
 
 .service-cards-container{display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap: 20px;}
-.service-card{border-radius:var(--border-radius);overflow:hidden;position:relative;text-decoration:none}
-.service-card img{filter:brightness(.85);object-fit:cover;width:100%}
-.service-card-title{background-color:rgba(16,22,36,.85);box-sizing:border-box;color:var(--dhl-white);font-family:var(--font-headings);font-size:1.15rem;font-weight:700;position:absolute;text-align:center;width:100%}
+.service-card{border:1px solid var(--color-border);border-radius:var(--border-radius);display:block;overflow:hidden;position:relative;text-decoration:none}
+.service-card img{display:block;filter:brightness(.85);height:220px;object-fit:cover;width:100%}
+.service-card-title{background-color:rgba(16,22,36,.85);box-sizing:border-box;color:var(--dhl-white);font-family:var(--font-headings);font-size:1.15rem;font-weight:700;padding:calc(var(--spacing-unit)*1.5) calc(var(--spacing-unit)*2);position:absolute;left:0;bottom:0;text-align:center;width:100%}
 .service-card:hover .service-card-title,.service-card:focus-within .service-card-title{background-color: #004fd8;}
 
 
@@ -909,6 +911,8 @@ button.cta-button {
 
     /* Layout containers */
     .container { width: 92%; text-align: left; }
+    .container2 { width: 100%; text-align: left; }
+    .container2 img { max-width: 92%;}
 
     /* Footer */
     .footer { font-size: 0.85rem; padding: 30px 0; }

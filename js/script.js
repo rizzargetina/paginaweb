@@ -30,18 +30,29 @@ document.addEventListener('DOMContentLoaded', () => {
                 }
             };
 
-            const handleScrollForTopBar = () => {
-                if (!isTopBarEffectivelyVisible()) {
+            // Throttle scroll handling and batch reads/writes to avoid forced reflows.
+            let latestScrollTop = window.pageYOffset || document.documentElement.scrollTop;
+            let scrollTicking = false;
+
+            const processScroll = (scrollTopValue) => {
+                // Read phase: batch all layout reads here
+                const visible = isTopBarEffectivelyVisible();
+                const currentHeight = visible ? topBar.offsetHeight : 0;
+
+                // We don't use currentHeight for any calculations here, but
+                // reading offsetHeight during the read phase lets the browser
+                // reuse layout information and avoids interleaved read/write cycles.
+                currentTopBarHeight = currentHeight;
+
+                // Write phase: apply class changes
+                if (!visible) {
                     topBar.classList.remove('is-hidden');
                     header.classList.remove('top-bar-is-hidden');
                     htmlElement.classList.remove('top-bar-is-hidden');
                     return;
                 }
 
-                let scrollTop = window.pageYOffset || document.documentElement.scrollTop;
-
-                // Solo mostrar la top bar si el scroll está en la parte más arriba
-                if (scrollTop === 0) {
+                if (scrollTopValue === 0) {
                     topBar.classList.remove('is-hidden');
                     header.classList.remove('top-bar-is-hidden');
                     htmlElement.classList.remove('top-bar-is-hidden');
@@ -49,6 +60,19 @@ document.addEventListener('DOMContentLoaded', () => {
                     topBar.classList.add('is-hidden');
                     header.classList.add('top-bar-is-hidden');
                     htmlElement.classList.add('top-bar-is-hidden');
+                }
+            };
+
+            const handleScrollForTopBar = () => {
+                // Schedule processing on the next animation frame so multiple
+                // scroll events in the same frame are collapsed.
+                latestScrollTop = window.pageYOffset || document.documentElement.scrollTop;
+                if (!scrollTicking) {
+                    scrollTicking = true;
+                    requestAnimationFrame(() => {
+                        processScroll(latestScrollTop);
+                        scrollTicking = false;
+                    });
                 }
             };
 

@@ -15,14 +15,10 @@
 
 :root {
     /* Accents & links */
-   --color-accent: #00296f; 
+     --color-accent: #00296f; 
     --color-link: #0096ff;
     --color-link-hover: #e0e0e0;
     --bott-color: #1b1c1f;
-
-    /* Branding colors used across the site */
-    --dhl-white: #eaeaea;
-    --dhl-yellow: #1a2333;
 
     /* Core Colors */
     --color-border: #181b20;
@@ -35,14 +31,12 @@
     /* Footer */
     --color-footer-bg: #0a0c10;
     --color-footer-border: #181b20;
-    --color-footer-link: var(--color-link);
-    --color-footer-link-hover: var(--color-link-hover);
     --color-footer-text: #aab7cb;
 
     /* Header & Topbar */
     --color-header-bg: #0f0f0f;
     --color-header-border: #00081d;
-    --color-header-text: var(--dhl-white);
+    --color-header-text:  #eaeaea;
     --color-top-bar-bg: #000000;
     --color-top-bar-text: #bfc5ce;
     --header-height: 60px;
@@ -50,7 +44,6 @@
     --top-bar-height: 35px;
     --border-radius: 4px;
 
-    /* Fonts */
     --font-headings: 'Poppins', Arial, sans-serif;
     --font-primary: 'Roboto', sans-serif;
 }
@@ -77,23 +70,6 @@ html {
 }
 .header.top-bar-is-hidden {
     top: 0;
-}
-
-.site-header {
-    background: var(--color-header-bg);
-    height: var(--header-height);
-    left: 0;
-    position: fixed;
-    width: 100%;
-    z-index: 1000;
-}
-.site-header .header-container { display:flex; align-items:center; justify-content:space-between; height:100%; }
-
-.header-container {
-    align-items: center;
-    display: flex;
-    height: 100%;
-    justify-content: space-between;
 }
 
 *, *:before, *:after {
@@ -132,8 +108,7 @@ h4 { font-size: 1.3rem; }
 
 section h1,
 .section h1,
-.content-section h1,
-.seccion-quienes h1 {
+.content-section h1 {
     font-size: clamp(1.5rem, 2.0vw + 0.8rem, 2.6rem);
     font-weight: 700;
     color: var(--color-headings);
@@ -230,15 +205,6 @@ hr {
 
 
 }
-
-.seccion-quienes {
-    display: block;
-    padding: 48px 0;
-    background: transparent;
-}
-.seccion-quienes { display:flex; align-items:flex-start; }
-.seccion-quienes .texto { flex:1; }
-.seccion-quienes .imagen { flex:1; }
 
 .logos-left {
     align-items: center;
@@ -566,7 +532,7 @@ background: linear-gradient(140deg, #0a0c10 30%, #101010 100%);
 .service-cards-container{display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap: 20px;}
 .service-card{border-radius:var(--border-radius);display:block;overflow:hidden;position:relative;text-decoration:none}
 .service-card img{display:block;filter:brightness(.85);height:220px;object-fit:cover;width:100%}
-.service-card-title{background-color:rgba(16,22,36,.85);box-sizing:border-box;color:var(--dhl-white);font-family:var(--font-headings);font-size:1.15rem;font-weight:700;padding:calc(var(--spacing-unit)*1.5) calc(var(--spacing-unit)*2);position:absolute;left:0;bottom:0;text-align:center;width:100%}
+.service-card-title{background-color:rgba(16,22,36,.85);box-sizing:border-box;font-family:var(--font-headings);font-size:1.15rem;font-weight:700;padding:calc(var(--spacing-unit)*1.5) calc(var(--spacing-unit)*2);position:absolute;width:100%}
 .service-card:hover .service-card-title,.service-card:focus-within .service-card-title{background-color: #004fd8;}
 
 

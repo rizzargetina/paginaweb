@@ -530,7 +530,7 @@ section,
 }
 .client-logo-track {
     align-items: center;
-    animation: scroll-logos 22s linear infinite;
+    animation: scroll-logos 30s linear infinite;
     display: flex;
     gap: 85px;
 }
@@ -758,7 +758,7 @@ section[id], .content-section[id], h2[id], [id] {
         background: var(--underline-color);
         transform-origin: left center;
         transform: translateX(-50%) scaleX(0);
-        transition: transform 400ms cubic-bezier(.2,.9,.2,1), opacity 200ms ease;
+        transition: transform 250ms cubic-bezier(.2,.9,.2,1), opacity 200ms ease;
         will-change: transform, opacity;
         border-radius: 2px;
         opacity: 0.95;
@@ -774,7 +774,7 @@ section[id], .content-section[id], h2[id], [id] {
     .rulenav .navlink:not(.only-mobile):not(:hover):not(:focus)::after {
         transform-origin: right center;
         transform: translateX(-50%) scaleX(0);
-        transition: transform 330ms cubic-bezier(.4,0,.2,1);
+        transition: transform 230ms cubic-bezier(.4,0,.2,1);
     }
             .mobile-menu-button { display: none; }
     .rulenav { flex-direction: row; width: auto; }

@@ -162,7 +162,7 @@ hr {
 
 }
 .container{width:86%;margin-left:auto;margin-right:auto;}
-.container img{  height: auto; border-radius: 4px; object-fit: cover; margin-top: 1em;}
+.container img{  height: auto; border-radius: 4px; object-fit: cover;}
 .container2{width:100%; margin-left:auto; margin-right:auto;text-align: left;}
 .container2 img{ border-radius: 4px;margin-top: 1em;}
 
@@ -564,7 +564,7 @@ background: linear-gradient(140deg, #0a0c10 30%, #101010 100%);
 .metric-item .label { font-size: 1rem; color: var(--color-text-secondary) }
 
 .service-cards-container{display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap: 20px;}
-.service-card{border:1px solid var(--color-border);border-radius:var(--border-radius);display:block;overflow:hidden;position:relative;text-decoration:none}
+.service-card{border-radius:var(--border-radius);display:block;overflow:hidden;position:relative;text-decoration:none}
 .service-card img{display:block;filter:brightness(.85);height:220px;object-fit:cover;width:100%}
 .service-card-title{background-color:rgba(16,22,36,.85);box-sizing:border-box;color:var(--dhl-white);font-family:var(--font-headings);font-size:1.15rem;font-weight:700;padding:calc(var(--spacing-unit)*1.5) calc(var(--spacing-unit)*2);position:absolute;left:0;bottom:0;text-align:center;width:100%}
 .service-card:hover .service-card-title,.service-card:focus-within .service-card-title{background-color: #004fd8;}

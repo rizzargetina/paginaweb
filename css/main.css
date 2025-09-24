@@ -1036,7 +1036,7 @@ section[id], .content-section[id], h2[id], [id] {
 
 @media (max-width: 600px) {
     section[id], .content-section[id], h2[id], [id] {
-        scroll-margin-top: calc(var(--header-height) + 8px);
+        scroll-margin-top: 0px;
     }
 }
 

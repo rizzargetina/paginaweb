@@ -1022,4 +1022,22 @@ button.cta-button {
 
 }
 
+/* Ensure in-page anchor targets appear a bit lower than the top fixed header
+   so the heading/content isn't hidden behind the fixed header when jumping. */
+section[id], .content-section[id], h2[id], [id] {
+    scroll-margin-top: var(--header-height);
+}
+
+@media (max-width: 900px) {
+    section[id], .content-section[id], h2[id], [id] {
+        scroll-margin-top: calc(var(--header-height) + 12px);
+    }
+}
+
+@media (max-width: 600px) {
+    section[id], .content-section[id], h2[id], [id] {
+        scroll-margin-top: calc(var(--header-height) + 8px);
+    }
+}
+
 

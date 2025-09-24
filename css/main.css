@@ -738,6 +738,11 @@ button.cta-button {
     background-color: var(--color-accent);
 }
 
+section[id], .content-section[id], h2[id], [id] {
+    scroll-margin-top: var(--header-height);
+}
+
+
 @media (min-width: 901px) {
     .rulenav .navlink:not(.only-mobile) {
         --underline-color: var(--color-link);
@@ -1020,16 +1025,6 @@ button.cta-button {
     .index-grid { grid-template-columns: repeat(1, 1fr); gap: 10px; }
     .index-item { padding: 16px 18px; font-size: 1rem; min-height: 25px; justify-content: left; text-align: left; }
 
-}
-
-/* Ensure in-page anchor targets appear a bit lower than the top fixed header
-   so the heading/content isn't hidden behind the fixed header when jumping. */
-section[id], .content-section[id], h2[id], [id] {
-    scroll-margin-top: var(--header-height);
-}
-
-
-@media (max-width: 600px) {
     section[id], .content-section[id], h2[id], [id] {
         scroll-margin-top: 0px;
     }

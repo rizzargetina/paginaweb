@@ -803,7 +803,7 @@ section[id], .content-section[id], h2[id], [id] {
     h1 { font-size: 2.0rem; }
     h2 { font-size: 1.8rem; }
     h3 { font-size: 1.4rem; }
-    .header-container, .footer-container, .container { width: 90%; padding-left: 15px; padding-right: 15px; }
+    .header-container, .footer-container, .container, .container2 { width: 90%; padding-left: 15px; padding-right: 15px; }
     #logo1, #logo2 { height: 35px; max-width: 120px; }
 
         /* Hide top bar on very small screens (strongly enforced) */

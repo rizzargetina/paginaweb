@@ -2,11 +2,131 @@
 <html lang="es">
 <head>
     <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
     <title>FOTOS</title>
+    <!-- Usa el CSS global si existe, y añadimos estilos locales para la galería -->
+    <link rel="stylesheet" href="/css/main.css">
+    <style>
+        :root{--bg:#000;--gap:14px;--card-bg:#0b0b0b}
+        html,body{height:100%;margin:0;font-family: Poppins, system-ui, sans-serif;background:var(--bg);color:#fff}
+        main{max-width:1200px;margin:24px auto;padding:0 12px}
+        h1{font-size:1.6rem;margin:8px 0 18px;text-transform:uppercase;letter-spacing:1px}
+        /* Galería estilo 'desordenado' (masonry via columnas) */
+        .gallery{column-width:280px;column-gap:var(--gap)}
+        .gallery figure{break-inside:avoid;margin:0 0 var(--gap);background:var(--card-bg);border-radius:8px;overflow:hidden;box-shadow:0 6px 18px rgba(0,0,0,0.6);}
+    .gallery img{display:block;width:100%;height:auto}
+        .gallery figcaption{padding:8px 10px;font-size:0.9rem;opacity:0.9;color:#ddd}
+        .meta{display:flex;justify-content:space-between;align-items:center;gap:8px}
+        .btn-open{background:transparent;border:1px solid rgba(255,255,255,0.08);color:#ddd;padding:4px 8px;border-radius:6px;font-size:0.85rem}
+        /* Lightbox */
+        .lightbox{position:fixed;inset:0;display:flex;align-items:center;justify-content:center;background:rgba(0,0,0,0.9);z-index:9999;opacity:0;pointer-events:none;transition:opacity .18s}
+        .lightbox.show{opacity:1;pointer-events:auto}
+        .lightbox img{max-width:94vw;max-height:94vh;box-shadow:0 10px 40px rgba(0,0,0,0.8);border-radius:6px}
+        .lightbox .close{position:absolute;right:18px;top:18px;color:#fff;background:rgba(0,0,0,0.4);border-radius:6px;padding:6px 8px;cursor:pointer}
+        /* Responsive tweaks */
+        @media (max-width:700px){.gallery{column-width:180px}}
+        @media (max-width:420px){.gallery{column-width:140px}}
+    </style>
 </head>
 <body>
-    <img src="img/3.jpg" loading="lazy">
-    <img src="img/2.jpg" loading="lazy">
-    <img src="img/4.jpg" loading="lazy">
+    
+    <main>
+        <h1>TRANSPORTE JGT</h1>
+
+        <section class="gallery" aria-label="Galería de fotos">
+            <figure>
+                <a href="#" data-src="img/3.jpg" class="open"><img src="img/3.jpg" alt="Foto 3" loading="lazy"></a>
+                <figcaption>
+                    <div class="meta"><button class="btn-open" data-src="img/3.jpg">Abrir</button></div>
+                </figcaption>
+            </figure>
+                        <figure>
+                <a href="#" data-src="img/4.jpg" class="open"><img src="img/4.jpg" alt="Foto 4" loading="lazy"></a>
+                <figcaption>
+                    <div class="meta"><button class="btn-open" data-src="img/4.jpg">Abrir</button></div>
+                </figcaption>
+            </figure>
+
+
+            <figure>
+                <a href="#" data-src="img/2.jpg" class="open"><img src="img/2.jpg" alt="Foto 2" loading="lazy"></a>
+                <figcaption>
+                    <div class="meta"><button class="btn-open" data-src="img/2.jpg">Abrir</button></div>
+                </figcaption>
+            </figure>
+
+
+            <figure>
+                <a href="#" data-src="img/mobile1.jpg" class="open"><img src="img/mobile1.jpg" alt="Mobile 1" loading="lazy"></a>
+                <figcaption>
+                    <div class="meta"><button class="btn-open" data-src="img/mobile1.jpg">Abrir</button></div>
+                </figcaption>
+            </figure>
+
+            <figure>
+                <a href="#" data-src="img/mobile2.jpg" class="open"><img src="img/mobile2.jpg" alt="Mobile 2" loading="lazy"></a>
+                <figcaption>
+                    <div class="meta"><button class="btn-open" data-src="img/mobile2.jpg">Abrir</button></div>
+                </figcaption>
+            </figure>
+
+            <figure>
+                <a href="#" data-src="img/fondo.jpg" class="open"><img src="img/fondo.jpg" alt="Fondo" loading="lazy"></a>
+                <figcaption>
+                    <div class="meta"><button class="btn-open" data-src="img/fondo.jpg">Abrir</button></div>
+                </figcaption>
+            </figure>
+        </section>
+
+    </main>
+
+    <!-- Lightbox simple -->
+    <div class="lightbox" role="dialog" aria-modal="true" aria-hidden="true">
+        <button class="close" aria-label="Cerrar">✕</button>
+        <img src="" alt="Foto ampliada">
+    </div>
+
+    <script>
+        // Lightbox: abrir al click en imagen o botón
+        (function(){
+            const lightbox = document.querySelector('.lightbox');
+            const lbImg = lightbox.querySelector('img');
+            const closeBtn = lightbox.querySelector('.close');
+
+            function show(src, alt){
+                lbImg.src = src;
+                lbImg.alt = alt || '';
+                lightbox.classList.add('show');
+                lightbox.setAttribute('aria-hidden', 'false');
+                document.body.style.overflow = 'hidden';
+            }
+            function hide(){
+                lightbox.classList.remove('show');
+                lightbox.setAttribute('aria-hidden', 'true');
+                lbImg.src = '';
+                document.body.style.overflow = '';
+            }
+
+            // Delegación: cualquier <a class="open"> o .btn-open
+            document.addEventListener('click', function(e){
+                const a = e.target.closest('a.open');
+                if(a){
+                    e.preventDefault();
+                    show(a.dataset.src, a.querySelector('img')?.alt);
+                    return;
+                }
+                const b = e.target.closest('.btn-open');
+                if(b){
+                    const src = b.dataset.src;
+                    show(src);
+                    return;
+                }
+                if(e.target === lightbox || e.target === closeBtn){ hide(); }
+            });
+
+            // cerrar con Escape
+            window.addEventListener('keydown', function(e){ if(e.key === 'Escape') hide(); });
+        })();
+    </script>
 </body>
 </html>

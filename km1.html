@@ -4,52 +4,54 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Manual Km SLB</title>
+     <link href="https://fonts.googleapis.com/css2?family=Atkinson+Hyperlegible:wght@400;700;800&display=swap" rel="stylesheet">
+   
     <style>
+        /* Variables y tipografía */
+        :root{
+            --bg: #0a0a0c;
+            --card-bg: #161a22;
+            --text: #f3f6fa;
+            --muted: #cfd8e3;
+            --divider: #2b3442;
+            --accent-green: #00ff15;
+            --accent-gold: #ffd700;
+            --container-max: 820px;
+            --radius: 10px;
+            --spacing: 1.2rem;
+        }
+
+
+        /* Layout base */
         body {
-            background: #0a0a0c;
+            background: var(--bg);
             margin: 0;
             display: flex;
             align-items: flex-start;
             justify-content: center;
-            font-family: 'Poppins', Arial, sans-serif;
+            font-family: 'Atkinson Hyperlegible', Arial, sans-serif;
+            color: var(--text);
         }
-            .container {
+
+        .container {
             width: 100%;
-            max-width: 820px;
+            max-width: var(--container-max);
             margin: 0 auto;
-            background: #161a22;
-            border-radius: 10px;
-            box-shadow: none;
-            padding: 2.5vw 2vw 2vw 2vw;
+            background: var(--card-bg);
+            border-radius: var(--radius);
+            padding: calc(var(--spacing) * 2) calc(var(--spacing) * 1.5);
         }
-            .img {
-            width: 100%;
-            max-width: 600px;
-            margin: 0 auto 1.2rem auto;
-            display: flex;
-            justify-content: center;
-            border-radius: 8px;
-            overflow: hidden;
-            box-shadow: none;
-        }
-        p {
-            font-size: 1.3rem;
-            color: #f3f6fa;
-            font-family: 'Poppins', Arial, sans-serif;
-            text-align: center;
-            margin-bottom: 2.2rem;
-            line-height: 1.7;
-            letter-spacing: 0.01em;
-        }
+
+        /* Tipografía */
         h1 {
-            color: #fff;
-            font-family: 'Poppins', Arial, sans-serif;
             font-size: 2.5rem;
             text-align: center;
             margin-bottom: 1.5rem;
             font-weight: 800;
             letter-spacing: 0.02em;
+            color: var(--text);
         }
+
         h2 {
             color: #e6eaf3;
             font-size: 1.35rem;
@@ -59,79 +61,75 @@
             text-align: left;
             padding-left: 0.5vw;
         }
-        hr{
-            color:#2b3442;
+
+        p {
+            font-size: 1.3rem;
+            text-align: center;
+            margin-bottom: 2.2rem;
+            line-height: 1.7;
+            letter-spacing: 0.01em;
+            color: var(--text);
         }
+
         .caption {
-            text-align:center;
-            color:#cfd8e3;
-            font-size:1.08rem;
-            margin-top:0.7em;
-            font-family:'Poppins',Arial,sans-serif;
-            opacity:0.85;
+            text-align: center;
+            color: var(--muted);
+            font-size: 1.08rem;
+            margin-top: 0.7em;
+            opacity: 0.85;
         }
-        @font-face {
-            font-family: 'Poppins';
-            src: url('../../fonts/Poppins-Regular.ttf') format('truetype');
-            font-weight: 400;
-            font-style: normal;
-            font-display: swap;
+
+        /* Reglas reutilizables */
+        .divider { border: none; height: 2px; background-color: var(--divider); margin: 1.6rem 0; }
+
+        .img {
+            width: 100%;
+            max-width: 600px;
+            margin: 0 auto 1.2rem auto;
+            display: flex;
+            justify-content: center;
+            border-radius: 8px;
+            overflow: hidden;
         }
-        @font-face {
-            font-family: 'Poppins';
-            src: url('../../fonts/Poppins-Bold.ttf') format('truetype');
-            font-weight: 700;
-            font-style: normal;
-            font-display: swap;
-        }
-        @font-face {
-            font-family: 'Poppins';
-            src: url('../../fonts/Poppins-ExtraBold.ttf') format('truetype');
-            font-weight: 800;
-            font-style: normal;
-            font-display: swap;
-        }
+        .img img { width: 100%; height: auto; max-width: 800px; display: block; }
+
+        /* Destacados de texto que antes estaban inline */
+        .highlight-green { color: var(--accent-green); font-weight: 700; }
+        .highlight-gold { color: var(--accent-gold); font-weight: 700; }
+
+        /* Aviso grande centrado (antes H2 con estilos inline) */
+        .notice { background-color: rgb(0, 3, 92); padding: 2rem; text-align: center; border-radius: 6px; color: #ffffff; }
+
         @media (max-width: 600px) {
-            .container {
-                 border-radius: 0px;
-            }
-            h1 {
-                font-size: 1.5rem;
-            }
-            h2 {
-                font-size: 1.1rem;
-            }
-            p {
-                font-size: 1rem;
-            }
-            hr{
-            color:#2b3442;
-            }
+            .container { border-radius: 0px; padding: 1rem; }
+            h1 { font-size: 1.5rem; }
+            h2 { font-size: 1.1rem; }
+            p { font-size: 1rem; }
         }
     </style>
 </head>
 <body>
     <div class="container">
-        <h1>Calculo de Km para SLB</h1>
-        <h2 style="background-color: rgb(0, 3, 92); padding: 3rem; text-align: center;">Se considera que se sale desde <strong>BASE AÑELO</strong> al <strong><span style="color:#00ff15">POZO</span></strong>.<br></h2>
-        <hr style="border: none; height: 2px; background-color: #2b3442;">
-        <h2>EJEMPLO 1</h2>
-        <p>Como ejemplo uso el pozo <span style="color:#00ff15">PAE APO 001</span> (no es lo mismo para todos los pozos)
-        <span style="color:#ffd700">IDA</span> 45 Km y <span style="color:#ffd700">VUELTA</span> 45 Km.<br>
-        <strong>TOTAL 90 Km</strong>.</p>
-        <p> Tener en cuenta todos los pozos recorridos.</p>
+    <h1>Cálculo de kilómetros — SLB</h1>
+    <h2 class="notice">Regla general: se registra el trayecto desde <strong>BASE AÑELO</strong> hasta el <strong><span class="highlight-green">pozo</span></strong>. Registre el origen y los tramos exactamente como se recorren.</h2>
+        <hr class="divider">
+    <h2>Ejemplo 1 — Viaje a un único pozo</h2>
+    <p>Pozo: <span class="highlight-green">PAE APO 001</span> (valores orientativos).<br>
+    <span class="highlight-gold">Ida:</span> 45 km — <span class="highlight-gold">Vuelta:</span> 45 km.<br>
+    <strong>Total a registrar: 90 km</strong>.</p>
+    <p>Nota: si la jornada incluye varios pozos, sumá los kilómetros de cada tramo según el orden real del recorrido.</p>
         <div class="img">
-            <img src="img/km_para_slb.webp" style="width:100%;height:auto;max-width:800px;" alt="Mapa cálculo de km SLB">
+            <img src="img/km_para_slb.webp" alt="Mapa cálculo de km SLB">
         </div>
         <div class="caption">
-            <em>Desde BASE AÑELO a <span style="color:#00ff15">PAE APO 001</span></em>
+            <em>Trayecto calculado: BASE AÑELO → <span class="highlight-green">PAE APO 001</span></em>
         </div>
-<hr style="border: none; height: 2px; background-color: #2b3442;">
+        <hr class="divider">
 
-        <h2>⚠️ En caso de gerenciamiento</h2>
-        <p>Se consideran solo los km de CARGA </p>
-        <hr>
-        <p>La información aquí presentada es a modo de ayuda, cualquier consulta no dude en preguntar</p>
+    <h2>⚠️ En caso de gerenciamiento</h2>
+        <p>Cuando el servicio es por gerenciamiento, únicamente se registran los kilómetros relacionados con la <strong>carga</strong>. Asegurate de documentar el motivo y punto de carga.</p>
+    <hr class="divider">
+    <p>La información anterior es orientativa y sirve como guía para el registro de kilómetros. Si tenés dudas sobre cómo registrar una ruta concreta, consultá con tu responsable o con el área de logística.</p>
     </div>
 </body>
 </html>

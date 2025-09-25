@@ -181,7 +181,7 @@ hr {
     position: absolute;
     inset: 0;
     width: 100%;
-    height: 95vh;
+    height: 90vh;
     object-fit: cover; /* Ensures the image covers the area like background-size: cover */
     object-position: center left;
     opacity: 0.32;
@@ -212,6 +212,16 @@ hr {
 }
 
 @media (max-width: 600px) {
+    .hero{
+    display: flex;
+    flex-direction: column;
+    align-items: stretch;
+    justify-content: flex-start;
+  padding: clamp(3.8rem, 4vw, 7rem) 0;
+    text-align: center;
+    color: #fff;
+        height: 650px;
+}
 
     .hero .hero-bg-image{
         position: absolute;

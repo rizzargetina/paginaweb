@@ -15,7 +15,7 @@ document.addEventListener('DOMContentLoaded', () => {
         if (topBar && header && htmlElement) {
             let lastScrollTop = 0;
             let currentTopBarHeight = 0;
-            const hideOffsetThreshold = 0.5;
+            const hideOffsetThreshold = 0.6;
 
             const isTopBarEffectivelyVisible = () => getComputedStyle(topBar).display !== 'none';
 

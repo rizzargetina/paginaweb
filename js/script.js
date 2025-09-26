@@ -6,8 +6,9 @@ document.addEventListener('DOMContentLoaded', () => {
     const htmlElement = document.documentElement;
 
     // Solo activar funciones de la top bar si el ancho de pantalla es mayor a 600px
+    // Usar matchMedia en lugar de leer innerWidth directamente (mejor práctica)
     function isDesktop() {
-        return window.innerWidth > 600;
+        return window.matchMedia('(min-width:601px)').matches;
     }
 
     function activateTopBarFunctions() {
@@ -31,7 +32,9 @@ document.addEventListener('DOMContentLoaded', () => {
             };
 
             // Throttle scroll handling and batch reads/writes to avoid forced reflows.
-            let latestScrollTop = window.pageYOffset || document.documentElement.scrollTop;
+            // Normalizar lectura de scroll: preferir la API moderna window.scrollY
+            const getScrollTop = () => (window.scrollY !== undefined ? window.scrollY : window.pageYOffset || document.documentElement.scrollTop || 0);
+            let latestScrollTop = getScrollTop();
             let scrollTicking = false;
 
             const processScroll = (scrollTopValue) => {
@@ -66,7 +69,7 @@ document.addEventListener('DOMContentLoaded', () => {
             const handleScrollForTopBar = () => {
                 // Schedule processing on the next animation frame so multiple
                 // scroll events in the same frame are collapsed.
-                latestScrollTop = window.pageYOffset || document.documentElement.scrollTop;
+                latestScrollTop = getScrollTop();
                 if (!scrollTicking) {
                     scrollTicking = true;
                     requestAnimationFrame(() => {
@@ -79,7 +82,7 @@ document.addEventListener('DOMContentLoaded', () => {
             const onResizeForTopBar = () => {
                 updateCurrentTopBarHeight();
                 updateHeaderTransitionClass();
-                lastScrollTop = window.pageYOffset || document.documentElement.scrollTop;
+                lastScrollTop = getScrollTop();
                 handleScrollForTopBar();
             };
 

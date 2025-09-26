@@ -26,8 +26,9 @@
      h1{font-family:'Poppins',Arial,sans-serif;font-weight:800;margin:0}
     </style>
 
-    <!-- Load the full stylesheet asynchronously but with preload to avoid render-blocking -->
-    <link rel="preload" href="css/main.min.css" as="style" onload="this.rel='stylesheet'">
+    <!-- Load the full stylesheet asynchronously but with preload to avoid render-blocking.
+        Use the recommended pattern to avoid FOUC: reset onload handler and then switch rel. -->
+    <link rel="preload" href="css/main.min.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
     <noscript><link rel="stylesheet" href="css/main.min.css"></noscript>
 </head>
 <body>

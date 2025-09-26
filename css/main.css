@@ -79,14 +79,7 @@ html {
     top: 0;
 }
 
-.site-header {
-    background: var(--color-header-bg);
-    height: var(--header-height);
-    left: 0;
-    position: fixed;
-    width: 100%;
-    z-index: 1000;
-}
+.site-header { /* commented out: rules previously here removed to declutter; re-add if necessary */ }
 .site-header .header-container { display:flex; align-items:center; justify-content:space-between; height:100%; }
 
 .header-container {
@@ -436,7 +429,6 @@ hr {
 
 section,
 .section,
-.seccion-quienes,
 .hero{
     margin-bottom: 50px;
 }
@@ -936,8 +928,7 @@ label[for="human-check"] { margin: 0; color: var(--color-text); font-weight: 500
 
     /* Make images inside .content-section square on small screens */
     .content-section img,
-    .content-section .image,
-    .content-section .thumb {
+    .content-section .image {
         width: 100%;
         height: auto;
         aspect-ratio: 1 / 1; /* keep square */
@@ -946,13 +937,14 @@ label[for="human-check"] { margin: 0; color: var(--color-text); font-weight: 500
         max-width: 100%;
     }
 
-    /* If the image is set as a background on a container, force a square box */
+    /* If the image is set as a background on a container, force a square box
     .content-section .image-bg {
         width: 100%;
         aspect-ratio: 1 / 1;
         background-size: cover;
         background-position: center;
     }
+    */
 
 }
 

@@ -628,7 +628,7 @@ button.cta-button {
 }
 
 
-#transporte-equipamiento-pesado{position:relative;display:flex;align-items:center;justify-content:center;min-height:60vh;margin:0}
+#transporte-equipamiento-pesado{position:relative;display:flex;align-items:center;justify-content:center;min-height:400px;margin:0}
 #transporte-equipamiento-pesado .text-content{
     background: var(--color-header-bg);
     color: #fafdff;

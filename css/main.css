@@ -79,7 +79,6 @@ html {
     top: 0;
 }
 
-.site-header { /* commented out: rules previously here removed to declutter; re-add if necessary */ }
 .site-header .header-container { display:flex; align-items:center; justify-content:space-between; height:100%; }
 
 .header-container {

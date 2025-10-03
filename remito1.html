@@ -6,60 +6,40 @@
     <title>Manual REMITOS</title>
     <style>
         :where(h1) { margin-block: 0.67em; font-size: 2em; }
+        :root{
+            --bg: #0a0a0c;
+            --card-bg: #161a22;
+            --text: #f3f6fa;
+            --muted: #cfd8e3;
+            --divider: #2b3442;
+            --accent-green: #00ff15;
+            --accent-gold: #ffd700;
+            --container-max: 820px;
+            --radius: 10px;
+            --spacing: 1.2rem;
+        }
+
+
+        /* Layout base */
         body {
-            background: black;
+            background: var(--bg);
             margin: 0;
             display: flex;
             align-items: flex-start;
             justify-content: center;
-            font-family: 'Poppins', Arial, sans-serif;
+            font-family: 'Atkinson Hyperlegible', Arial, sans-serif;
+            color: var(--text);
         }
-            .container {
+
+        .container {
             width: 100%;
-            max-width: 820px;
+            max-width: var(--container-max);
             margin: 0 auto;
-            background: #2e3746;
-            border-radius: 10px;
-            box-shadow: none;
-            padding: 2.5vw 2vw 2vw 2vw;
+            background: var(--card-bg);
+            border-radius: var(--radius);
+            padding: calc(var(--spacing) * 2) calc(var(--spacing) * 1.5);
         }
-        h1 {
-            color: #fff;
-            font-family: 'Poppins', Arial, sans-serif;
-            font-size: 2.7rem;
-            margin-bottom: 1.5rem;
-            font-weight: 800;
-            letter-spacing: 0.02em;
-        }
-        @font-face {
-            font-family: 'Poppins';
-            src: url('../../fonts/Poppins-Regular.ttf') format('truetype');
-            font-weight: 400;
-            font-style: normal;
-            font-display: swap;
-        }
-        @font-face {
-            font-family: 'Poppins';
-            src: url('../../fonts/Poppins-Bold.ttf') format('truetype');
-            font-weight: 700;
-            font-style: normal;
-            font-display: swap;
-        }
-        @font-face {
-            font-family: 'Poppins';
-            src: url('../../fonts/Poppins-ExtraBold.ttf') format('truetype');
-            font-weight: 800;
-            font-style: normal;
-            font-display: swap;
-        }
-        @media (max-width: 600px) {
-            .container {
-                 border-radius: 0px;
-            }
-            h1 {
-                font-size: 1.5rem;
-            }
-        }
+
     </style>
 </head>
 <body>

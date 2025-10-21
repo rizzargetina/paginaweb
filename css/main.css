@@ -278,9 +278,6 @@ hr {
 }
 
 
-
-
-
 .logos-left {
     align-items: center;
     display: flex;
@@ -331,16 +328,6 @@ hr {
     padding: 12px; /* Un poco  de padding horizontal */
     position: relative;
     text-transform: uppercase;
-}
-
-/* Prevent default text-decoration (global a:hover) on nav links so
-   only the animated underline appears */
-.rulenav .navlink,
-.rulenav .navlink:hover,
-.rulenav .navlink:focus {
-    text-decoration: none;
-    text-decoration-color: transparent;
-    text-decoration-thickness: 0;
 }
 
 
@@ -827,9 +814,7 @@ label[for="human-check"] { margin: 0; color: var(--color-text); font-weight: 500
         height: 2px;
         width: 80%; /* accommodate padding and keep line shorter than full item */
         background: var(--underline-color);
-        transform-origin: left center;
         transform: translateX(-50%) scaleX(0);
-        transition: transform 250ms cubic-bezier(.2,.9,.2,1), opacity 200ms ease;
         will-change: transform, opacity;
         border-radius: 2px;
         opacity: 0.95;
@@ -837,16 +822,9 @@ label[for="human-check"] { margin: 0; color: var(--color-text); font-weight: 500
 
     .rulenav .navlink:not(.only-mobile):hover::after,
     .rulenav .navlink:not(.only-mobile):focus::after {
-        transform-origin: left center;
         transform: translateX(-50%) scaleX(1);
     }
 
-    /* reverse origin on collapse so it animates right->left when leaving */
-    .rulenav .navlink:not(.only-mobile):not(:hover):not(:focus)::after {
-        transform-origin: right center;
-        transform: translateX(-50%) scaleX(0);
-        transition: transform 230ms cubic-bezier(.4,0,.2,1);
-    }
             .mobile-menu-button { display: none; }
     .rulenav { flex-direction: row; width: auto; }
     .rulenav .only-mobile { display: none !important; }
@@ -854,22 +832,6 @@ label[for="human-check"] { margin: 0; color: var(--color-text); font-weight: 500
 
     .only-mobile { display: none !important; }
 
-
-    .link-animated {
-        position: relative;
-        display: inline-block;
-        text-decoration: none;
-    }
-
-
-    .link-animated:hover::after,
-    .link-animated:focus::after {
-        opacity: 1; /* show instantly */
-    }
-
-    .link-animated:not(:hover):not(:focus)::after {
-        opacity: 0; /* hide instantly */
-    }
 
     /* Paint background blue on hover and ensure readable text */
     .link-animated:hover,
@@ -919,7 +881,6 @@ label[for="human-check"] { margin: 0; color: var(--color-text); font-weight: 500
         pointer-events: none;
         opacity: 0;
         transform: translateY(-6px) scale(.995);
-        transition: opacity .18s cubic-bezier(.2,.9,.2,1), transform .18s cubic-bezier(.2,.9,.2,1);
         display: flex;
         flex-direction: column;
         justify-content: flex-start;

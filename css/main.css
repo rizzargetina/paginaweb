@@ -48,7 +48,7 @@
     --header-height: 60px;
     --spacing-unit: 8px;
     --top-bar-height: 35px;
-    --border-radius: 4px;
+    --border-radius: 0px;
 
     /* Fonts */
     --font-headings: 'Poppins', Arial, sans-serif;
@@ -153,9 +153,9 @@ hr {
 
 }
 .container{width:86%;margin-left:auto;margin-right:auto;}
-.container img{  height: auto; border-radius: 4px; object-fit: cover;}
+.container img{  height: auto;  object-fit: cover;}
 .container2{width:100%; margin-left:auto; margin-right:auto;text-align: left;}
-.container2 img{ border-radius: 4px;margin-top: 1em;}
+.container2 img{ margin-top: 1em;}
 
 
 .hero{
@@ -350,7 +350,6 @@ hr {
 
 .mobile-menu-button .hamburger-line {
     background-color: var(--color-header-text);
-    border-radius: 1px;
     display: block;
     height: 2.5px;
     left: 50%;
@@ -451,11 +450,9 @@ hr {
 .language-selector a.lang-active {
     font-weight: 700;
     background-color: var(--bott-color);
-    border-radius: 4px;
 }
 .language-selector a:not(.lang-active):hover {
     background-color: rgba(255, 255, 255, 0.08);
-        border-radius: 4px;
 }
 
 section,
@@ -542,9 +539,11 @@ section,
 }
 .client-logo-track {
     align-items: center;
-    animation: scroll-logos 30s linear infinite;
+    animation: none;
     display: flex;
     gap: 85px;
+    justify-content: center;
+    flex-wrap: wrap;
 }
 @keyframes scroll-logos {
 	from {
@@ -561,6 +560,10 @@ section,
     object-fit: contain;
     opacity: .7;
     width: auto;
+}
+
+.client-logo-track .logo-duplicate {
+    display: none;
 }
 
 #key-metrics,
@@ -605,7 +608,6 @@ button.cta-button {
     align-items: center;
     gap: 20px;
     padding: 12px 16px;
-    border-radius: 6px;
     background: rgba(255,255,255,0.08);
     border: 1px solid rgba(255,255,255,0.18);
     color: #f0f2f5;
@@ -787,7 +789,7 @@ section[id], .content-section[id], h2[id], [id] {
 
 #form-status { margin-top:1rem; padding:8px; text-align:center; border-radius:var(--border-radius); font-weight:500; }
 
-#como-postular { text-align:center; padding:20px; border-radius:18px; margin-top:48px; border:1px solid var(--color-border); }
+#como-postular { text-align:center; padding:20px; margin-top:48px; border:1px solid var(--color-border); }
 #como-postular p { line-height:1.6; max-width:700px; margin:0 auto; }
 .info-text {align-items: center; gap: 0.4rem; margin: 0 10px; }
 .office-image{
@@ -816,7 +818,6 @@ label[for="human-check"] { margin: 0; color: var(--color-text); font-weight: 500
         background: var(--underline-color);
         transform: translateX(-50%) scaleX(0);
         will-change: transform, opacity;
-        border-radius: 2px;
         opacity: 0.95;
     }
 
@@ -983,7 +984,6 @@ label[for="human-check"] { margin: 0; color: var(--color-text); font-weight: 500
         width: 100%;
         margin: 20px 0;
         text-align: center;
-        border-radius: 6px;
     }
 
     /* Transporte section: keep text positioned over image */
@@ -1025,9 +1025,9 @@ label[for="human-check"] { margin: 0; color: var(--color-text); font-weight: 500
     .client-logo-track > * { display: flex; justify-content: center; align-items: center; }
 
     /* Images & small content blocks */
-    .office-image { aspect-ratio: 1/1; object-fit: cover; border-radius: 4px; object-position: left; display: block; }
+    .office-image { aspect-ratio: 1/1; object-fit: cover; object-position: left; display: block; }
     .base-choferes-flex { flex-direction: column; align-items: center; }
-    .base-choferes-img img { aspect-ratio: 1/1; border-radius: 4px; object-fit: cover; object-position: left; display: block; }
+    .base-choferes-img img { aspect-ratio: 1/1;  object-fit: cover; object-position: left; display: block; }
 
     /* Service cards and listing adjustments */
     .service-card-title { text-align: left; padding-left: calc(var(--spacing-unit) * 2); }

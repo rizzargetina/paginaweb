@@ -15,36 +15,36 @@
 
 :root {
     /* Accents & links */
-    --color-accent: #00296f; 
-    --color-link: #0096ff;
-    --color-link-hover: #e0e0e0;
-    --bott-color: #1b1c1f;
+    --color-accent: #004085; 
+    --color-link: #0056b3;
+    --color-link-hover: #003d73;
+    --bott-color: #f1f3f5;
 
-    /* Branding colors used across the site */
-    --dhl-white: #eaeaea;
-    --dhl-yellow: #1a2333;
+    /* Branding colors usados en todo el sitio */
+    --dhl-white: #ffffff;
+    --dhl-yellow: #f8f9fa;
 
     /* Core Colors */
-    --color-border: #181b20;
-    --color-headings: #eaeaea;
-    --color-primary-bg: #0a0c10;
-    --color-secondary-bg: #111215;
-    --color-text: #bfc5ce;
-    --color-text-secondary: #828ea1;
+    --color-border: #ced4da;
+    --color-headings: #343a40;
+    --color-primary-bg: #ffffff;
+    --color-secondary-bg: #f8f9fa;
+    --color-text: #495057;
+    --color-text-secondary: #6c757d;
 
     /* Footer */
-    --color-footer-bg: #0a0c10;
-    --color-footer-border: #181b20;
+    --color-footer-bg: #f8f9fa;
+    --color-footer-border: #ced4da;
     --color-footer-link: var(--color-link);
     --color-footer-link-hover: var(--color-link-hover);
-    --color-footer-text: #aab7cb;
+    --color-footer-text: #495057;
 
     /* Header & Topbar */
-    --color-header-bg: #0f0f0f;
-    --color-header-border: #00081d;
-    --color-header-text: var(--dhl-white);
-    --color-top-bar-bg: #000000;
-    --color-top-bar-text: #bfc5ce;
+    --color-header-bg: #ffffff;
+    --color-header-border: #ced4da;
+    --color-header-text: var(--color-text);
+    --color-top-bar-bg: #f8f9fa;
+    --color-top-bar-text: #495057;
     --header-height: 60px;
     --spacing-unit: 8px;
     --top-bar-height: 35px;
@@ -111,8 +111,9 @@ html {
 .aspect-4-3 { aspect-ratio: 4 / 3; }
 
 .header {
-    background: var(--color-header-bg); /* #2a4d69  alternativa en proceso*/
+    background: var(--color-header-bg);
     border-bottom: 1px solid var(--color-header-border);
+    box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.1);
     height: var(--header-height);
     left: 0;
     position: fixed;
@@ -141,8 +142,8 @@ html {
 }
 
 body {
-    background-color: var(--color-secondary-bg);
-    color: #f0f2f5;
+    background-color: var(--color-primary-bg);
+    color: var(--color-text);
     font-family: var(--font-primary);
     font-size: 18px;
     font-weight: 400;
@@ -225,12 +226,13 @@ hr {
 .hero {
     display: flex;
     flex-direction: column;
-    align-items: stretch;
-    justify-content: flex-start;
+    align-items: center; /* Centra horizontalmente */
+    justify-content: flex-start; /* Asegura que el contenido esté al inicio */
+    padding-top: 50px; /* Despaga del top */
     min-height: 610px;
     height: 90vh;
-    text-align: left;
-    color: #fff;
+    color: #cccccd;
+    margin: 0 auto; /* Centra horizontalmente */
 }
 .hero .hero-bg-image{
     position: absolute;
@@ -239,107 +241,36 @@ hr {
     height: 90vh;
     object-fit: cover; /* Ensures the image covers the area like background-size: cover */
     object-position: center left;
-    opacity: 0.5;
+    filter: brightness(0.7); /* Reducir la oscuridad de la imagen */
     z-index: 1;
     display: block;
 }
 .hero .hero-content{
+    text-align: center;
     position: relative;
     z-index: 3;
-    width: 100%;
-    padding:  70px 180px ;
-    text-align:left ;
+    max-width: 800px;
 }
 .hero h1{
     font-family:var(--font-headings);
-    font-size:3.2rem;
-    font-weight:800;
-    padding:0%;
-    color:#fff;
-
-}
-.hero p{
-    font-size:1.5rem;
-    font-weight:400;
-        max-width: 900px;
-}
-
-@media (max-width: 900px) {
-    .hero{
-    display: flex;
-    flex-direction: column;
-    align-items: stretch;
-    justify-content: flex-start;
-    text-align: center;
-    color: #fff;
-        height: 650px;
-}
-
-    .hero .hero-bg-image{
-        position: absolute;
-        inset: 0;
-        width: 100%;
-        height: 650px;
-        object-fit: cover;
-        object-position: center left;
-        opacity: 0.4;
-        z-index: 1;
-    }
-
-    .hero .hero-content{
-    position: relative;
-    z-index: 3;
-    width: 100%;
-    padding:  10px;
-    text-align:center ;
-    align-self: center;
-}
-    .hero h1 { font-size: 2.4rem; font-weight: 800; color: #fff; }
-
-    .hero p{font-size:1rem;margin-bottom:1.2em; width: 100%;font-weight:400;}
-
-
+    font-size:3.5rem; /* Incrementar tamaño de fuente */
+    font-weight:900; /* Hacer el texto más grueso */
+    text-transform:uppercase; /* Convertir texto a mayúsculas */
+    letter-spacing:1.5px; /* Añadir espaciado entre letras */
+    color:#ffffff;
+    background-color: #002f62; /* Fondo azul más oscuro */
+    padding: 15px; /* Ajustar el espacio alrededor del texto */
+    max-width: 800px; /* Incrementar el ancho del fondo azul */
 }
 
 @media (max-width: 600px) {
-
-    .hero{
-    display: flex;
-    flex-direction: column;
-    align-items: stretch;
-    justify-content: flex-start;
-
-    text-align: center;
-    color: #fff;
-        height: 650px;
-}
-
-    .hero .hero-bg-image{
-        position: absolute;
-        inset: 0;
-        width: 100%;
-        height: 650px;
-        object-fit: cover;
-        object-position: center left;
-        opacity: 0.4;
-        z-index: 1;
+    .hero h1{
+        font-size:2.5rem; /* Ajustar tamaño de fuente para pantallas pequeñas */
+        padding: 10px; /* Ajustar padding para pantallas pequeñas */
+        background-color: transparent; /* Eliminar fondo de color */
     }
-
-    .hero .hero-content{
-    position: relative;
-    z-index: 3;
-    width: 100%;
-    text-align:center ;
-    
-    padding:  0;
-
 }
-    .hero h1 { font-size: 2.4rem; font-weight: 800; color: #fff; }
 
-    .hero p{font-size:1rem; margin-bottom:0; text-align:center ;font-weight:400;}
-
-
-}
 
 
 .logos-left {
@@ -451,7 +382,7 @@ hr {
 .top-bar {
     align-items: center;
     background-color: var(--color-top-bar-bg);
-    color: var(--color-top-bar-text);
+    color: #343a40; /* Ajustar el color del texto para mejor contraste */
     display: flex;
     font-size: 0.825rem;
     height: var(--top-bar-height);
@@ -464,11 +395,12 @@ hr {
 }
 
 .top-bar a {
-    color: var(--color-top-bar-text);
+    color: #343a40; /* Ajustar el color de los enlaces */
     text-decoration: none;
 }
 
 .top-bar img {
+    filter: brightness(0.8); /* Oscurecer ligeramente los iconos */
     display: block;
     align-self: center;
     margin: 0;
@@ -527,12 +459,14 @@ section,
 }
 
 .footer {
-    background-color: var(--color-footer-bg, var(--color-secondary-bg));
-    color: var(--color-footer-text, var(--color-text-secondary));
+    background-color: var(--color-footer-bg);
+    color: var(--color-footer-text);
      font-family: var(--font-primary);
      font-size: 0.9rem;
     margin-top: 40px;
      padding: 40px 0;
+    border-top: 1px solid var(--color-footer-border);
+    box-shadow: 0px -2px 5px rgba(0, 0, 0, 0.1);
 }
 
 .footer-container {
@@ -610,33 +544,27 @@ section,
     justify-content: center;
     flex-wrap: wrap;
 }
-@keyframes scroll-logos {
-	from {
-		transform: translateX(0);
-	}
-	to {
-		transform: translateX(calc(-250px * 9));
-	}
-}
+
 .client-logo-track img {
-    filter: brightness(0) invert(1) grayscale(.5);
-    height: 60px;
-    max-width: 170px;
-    object-fit: contain;
-    opacity: .7;
-    width: auto;
+    filter: none; /* Eliminar filtros que puedan afectar la visibilidad */
+    height: auto; /* Ajustar altura para que los logos sean proporcionales */
+    max-height: 80px; /* Limitar la altura máxima */
+    object-fit: contain; /* Asegurar que los logos se ajusten correctamente */
+    margin: 0 auto; /* Centrar los logos */
 }
 
-.client-logo-track .logo-duplicate {
-    display: none;
+.client-logo-track .logo-drivin {
+    max-height: 70px; /* Ajustar altura específica para el logo de Drivin */
+    object-fit: contain; /* Mantener proporciones */
+    margin: 0 auto; /* Centrar el logo */
 }
 
 #key-metrics,
 #key-metrics-guard {
-background: linear-gradient(140deg, #0a0c10 30%, #101010 100%);
+    background: linear-gradient(140deg, #ffffff 30%, #f8f9fa 100%);
     border: 1px solid var(--color-border);
     border-radius: var(--border-radius);
-    color: inherit;
+    color: var(--color-text);
     margin: 40px 0 0;
     padding: calc(var(--spacing-unit) * 4);
 }
@@ -654,7 +582,7 @@ background: linear-gradient(140deg, #0a0c10 30%, #101010 100%);
     text-align: center;
 }
 .metric-item { flex: 1; min-width: 200px; padding: 20px }
-.metric-item .icon { font-size: 2.8rem; color: var(--color-accent); margin-bottom: .5rem; display: block }
+.metric-item .icon { font-size: 2.8rem; color: var(--color-link); margin-bottom: .5rem; display: block }
 .metric-item .number { font-size: 2.5rem; font-weight: 700; color: var(--color-headings); font-family: var(--font-headings) }
 .metric-item .label { font-size: 1rem; color: var(--color-text-secondary) }
 
@@ -677,9 +605,8 @@ button.cta-button {
     align-items: center;
     gap: 20px;
     padding: 12px 16px;
-    background: rgba(255,255,255,0.08);
-    border: 1px solid rgba(255,255,255,0.18);
-    color: #f0f2f5;
+    background: rgba(92, 92, 92, 0.08);
+    border: 1px solid rgba(28, 28, 28, 0.18);
     cursor: pointer;
     font-family: 'Roboto', Arial, sans-serif;
     font-weight: 700;
@@ -692,7 +619,6 @@ button.cta-button {
 .cta-button:hover,
 .cta-button:focus {
     background: rgba(255,255,255,0.18);
-    color: #fff;
     text-decoration: none;
     transform: translateY(-2px) scale(1.03);
 }
@@ -707,7 +633,6 @@ button.cta-button {
 
 .km-guard-title{
     align-items:center;
-    color:#fff;
     display:inline-flex;
     font-size:2.2rem;
     font-weight:900;
@@ -763,7 +688,7 @@ button.cta-button {
     max-height: 620px;
     margin: 0 auto;
 }
-.services-cta-wrapper{margin-top:2rem;text-align:center}
+.services-cta-wrapper{margin-top:2rem;text-align:center; color:inherit;}
 
 .tecnologias-usadas{margin:2.5rem 0;text-align:center}
 .tech-list{display:flex;flex-wrap:wrap;justify-content:center;gap:2.5em;margin-top:1.5em}
@@ -800,7 +725,6 @@ button.cta-button {
 .index-item{
     align-items:center;
     background-color: var(--bott-color);
-    color:#fff;
     display:flex;
     font-weight:700;
     justify-content:center;
@@ -1137,5 +1061,4 @@ label[for="human-check"] { margin: 0; color: var(--color-text); font-weight: 500
         scroll-margin-top: 0px;
     }
 }
-
 

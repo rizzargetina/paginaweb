@@ -241,7 +241,7 @@ hr {
     height: 90vh;
     object-fit: cover; /* Ensures the image covers the area like background-size: cover */
     object-position: center left;
-    filter: brightness(0.7); /* Reducir la oscuridad de la imagen */
+    filter: brightness(0.5); /* Reducir la oscuridad de la imagen */
     z-index: 1;
     display: block;
 }
@@ -258,7 +258,7 @@ hr {
     text-transform:uppercase; /* Convertir texto a mayúsculas */
     letter-spacing:1.5px; /* Añadir espaciado entre letras */
     color:#ffffff;
-    background-color: #002f62; /* Fondo azul más oscuro */
+    background-color: transparent; /* Fondo azul más oscuro */
     padding: 15px; /* Ajustar el espacio alrededor del texto */
     max-width: 800px; /* Incrementar el ancho del fondo azul */
 }
@@ -267,7 +267,8 @@ hr {
     .hero h1{
         font-size:2.5rem; /* Ajustar tamaño de fuente para pantallas pequeñas */
         padding: 10px; /* Ajustar padding para pantallas pequeñas */
-        background-color: transparent; /* Eliminar fondo de color */
+        border-radius: 5px; /* Añadir bordes redondeados para un diseño más compacto */
+        text-align: center; /* Asegurar que el texto esté centrado */
     }
 }
 

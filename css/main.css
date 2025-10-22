@@ -264,6 +264,27 @@ hr {
 }
 
 @media (max-width: 600px) {
+    .hero {
+    display: flex;
+    flex-direction: column;
+    align-items: center; /* Centra horizontalmente */
+    justify-content: flex-start; /* Asegura que el contenido esté al inicio */
+    padding-top: 50px; /* Despaga del top */
+    height: 650px;
+    color: #cccccd;
+    margin: 0 auto; /* Centra horizontalmente */
+}
+.hero .hero-bg-image{
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 650px;
+    object-fit: cover; /* Ensures the image covers the area like background-size: cover */
+    object-position: center left;
+    filter: brightness(0.62); /* Reducir la oscuridad de la imagen */
+    z-index: 1;
+    display: block;
+}
     .hero h1{
         font-size:2.5rem; /* Ajustar tamaño de fuente para pantallas pequeñas */
         padding: 10px; /* Ajustar padding para pantallas pequeñas */

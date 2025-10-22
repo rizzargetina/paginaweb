@@ -261,6 +261,7 @@ hr {
     background-color: transparent; /* Fondo azul más oscuro */
     padding: 15px; /* Ajustar el espacio alrededor del texto */
     max-width: 800px; /* Incrementar el ancho del fondo azul */
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5); 
 }
 
 @media (max-width: 600px) {

@@ -241,7 +241,7 @@ hr {
     height: 90vh;
     object-fit: cover; /* Ensures the image covers the area like background-size: cover */
     object-position: center left;
-    filter: brightness(0.5); /* Reducir la oscuridad de la imagen */
+    filter: brightness(0.62); /* Reducir la oscuridad de la imagen */
     z-index: 1;
     display: block;
 }

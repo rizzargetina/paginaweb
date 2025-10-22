@@ -280,7 +280,6 @@ hr {
     width: 100%;
     height: 650px;
     object-fit: cover; /* Ensures the image covers the area like background-size: cover */
-    object-position: center left;
     filter: brightness(0.62); /* Reducir la oscuridad de la imagen */
     z-index: 1;
     display: block;

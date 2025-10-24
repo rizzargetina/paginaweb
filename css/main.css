@@ -483,11 +483,6 @@ backdrop-filter: blur(10px); /* Aplicar el desenfoque */
     background-color: rgba(255, 255, 255, 0.08);
 }
 
-section,
-.section,
-.hero{
-    margin-bottom: 50px;
-}
 
 .footer {
     background-color: var(--color-footer-bg);

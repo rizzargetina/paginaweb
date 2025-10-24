@@ -526,6 +526,7 @@ backdrop-filter: blur(10px); /* Aplicar el desenfoque */
     align-items: flex-start;
 }
 
+
 .text-content {
     flex: 0.8 1 0;
 }

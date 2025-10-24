@@ -270,7 +270,7 @@ hr {
     background-color: transparent; /* Fondo azul más oscuro */
     padding: 18px; /* Ajustar el espacio alrededor del texto */
     max-width: 800px; /* Incrementar el ancho del fondo azul */
-background-color: rgba(0, 17, 61, 0.8); /* Color oscuro con opacidad */
+background-color: rgb(0, 64, 133); /* Color oscuro con opacidad */
 backdrop-filter: blur(10px); /* Aplicar el desenfoque */
 }
 

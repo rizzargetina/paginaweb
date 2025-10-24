@@ -152,6 +152,10 @@ body {
     padding-top: 60px;
 }
 
+body.not-index {
+    padding-top: calc(var(--header-height) + var(--top-bar-height)); /* Ajustar según la altura del header y la top bar */
+}
+
 h1, h2, h3, h4, h5, h6 {
    font-family: var(--font-headings);
    font-weight: 700;

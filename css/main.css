@@ -527,11 +527,11 @@ backdrop-filter: blur(10px); /* Aplicar el desenfoque */
 }
 
 .image-content,
-.image-content img,
-.section-image {
+.image-content img{
     border: none;
     margin: 10px;
 }
+
 .text-content {
     flex: 0.8 1 0;
 }

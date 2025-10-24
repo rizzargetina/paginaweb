@@ -507,13 +507,6 @@ backdrop-filter: blur(10px); /* Aplicar el desenfoque */
     width: var(--container-width-mobile);
 }
 
-.footer-left, .footer-right {
-    flex: 1 1 300px;
-}
-
-.footer-right {
-    text-align: right;
-}
 
 
 .footer p {

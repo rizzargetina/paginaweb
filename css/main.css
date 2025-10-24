@@ -539,11 +539,7 @@ backdrop-filter: blur(10px); /* Aplicar el desenfoque */
     flex: 1.2 1 0;
 }
 
-.image-content img {
-    height: 100%;
-    object-fit: cover;
-    width: 100%;
-}
+
 #client-logos {
     padding-left: 0; 
     text-align: center; 

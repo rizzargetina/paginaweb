@@ -507,6 +507,13 @@ backdrop-filter: blur(10px); /* Aplicar el desenfoque */
     width: var(--container-width-mobile);
 }
 
+.footer-left, .footer-right {
+    flex: 1 1 300px;
+}
+
+.footer-right {
+    text-align: right;
+}
 
 
 .footer p {
@@ -519,12 +526,6 @@ backdrop-filter: blur(10px); /* Aplicar el desenfoque */
     align-items: flex-start;
 }
 
-.image-content,
-.image-content img,
-.section-image {
-    border: none;
-    margin: 20px;
-}
 .text-content {
     flex: 0.8 1 0;
 }
@@ -542,24 +543,11 @@ backdrop-filter: blur(10px); /* Aplicar el desenfoque */
     text-align: center; 
     margin-top: 40px;
 }
-
-#client-logos h2 {
-    color: var(--color-headings);
-    margin: 0 0 1em 0;
-    text-align: center;
-    position: relative;
-    display: inline-block;
-}
-.client-logo-slider {
-	width: 100%;
-	overflow: hidden;
-	position: relative;
-}
 .client-logo-track {
     align-items: center;
     animation: none;
     display: flex;
-    gap: 85px;
+    gap: 15px;
     justify-content: center;
     flex-wrap: wrap;
 }
@@ -570,12 +558,6 @@ backdrop-filter: blur(10px); /* Aplicar el desenfoque */
     max-height: 80px; /* Limitar la altura máxima */
     object-fit: contain; /* Asegurar que los logos se ajusten correctamente */
     margin: 0 auto; /* Centrar los logos */
-}
-
-.client-logo-track .logo-drivin {
-    max-height: 70px; /* Ajustar altura específica para el logo de Drivin */
-    object-fit: contain; /* Mantener proporciones */
-    margin: 0 auto; /* Centrar el logo */
 }
 
 #key-metrics,
@@ -668,7 +650,6 @@ button.cta-button {
 #transporte-equipamiento-pesado{position:relative;display:flex;align-items:center;justify-content:center;min-height:400px;margin:0}
 #transporte-equipamiento-pesado .text-content{
     background: var(--color-header-bg);
-    color: #fafdff;
     font-size: clamp(0.95rem, 1.1vw + 0.2rem, 1.25rem);
     font-weight: 400;
     line-height: 1.6;
@@ -679,10 +660,11 @@ button.cta-button {
     position: absolute;
     top: clamp(3%, 4.5vh, 8%);
     left: clamp(4%, 3vw, 6%);
-    max-width: clamp(640px, 36%, 640px);
     right: auto;
     z-index: 2;
 }
+
+
 
 /* Imágenes 4:3 en desktop para .section-image */
 .section-image {

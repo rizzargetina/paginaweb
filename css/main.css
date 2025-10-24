@@ -238,7 +238,7 @@ hr {
     flex-direction: column;
     align-items: center; /* Centra horizontalmente */
     justify-content: flex-start; /* Asegura que el contenido esté al inicio */
-    padding-top: 50px; /* Despaga del top */
+    padding-top: 38px; /* Despaga del top */
     min-height: 610px;
     height: 90vh;
     color: #cccccd;

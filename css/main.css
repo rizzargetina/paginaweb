@@ -48,7 +48,6 @@
     --header-height: 60px;
     --spacing-unit: 8px;
     --top-bar-height: 35px;
-    --border-radius: 0px;
 
     /* Layout & Spacing */
     --container-width: 86%;
@@ -286,7 +285,6 @@ backdrop-filter: blur(10px); /* Aplicar el desenfoque */
     .hero h1{
         font-size:2.5rem; /* Ajustar tamaño de fuente para pantallas pequeñas */
         padding: 10px; /* Ajustar padding para pantallas pequeñas */
-        border-radius: 5px; /* Añadir bordes redondeados para un diseño más compacto */
         text-align: center; /* Asegurar que el texto esté centrado */
     }
 }
@@ -584,7 +582,6 @@ section,
 #key-metrics-guard {
     background: linear-gradient(140deg, #ffffff 30%, #f8f9fa 100%);
     border: 1px solid var(--color-border);
-    border-radius: var(--border-radius);
     color: var(--color-text);
     margin: 40px 0 0;
     padding: calc(var(--spacing-unit) * 4);
@@ -612,7 +609,7 @@ section,
     grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
     gap: var(--gap-medium);
 }
-.service-card{border-radius:var(--border-radius);display:block;overflow:hidden;position:relative;text-decoration:none}
+.service-card{display:block;overflow:hidden;position:relative;text-decoration:none}
 .service-card img{display:block;filter:brightness(.85);height:220px;object-fit:cover;width:100%}
 .service-card-title{background-color:rgba(16,22,36,.85);box-sizing:border-box;color:var(--dhl-white);font-family:var(--font-headings);font-size:1.15rem;font-weight:700;padding:calc(var(--spacing-unit)*1.5) calc(var(--spacing-unit)*2);position:absolute;left:0;bottom:0;text-align:center;width:100%}
 .service-card:hover .service-card-title,.service-card:focus-within .service-card-title{background-color: #004fd8;}
@@ -787,7 +784,7 @@ section[id], .content-section[id], h2[id], [id] {
 #contact-form input[type="email"],
 #contact-form input[type="tel"],
 #contact-form textarea {
-    width:100%; padding:12px; border:1px solid var(--color-border); border-radius:var(--border-radius);
+    width:100%; padding:12px; border:1px solid var(--color-border);
     background:var(--color-primary-bg); color:var(--color-text); font:1rem/1.2 var(--font-primary);
 }
 
@@ -802,7 +799,7 @@ section[id], .content-section[id], h2[id], [id] {
 
 .contact-form-submit { padding:10px 22px; }
 
-#form-status { margin-top:1rem; padding:8px; text-align:center; border-radius:var(--border-radius); font-weight:500; }
+#form-status { margin-top:1rem; padding:8px; text-align:center;font-weight:500; }
 
 #como-postular { text-align:center; padding:20px; margin-top:48px; border:1px solid var(--color-border); }
 #como-postular p { line-height:1.6; max-width:700px; margin:0 auto; }

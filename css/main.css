@@ -568,7 +568,7 @@ backdrop-filter: blur(10px); /* Aplicar el desenfoque */
 
 #key-metrics,
 #key-metrics-guard {
-    background: linear-gradient(140deg, #dfcaca 30%, #86b4df 100%);
+    background: #e2ddf3;
     border: 1px solid var(--color-border);
     color: var(--color-text);
     margin: 40px 0 0;

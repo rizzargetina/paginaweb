@@ -1009,27 +1009,6 @@ label[for="human-check"] { margin: 0; color: var(--color-text); font-weight: 500
 
     /* Hide larger sections not needed on smallest screens */
     #quienes-somos { display: none !important; }
-
-    /* Client logos: convert to centered grid for narrow screens */
-    .client-logo-slider {
-        overflow: visible;
-        display: flex;
-        justify-content: center;
-        align-items: center;
-    }
-    .client-logo-track {
-        display: grid;
-        grid-template-columns: repeat(2, 1fr);
-        width: 100%;
-        animation: none !important;
-        align-items: center;
-        padding: 0;
-        margin: 0 auto;
-        gap: var(--gap-medium) 25px;
-        justify-items: center;
-    }
-    .client-logo-track img { height: 80px !important; max-width: 120px; margin-left: 0 !important; margin-right: 0 !important; }
-    /* Images & small content blocks */
     .office-image { aspect-ratio: 1/1; object-fit: cover; object-position: left; display: block; }
     .base-choferes-flex { flex-direction: column; align-items: center; }
     .base-choferes-img img { aspect-ratio: 1/1;  object-fit: cover; object-position: left; display: block; }

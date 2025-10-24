@@ -338,7 +338,7 @@ backdrop-filter: blur(10px); /* Aplicar el desenfoque */
     font-size: 0.9rem; /* Ligeramente  p para un look 1s refinado si hay muchos items */
     font-weight: 700;
     height: 100%;
-    letter-spacing: 0.8px; /* Un pocos de espaciado entre letras para msculas */
+    letter-spacing: 0.8px; /* Un pocos de espaciado♦ñ entre letras para msculas */
     padding: 12px; /* Un poco  de padding horizontal */
     position: relative;
     text-transform: uppercase;
@@ -962,14 +962,6 @@ label[for="human-check"] { margin: 0; color: var(--color-text); font-weight: 500
         max-width: 100%;
     }
 
-    /* If the image is set as a background on a container, force a square box
-    .content-section .image-bg {
-        width: 100%;
-        aspect-ratio: 1 / 1;
-        background-size: cover;
-        background-position: center;
-    }
-    */
 
 }
 
@@ -1082,5 +1074,13 @@ label[for="human-check"] { margin: 0; color: var(--color-text); font-weight: 500
     section[id], .content-section[id], h2[id], [id] {
         scroll-margin-top: 0px;
     }
+}
+
+/* Ajuste para imágenes dentro de contenedores */
+.responsive-image {
+    max-width: 100%;
+    height: auto;
+    object-fit: cover;
+    display: block;
 }
 

@@ -8,18 +8,14 @@
     <link rel="canonical" href="https://www.transporte-jgt-timol.com/contact.html" />
     <link rel="icon" type="image/x-icon" href="icons/jgt-2.webp">
     <link rel="stylesheet" href="css/main.css">
-        <style>
-            :where(h1) { margin-block: 0.67em; font-size: 2em; }
-        </style>
 </head>
 <body>
-
-
+    <!-- Top Bar -->
     <div class="top-bar">
         <div class="container top-bar-container">
             <div class="top-bar-left">
                 <a href="EMPLEOS.html">Oportunidades laborales</a>
-                <a href="https://wa.me/5492994674943" target="_blank" rel="noopener" style="padding: 0; font-weight: 400; display:inline-flex; align-items:center; gap:6px;">
+                <a href="https://wa.me/5492994674943" target="_blank" rel="noopener" class="whatsapp-link">
                    WhatsApp
                 </a>
             </div>
@@ -34,6 +30,8 @@
             </div>
         </div>
     </div>
+
+    <!-- Header -->
     <header class="header" id="main-header">
         <div class="container header-container">
             <div class="logos-left">
@@ -50,27 +48,23 @@
                 <span class="hamburger-line" aria-hidden="true"></span>
             </button>
             <nav class="rulenav" id="main-navigation" aria-label="Navegación principal">
-                                <a class="navlink" href="index.html">Inicio</a>
-                                <a class="navlink" href="TRANSPORTE.html">Transporte</a>
-                                <a class="navlink" href="ALQUILERES.html">Alquileres</a>
-                                <a class="navlink" href="CONTACTO.html">Contacto</a>
-                                <a class="navlink only-mobile" href="EMPLEOS.html">Oportunidades Laborales</a>
+                <a class="navlink" href="index.html">Inicio</a>
+                <a class="navlink" href="TRANSPORTE.html">Transporte</a>
+                <a class="navlink" href="ALQUILERES.html">Alquileres</a>
+                <a class="navlink" href="CONTACTO.html">Contacto</a>
+                <a class="navlink only-mobile" href="EMPLEOS.html">Oportunidades Laborales</a>
             </nav>
         </div>
     </header>
 
-    <main style="margin-top: 35px;">
-    <div class="container ">
-            <div class="contact-wrapper">
-
+    <!-- Main Content -->
+    <main>
+        <section class="contact-section">
+            <div class="container contact-wrapper">
+                <!-- Contact Form -->
                 <div class="contact-form-container">
                     <h2>Obtenga una Cotización</h2>
                     <form id="contact-form" action="https://formsubmit.co/ptarifa@timolsrl.com" method="POST">
-                        <!-- Honeypot field (oculto para humanos, visible para bots) -->
-                        <div style="display:none;">
-                            <label for="company">Empresa (no completar):</label>
-                            <input type="text" id="company" name="company" autocomplete="off">
-                        </div>
                         <div class="form-group">
                             <label for="name">Nombre Completo / Empresa:</label>
                             <input type="text" id="name" name="name" required>
@@ -84,101 +78,81 @@
                             <input type="tel" id="phone" name="phone">
                         </div>
                         <div class="form-group">
-                            <label for="subject">Asunto:</label>
-                            <input type="text" id="subject" name="subject" required>
-                        </div>
-                        <div class="form-group">
                             <label for="message">Mensaje:</label>
                             <textarea id="message" name="message" rows="6" placeholder="Escriba su consulta aquí..." required></textarea>
                         </div>
-                        <!-- Simple checkbox captcha -->
-                        <div class="form-group" style="display: flex; align-items: center; gap: 8px;">
+                        <div class="form-group human-check">
                             <input type="checkbox" id="human-check" name="human-check" required>
-                            <label for="human-check" style="margin-bottom: 0;">No soy un robot</label>
+                            <label for="human-check">No soy un robot</label>
                         </div>
-                            <input type="hidden" name="_next" value="https://transporte-jgt-timol.com/gracias.html">
-                        <div class="form-group">
-                            <button type="submit" class="cta-button">Enviar Mensaje</button>
-                        </div>
-                         <p id="form-status"></p>
+                        <input type="hidden" name="_next" value="https://transporte-jgt-timol.com/gracias.html">
+                        <button type="submit" class="cta-button">Enviar Mensaje</button>
+                        <p id="form-status"></p>
                     </form>
                 </div>
 
+                <!-- Contact Info -->
                 <div class="contact-info-container">
+                    <h2>Información de Contacto</h2>
                     <div class="info-item">
-                        <div class="info-text">
-                            <h2>Correos Electrónicos:</h2>
-  <p>Juan Gabriel Tarifa:</p>
-                                                        <p><span id="correo-tarifa"></span> </p>
-                                                         <p>Gabriel Morales:</p>
-                            <p><span id="correo-morales"></span> </p>
-    
-                        </div>
-                        <script>
-                            // Correos
-                            function mostrarCorreo(id, usuario, dominio) {
-                                const correo = `${usuario}@${dominio}`;
-                                const span = document.getElementById(id);
-                                span.innerHTML = `<a href="mailto:${correo}">${correo}</a>`;
-                            }
-                            mostrarCorreo("correo-tarifa", "juangabrieltarifa", "hotmail.com");
-                            mostrarCorreo("correo-morales", "gmorales", "timolsrl.com");
-                        </script>
+                        <h3>Correos Electrónicos:</h3>
+                        <p>Juan Gabriel Tarifa: <span id="correo-tarifa"></span></p>
+                        <p>Gabriel Morales: <span id="correo-morales"></span></p>
                     </div>
                     <div class="info-item">
-                        <div class="info-text">
-                            <h2>Horario de Atención Oficina:</h2>
-                            <p>Lunes a Viernes: 8:00 - 18:00 hs</p>
-                        </div>
+                        <h3>Horario de Atención Oficina:</h3>
+                        <p>Lunes a Viernes: 8:00 - 18:00 hs</p>
                     </div>
+                    <div class="info-item">
+                        <h3>Ubicación Oficina (Cipolletti)</h3>
+                        <p><a href="https://maps.app.goo.gl/u2dkC5AAgWcxnxem7" target="_blank">Pastor J. A. Bowdler 502</a></p>
+                        <img src="img/oficina.png" alt="Ubicación de la oficina" class="responsive-image">
+                    </div>
+                </div>
+            </div>
+        </section>
 
-                    <div class="container2">
-                    <h2>Ubicación Oficina (Cipolletti)</h2>
-                    <p><a href="https://maps.app.goo.gl/u2dkC5AAgWcxnxem7" target="_blank">Pastor J. A. Bowdler 502</a></p>
-                    <picture>
-                        <source srcset="img/oficina.png">
-                        <img src="img/oficina.png" alt="Ubicación de la oficina" style="width:100%; height:auto; object-fit:cover;">
-                    </picture>
-                    </div>
+        <!-- Additional Locations -->
+        <section class="location-section">
+            <div class="container">
+                <h2>Base Choferes, Añelo</h2>
+                <p><a href="https://maps.app.goo.gl/Ypc1Ae6ZMrAmrn468" target="_blank">38°26'03.2"S 68°57'24.1"W</a></p>
+                <img src="img/basechoferes.png" alt="Base de Choferes Añelo" class="responsive-image">
+            </div>
+        </section>
     </main>
 
-        <div class="container">
-            <h2>BASE CHOFERES, AÑELO</h2>
-            <p><a href="https://maps.app.goo.gl/Ypc1Ae6ZMrAmrn468" target="_blank">Coordenadas: 38°26'03.2"S 68°57'24.1"W</a></p>
-            <picture>
-                <source srcset="img/mapa_cuadrado.png" media="(max-width: 700px)">
-                <img src="img/basechoferes.png" alt="Base de Choferes Añelo" style="max-width: 100%; max-height: 340px; height: 340px; object-fit: cover;">
-            </picture>
-        </div>
-
-
-    
+    <!-- Footer -->
     <footer class="footer">
         <div class="container footer-container">
             <div class="footer-left">
-                <p> DOMICILIO: Pastor J. A. Bowdler 502 - (8324) Cipolletti, Rio Negro</p>
-                <p> RAZON SOCIAL: TRANSPORTE JGT S.R.L. & TIMOL S.R.L. </p>
+                <p>DOMICILIO: Pastor J. A. Bowdler 502 - (8324) Cipolletti, Rio Negro</p>
+                <p>RAZÓN SOCIAL: TRANSPORTE JGT S.R.L. & TIMOL S.R.L.</p>
             </div>
             <div class="footer-right">
-                <p>ULTIMA ACTUALIZACION:  26 Jun. 2025</p>
-                                <p> <a href="FOTOS.html"> FOTOS</a></p>
+                <p>Última Actualización: 26 Jun. 2025</p>
+                <p><a href="FOTOS.html">FOTOS</a></p>
             </div>
         </div>
     </footer>
 
+    <script src="js/script.js"></script>
+    <script>
+        // Mostrar correos dinámicamente
+        function mostrarCorreo(id, usuario, dominio) {
+            const correo = `${usuario}@${dominio}`;
+            document.getElementById(id).innerHTML = `<a href="mailto:${correo}">${correo}</a>`;
+        }
+        mostrarCorreo("correo-tarifa", "juangabrieltarifa", "hotmail.com");
+        mostrarCorreo("correo-morales", "gmorales", "timolsrl.com");
 
- <script src="js/script.js"></script>
-<script>
-// Evita el envío si el honeypot está completo
-const form = document.getElementById('contact-form');
-form.addEventListener('submit', function(e) {
-    if (document.getElementById('company').value) {
-        e.preventDefault();
-        document.getElementById('form-status').textContent = 'Error: posible spam detectado.';
-        return;
-    }
-    // El checkbox ya es required, no se necesita validación extra
-});
-</script>
+        // Validación del formulario
+        document.getElementById('contact-form').addEventListener('submit', function(e) {
+            if (document.getElementById('company').value) {
+                e.preventDefault();
+                document.getElementById('form-status').textContent = 'Error: posible spam detectado.';
+            }
+        });
+    </script>
 </body>
 </html>

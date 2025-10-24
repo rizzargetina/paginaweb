@@ -280,7 +280,7 @@ backdrop-filter: blur(10px); /* Aplicar el desenfoque */
     flex-direction: column;
     align-items: center; /* Centra horizontalmente */
     justify-content: flex-start; /* Asegura que el contenido esté al inicio */
-    padding-top: 50px; /* Despaga del top */
+    padding-top: 0px; /* Despaga del top */
     height: 650px;
     color: #cccccd;
     margin: 0 auto; /* Centra horizontalmente */

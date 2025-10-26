@@ -10,7 +10,7 @@
  
         <link rel="stylesheet" href="css/main.css">
 </head>
-<body>
+<body class="not-index jobs-page">
 
     <div class="top-bar">
         <div class="container top-bar-container">
@@ -56,12 +56,16 @@
         </div>
     </header>
 
+<!-- Hero band -->
+<section class="band band-hero">
+    <div class="container">
+        <h1>Oportunidades Laborales</h1>
+        <p class="page-intro">En Transporte JGT y Timol, valoramos el compromiso, la seriedad, la idoneidad, la responsabilidad y el profesionalismo. Somos un equipo en crecimiento constante, operando en el corazón de la actividad energética de la región. Si buscás un ambiente de trabajo dinámico, desafiante y con oportunidades de desarrollo, queremos conocerte.</p>
+    </div>
+</section>
+
 <main>
     <div class="container page-container">
-        <h1>Trabajá con Nosotros</h1>
-        <p class="page-intro">
-            En Transporte JGT y Timol, valoramos el compromiso, la seriedad, la idoneidad, la responsabilidad y el profesionalismo. Somos un equipo en crecimiento constante, operando en el corazón de la actividad energética de la región. Si buscas un ambiente de trabajo dinámico, desafiante y con oportunidades de desarrollo, ¡queremos conocerte!
-        </p>
 
         <section id="por-que-jgt" class="section-container">
             <h2>¿Por Qué Unirte a Nuestro Equipo?</h2>
@@ -76,39 +80,23 @@
         </section>
 
         <section id="vacantes" class="section-container">
-                <h2>Vacantes Actuales</h2>
-                <p>A continuación, encontrarás ejemplos de los perfiles que solemos buscar. Te invitamos a revisar si alguna se ajusta a tu experiencia o a enviarnos tu CV de forma espontánea.</p>
+            <h2>Vacantes actuales</h2>
+            <p>A continuación encontrarás ejemplos de los perfiles que solemos buscar. Revisá si alguno se ajusta a tu experiencia o envianos tu CV de forma espontánea.</p>
 
-                <div class="job-listings-container">
-                     <article class="job-listing">
-                        <h3>Tecnico civil</h3>
-                        <p class="job-location"><i class="fas fa-map-marker-alt"></i> Base Cipolletti / Añelo / Operación en Campo</p>
-                        <p class="job-description">
-                            Se necesita.
-                        </p>
-                        <!-- Reemplazo ícono de sobre por SVG local -->
-                        <div class="contact-email">
-                        <a href="#" id="email-link-1"><img src="icons/envelope-fill.svg" alt="Email" style="width:1em;height:1em;vertical-align:middle;"> Enviar CV a Recursos Humanos</a>
-                        <noscript>Para ver el correo, por favor habilita JavaScript y envía tu CV a mcampos [arroba] timolsrl.com</noscript>
-                    </article>
-                        <script type="text/javascript">
-                        // Ofuscación mejorada: partes en data-attributes
-                        document.addEventListener('DOMContentLoaded', function() {
-                            var link = document.getElementById('email-link-1');
-                            var user = link.getAttribute('data-user') || 'mcampos';
-                            var domain = link.getAttribute('data-domain') || 'timolsrl.com';
-                            var subject = link.getAttribute('data-subject') || 'CV Postulación Espontánea';
-                            link.addEventListener('click', function(e) {
-                                e.preventDefault();
-                                var email = user + '@' + domain;
-                                var mailto = 'mailto:' + email + '?subject=' + encodeURIComponent(subject);
-                                window.location.href = mailto;
-                            });
-                        });
-                        </script>
-                
-                </div>
-            </section>
+            <div class="job-listings-container">
+                <article class="job-listing">
+                    <h3>Técnico/a Civil</h3>
+                    <p class="job-location">Base Cipolletti / Añelo · Operación en Campo</p>
+                    <p class="job-description">Buscamos perfiles con experiencia en obras civiles, relevamientos, elaboración de reportes y seguimiento de contratistas. Valoramos la proactividad, el trabajo en equipo y la orientación a la seguridad.</p>
+                    <div class="contact-email">
+                        <a href="#" class="email-link" data-user="mcampos" data-domain="timolsrl.com" data-subject="CV Técnico/a Civil">
+                            <img src="icons/envelope-fill.svg" alt="Email" width="16" height="16"> Enviar CV a Recursos Humanos
+                        </a>
+                        <noscript>Para ver el correo, habilitá JavaScript y enviá tu CV a mcampos [arroba] timolsrl.com</noscript>
+                    </div>
+                </article>
+            </div>
+        </section>
 
 
         <hr class="jobs-hr">
@@ -119,23 +107,9 @@
                Si actualmente no tenemos búsquedas activas, no importa, siempre estamos interesados en conocer profesionales talentosos. Si deseas formar parte de nuestro equipo en el futuro, por favor envía tu Currículum Vitae actualizado a la siguiente dirección de correo electrónico:
             </p>
             <div class="contact-email">
-                <a href="#" id="email-link-2" data-user="mcampos" data-domain="timolsrl.com" data-subject="CV Postulación Espontánea"><img src="icons/envelope-fill.svg" alt="Email" style="width:1em;height:1em;vertical-align:middle;"> Enviar CV a Recursos Humanos</a>
+                <a href="#" class="email-link" data-user="mcampos" data-domain="timolsrl.com" data-subject="CV Postulación Espontánea"><img src="icons/envelope-fill.svg" alt="Email" width="16" height="16"> Enviar CV a Recursos Humanos</a>
                 <noscript>Para ver el correo, por favor habilita JavaScript y envía tu CV a mcampos [arroba] timolsrl.com</noscript>
             </div>
-            <script type="text/javascript">
-            document.addEventListener('DOMContentLoaded', function() {
-                var link = document.getElementById('email-link-2');
-                var user = link.getAttribute('data-user');
-                var domain = link.getAttribute('data-domain');
-                var subject = link.getAttribute('data-subject');
-                link.addEventListener('click', function(e) {
-                    e.preventDefault();
-                    var email = user + '@' + domain;
-                    var mailto = 'mailto:' + email + '?subject=' + encodeURIComponent(subject);
-                    window.location.href = mailto;
-                });
-            });
-            </script>
 
             <p>
                 Asegúrate de indicar en el asunto del correo tu área de interés o el puesto al que te gustaría aplicar (Ej: "CV - Chofer", "CV - Administración", "CV - Técnico Mecánico").
@@ -159,5 +133,20 @@
     </footer>
 
 <script src="js/script.js"></script>
+<script>
+// Activar enlaces de email usando data attributes (evita exponer el correo en el HTML)
+document.addEventListener('DOMContentLoaded', function () {
+    document.querySelectorAll('a.email-link[data-user][data-domain]').forEach(function (link) {
+        link.addEventListener('click', function (e) {
+            e.preventDefault();
+            const user = link.getAttribute('data-user');
+            const domain = link.getAttribute('data-domain');
+            const subject = link.getAttribute('data-subject') || 'CV Postulación';
+            const mailto = `mailto:${user}@${domain}?subject=${encodeURIComponent(subject)}`;
+            window.location.href = mailto;
+        });
+    });
+});
+</script>
 </body>
 </html>

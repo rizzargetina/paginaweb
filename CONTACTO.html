@@ -58,13 +58,22 @@
     </header>
 
     <!-- Main Content -->
-    <main >
+        <section class="band band-hero">
+            <div class="container">
+                <h1>Contacto</h1>
+                <p class="page-intro">Escribinos para cotizaciones, consultas o coordinación de servicios. Respondemos de lunes a viernes de 8:00 a 18:00.</p>
+            </div>
+        </section>
+
+        <main>
         <section class="contact-section">
             <div class="container contact-wrapper">
                 <!-- Contact Form -->
                 <div class="contact-form-container">
                     <h2>Obtenga una Cotización</h2>
                     <form id="contact-form" action="https://formsubmit.co/ptarifa@timolsrl.com" method="POST">
+                            <!-- Honeypot anti-spam: si se completa, cancelamos el envío -->
+                            <input type="text" id="company" name="company" class="hp-field" autocomplete="organization" tabindex="-1" aria-hidden="true">
                         <div class="form-group">
                             <label for="name">Nombre Completo / Empresa:</label>
                             <input type="text" id="name" name="name" required>
@@ -87,7 +96,7 @@
                         </div>
                         <input type="hidden" name="_next" value="https://transporte-jgt-timol.com/gracias.html">
                         <button type="submit" class="cta-button">Enviar Mensaje</button>
-                        <p id="form-status"></p>
+                        <p id="form-status" role="alert" aria-live="polite"></p>
                     </form>
                 </div>
 
@@ -138,19 +147,22 @@
 
     <script src="js/script.js"></script>
     <script>
-        // Mostrar correos dinámicamente
+        // Mostrar correos dinámicamente (evita scrapers)
         function mostrarCorreo(id, usuario, dominio) {
             const correo = `${usuario}@${dominio}`;
-            document.getElementById(id).innerHTML = `<a href="mailto:${correo}">${correo}</a>`;
+            const el = document.getElementById(id);
+            if (el) el.innerHTML = `<a href="mailto:${correo}">${correo}</a>`;
         }
-        mostrarCorreo("correo-tarifa", "juangabrieltarifa", "hotmail.com");
-        mostrarCorreo("correo-morales", "gmorales", "timolsrl.com");
+        mostrarCorreo('correo-tarifa', 'juangabrieltarifa', 'hotmail.com');
+        mostrarCorreo('correo-morales', 'gmorales', 'timolsrl.com');
 
-        // Validación del formulario
-        document.getElementById('contact-form').addEventListener('submit', function(e) {
-            if (document.getElementById('company').value) {
+        // Validación del formulario: honeypot simple
+        document.getElementById('contact-form').addEventListener('submit', function (e) {
+            var hp = document.getElementById('company');
+            if (hp && hp.value) {
                 e.preventDefault();
-                document.getElementById('form-status').textContent = 'Error: posible spam detectado.';
+                var status = document.getElementById('form-status');
+                if (status) status.textContent = 'Error: posible spam detectado.';
             }
         });
     </script>

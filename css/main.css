@@ -622,22 +622,7 @@ button.cta-button {
 }
 
 
-#transporte-equipamiento-pesado{position:relative;display:flex;align-items:center;justify-content:center;min-height:400px;margin:0}
-#transporte-equipamiento-pesado .text-content{
-    background: var(--color-header-bg);
-    font-size: clamp(0.95rem, 1.1vw + 0.2rem, 1.25rem);
-    font-weight: 400;
-    line-height: 1.6;
-    padding-left: 2rem;
-    padding-right: 2rem;
-    padding-top: 0;
-    padding-bottom: 0;
-    position: absolute;
-    top: clamp(3%, 4.5vh, 8%);
-    left: clamp(4%, 3vw, 6%);
-    right: auto;
-    z-index: 2;
-}
+/* Removed unused: #transporte-equipamiento-pesado */
 
 
 
@@ -651,17 +636,7 @@ button.cta-button {
     display: block;
     margin: 0 auto;
 }
-
-.video-section {
-    width: 100vw;
-    height: 460px;
-    object-fit: cover;
-    object-position: center center;
-    display: block;
-    max-width: 100%;
-    max-height: 620px;
-    margin: 0 auto;
-}
+/* Removed unused: .video-section */
 .services-cta-wrapper{margin-top:2rem;text-align:center; color:inherit;}
 
 /* Removed unused tech list styles */
@@ -684,38 +659,7 @@ button.cta-button {
     display:inline-block;
     height:2.7rem;
 }
-
-.index-grid{
-    align-items:stretch;
-    display:grid;
-    gap:14px;
-    grid-template-columns:repeat(auto-fit,minmax(180px,1fr));
-    margin-top:1.8rem;
-}
-
-.index-item{
-    align-items:center;
-    background-color: var(--bott-color);
-    display:flex;
-    font-weight:700;
-    justify-content:center;
-    min-height:64px;
-    padding:10px 10px;
-    text-align:center;
-}
-
-.index-item,
-.index-item a{
-    text-decoration:none !important;
-    text-decoration-color:transparent !important;
-    text-decoration-thickness:0 !important;
-}
-
-.index-item:focus,
-.index-item:hover{
-    color: WHITE;
-    background-color: var(--color-link);
-}
+/* Removed unused: .index-grid and .index-item */
 
 section[id], .content-section[id], h2[id], [id] {
     scroll-margin-top: var(--header-height);
@@ -786,8 +730,7 @@ label[for="human-check"] { margin: 0; color: var(--color-text); font-weight: 500
 
 
 @media (max-width: 900px) {
-    .top-bar { display: none; }
-    .header { top: 0; }
+    /* top-bar hidden handled below with !important; removed duplicate rule */
     .logos-left { flex-grow: 1; justify-content: flex-start; min-width: 100px; gap: var(--spacing-unit); }
     .mobile-menu-button { display: flex; align-items: center; justify-content: center; flex-shrink: 0; }
     body { font-size: 15px; padding-top: var(--header-height); }
@@ -802,7 +745,7 @@ label[for="human-check"] { margin: 0; color: var(--color-text); font-weight: 500
     }
     #logo1, #logo2 { height: 35px; max-width: 120px; }
 
-    /* Hide top bar on small screens (simplified) */
+    /* Hide top bar on small screens */
     .top-bar { display: none !important; }
 
     .pepito .logo-h1 { display: none; }
@@ -911,18 +854,7 @@ label[for="human-check"] { margin: 0; color: var(--color-text); font-weight: 500
         text-align: center;
     }
 
-    /* Transporte section: keep text positioned over image */
-    #transporte-equipamiento-pesado { position: relative; }
-    #transporte-equipamiento-pesado .text-content{
-        position: absolute;
-        inset-inline: 0;
-        margin-inline: auto;
-        width: min(90%, clamp(640px, 36%, 640px));
-        color: #fafdff;
-        text-align: center;
-        padding: 0 2rem;
-        z-index: 2;
-    }
+    /* Removed unused transporte overlay rules */
 
     /* Hide larger sections not needed on smallest screens */
     #quienes-somos { display: none !important; }
@@ -951,12 +883,7 @@ label[for="human-check"] { margin: 0; color: var(--color-text); font-weight: 500
         margin-right: auto;
     }
 
-    /* Index grid adjustments */
-    .index-grid { 
-        grid-template-columns: repeat(1, 1fr); 
-        gap: var(--gap-small); 
-    }
-    .index-item { padding: 16px 18px; font-size: 1rem; min-height: 25px; justify-content: left; text-align: left; }
+    /* Removed unused index grid adjustments */
 
     section[id], .content-section[id], h2[id], [id] {
         scroll-margin-top: 0px;

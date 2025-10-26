@@ -1,17 +1,4 @@
-@font-face {
-    font-display: swap;
-    font-family: 'Poppins';
-    font-style: normal;
-    font-weight: 700;
-    src: local('Poppins Bold'), local('Poppins-Bold'), url('../fonts/Poppins-Bold.ttf') format('truetype');
-}
-@font-face {
-    font-display: swap;
-    font-family: 'Poppins';
-    font-style: normal;
-    font-weight: 800;
-    src: local('Poppins ExtraBold'), local('Poppins-ExtraBold'), url('../fonts/Poppins-ExtraBold.ttf') format('truetype');
-}
+/* Custom webfonts removed for simplicity and performance (use system stack) */
 
 :root {
     /* Accents & links */
@@ -61,9 +48,9 @@
     --padding-medium: 20px;
     --padding-large: 40px;
 
-    /* Fonts */
-    --font-headings: 'Poppins', Arial, sans-serif;
-    --font-primary: 'Roboto', sans-serif;
+    /* Fonts: unified system stack for headings and body */
+    --font-primary: ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Arial, "Noto Sans", "Liberation Sans", sans-serif;
+    --font-headings: var(--font-primary);
     
     /* Font Sizes */
     --font-size-large: 1.4rem;
@@ -792,40 +779,9 @@ label[for="human-check"] { margin: 0; color: var(--color-text); font-weight: 500
 
 
 @media (min-width: 901px) {
-    .rulenav .navlink:not(.only-mobile) {
-        --underline-color: var(--color-link);
-    }
-
-    .rulenav .navlink:not(.only-mobile)::after {
-        content: '';
-        position: absolute;
-        left: 50%;
-        bottom: 16px;
-        height: 2px;
-        width: 80%; /* accommodate padding and keep line shorter than full item */
-        background: var(--underline-color);
-        transform: translateX(-50%) scaleX(0);
-        will-change: transform, opacity;
-        opacity: 0.95;
-    }
-
-    .rulenav .navlink:not(.only-mobile):hover::after,
-    .rulenav .navlink:not(.only-mobile):focus::after {
-        transform: translateX(-50%) scaleX(1);
-    }
-
-            .mobile-menu-button { display: none; }
+    .mobile-menu-button { display: none; }
     .rulenav { flex-direction: row; width: auto; }
-
-
     .only-mobile { display: none !important; }
-
-
-    /* Paint background blue on hover and ensure readable text */
-    .link-animated:hover,
-    .link-animated:focus {
-        background: var(--color-accent);
-    }
 }
 
 
@@ -839,7 +795,7 @@ label[for="human-check"] { margin: 0; color: var(--color-text); font-weight: 500
     h1 { font-size: 2.0rem; }
     h2 { font-size: 1.8rem; }
     h3 { font-size: 1.4rem; }
-    .header-container, .footer-container, .container, .container2 { 
+    .header-container, .footer-container, .container { 
         width: var(--container-width-mobile); 
         padding-left: 15px; 
         padding-right: 15px; 
@@ -1054,13 +1010,9 @@ label[for="human-check"] { margin: 0; color: var(--color-text); font-weight: 500
 
 .jobs-hr { border: 0; border-top: 1px solid var(--color-border); margin: 2rem 0; }
 
-/* ==========================
-   ALQUILERES page redesign
-   ========================== */
-body.alquileres-page .band { padding: 54px 0; margin: 0; }
-body.alquileres-page .band + .band { margin-top: 0; }
-body.transporte-page .band { padding: 54px 0; margin: 0; }
-body.transporte-page .band + .band { margin-top: 0; }
+/* Bands: unified styles (applies to all pages) */
+.band { padding: 54px 0; margin: 0; }
+.band + .band { margin-top: 0; }
 
 /* Color bands */
 .band-accent { background: linear-gradient(135deg, var(--color-accent) 0%, var(--color-link) 100%); color: #ffffff; }
@@ -1068,104 +1020,54 @@ body.transporte-page .band + .band { margin-top: 0; }
 .band-dark   { background: #0f2036; color: #fafdff; }
 .band-white  { background: #ffffff; }
 .band-hero   {
-        background:
-            linear-gradient(180deg, rgba(0,64,133,0.88) 0%, rgba(0,86,179,0.78) 100%),
-            url('../img/fondo.webp') center/cover no-repeat;
-        color: #ffffff;
-        padding-top: 72px; /* un poco más alta para resaltar la apertura */
-        padding-bottom: 72px;
+    background:
+        linear-gradient(180deg, rgba(0,64,133,0.88) 0%, rgba(0,86,179,0.78) 100%),
+        url('../img/fondo.webp') center/cover no-repeat;
+    color: #ffffff;
+    padding: 72px 0;
 }
 
 /* Container inside bands aligns with site width */
-body.alquileres-page .band .container { max-width: var(--max-width); width: var(--container-width); margin: 0 auto; }
-body.transporte-page .band .container { max-width: var(--max-width); width: var(--container-width); margin: 0 auto; }
-/* Texto más contenido en el hero */
-body.alquileres-page .band-hero .page-intro { max-width: 980px; margin: 0 auto; }
+.band .container { max-width: var(--max-width); width: var(--container-width); margin: 0 auto; }
 
 /* Alternate layout for sections */
-body.alquileres-page .content-section.alt { flex-direction: row-reverse; }
-body.transporte-page .content-section.alt { flex-direction: row-reverse; }
+.content-section.alt { flex-direction: row-reverse; }
 
-/* Headings and text color on dark bands */
-body.alquileres-page .band-accent h1,
-body.alquileres-page .band-accent h2,
-body.alquileres-page .band-accent h3,
-body.alquileres-page .band-accent h4,
-body.alquileres-page .band-dark h1,
-body.alquileres-page .band-dark h2,
-body.alquileres-page .band-dark h3,
-body.alquileres-page .band-dark h4,
-body.alquileres-page .band-hero h1,
-body.alquileres-page .band-hero h2,
-body.alquileres-page .band-hero h3,
-body.alquileres-page .band-hero h4 { color: #ffffff; }
-body.transporte-page .band-accent h1,
-body.transporte-page .band-accent h2,
-body.transporte-page .band-accent h3,
-body.transporte-page .band-accent h4,
-body.transporte-page .band-dark h1,
-body.transporte-page .band-dark h2,
-body.transporte-page .band-dark h3,
-body.transporte-page .band-dark h4 { color: #ffffff; }
+/* Text colors on dark bands */
+.band-accent h1, .band-accent h2, .band-accent h3, .band-accent h4,
+.band-dark h1, .band-dark h2, .band-dark h3, .band-dark h4,
+.band-hero h1, .band-hero h2, .band-hero h3, .band-hero h4 { color: #ffffff; }
+.band-accent p, .band-dark p, .band-hero p { color: rgba(255,255,255,0.92); }
 
-/* Mejorar legibilidad de párrafos en fondos oscuros */
-body.alquileres-page .band-hero p,
-body.alquileres-page .band-accent p,
-body.alquileres-page .band-dark p { color: rgba(255,255,255,0.92); }
+/* Key metrics inside bands */
+.band-accent #key-metrics, .band-dark #key-metrics, .band-hero #key-metrics { border: 0; margin: 0; padding: 0; background: transparent; }
+.band-accent #key-metrics .metric-item .number,
+.band-dark #key-metrics .metric-item .number,
+.band-hero #key-metrics .metric-item .number { color: #ffffff; }
+.band-accent #key-metrics .metric-item .label,
+.band-dark #key-metrics .metric-item .label,
+.band-hero #key-metrics .metric-item .label { color: rgba(255,255,255,0.88); }
+.band-accent #key-metrics .metric-item .icon,
+.band-dark #key-metrics .metric-item .icon,
+.band-hero #key-metrics .metric-item .icon { color: #ffffff; }
 
-/* Key metrics integrated in bands (no card look) */
-body.alquileres-page #key-metrics { border: 0; margin: 0; padding: 0; background: transparent; }
-body.alquileres-page .band-accent #key-metrics .metric-item .number,
-body.alquileres-page .band-dark #key-metrics .metric-item .number { color: #ffffff; }
-body.alquileres-page .band-accent #key-metrics .metric-item .label,
-body.alquileres-page .band-dark #key-metrics .metric-item .label { color: rgba(255,255,255,0.88); }
-body.alquileres-page .band-accent #key-metrics .metric-item .icon,
-body.alquileres-page .band-dark #key-metrics .metric-item .icon { color: #ffffff; }
-
-/* CTA button contrast on dark bands */
-body.alquileres-page .band-accent .cta-button,
-body.alquileres-page .band-dark .cta-button {
+/* CTA contrast on dark bands */
+.band-accent .cta-button, .band-dark .cta-button, .band-hero .cta-button {
     background: rgba(255,255,255,0.08);
     border-color: rgba(255,255,255,0.4);
     color: #ffffff;
 }
-body.alquileres-page .band-hero .cta-button {
-    background: rgba(255,255,255,0.08);
-    border-color: rgba(255,255,255,0.4);
-    color: #ffffff;
-}
-body.alquileres-page .band-accent .cta-button:hover,
-body.alquileres-page .band-accent .cta-button:focus,
-body.alquileres-page .band-dark .cta-button:hover,
-body.alquileres-page .band-dark .cta-button:focus,
-body.alquileres-page .band-hero .cta-button:hover,
-body.alquileres-page .band-hero .cta-button:focus {
-    background: rgba(255,255,255,0.18);
-}
-body.transporte-page .band-accent .cta-button,
-body.transporte-page .band-dark .cta-button {
-    background: rgba(255,255,255,0.08);
-    border-color: rgba(255,255,255,0.4);
-    color: #ffffff;
-}
-body.transporte-page .band-accent .cta-button:hover,
-body.transporte-page .band-accent .cta-button:focus,
-body.transporte-page .band-dark .cta-button:hover,
-body.transporte-page .band-dark .cta-button:focus {
-    background: rgba(255,255,255,0.18);
-}
+.band-accent .cta-button:hover,
+.band-accent .cta-button:focus,
+.band-dark .cta-button:hover,
+.band-dark .cta-button:focus,
+.band-hero .cta-button:hover,
+.band-hero .cta-button:focus { background: rgba(255,255,255,0.18); }
 
-/* Improve spacing inside metrics on all screens */
-body.alquileres-page .metrics-container { gap: 24px; }
-body.transporte-page .metrics-container { gap: 24px; }
-
-/* Responsive adjustments remain stacked on small screens */
+/* Responsive: stack content sections */
 @media (max-width: 900px) {
-    body.alquileres-page .content-section { flex-direction: column; align-items: center; text-align: left; gap: 18px; }
-    body.alquileres-page .content-section.alt { flex-direction: column; }
-    /* Evitar fondos pesados en móviles */
+    .content-section { flex-direction: column; align-items: center; text-align: left; gap: 18px; }
+    .content-section.alt { flex-direction: column; }
     .band-hero { background-attachment: scroll; }
-    body.transporte-page .content-section { flex-direction: column; align-items: center; text-align: left; gap: 18px; }
-    body.transporte-page .content-section.alt { flex-direction: column; }
 }
 

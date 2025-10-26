@@ -70,25 +70,8 @@ html {
 
 /* Utility Classes */
 .mobile-only { display: none; }
-
-/* Flex utilities */
-.flex { display: flex; }
-.flex-center { display: flex; align-items: center; justify-content: center; }
-.flex-between { display: flex; align-items: center; justify-content: space-between; }
-.flex-column { display: flex; flex-direction: column; }
-.flex-wrap { flex-wrap: wrap; }
-.align-center { align-items: center; }
-.justify-center { justify-content: center; }
+/* Keep only the utilities used in markup */
 .text-center { text-align: center; }
-
-/* Container utilities */
-.container-base { margin-left: auto; margin-right: auto; }
-.full-width { width: 100%; }
-
-/* Spacing utilities */
-.gap-small { gap: var(--gap-small); }
-.gap-medium { gap: var(--gap-medium); }
-.gap-large { gap: var(--gap-large); }
 
 /* Image utilities (trimmed to essentials; specific helpers removed) */
 
@@ -703,7 +686,6 @@ section[id], .content-section[id], h2[id], [id] {
 
 #como-postular { text-align:center; padding:20px; margin-top:48px; border:1px solid var(--color-border); }
 #como-postular p { line-height:1.6; max-width:700px; margin:0 auto; }
-.info-text {align-items: center; gap: 0.4rem; margin: 0 10px; }
 /* Removed unused office-image helper */
 
 /* Styles for the simple checkbox used on the contact form (input has id="human-check") */

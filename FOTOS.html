@@ -4,10 +4,11 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width,initial-scale=1">
     <title>FOTOS</title>
-    <!-- Usa el CSS global si existe, y añadimos estilos locales para la galería -->
-    <link rel="stylesheet" href="/css/main.min.css">
+    <!-- Usa el CSS global y añadimos estilos locales para la galería -->
+    <link rel="stylesheet" href="css/main.css">
     <style>
-        :where(h1) { margin-block: 0.67em; font-size: 2em; }
+    :where(h1) { margin-block: 0.67em; font-size: 2em; }
+    .title-link{color:#fff;text-decoration:none}
         :root{--bg:#000;--gap:14px;--card-bg:#0b0b0b}
         html,body{height:100%;margin:0;font-family: Poppins, system-ui, sans-serif;background:var(--bg);color:#fff}
         main{max-width:1200px;margin:24px auto;padding:0 12px}
@@ -31,7 +32,7 @@
 <body>
     
     <main>
-        <h1><a href="index.html" style="color: white; text-decoration: none;">TRANSPORTE JGT // GALERÍA</a></h1>
+    <h1><a href="index.html" class="title-link">TRANSPORTE JGT // GALERÍA</a></h1>
 
         <section class="gallery" aria-label="Galería de fotos">
             <figure>

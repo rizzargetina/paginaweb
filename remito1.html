@@ -28,6 +28,28 @@
             align-items: flex-start;
             justify-content: center;
             font-family: 'Atkinson Hyperlegible', Arial, sans-serif;
+
+                /* Componentes reutilizables */
+                hr.divider { border: none; height: 2px; background-color: var(--divider); }
+                table.remitos {
+                    width: 100%;
+                    border-collapse: collapse;
+                    margin-bottom: 2.2rem;
+                    font-size: 1.18rem;
+                    color: var(--text);
+                    font-family: 'Poppins', Arial, sans-serif;
+                }
+                table.remitos thead tr { background: #232a36; }
+                table.remitos th {
+                    padding: 0.7em 0.5em;
+                    border-bottom: 2px solid #3a4252;
+                    text-align: left;
+                }
+                table.remitos td {
+                    padding: 0.7em 0.5em;
+                    border-bottom: 1px solid #3a4252;
+                }
+                table.remitos td:first-child { color: #d1d5db; }
             color: var(--text);
         }
 
@@ -45,8 +67,9 @@
 <body class="not-index">
     <div class="container">
         <h1>¿Cuándo se hace un remito TIMOL?</h1>
-<hr style="border: none; height: 2px; background-color: #2b3442;">
+    <hr class="divider">
         <table style="width:100%; border-collapse:collapse; margin-bottom:2.2rem; font-size:1.18rem; color:#f3f6fa; font-family:'Poppins', Arial, sans-serif;">
+           <table class="remitos">
             <thead>
                 <tr style="background:#232a36;">
                     <th style="padding:0.7em 0.5em; border-bottom:2px solid #3a4252; text-align:left;">Cliente</th>
@@ -55,26 +78,27 @@
             </thead>
             <tbody>
                 <tr>
-                    <td style="padding:0.7em 0.5em; border-bottom:1px solid #3a4252; color: #d1d5db;">SLB</td>
-                    <td style="padding:0.7em 0.5em; border-bottom:1px solid #3a4252;">Siempre se utiliza remito TIMOL, excepto en los viajes gerenciados; en esos casos corresponde el remito de TRANSPORTE JGT</td>
+                    <td>SLB</td>
+                    <td>Siempre se utiliza remito TIMOL, excepto en los viajes gerenciados; en esos casos corresponde el remito de TRANSPORTE JGT</td>
                 </tr>
                 <tr>
-                    <td style="padding:0.7em 0.5em; border-bottom:1px solid #3a4252; color: #d1d5db;">PRODENG</td>
-                    <td style="padding:0.7em 0.5em; border-bottom:1px solid #3a4252;"></td>
+                    <td>PRODENG</td>
+                    <td></td>
                 </tr>
                 <tr>
-                    <td style="padding:0.7em 0.5em; border-bottom:1px solid #3a4252; color: #d1d5db;">BRENT</td>
-                    <td style="padding:0.7em 0.5em; border-bottom:1px solid #3a4252;"></td>
+                    <td>BRENT</td>
+                    <td></td>
                 </tr>
                  <tr>
-                    <td style="padding:0.7em 0.5em; border-bottom:1px solid #3a4252; color: #d1d5db;">TRONADOR</td>
-                    <td style="padding:0.7em 0.5em; border-bottom:1px solid #3a4252;">A partir del 01/09/2025</td>
+                    <td>TRONADOR</td>
+                    <td>A partir del 01/09/2025</td>
                 </tr>
             </tbody>
         </table>
                 <h1>¿Cuándo se hace un remito TRANSPORTE JGT?</h1>
-<hr style="border: none; height: 2px; background-color: #2b3442;">
+    <hr class="divider">
         <table style="width:100%; border-collapse:collapse; margin-bottom:2.2rem; font-size:1.18rem; color:#f3f6fa; font-family:'Poppins', Arial, sans-serif;">
+           <table class="remitos">
             <thead>
                 <tr style="background:#232a36;">
                     <th style="padding:0.7em 0.5em; border-bottom:2px solid #3a4252; text-align:left;">Cliente</th>
@@ -83,80 +107,80 @@
             </thead>
             <tbody>
                 <tr>
-                    <td style="padding:0.7em 0.5em; border-bottom:1px solid #3a4252; color: #d1d5db;">SLB</td>
-                    <td style="padding:0.7em 0.5em; border-bottom:1px solid #3a4252;">SOLAMENTE viajes gerenciados</td>
+                    <td>SLB</td>
+                    <td>SOLAMENTE viajes gerenciados</td>
                 </tr>
                 <tr>
-                    <td style="padding:0.7em 0.5em; border-bottom:1px solid #3a4252; color: #d1d5db;">SUPERIOR</td>
-                    <td style="padding:0.7em 0.5em; border-bottom:1px solid #3a4252;"></td>
+                    <td>SUPERIOR</td>
+                    <td></td>
                 </tr>
                 <tr>
-                    <td style="padding:0.7em 0.5em; border-bottom:1px solid #3a4252; color: #d1d5db;">PHOENIX</td>
-                    <td style="padding:0.7em 0.5em; border-bottom:1px solid #3a4252;"></td>
+                    <td>PHOENIX</td>
+                    <td></td>
                 </tr>
                                 <tr>
-                    <td style="padding:0.7em 0.5em; border-bottom:1px solid #3a4252; color: #d1d5db;">COMPLEJOS DEL SUR</td>
-                    <td style="padding:0.7em 0.5em; border-bottom:1px solid #3a4252;"></td>
+                    <td>COMPLEJOS DEL SUR</td>
+                    <td></td>
                 </tr>
                                 <tr>
-                    <td style="padding:0.7em 0.5em; border-bottom:1px solid #3a4252; color: #d1d5db;">WPS</td>
-                    <td style="padding:0.7em 0.5em; border-bottom:1px solid #3a4252;"></td>
+                    <td>WPS</td>
+                    <td></td>
                 </tr>
                                 <tr>
-                    <td style="padding:0.7em 0.5em; border-bottom:1px solid #3a4252; color: #d1d5db;">CALFRAC</td>
-                    <td style="padding:0.7em 0.5em; border-bottom:1px solid #3a4252;"></td>
+                    <td>CALFRAC</td>
+                    <td></td>
                 </tr>
                                 <tr>
-                    <td style="padding:0.7em 0.5em; border-bottom:1px solid #3a4252; color: #d1d5db;">WHEATHERFORD (WFT)</td>
-                    <td style="padding:0.7em 0.5em; border-bottom:1px solid #3a4252;"></td>
+                    <td>WHEATHERFORD (WFT)</td>
+                    <td></td>
                 </tr>
                                 <tr>
-                    <td style="padding:0.7em 0.5em; border-bottom:1px solid #3a4252; color: #d1d5db;">RENTAL</td>
-                    <td style="padding:0.7em 0.5em; border-bottom:1px solid #3a4252;"></td>
+                    <td>RENTAL</td>
+                    <td></td>
                 </tr>
                                 <tr>
-                    <td style="padding:0.7em 0.5em; border-bottom:1px solid #3a4252; color: #d1d5db;">SOLUCIONES MOVILES</td>
-                    <td style="padding:0.7em 0.5em; border-bottom:1px solid #3a4252;"></td>
+                    <td>SOLUCIONES MOVILES</td>
+                    <td></td>
                 </tr>
                                 <tr>
-                    <td style="padding:0.7em 0.5em; border-bottom:1px solid #3a4252; color: #d1d5db;">TACKER</td>
-                    <td style="padding:0.7em 0.5em; border-bottom:1px solid #3a4252;"></td>
+                    <td>TACKER</td>
+                    <td></td>
                 </tr>
                                 <tr>
-                    <td style="padding:0.7em 0.5em; border-bottom:1px solid #3a4252; color: #d1d5db;">INDARSA</td>
-                    <td style="padding:0.7em 0.5em; border-bottom:1px solid #3a4252;"></td>
+                    <td>INDARSA</td>
+                    <td></td>
                 </tr>
                                 <tr>
-                    <td style="padding:0.7em 0.5em; border-bottom:1px solid #3a4252; color: #d1d5db;">TSB</td>
-                    <td style="padding:0.7em 0.5em; border-bottom:1px solid #3a4252;"></td>
+                    <td>TSB</td>
+                    <td></td>
                 </tr>
                                 <tr>
-                    <td style="padding:0.7em 0.5em; border-bottom:1px solid #3a4252; color: #d1d5db;">EXLOG</td>
-                    <td style="padding:0.7em 0.5em; border-bottom:1px solid #3a4252;"></td>
+                    <td>EXLOG</td>
+                    <td></td>
                 </tr>
                                 <tr>
-                    <td style="padding:0.7em 0.5em; border-bottom:1px solid #3a4252; color: #d1d5db;">INGENIERIA TERRA</td>
-                    <td style="padding:0.7em 0.5em; border-bottom:1px solid #3a4252;"></td>
+                    <td>INGENIERIA TERRA</td>
+                    <td></td>
                 </tr>
                                 <tr>
-                    <td style="padding:0.7em 0.5em; border-bottom:1px solid #3a4252; color: #d1d5db;">INHOUSE</td>
-                    <td style="padding:0.7em 0.5em; border-bottom:1px solid #3a4252;"></td>
+                    <td>INHOUSE</td>
+                    <td></td>
                 </tr>
                                 <tr>
-                    <td style="padding:0.7em 0.5em; border-bottom:1px solid #3a4252; color: #d1d5db;">PETREVEN</td>
-                    <td style="padding:0.7em 0.5em; border-bottom:1px solid #3a4252;"></td>
+                    <td>PETREVEN</td>
+                    <td></td>
                 </tr>
                                 <tr>
-                    <td style="padding:0.7em 0.5em; border-bottom:1px solid #3a4252; color: #d1d5db;">H&P</td>
-                    <td style="padding:0.7em 0.5em; border-bottom:1px solid #3a4252;"></td>
+                    <td>H&P</td>
+                    <td></td>
                 </tr>
                                 <tr>
-                    <td style="padding:0.7em 0.5em; border-bottom:1px solid #3a4252; color: #d1d5db;">DLS</td>
-                    <td style="padding:0.7em 0.5em; border-bottom:1px solid #3a4252;"></td>
+                    <td>DLS</td>
+                    <td></td>
                 </tr>
                                 <tr>
-                    <td style="padding:0.7em 0.5em; border-bottom:1px solid #3a4252; color: #d1d5db;">JLF</td>
-                    <td style="padding:0.7em 0.5em; border-bottom:1px solid #3a4252;"></td>
+                    <td>JLF</td>
+                    <td></td>
                 </tr>
             </tbody>
         </table>

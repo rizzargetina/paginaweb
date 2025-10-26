@@ -1057,10 +1057,20 @@ body.transporte-page .band + .band { margin-top: 0; }
 .band-muted  { background: #f1f5fb; }
 .band-dark   { background: #0f2036; color: #fafdff; }
 .band-white  { background: #ffffff; }
+.band-hero   {
+        background:
+            linear-gradient(180deg, rgba(0,64,133,0.88) 0%, rgba(0,86,179,0.78) 100%),
+            url('../img/fondo.webp') center/cover no-repeat;
+        color: #ffffff;
+        padding-top: 72px; /* un poco más alta para resaltar la apertura */
+        padding-bottom: 72px;
+}
 
 /* Container inside bands aligns with site width */
 body.alquileres-page .band .container { max-width: var(--max-width); width: var(--container-width); margin: 0 auto; }
 body.transporte-page .band .container { max-width: var(--max-width); width: var(--container-width); margin: 0 auto; }
+/* Texto más contenido en el hero */
+body.alquileres-page .band-hero .page-intro { max-width: 980px; margin: 0 auto; }
 
 /* Alternate layout for sections */
 body.alquileres-page .content-section.alt { flex-direction: row-reverse; }
@@ -1074,7 +1084,11 @@ body.alquileres-page .band-accent h4,
 body.alquileres-page .band-dark h1,
 body.alquileres-page .band-dark h2,
 body.alquileres-page .band-dark h3,
-body.alquileres-page .band-dark h4 { color: #ffffff; }
+body.alquileres-page .band-dark h4,
+body.alquileres-page .band-hero h1,
+body.alquileres-page .band-hero h2,
+body.alquileres-page .band-hero h3,
+body.alquileres-page .band-hero h4 { color: #ffffff; }
 body.transporte-page .band-accent h1,
 body.transporte-page .band-accent h2,
 body.transporte-page .band-accent h3,
@@ -1083,6 +1097,11 @@ body.transporte-page .band-dark h1,
 body.transporte-page .band-dark h2,
 body.transporte-page .band-dark h3,
 body.transporte-page .band-dark h4 { color: #ffffff; }
+
+/* Mejorar legibilidad de párrafos en fondos oscuros */
+body.alquileres-page .band-hero p,
+body.alquileres-page .band-accent p,
+body.alquileres-page .band-dark p { color: rgba(255,255,255,0.92); }
 
 /* Key metrics integrated in bands (no card look) */
 body.alquileres-page #key-metrics { border: 0; margin: 0; padding: 0; background: transparent; }
@@ -1100,10 +1119,17 @@ body.alquileres-page .band-dark .cta-button {
     border-color: rgba(255,255,255,0.4);
     color: #ffffff;
 }
+body.alquileres-page .band-hero .cta-button {
+    background: rgba(255,255,255,0.08);
+    border-color: rgba(255,255,255,0.4);
+    color: #ffffff;
+}
 body.alquileres-page .band-accent .cta-button:hover,
 body.alquileres-page .band-accent .cta-button:focus,
 body.alquileres-page .band-dark .cta-button:hover,
-body.alquileres-page .band-dark .cta-button:focus {
+body.alquileres-page .band-dark .cta-button:focus,
+body.alquileres-page .band-hero .cta-button:hover,
+body.alquileres-page .band-hero .cta-button:focus {
     background: rgba(255,255,255,0.18);
 }
 body.transporte-page .band-accent .cta-button,
@@ -1127,6 +1153,8 @@ body.transporte-page .metrics-container { gap: 24px; }
 @media (max-width: 900px) {
     body.alquileres-page .content-section { flex-direction: column; align-items: center; text-align: left; gap: 18px; }
     body.alquileres-page .content-section.alt { flex-direction: column; }
+    /* Evitar fondos pesados en móviles */
+    .band-hero { background-attachment: scroll; }
     body.transporte-page .content-section { flex-direction: column; align-items: center; text-align: left; gap: 18px; }
     body.transporte-page .content-section.alt { flex-direction: column; }
 }

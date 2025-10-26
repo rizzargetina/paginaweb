@@ -930,8 +930,7 @@ label[for="human-check"] { margin: 0; color: var(--color-text); font-weight: 500
 .band-white  { background: #ffffff; }
 .band-hero   {
     background:
-        linear-gradient(180deg, rgba(0,64,133,0.88) 0%, rgba(0,86,179,0.78) 100%),
-        url('../img/fondo.webp') center/cover no-repeat;
+        linear-gradient(180deg, rgba(0,64,133,0.88) 0%, rgba(0,86,179,0.78) 100%);
     color: #ffffff;
     padding: 72px 0;
 }

@@ -1049,6 +1049,8 @@ label[for="human-check"] { margin: 0; color: var(--color-text); font-weight: 500
    ========================== */
 body.alquileres-page .band { padding: 54px 0; margin: 0; }
 body.alquileres-page .band + .band { margin-top: 0; }
+body.transporte-page .band { padding: 54px 0; margin: 0; }
+body.transporte-page .band + .band { margin-top: 0; }
 
 /* Color bands */
 .band-accent { background: linear-gradient(135deg, var(--color-accent) 0%, var(--color-link) 100%); color: #ffffff; }
@@ -1058,9 +1060,11 @@ body.alquileres-page .band + .band { margin-top: 0; }
 
 /* Container inside bands aligns with site width */
 body.alquileres-page .band .container { max-width: var(--max-width); width: var(--container-width); margin: 0 auto; }
+body.transporte-page .band .container { max-width: var(--max-width); width: var(--container-width); margin: 0 auto; }
 
 /* Alternate layout for sections */
 body.alquileres-page .content-section.alt { flex-direction: row-reverse; }
+body.transporte-page .content-section.alt { flex-direction: row-reverse; }
 
 /* Headings and text color on dark bands */
 body.alquileres-page .band-accent h1,
@@ -1071,6 +1075,14 @@ body.alquileres-page .band-dark h1,
 body.alquileres-page .band-dark h2,
 body.alquileres-page .band-dark h3,
 body.alquileres-page .band-dark h4 { color: #ffffff; }
+body.transporte-page .band-accent h1,
+body.transporte-page .band-accent h2,
+body.transporte-page .band-accent h3,
+body.transporte-page .band-accent h4,
+body.transporte-page .band-dark h1,
+body.transporte-page .band-dark h2,
+body.transporte-page .band-dark h3,
+body.transporte-page .band-dark h4 { color: #ffffff; }
 
 /* Key metrics integrated in bands (no card look) */
 body.alquileres-page #key-metrics { border: 0; margin: 0; padding: 0; background: transparent; }
@@ -1094,13 +1106,28 @@ body.alquileres-page .band-dark .cta-button:hover,
 body.alquileres-page .band-dark .cta-button:focus {
     background: rgba(255,255,255,0.18);
 }
+body.transporte-page .band-accent .cta-button,
+body.transporte-page .band-dark .cta-button {
+    background: rgba(255,255,255,0.08);
+    border-color: rgba(255,255,255,0.4);
+    color: #ffffff;
+}
+body.transporte-page .band-accent .cta-button:hover,
+body.transporte-page .band-accent .cta-button:focus,
+body.transporte-page .band-dark .cta-button:hover,
+body.transporte-page .band-dark .cta-button:focus {
+    background: rgba(255,255,255,0.18);
+}
 
 /* Improve spacing inside metrics on all screens */
 body.alquileres-page .metrics-container { gap: 24px; }
+body.transporte-page .metrics-container { gap: 24px; }
 
 /* Responsive adjustments remain stacked on small screens */
 @media (max-width: 900px) {
     body.alquileres-page .content-section { flex-direction: column; align-items: center; text-align: left; gap: 18px; }
     body.alquileres-page .content-section.alt { flex-direction: column; }
+    body.transporte-page .content-section { flex-direction: column; align-items: center; text-align: left; gap: 18px; }
+    body.transporte-page .content-section.alt { flex-direction: column; }
 }
 

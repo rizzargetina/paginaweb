@@ -241,6 +241,7 @@ backdrop-filter: blur(10px); /* Aplicar el desenfoque */
     position: absolute;
     inset: 0;
     width: 100%;
+    max-height: 650px;
     object-position: top center;
     object-fit: cover; /* Ensures the image covers the area like background-size: cover */
     z-index: 1;

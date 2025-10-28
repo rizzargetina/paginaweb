@@ -770,7 +770,7 @@ label[for="human-check"] { margin: 0; color: var(--color-text); font-weight: 500
 
 
     /* Layout containers */
-    .container { width: var(--container-width-small); text-align: left; }
+    .container { width: 100%; text-align: left; }
 
     /* Footer */
     .footer { font-size: 0.85rem; padding: 30px 0; }

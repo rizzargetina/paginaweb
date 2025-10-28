@@ -381,8 +381,8 @@ backdrop-filter: blur(10px); /* Aplicar el desenfoque */
 
 
 .footer {
-    background-color: var(--color-footer-bg);
-    color: var(--color-footer-text);
+    background-color: black;
+    color: white;
      font-family: var(--font-primary);
      font-size: 0.9rem;
     margin-top: 40px;

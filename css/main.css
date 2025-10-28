@@ -27,9 +27,8 @@
     --color-footer-text: #495057;
 
     /* Header & Topbar */
-    --color-header-bg: #ffffff;
-    --color-header-border: #ced4da;
-    --color-header-text: var(--color-text);
+    --color-header-bg: #020028;
+    --color-header-text: WHITE;
     --header-height: 60px;
     --spacing-unit: 8px;
 
@@ -74,7 +73,7 @@ html {
 
 .header {
     background: var(--color-header-bg);
-    border-bottom: 1px solid var(--color-header-border);
+    color: white;
     box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.1);
     height: var(--header-height);
     left: 0;
@@ -644,11 +643,6 @@ label[for="human-check"] { margin: 0; color: var(--color-text); font-weight: 500
     h1 { font-size: 2.0rem; }
     h2 { font-size: 1.8rem; }
     h3 { font-size: 1.4rem; }
-    .header-container, .footer-container, .container { 
-        width: var(--container-width-mobile); 
-        padding-left: 15px; 
-        padding-right: 15px; 
-    }
     #logo1, #logo2 { height: 35px; max-width: 120px; }
 
     /* Mobile adjustments */

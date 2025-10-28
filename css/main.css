@@ -1,5 +1,3 @@
-/* Custom webfonts removed for simplicity and performance (use system stack) */
-
 :root {
     /* Accents & links */
     --color-accent: #0051a8; 
@@ -281,7 +279,7 @@ backdrop-filter: blur(10px); /* Aplicar el desenfoque */
     padding: 12px; /* Un poco  de padding horizontal */
     position: relative;
     text-transform: uppercase;
-    color: #b5b5b5 !important; /* Asegura que el texto sea negro */
+    color: #e8e8e8 !important; /* Asegura que el texto sea negro */
 }
 
 

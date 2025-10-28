@@ -44,7 +44,6 @@
 
     /* Fonts: unified system stack for headings and body */
     --font-primary: ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Arial, "Noto Sans", "Liberation Sans", sans-serif;
-    --font-headings: var(--font-primary);
     
     /* Font Sizes */
     --font-size-large: 1.4rem;
@@ -108,7 +107,7 @@ body {
 
 
 h1, h2, h3, h4, h5, h6 {
-   font-family: var(--font-headings);
+   font-family: var(--font-primary);
    font-weight: 700;
    color: var(--color-headings);
 

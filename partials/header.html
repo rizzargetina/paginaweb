@@ -20,5 +20,42 @@
             <a class="navlink" href="/CONTACTO.html">Contacto</a>
             <a class="navlink only-mobile" href="/EMPLEOS.html">Oportunidades Laborales</a>
         </nav>
+        <div id="mobile-nav-overlay" class="mobile-nav-overlay" aria-hidden="true"></div>
+
+        <script>
+            (function () {
+                try {
+                    var btn = document.getElementById('mobile-menu-button');
+                    var nav = document.getElementById('main-navigation');
+                    var overlay = document.getElementById('mobile-nav-overlay');
+                    if (!btn || !nav) return;
+                    if (btn.dataset.menuInit) return;
+                    btn.dataset.menuInit = '1';
+
+                    function setOpen(open) {
+                        open = Boolean(open);
+                        btn.classList.toggle('open', open);
+                        nav.classList.toggle('mobile-menu-open', open);
+                        document.body.classList.toggle('mobile-menu-open', open);
+                        btn.setAttribute('aria-expanded', open ? 'true' : 'false');
+                        if (overlay) {
+                            overlay.classList.toggle('visible', open);
+                            overlay.setAttribute('aria-hidden', open ? 'false' : 'true');
+                        }
+                    }
+
+                    btn.addEventListener('click', function (e) {
+                        e.stopPropagation();
+                        setOpen(!btn.classList.contains('open'));
+                    });
+
+                    if (overlay) overlay.addEventListener('click', function () { setOpen(false); });
+
+                    document.addEventListener('keydown', function (e) { if (e.key === 'Escape') setOpen(false); });
+
+                    nav.querySelectorAll('a').forEach(function (a) { a.addEventListener('click', function () { setOpen(false); }); });
+                } catch (err) { console.warn('menu init failed', err); }
+            })();
+        </script>
     </div>
 </header>

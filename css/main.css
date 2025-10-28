@@ -700,6 +700,31 @@ label[for="human-check"] { margin: 0; color: var(--color-text); font-weight: 500
         transform: translateY(0) scale(1);
     }
 
+    /* Overlay used behind the mobile menu */
+    .mobile-nav-overlay {
+        position: fixed;
+        left: 0;
+        right: 0;
+        top: var(--header-height);
+        bottom: 0;
+        background: rgba(0,0,0,0.32);
+        opacity: 0;
+        pointer-events: none;
+        transition: opacity 0.22s ease;
+        z-index: 1098;
+    }
+    .mobile-nav-overlay.visible {
+        opacity: 1;
+        pointer-events: auto;
+    }
+
+    /* When menu is open, give it a dark, high-contrast background and ensure items are readable */
+    .rulenav.mobile-menu-open {
+        background: linear-gradient(180deg, #003f8a, #0056b3); /* azul degradado */
+        color: #fff;
+    }
+    .rulenav.mobile-menu-open .navlink { color: #fff; }
+
     /* When the mobile menu is open, prevent background scrolling */
     body.mobile-menu-open {
         overflow: hidden;

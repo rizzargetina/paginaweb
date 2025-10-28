@@ -291,7 +291,6 @@ backdrop-filter: blur(10px); /* Aplicar el desenfoque */
 .mobile-menu-button {
     background: transparent; /* Mejor que 'none' */
     border: white;
-    color: black;
     display: none; /* Se activa por media queries en responsive.css */
     height: 44px;
     margin-left: 12px;
@@ -304,7 +303,7 @@ backdrop-filter: blur(10px); /* Aplicar el desenfoque */
 
 
 .mobile-menu-button .hamburger-line {
-    background-color: var(--color-header-text);
+    background-color:white;
     display: block;
     height: 2.5px;
     left: 50%;
@@ -695,7 +694,7 @@ label[for="human-check"] { margin: 0; color: var(--color-text); font-weight: 500
 
     /* When menu is open, give it a dark, high-contrast background and ensure items are readable */
     .rulenav.mobile-menu-open {
-        background: linear-gradient(180deg, #003f8a, #0056b3); /* azul degradado */
+        background: black;
         color: #fff;
     }
     .rulenav.mobile-menu-open .navlink { color: #fff; }
@@ -719,7 +718,7 @@ label[for="human-check"] { margin: 0; color: var(--color-text); font-weight: 500
         padding: 0 1.3rem;
         font-size: 1.1rem;
         color: #fff;
-        border-bottom: 1px solid #3a3a3a;
+        border-bottom: 1px solid #242424;
     }
 
     /* Overlay layer for dimming content behind the menu */

@@ -871,12 +871,7 @@ label[for="human-check"] { margin: 0; color: var(--color-text); font-weight: 500
 .band-muted  { background: #f1f5fb; }
 .band-dark   { background: #0f2036; color: #fafdff; }
 .band-white  { background: #ffffff; }
-.band-hero   {
-    background:
-        linear-gradient(180deg, rgba(96, 118, 142, 0.88) 0%, rgba(153, 149, 78, 0.78) 100%);
-    color: #ffffff;
-    padding: 72px 0;
-}
+
 
 /* Container inside bands aligns with site width */
 .band .container { max-width: var(--max-width); width: var(--container-width); margin: 0 auto; }

@@ -189,12 +189,7 @@ hr {
     z-index: 1;
     display: block;
 }
-.hero .hero-content{
-    text-align: center;
-    position: relative;
-    z-index: 3;
-    max-width: 800px;
-}
+
 .hero h1{
     font-family:var(--font-headings);
     font-size:3.5rem; /* Incrementar tamaño de fuente */

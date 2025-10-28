@@ -281,7 +281,7 @@ backdrop-filter: blur(10px); /* Aplicar el desenfoque */
     padding: 12px; /* Un poco  de padding horizontal */
     position: relative;
     text-transform: uppercase;
-    color: #343a40 !important; /* Asegura que el texto sea negro */
+    color: #b5b5b5 !important; /* Asegura que el texto sea negro */
 }
 
 

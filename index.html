@@ -11,32 +11,7 @@
     <link rel="stylesheet" href="css/main.css">
 </head>
 <body>
-    <header class="header" id="main-header">
-        <div class="container header-container">
-            <div class="logos-left">
-                <a href="#main-header" aria-label="Ir a la sección principal">
-                    <img src="img/JGT1.webp" alt="Logo JGT" id="logo1" class="no-drag" draggable="false" width="160" height="40">
-                </a>
-                <a href="#main-header" aria-label="Ir a la sección principal">
-                    <img src="img/timol.webp" alt="Logo TIMOL" id="logo2" class="no-drag" draggable="false" width="160" height="40">
-                </a>
-            </div>
-            <button class="mobile-menu-button" id="mobile-menu-button" aria-controls="main-navigation" aria-expanded="false" aria-label="Abrir menú principal">
-                <span class="hamburger-line" aria-hidden="true"></span>
-                <span class="hamburger-line" aria-hidden="true"></span>
-                <span class="hamburger-line" aria-hidden="true"></span>
-            </button>
-            <nav class="rulenav" id="main-navigation" aria-label="Navegación principal">
-                                <a class="navlink" href="index.html">Inicio</a>
-                                <a class="navlink" href="TRANSPORTE.html">Transporte</a>
-                                <a class="navlink" href="ALQUILERES.html">Alquileres</a>
-                                <a class="navlink" href="CONTACTO.html">Contacto</a>
-                                <a class="navlink only-mobile" href="EMPLEOS.html">Oportunidades Laborales</a>
-
-            
-                            </nav>
-        </div>
-    </header>
+    <div data-include="templates/header.html"></div> 
     <main >
     <section class="hero">
         <img class="hero-bg-image" src="img/equipos.jpg" alt="Fondo hero" fetchpriority="high" loading="eager">
@@ -164,6 +139,7 @@
 
 
     
+    <script src="js/include.js" defer></script>
     <script src="js/script.js" defer></script>
     <script type="application/ld+json">
     {

@@ -1,0 +1,61 @@
+// js/include.js
+// Carga HTML desde una ruta externa y lo inserta en elementos con el atributo data-include
+// Uso: <div data-include="templates/header.html"></div>
+// Incluir este script antes de </body>: <script src="js/include.js"></script>
+
+(function () {
+  'use strict';
+
+  function loadHTML(path, container) {
+    return fetch(path, { cache: 'no-store' })
+      .then(function (res) {
+        if (!res.ok) throw new Error('HTTP error ' + res.status);
+        return res.text();
+      })
+      .then(function (html) {
+        container.innerHTML = html;
+        // Ejecutar scripts internos del HTML incluido (para que funcionen eventos inline o módulos externos)
+        Array.from(container.querySelectorAll('script')).forEach(function (oldScript) {
+          var script = document.createElement('script');
+          if (oldScript.src) {
+            // copia el src y permite que el navegador lo cargue
+            script.src = oldScript.src;
+            script.async = false; // preservar orden
+          } else {
+            script.textContent = oldScript.textContent;
+          }
+          // Copiar atributos tipo, nomodule, etc.
+          Array.from(oldScript.attributes).forEach(function (attr) {
+            try { script.setAttribute(attr.name, attr.value); } catch (e) { }
+          });
+          document.head.appendChild(script);
+          // Remover el script original para evitar re-ejecuciones si se vuelve a cargar
+          oldScript.parentNode && oldScript.parentNode.removeChild(oldScript);
+        });
+      });
+  }
+
+  function includeAll() {
+    var els = document.querySelectorAll('[data-include]');
+    var promises = Array.from(els).map(function (el) {
+      var path = el.getAttribute('data-include');
+      if (!path) return Promise.resolve();
+      return loadHTML(path, el).catch(function (err) {
+        console.error('[include.js] Error cargando', path, err);
+        // Mostrar un fallback mínimo para evitar huecos en la UI
+        el.innerHTML = '';
+      });
+    });
+    return Promise.all(promises);
+  }
+
+  // API pública: permite cargar manualmente si se necesita
+  window.includeHTML = includeAll;
+
+  // Autoejecución al cargar el DOM
+  if (document.readyState === 'loading') {
+    document.addEventListener('DOMContentLoaded', function () { includeAll(); });
+  } else {
+    includeAll();
+  }
+})();

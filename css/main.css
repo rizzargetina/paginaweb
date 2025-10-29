@@ -530,9 +530,6 @@ button.cta-button {
     height:2.7rem;
 }
 
-/* Generic section container spacing for inner sections */
-.section-container { margin: 2rem 0; }
-
 
 /* Contact layout */
 .contact-wrapper { display:flex; flex-wrap:wrap; gap:24px; }
@@ -592,7 +589,6 @@ label[for="human-check"] { margin: 0; color: var(--color-text); font-weight: 500
 @media (max-width: 900px) {
     .logos-left { flex-grow: 1; justify-content: flex-start; min-width: 100px; gap: var(--spacing-unit); }
     .mobile-menu-button { display: flex; align-items: center; justify-content: center; flex-shrink: 0; }
-    body { font-size: 15px; padding-top: var(--header-height); }
     html { scroll-padding-top: calc(var(--header-height) + 15px) !important; }
     h1 { font-size: 2.0rem; }
     h2 { font-size: 1.8rem; }

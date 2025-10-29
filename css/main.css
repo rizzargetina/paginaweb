@@ -42,8 +42,10 @@
     --padding-medium: 20px;
     --padding-large: 40px;
 
-    /* Fonts: unified system stack for headings and body */
-    --font-primary: ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Arial, "Noto Sans", "Liberation Sans", sans-serif;
+    /* Fonts: use Futura when available, with sensible fallbacks */
+    --font-primary: "Futura", "Futura PT", "Trebuchet MS", ui-sans-serif, system-ui, -apple-system, "Segoe UI", Roboto, Arial, "Noto Sans", "Liberation Sans", sans-serif;
+    /* Use a dedicated variable for headings (keeps bold/uppercase treatments consistent) */
+    --font-headings: "Futura", "Futura PT", "Trebuchet MS", "Segoe UI", Roboto, Arial, sans-serif;
     
     /* Font Sizes */
     --font-size-large: 1.4rem;
@@ -456,7 +458,7 @@ button.cta-button {
     background: rgba(92, 92, 92, 0.08);
     border: 1px solid rgba(28, 28, 28, 0.18);
     cursor: pointer;
-    font-family: 'Roboto', Arial, sans-serif;
+    font-family: var(--font-primary);
     font-weight: 700;
     margin: 14px 0 40px;
     text-align: center;
@@ -761,8 +763,7 @@ label[for="human-check"] { margin: 0; color: var(--color-text); font-weight: 500
 }
 
 /* Bands: unified styles (applies to all pages) */
-.band { padding: 54px 0; margin: 0; }
-.band + .band { margin-top: 0; }
+.band { padding: 50px 0; margin: 0; }
 
 /* Color bands */
 .band-accent { background: linear-gradient(135deg, #262b2f 0%, #52585e 100%); color: #ffffff; }

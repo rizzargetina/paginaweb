@@ -462,9 +462,12 @@ backdrop-filter: blur(10px); /* Aplicar el desenfoque */
 }
 
 .image-content img {
-    height: 100%;
-    object-fit: cover;
+    /* Evitar estirados: usar tamaño natural en desktop y ajustar en responsive */
     width: 100%;
+    height: auto;
+    object-fit: cover;
+    max-width: 100%;
+    display: block;
 }
 #client-logos {
     padding-left: 0; 
@@ -894,3 +897,21 @@ label[for="human-check"] { margin: 0; color: var(--color-text); font-weight: 500
 .band-dark .cta-button:focus,
 .band-hero .cta-button:hover,
 .band-hero .cta-button:focus { background: rgba(255,255,255,0.18); }
+
+/* Responsive fixes para bandas e imágenes en móvil */
+@media (max-width: 900px) {
+    .band { padding: 28px 0; }
+    .band .container { width: var(--container-width-mobile); padding-left: 16px; padding-right: 16px; }
+    /* Forzar apilado y centrado dentro de las bandas */
+    .band .content-section { flex-direction: column; gap: 18px; align-items: center; }
+    .band .text-content { order: 2; width: 100%; }
+    .band .image-content { order: 1; width: 100%; max-width: 520px; }
+    .band .image-content img { width: 100%; height: auto; aspect-ratio: 4/3; object-fit: cover; display: block; }
+}
+
+@media (max-width: 600px) {
+    .band { padding: 20px 0; }
+    .band .container { width: 94%; }
+    /* En pantallas muy pequeñas preferimos imagen cuadrada y más compacta */
+    .band .image-content img { aspect-ratio: 1 / 1; max-width: 420px; }
+}

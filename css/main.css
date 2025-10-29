@@ -535,8 +535,7 @@ button.cta-button {
 .contact-wrapper { display:flex; flex-wrap:wrap; gap:24px; }
 .contact-form-container, .contact-info-container { flex:1; min-width:280px; }
 
-/* Form controls (grouped) */
-#contact-form .form-group { margin-bottom:1rem; }
+
 #contact-form label { display:block; margin-bottom:.5rem; font-weight:500; color:var(--color-text); font-size:.95rem; }
 #contact-form input[type="text"],
 #contact-form input[type="email"],
@@ -768,7 +767,7 @@ label[for="human-check"] { margin: 0; color: var(--color-text); font-weight: 500
 /* Color bands */
 .band-accent { background: linear-gradient(135deg, #262b2f 0%, #52585e 100%); color: #ffffff; }
 .band-muted  { background: #f1f5fb; }
-.band-dark   { background: #0f2036; color: #fafdff; }
+.band-dark   { background: #0f2036; color: #fafdff;}
 .band-white  { background: #ffffff; }
 
 

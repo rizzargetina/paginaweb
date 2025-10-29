@@ -849,3 +849,37 @@ label[for="human-check"] { margin: 0; color: var(--color-text); font-weight: 500
     /* En pantallas muy pequeñas preferimos imagen cuadrada y más compacta */
     .band .image-content img { aspect-ratio: 1 / 1; max-width: 420px; }
 }
+
+/* Evitar FOUC para fragmentos incluidos dinámicamente (header/footer) */
+/*
+ - Mientras se cargan los includes se añade la clase `includes-loading` a <html>.
+ - Cada contenedor con `data-include` obtiene `.include-loading` durante la petición
+   y `.include-ready` cuando su HTML fue insertado.
+ - Si JS no está disponible, el contenido debe mostrarse (fallback con <noscript> si es necesario).
+*/
+
+[data-include] {
+    transition: opacity 180ms var(--transition-fast), visibility 0ms linear 180ms;
+}
+
+html.includes-loading [data-include],
+[data-include].include-loading {
+    opacity: 0 !important;
+    visibility: hidden !important;
+    pointer-events: none !important;
+}
+
+html.includes-loaded [data-include],
+[data-include].include-ready {
+    opacity: 1 !important;
+    visibility: visible !important;
+    pointer-events: auto !important;
+    transition-delay: 0ms;
+}
+
+/* Fallback para no-js: si el navegador no ejecuta JS, mostrar los includes */
+noscript + [data-include],
+[data-include] { /* Keep visible by default when JS disabled */
+    visibility: visible !important;
+    opacity: 1 !important;
+}

@@ -7,6 +7,10 @@
   'use strict';
 
   function loadHTML(path, container) {
+    // marcar contenedor como loading para evitar FOUC mientras se hace fetch
+    try { container.classList.add('include-loading'); } catch (e) { }
+    try { container.setAttribute('aria-hidden', 'true'); } catch (e) { }
+
     return fetch(path, { cache: 'no-store' })
       .then(function (res) {
         if (!res.ok) throw new Error('HTTP error ' + res.status);
@@ -14,6 +18,10 @@
       })
       .then(function (html) {
         container.innerHTML = html;
+        // marcar como listo y restaurar accesibilidad
+        try { container.classList.remove('include-loading'); } catch (e) { }
+        try { container.classList.add('include-ready'); } catch (e) { }
+        try { container.removeAttribute('aria-hidden'); } catch (e) { }
         // Ejecutar scripts internos del HTML incluido (para que funcionen eventos inline o módulos externos)
         Array.from(container.querySelectorAll('script')).forEach(function (oldScript) {
           var script = document.createElement('script');
@@ -36,6 +44,9 @@
   }
 
   function includeAll() {
+    // indicar al CSS que estamos cargando includes para evitar FOUC
+    try { document.documentElement.classList.add('includes-loading'); } catch (e) { }
+
     var els = document.querySelectorAll('[data-include]');
     var promises = Array.from(els).map(function (el) {
       var path = el.getAttribute('data-include');
@@ -54,6 +65,11 @@
       } catch (e) {
         /* fallthrough si CustomEvent no está disponible */
       }
+      // marcar que los includes terminaron (CSS puede mostrarlos)
+      try {
+        document.documentElement.classList.remove('includes-loading');
+        document.documentElement.classList.add('includes-loaded');
+      } catch (e) { }
       return res;
     });
   }

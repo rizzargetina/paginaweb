@@ -57,10 +57,32 @@
     --transition-fast: 0.2s ease;
     --transition-normal: 0.3s ease;
     --transition-slow: 0.28s cubic-bezier(0.2, 0.8, 0.2, 1);
+    /* Band colors (harmonized with site palette) */
+    --band-accent-start: #16243a; /* oscuro, cercano al header */
+    --band-accent-end:   #2f4b6f; /* tono azulado/neutral para gradiente */
+    --band-muted-bg:     #f3f6f9; /* sutil off-white para secciones claras */
+    --band-dark-bg:      var(--color-header-bg); /* reutiliza el color del header */
+    --band-dark-text:    var(--dhl-white);
+    --band-white-bg:     #ffffff;
+    --band-cta-bg:       rgba(255,255,255,0.08);
+    --band-cta-border:   rgba(255,255,255,0.4);
 }
 
 html {
     box-sizing: border-box;
+}
+
+/* GT America Condensed: prefer the locally installed font if available.
+   This project does not bundle GT America (commercial). If you have the
+   font files (woff/woff2) add them into `fonts/` and update the src: url(...)
+   below to reference those files instead of relying on local(). */
+@font-face {
+    font-family: 'GT America Condensed';
+    src: local('GT America Condensed'), local('GT-America-Condensed'), local('GT America Cond'), local('GTAmerCondensed');
+    font-weight: 700;
+    font-style: normal;
+    font-display: swap;
+    font-stretch: condensed;
 }
 
 /* Utility Classes */
@@ -516,6 +538,7 @@ button.cta-button {
     background: var(--color-accent);
     color: #fafdff;
     display: flex;
+    font-family: 'GT America Condensed', var(--font-headings);
     font-size: 2.3rem;
     font-weight: 700;
     gap: 12px;
@@ -765,11 +788,11 @@ label[for="human-check"] { margin: 0; color: var(--color-text); font-weight: 500
 /* Bands: unified styles (applies to all pages) */
 .band { padding: 50px 0; margin: 0; }
 
-/* Color bands */
-.band-accent { background: linear-gradient(135deg, #262b2f 0%, #52585e 100%); color: #ffffff; }
-.band-muted  { background: #f1f5fb; }
-.band-dark   { background: #0f2036; color: #fafdff;}
-.band-white  { background: #ffffff; }
+/* Color bands (usar variables para mantener coherencia con la paleta) */
+.band-accent { background: linear-gradient(135deg, var(--band-accent-start) 0%, var(--band-accent-end) 100%); color: var(--dhl-white); }
+.band-muted  { background: var(--band-muted-bg); color: var(--color-text); }
+.band-dark   { background: var(--band-dark-bg); color: var(--band-dark-text); }
+.band-white  { background: var(--band-white-bg); color: var(--color-text); }
 
 
 /* Container inside bands aligns with site width */
@@ -781,7 +804,7 @@ label[for="human-check"] { margin: 0; color: var(--color-text); font-weight: 500
 /* Text colors on dark bands */
 .band-accent h1, .band-accent h2, .band-accent h3, .band-accent h4,
 .band-dark h1, .band-dark h2, .band-dark h3, .band-dark h4,
-.band-hero h1, .band-hero h2, .band-hero h3, .band-hero h4 { color: #ffffff; }
+.band-hero h1, .band-hero h2, .band-hero h3, .band-hero h4 { color: var(--dhl-white); }
 .band-accent p, .band-dark p, .band-hero p { color: rgba(255,255,255,0.92); }
 
 /* Key metrics inside bands */
@@ -798,9 +821,9 @@ label[for="human-check"] { margin: 0; color: var(--color-text); font-weight: 500
 
 /* CTA contrast on dark bands */
 .band-accent .cta-button, .band-dark .cta-button, .band-hero .cta-button {
-    background: rgba(255,255,255,0.08);
-    border-color: rgba(255,255,255,0.4);
-    color: #ffffff;
+    background: var(--band-cta-bg);
+    border-color: var(--band-cta-border);
+    color: var(--dhl-white);
 }
 .band-accent .cta-button:hover,
 .band-accent .cta-button:focus,

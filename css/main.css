@@ -25,7 +25,7 @@
     --color-footer-text: #495057;
 
     /* Header & Topbar */
-    --color-header-bg: #020028;
+    --color-header-bg: #00356e;
     --color-header-text: WHITE;
     --header-height: 60px;
     --spacing-unit: 8px;
@@ -160,64 +160,25 @@ hr {
     margin-right: auto; 
     max-width: 1200px;
 }
-
-/* Removed broad img rule and unused .container2 */
-
-
 .hero {
+    align-items: center;
+    background-color: #000000;
     display: flex;
-    flex-direction: column;
-    align-items: center; /* Centra horizontalmente */
-    justify-content: flex-start; /* Asegura que el contenido esté al inicio */
-    padding-top: 38px; /* Despaga del top */
-    min-height: 610px;
-    height: 90vh;
-    color: #cccccd;
-    margin: 0 auto; /* Centra horizontalmente */
-}
-.hero .hero-bg-image{
-    position: absolute;
-    inset: 0;
-    width: 100%;
-    height: 90vh;
-    object-fit: cover; /* Ensures the image covers the area like background-size: cover */
-    object-position: top center;
-    z-index: 1;
-    display: block;
-}
-
-/* Hero overlay: headline, tagline and CTAs */
-.hero-overlay{
+    height: 450px;
+    margin-bottom: 20px;
+    justify-content: center;
+    overflow: hidden;
     position: relative;
-    z-index: 3;
-    max-width: 1100px;
     width: 100%;
-    padding: 28px 24px;
-    margin-top: 70px;
-    text-align: left;
-    color: #ffffff;
-    display: flex;
-    flex-direction: column;
-    gap: 12px;
-    align-items: flex-start;
-    text-shadow: 0 6px 18px rgba(0,0,0,0.45);
 }
-.hero-overlay h2{ font-size: clamp(1.6rem, 3.8vw, 2.6rem); margin: 0; letter-spacing: 0.6px; font-weight:800; }
-.hero-overlay .hero-tagline{ font-size: 1.05rem; color: rgba(255,255,255,0.92); margin: 0; max-width: 760px; }
-.hero-ctas{ display:flex; gap:12px; margin-top: 8px; }
 
-/* Primary CTA for hero - more prominent */
-.cta-primary{
-    background: linear-gradient(90deg,#ff7a00 0%, #ffb700 100%);
-    color: #111; border: 0; box-shadow: 0 8px 20px rgba(255,140,0,0.18); padding: 12px 18px;
-}
-.cta-primary:hover, .cta-primary:focus{ transform: translateY(-3px) scale(1.02); box-shadow: 0 12px 28px rgba(255,140,0,0.22); }
 
-/* Decorative gradient layer for depth */
-.hero-gradient{ position:absolute; inset: auto 0 0 0; height: 220px; z-index:2; pointer-events:none; background: linear-gradient(180deg, rgba(0,0,0,0) 0%, rgba(0,0,0,0.36) 40%, rgba(0,0,0,0.6) 100%); }
+/* Primary CTA left as-is but can be simplified elsewhere */
+.cta-primary{ z-index: 3; }
 
-/* Reveal animation helper used for subtle entrance */
-.reveal{ opacity: 0; transform: translateY(10px); transition: opacity 600ms cubic-bezier(.2,.9,.25,1), transform 600ms cubic-bezier(.2,.9,.25,1); }
+
+/* Reveal helper kept but simplified timing elsewhere */
+.reveal{ opacity: 0; transform: translateY(10px); transition: opacity 360ms ease, transform 360ms ease; }
 .reveal.is-visible{ opacity: 1; transform: translateY(0); }
 
 /* Client-logo marquee animation (applies conditionally via JS class) */
@@ -227,50 +188,6 @@ hr {
 }
 .client-logo-track.animate{ animation: marquee 20s linear infinite; }
 
-/* Slight pulse for hero headline to add life */
-@keyframes hero-pulse { 0% { transform: translateY(0); } 50% { transform: translateY(-3px); } 100% { transform: translateY(0); } }
-.hero-overlay h2 { animation: hero-pulse 6s ease-in-out infinite; }
-
-.hero h1{
-    font-family:var(--font-headings);
-    font-size:3.5rem; /* Incrementar tamaño de fuente */
-    font-weight:900; /* Hacer el texto más grueso */
-    text-transform:uppercase; /* Convertir texto a mayúsculas */
-    letter-spacing:1.5px; /* Añadir espaciado entre letras */
-    color:#ffffff;
-    padding: 18px; /* Ajustar el espacio alrededor del texto */
-    max-width: 800px; /* Incrementar el ancho del fondo azul */
-background-color: rgb(0, 64, 133); /* Color oscuro con opacidad */
-backdrop-filter: blur(10px); /* Aplicar el desenfoque */
-}
-
-@media (max-width: 600px) {
-    .hero {
-    display: flex;
-    flex-direction: column;
-    align-items: center; /* Centra horizontalmente */
-    justify-content: flex-start; /* Asegura que el contenido esté al inicio */
-    padding-top: 0px; /* Despaga del top */
-    height: 650px;
-    color: #cccccd;
-    margin: 0 auto; /* Centra horizontalmente */
-}
-.hero .hero-bg-image{
-    position: absolute;
-    inset: 0;
-    width: 100%;
-    max-height: 650px;
-    object-position: top center;
-    object-fit: cover; /* Ensures the image covers the area like background-size: cover */
-    z-index: 1;
-    display: block;
-}
-    .hero h1{
-        font-size:2.5rem; /* Ajustar tamaño de fuente para pantallas pequeñas */
-        padding: 20px; /* Ajustar padding para pantallas pequeñas */
-        text-align: center; /* Asegurar que el texto esté centrado */
-    }
-}
 
 
 
@@ -709,7 +626,7 @@ label[for="human-check"] { margin: 0; color: var(--color-text); font-weight: 500
     /* Visible state when menu is toggled open via JS adding .mobile-menu-open */
     .rulenav.mobile-menu-open {
         pointer-events: auto;
-        color:black;
+        color:rgb(25, 25, 25);
         opacity: 1;
         transform: translateY(0) scale(1);
     }

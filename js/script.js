@@ -7,14 +7,22 @@ document.addEventListener('DOMContentLoaded', () => {
     function initMobileMenuToggle() {
         const mobileBtn = document.getElementById('mobile-menu-button');
         const nav = document.querySelector('#main-navigation.rulenav, .rulenav');
+        const overlay = document.getElementById('mobile-nav-overlay');
 
         if (!mobileBtn || !nav) return;
+        // Evitar inicializar múltiples veces si ya se hizo (por includes:loaded etc.)
+        if (mobileBtn.dataset.menuInit) return;
+        mobileBtn.dataset.menuInit = '1';
 
         function applyState(open) {
             mobileBtn.classList.toggle('open', open);
             nav.classList.toggle('mobile-menu-open', open);
             mobileBtn.setAttribute('aria-expanded', String(open));
             document.body.classList.toggle('mobile-menu-open', open);
+            if (overlay) {
+                overlay.classList.toggle('visible', open);
+                overlay.setAttribute('aria-hidden', open ? 'false' : 'true');
+            }
 
             // Manage aria-hidden and focusability for interactive descendants
             const isMobile = window.innerWidth <= 900;
@@ -76,6 +84,13 @@ document.addEventListener('DOMContentLoaded', () => {
             const isOpen = mobileBtn.classList.contains('open');
             applyState(!isOpen);
         });
+
+        // Si existe overlay, permitir cerrar el menú al clickearlo
+        if (overlay) {
+            overlay.addEventListener('click', function () { applyState(false); });
+            // Inicializar atributo aria-hidden si no existe
+            if (!overlay.hasAttribute('aria-hidden')) overlay.setAttribute('aria-hidden', 'true');
+        }
 
         // cerrar con Escape
         document.addEventListener('keydown', (e) => {

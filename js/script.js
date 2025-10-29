@@ -107,39 +107,10 @@ document.addEventListener('DOMContentLoaded', () => {
         try { initMobileMenuToggle(); } catch (e) { /* ignore if header not present yet */ }
 });
 
-// Loader para includes HTML (header)
-document.addEventListener('DOMContentLoaded', () => {
-    const placeholders = document.querySelectorAll('[data-include="header"]');
-    if (!placeholders.length) return;
-
-    fetch('templates/header.html')
-        .then((res) => {
-            if (!res.ok) throw new Error('No se obtuvo templates/header.html');
-            return res.text();
-        })
-        .then((html) => {
-            placeholders.forEach((el) => el.innerHTML = html);
-
-            // Ejecutar scripts inline o con src que venga dentro del header
-            placeholders.forEach((el) => {
-                el.querySelectorAll('script').forEach((old) => {
-                    const s = document.createElement('script');
-                    if (old.src) {
-                        s.src = old.src;
-                        s.async = false;
-                    } else {
-                        s.textContent = old.textContent;
-                    }
-                    document.head.appendChild(s);
-                });
-            });
-
-            // Re-inicializar el menú móvil ahora que el header está en el DOM
-            if (typeof window.initMobileMenuToggle === 'function') {
-                try { window.initMobileMenuToggle(); } catch (e) { console.warn('initMobileMenuToggle falló', e); }
-            }
-
-            document.dispatchEvent(new CustomEvent('includes:loaded'));
-        })
-        .catch((err) => console.error('Error cargando header:', err));
+// Re-inicializar el menú móvil una vez que los includes hayan terminado de cargarse.
+// include.js ahora dispara el evento 'includes:loaded' al finalizar.
+document.addEventListener('includes:loaded', function () {
+    if (typeof window.initMobileMenuToggle === 'function') {
+        try { window.initMobileMenuToggle(); } catch (e) { console.warn('initMobileMenuToggle falló', e); }
+    }
 });

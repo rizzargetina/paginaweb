@@ -46,7 +46,16 @@
         el.innerHTML = '';
       });
     });
-    return Promise.all(promises);
+    // Cuando todos los includes se hayan cargado, emitir un evento para que otros
+    // scripts puedan inicializarse (por ejemplo inyección de JSON-LD o menús).
+    return Promise.all(promises).then(function (res) {
+      try {
+        document.dispatchEvent(new CustomEvent('includes:loaded'));
+      } catch (e) {
+        /* fallthrough si CustomEvent no está disponible */
+      }
+      return res;
+    });
   }
 
   // API pública: permite cargar manualmente si se necesita

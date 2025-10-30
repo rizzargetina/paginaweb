@@ -411,6 +411,9 @@ hr {
 
 .text-content {
     flex: 0.8 1 0;
+    /* Alinea el contenido de texto al inicio (parte superior) cuando el contenedor es
+       un flex row; evita que el texto quede centrado verticalmente. */
+    align-self: flex-start;
 }
 .image-content {
     flex: 1.2 1 0;

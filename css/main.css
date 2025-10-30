@@ -95,7 +95,6 @@ html {
 .header {
     background: var(--color-header-bg);
     color: white;
-    box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.1);
     height: var(--header-height);
     left: 0;
     position: fixed;
@@ -213,9 +212,6 @@ hr {
 .client-logo-track.animate{ animation: marquee 20s linear infinite; }
 
 
-
-
-
 .logos-left {
     align-items: center;
     display: flex;
@@ -268,6 +264,24 @@ hr {
     color: #e8e8e8 !important; /* Asegura que el texto sea negro */
 }
 
+.navlink::after {
+    content: "";
+    position: absolute;
+    left: 12px; /* respeta el padding horizontal */
+    right: 12px;
+    bottom: 18px; /* separación desde la línea base del enlace */
+    height: 2px;
+    background: var(--color-link);
+    transform: scaleX(0);
+}
+
+.navlink:hover::after,
+.navlink:focus::after,
+.navlink:focus-visible::after,
+.navlink.active::after {
+    transform: scaleX(1);
+    opacity: 1;
+}
 
 
 
@@ -355,7 +369,6 @@ hr {
     margin-top: 40px;
      padding: 40px 0;
     border-top: 1px solid var(--color-footer-border);
-    box-shadow: 0px -2px 5px rgba(0, 0, 0, 0.1);
 }
 
 .footer-container {
@@ -649,6 +662,13 @@ label[for="human-check"] { margin: 0; color: var(--color-text); font-weight: 500
         transform: translateY(0) scale(1);
     }
 
+    /* Disable navlink underline in mobile (hamburger) menu */
+    /* The desktop underline is implemented using .navlink::after; on mobile
+       the nav items are stacked and should not show that decorative line. */
+    .rulenav .navlink::after {
+        display: none;
+    }
+
     /* Overlay used behind the mobile menu */
     .mobile-nav-overlay {
         position: fixed;
@@ -882,4 +902,49 @@ noscript + [data-include],
 [data-include] { /* Keep visible by default when JS disabled */
     visibility: visible !important;
     opacity: 1 !important;
+}
+
+.contact-form-container { flex: 1 1 480px; }
+.contact-info-container {
+    flex: 0.9 1 320px;
+    background: var(--color-header-bg);
+    color: #fff;
+    padding: 22px;
+
+}
+.contact-info-container h2, .contact-info-container h3 { color: #fff; }
+.contact-info-container a { color: rgba(255,255,255,0.95); text-decoration: underline; }
+.contact-card .form-group { margin-bottom: 12px; }
+.contact-card input[type="text"], .contact-card input[type="email"], .contact-card input[type="tel"], .contact-card textarea {
+    width: 100%;
+    padding: 12px;
+    border: 1px solid rgba(3, 10, 27, 0.08);
+
+    background: #fff;
+    color: #08223a;
+    font-size: 1rem;
+
+}
+.contact-card input:focus, .contact-card textarea:focus {
+    outline: none;
+    border-color: rgba(0,120,212,0.9);
+
+}
+.cta-button.cta-primary {
+    background: linear-gradient(90deg,#ffd24d 0%, #ffb703 100%);
+    color: #08223a;
+    border: none;
+    padding: 12px 18px;
+    font-size: 1rem;
+    box-shadow: 0 8px 20px rgba(255,183,3,0.18);
+}
+.cta-button.cta-primary:hover {
+    transform: translateY(-3px) scale(1.01);
+    box-shadow: 0 14px 34px rgba(2,6,23,0.18);
+}
+#form-status { color: #8a0000; margin-top: 0.8rem; }
+
+@media (max-width: 900px) {
+  .contact-card { flex-direction: column; padding: 18px; }
+  .contact-info-container { order: -1; width: 100%; }
 }

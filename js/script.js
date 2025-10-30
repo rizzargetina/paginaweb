@@ -120,9 +120,18 @@ document.addEventListener('DOMContentLoaded', () => {
     // Exponer para poder inicializar después de cargar includes
         window.initMobileMenuToggle = initMobileMenuToggle;
         try { initMobileMenuToggle(); } catch (e) { /* ignore if header not present yet */ }
-});
 
-// Re-inicializar el menú móvil una vez que los includes hayan terminado de cargarse.
+        // Play DTM video after 2 seconds
+        setTimeout(() => {
+            const img = document.getElementById('dtm-image');
+            const video = document.getElementById('dtm-video');
+            if (img && video) {
+                img.style.display = 'none';
+                video.style.display = 'block';
+                video.play().catch(e => console.log('Video play failed:', e));
+            }
+        }, 2000);
+    });// Re-inicializar el menú móvil una vez que los includes hayan terminado de cargarse.
 // include.js ahora dispara el evento 'includes:loaded' al finalizar.
 document.addEventListener('includes:loaded', function () {
     if (typeof window.initMobileMenuToggle === 'function') {

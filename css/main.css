@@ -950,9 +950,9 @@ noscript + [data-include],
     opacity: 1 !important;
 }
 
-.contact-form-container { flex: 1 1 480px; }
+.contact-form-container { flex: 1 1 1; }
 .contact-info-container {
-    flex: 0.9 1 320px;
+    flex: 1 1 1;
     background: var(--color-header-bg);
     color: #fff;
     padding: 22px;

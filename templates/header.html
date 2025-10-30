@@ -17,7 +17,15 @@
                 <a class="navlink" href="index.html">Inicio</a>
                 <a class="navlink" href="TRANSPORTE.html">Transporte</a>
                 <a class="navlink" href="ALQUILERES.html">Alquileres</a>
-                <a class="navlink" href="CONTACTO.html">Contacto</a>
+                <!-- Contacto: mantenemos el link principal y añadimos un submenú solo para escritorio -->
+                <div class="nav-dropdown">
+                    <a class=" nav-dropdown-toggle navlink" href="CONTACTO.html">Contacto</a>
+                    <div class="dropdown-menu" aria-hidden="true">
+                            <a class="dropdown-item only-desktop" href="CONTACTO.html"><span class="dropdown-label">Contacto</span></a>
+                            <a class="dropdown-item only-desktop" href="EMPLEOS.html"><span class="dropdown-label">Trabaja con Nosotros</span></a>
+                    </div>
+                </div>
+                <!-- En móvil el enlace a Empleos se muestra como antes -->
                 <a class="navlink only-mobile" href="EMPLEOS.html">Trabaja con Nosotros</a>
             </nav>
             <!-- Overlay para el menú móvil (evita clicks en el fondo y añade sombreado) -->

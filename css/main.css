@@ -283,6 +283,55 @@ hr {
     opacity: 1;
 }
 
+/* Minimal dropdown styling that preserves the existing header design.
+   The menu appears on hover/focus only on desktop and is hidden on mobile. */
+.nav-dropdown { position: relative; display: inline-flex; align-items: center; }
+.dropdown-menu {
+    display: none;
+    background-color: var( --color-header-bg);
+    position: absolute;
+    top: 0;
+    left: 0;
+    min-width: 500px;
+    background: transparent; /* keep header background visible */
+    z-index: 1200;
+    flex-direction: column;
+}
+.dropdown-item {
+    display: block;
+    background-color: var( --color-header-bg);
+    padding: 10px 14px;
+        align-items: center;
+    display: flex;
+    font-family: var(--font-headings);
+    font-size: 0.9rem; /* Ligeramente  p para un look 1s refinado si hay muchos items */
+    font-weight: 700;
+    height: var(--header-height);
+    letter-spacing: 0.8px; /* Un pocos de espaciado♦ñ entre letras para msculas */
+    padding: 12px; /* Un poco  de padding horizontal */
+    position: relative;
+    text-transform: uppercase;
+    color: #e8e8e8 !important; /* Asegura que el texto sea negro */
+}
+.dropdown-item { position: relative; }
+.dropdown-item .dropdown-label { position: relative; display: inline-block; }
+.dropdown-item .dropdown-label::after {
+    content: "";
+    position: absolute;
+    left: 0; /* align to label content */
+    right: 0;
+    bottom: 0px; /* tweak this value if you want the line closer/further from the text */
+    height: 2px;
+    background: var(--color-link);
+    transform: scaleX(0);
+}
+.dropdown-item:hover .dropdown-label::after,
+.dropdown-item:focus .dropdown-label::after,
+.dropdown-item:focus-visible .dropdown-label::after,
+.dropdown-item.active .dropdown-label::after {
+    transform: scaleX(1);
+    opacity: 1;
+}
 
 
 /* --- Mobile Menu Button --- */
@@ -623,6 +672,11 @@ label[for="human-check"] { margin: 0; color: var(--color-text); font-weight: 500
     .mobile-menu-button { display: none; }
     .rulenav { flex-direction: row; width: auto; }
     .only-mobile { display: none !important; }
+    .only-desktop { display: block !important; }
+    .nav-dropdown:hover .dropdown-menu,
+    .nav-dropdown:focus-within .dropdown-menu {
+        display: flex;
+    }
 }
 
 
@@ -731,6 +785,9 @@ label[for="human-check"] { margin: 0; color: var(--color-text); font-weight: 500
 
     .rulenav .navlink { display: flex; color: black; justify-content: right; width: 90vw; padding: 0 2.5rem; text-align: right; font-size: 1.5rem; color: #fff; }
     .only-mobile { display: flex !important; }
+    /* Hide desktop-only dropdown items and prevent dropdown display on mobile */
+    .only-desktop { display: none !important; }
+    .nav-dropdown .dropdown-menu { display: none !important; }
     /* Make images inside .content-section square on small screens */
 
 }

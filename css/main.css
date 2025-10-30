@@ -31,10 +31,10 @@
     --spacing-unit: 8px;
 
     /* Layout & Spacing */
-    --container-width: 86%;
+    --container-width: 96%;
     --container-width-mobile: 90%;
     --container-width-small: 92%;
-    --max-width: 1300px;
+    --max-width: 1400px;
     --gap-small: 10px;
     --gap-medium: 20px;
     --gap-large: 40px;

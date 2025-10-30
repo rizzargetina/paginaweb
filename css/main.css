@@ -826,7 +826,6 @@ label[for="human-check"] { margin: 0; color: var(--color-text); font-weight: 500
     .content-section .image-content .image,
     .content-section .image-content .thumb {
         width: 100%;
-        max-width: 420px;
         aspect-ratio: 1 / 1;
         height: auto;
         object-fit: cover;
@@ -903,7 +902,7 @@ label[for="human-check"] { margin: 0; color: var(--color-text); font-weight: 500
 /* Responsive fixes para bandas e imágenes en móvil */
 @media (max-width: 900px) {
     .band { padding: 28px 0; }
-    .band .container { width: var(--container-width-mobile); padding-left: 16px; padding-right: 16px; }
+
     /* Forzar apilado y centrado dentro de las bandas */
     .band .content-section { flex-direction: column; gap: 18px; align-items: center; }
     .band .text-content { order: 2; width: 100%; }
@@ -913,7 +912,7 @@ label[for="human-check"] { margin: 0; color: var(--color-text); font-weight: 500
 
 @media (max-width: 600px) {
     .band { padding: 20px 0; }
-    .band .container { width: 94%; }
+
     /* En pantallas muy pequeñas preferimos imagen cuadrada y más compacta */
     .band .image-content img { aspect-ratio: 1 / 1; max-width: 420px; }
 }

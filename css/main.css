@@ -200,18 +200,6 @@ hr {
 .cta-primary{ z-index: 3; }
 
 
-/* Reveal helper kept but simplified timing elsewhere */
-.reveal{ opacity: 0; transform: translateY(10px); transition: opacity 360ms ease, transform 360ms ease; }
-.reveal.is-visible{ opacity: 1; transform: translateY(0); }
-
-/* Client-logo marquee animation (applies conditionally via JS class) */
-@keyframes marquee {
-  0% { transform: translateX(0); }
-  100% { transform: translateX(-50%); }
-}
-.client-logo-track.animate{ animation: marquee 20s linear infinite; }
-
-
 .logos-left {
     align-items: center;
     display: flex;
@@ -292,7 +280,7 @@ hr {
     position: absolute;
     top: 0;
     left: 0;
-    min-width: 500px;
+    min-width: 220px;
     background: transparent; /* keep header background visible */
     z-index: 1200;
     flex-direction: column;

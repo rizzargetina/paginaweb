@@ -16,6 +16,51 @@
 <main>
     <h1 class="pepito"> Trabaja con Nosotros </h1>
 
+    <section class="band band-white">
+        <div class="container">
+            <div class="content-section">
+                <div class="text-content">
+                    <h2>Unite a Nuestro Equipo</h2>
+                    <p> Mostranos lo que haces! Valoramos iniciativa, predisposicion y trabajo en equipo.</p>
+                </div>
+                <div class="image-content">
+                    <img src="img/10.jpg" alt="Nuestro equipo de trabajo" class="responsive-image">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="band band-muted">
+        <div class="container">
+            <h2>Vacantes Actuales</h2>
+            <div class="service-cards-container">
+                <div class="service-card">
+                    <img src="img/13.jpg" alt="Chofer Profesional">
+                    <div class="service-card-title">Chofer Profesional</div>
+                </div>
+                <div class="service-card">
+                    <img src="img/arch.jpg" alt="Ingeniero en Sistemas">
+                    <div class="service-card-title">Ingeniero en Sistemas</div>
+                </div>
+                                <div class="service-card">
+                    <img src="img/arch.jpg" alt="Ingeniero en Sistemas">
+                    <div class="service-card-title">Tecnico Civil</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="band band-accent">
+        <div class="container">
+            <h2>¿Cómo Postular?</h2>
+            <div id="como-postular">
+                <p>Si te queres unir a nuestro equipo, envia tu CV al siguiente correo:</p>
+                <p>= <span id="correo-postulacion"></span></p>
+
+                </div>
+        </div>
+    </section>
+
 </main>
 
  <div data-include="templates/footer.html"></div>
@@ -23,20 +68,6 @@
 
     <script src="js/include.js" ></script>
     <script src="js/script.js"></script>
-<script>
-// Activar enlaces de email usando data attributes (evita exponer el correo en el HTML)
-document.addEventListener('DOMContentLoaded', function () {
-    document.querySelectorAll('a.email-link[data-user][data-domain]').forEach(function (link) {
-        link.addEventListener('click', function (e) {
-            e.preventDefault();
-            const user = link.getAttribute('data-user');
-            const domain = link.getAttribute('data-domain');
-            const subject = link.getAttribute('data-subject') || 'CV Postulación';
-            const mailto = `mailto:${user}@${domain}?subject=${encodeURIComponent(subject)}`;
-            window.location.href = mailto;
-        });
-    });
-});
-</script>
+
 </body>
 </html>

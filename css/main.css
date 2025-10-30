@@ -502,7 +502,6 @@ hr {
 .metrics-container {
     display: flex;
     flex-wrap: wrap;
-    gap: var(--gap-medium);
     justify-content: space-around;
     text-align: center;
 }
@@ -863,7 +862,7 @@ label[for="human-check"] { margin: 0; color: var(--color-text); font-weight: 500
 
 
 /* Container inside bands aligns with site width */
-.band .container { max-width: var(--max-width); width: var(--container-width); margin: 0 auto; }
+.band .container { max-width: 1200px; width: var(--container-width); margin: 0 auto; }
 
 /* Alternate layout for sections */
 .content-section.alt { flex-direction: row-reverse; }

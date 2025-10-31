@@ -950,9 +950,9 @@ noscript + [data-include],
     opacity: 1 !important;
 }
 
-.contact-form-container { flex: 1 1 1; }
+.contact-form-container { flex: 0.9 1 0; }
 .contact-info-container {
-    flex: 1 1 1;
+    flex: 1.1 1 0;
     background: var(--color-header-bg);
     color: #fff;
     padding: 22px;
@@ -988,8 +988,6 @@ noscript + [data-include],
     transform: translateY(-3px) scale(1.01);
     box-shadow: 0 14px 34px rgba(2,6,23,0.18);
 }
-#form-status { color: #8a0000; margin-top: 0.8rem; }
-
 @media (max-width: 900px) {
   .contact-card { flex-direction: column; padding: 18px; }
   .contact-info-container { order: -1; width: 100%; }

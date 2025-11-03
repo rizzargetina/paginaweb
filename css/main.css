@@ -280,7 +280,7 @@ hr {
     position: absolute;
     top: 0;
     left: 0;
-    min-width: 220px;
+    width: 220px;
     background: transparent; /* keep header background visible */
     z-index: 1200;
     flex-direction: column;
@@ -294,7 +294,7 @@ hr {
     font-family: var(--font-headings);
     font-size: 0.9rem; /* Ligeramente  p para un look 1s refinado si hay muchos items */
     font-weight: 700;
-    height: var(--header-height);
+    height: 60px;
     letter-spacing: 0.8px; /* Un pocos de espaciado♦ñ entre letras para msculas */
     padding: 12px; /* Un poco  de padding horizontal */
     position: relative;

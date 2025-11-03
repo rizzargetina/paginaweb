@@ -1,6 +1,6 @@
 :root {
     /* Accents & links */
-    --color-accent: #0051a8; 
+    --color-accent: #003b79; 
     --color-link: #0056b3;
     --color-link-hover: #003d73;
     --bott-color: #f1f3f5;
@@ -280,7 +280,7 @@ hr {
     position: absolute;
     top: 0;
     left: 0;
-    width: 220px;
+    min-width: 220px;
     background: transparent; /* keep header background visible */
     z-index: 1200;
     flex-direction: column;

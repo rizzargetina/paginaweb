@@ -177,11 +177,12 @@ hr {
     color: #17191e;
 
 }
-.container { 
-    width: var(--container-width); 
-    margin-left: auto; 
-    margin-right: auto; 
-    max-width: 1200px;
+.container {
+    max-width: 1400px; /* Ancho de contenido amplio, estilo corporativo */
+    margin-left: auto;
+    margin-right: auto;
+    padding-left: 1.5em;
+    padding-right: 1.5em;
 }
 .hero {
     align-items: center;

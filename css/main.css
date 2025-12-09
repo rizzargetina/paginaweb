@@ -58,8 +58,8 @@
     --transition-normal: 0.3s ease;
     --transition-slow: 0.28s cubic-bezier(0.2, 0.8, 0.2, 1);
     /* Band colors (harmonized with site palette) */
-    --band-accent-start: #16243a; /* oscuro, cercano al header */
-    --band-accent-end:   #2f4b6f; /* tono azulado/neutral para gradiente */
+    --band-accent-start: #050d1a; /* oscuro, cercano al header */
+    --band-accent-end:   #1b3e6d; /* tono azulado/neutral para gradiente */
     --band-muted-bg:     #f3f6f9; /* sutil off-white para secciones claras */
     --band-dark-bg:      var(--color-header-bg); /* reutiliza el color del header */
     --band-dark-text:    var(--dhl-white);

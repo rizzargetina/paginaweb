@@ -734,7 +734,7 @@ label[for="human-check"] { margin: 0; color: var(--color-text); font-weight: 500
 
     /* When menu is open, give it a dark, high-contrast background and ensure items are readable */
     .rulenav.mobile-menu-open {
-        background: black;
+        background: #03213d;
         color: #fff;
     }
     .rulenav.mobile-menu-open .navlink { color: #fff; }

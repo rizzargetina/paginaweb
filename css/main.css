@@ -993,3 +993,14 @@ noscript + [data-include],
   .contact-card { flex-direction: column; padding: 18px; }
   .contact-info-container { order: -1; width: 100%; }
 }
+
+@media (max-width: 600px) {
+    .contact-info-container {
+    width: 100vw !important;
+    margin-left: calc(-1 * (100vw - 100%) / 2);
+    margin-right: calc(-1 * (100vw - 100%) / 2);
+    border-radius: 0 !important;
+    padding-left: 16px;
+    padding-right: 16px;
+    }
+}

@@ -19,7 +19,6 @@
 
     /* Footer */
     --color-footer-bg: #f8f9fa;
-    --color-footer-border: #ced4da;
     --color-footer-link: var(--color-link);
     --color-footer-link-hover: var(--color-link-hover);
     --color-footer-text: #495057;
@@ -938,13 +937,6 @@ label[for="human-check"] { margin: 0; color: var(--color-text); font-weight: 500
     .band .image-content img { aspect-ratio: 1 / 1; max-width: 420px; }
 }
 
-/* Evitar FOUC para fragmentos incluidos dinámicamente (header/footer) */
-/*
- - Mientras se cargan los includes se añade la clase `includes-loading` a <html>.
- - Cada contenedor con `data-include` obtiene `.include-loading` durante la petición
-   y `.include-ready` cuando su HTML fue insertado.
- - Si JS no está disponible, el contenido debe mostrarse (fallback con <noscript> si es necesario).
-*/
 
 [data-include] {
     transition: opacity 180ms var(--transition-fast), visibility 0ms linear 180ms;

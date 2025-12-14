@@ -404,9 +404,8 @@ hr {
     color: white;
      font-family: var(--font-primary);
      font-size: 0.9rem;
-    margin-top: 40px;
+    margin-top: 0;
      padding: 40px 0;
-    border-top: 1px solid var(--color-footer-border);
 }
 
 .footer-container {
@@ -545,7 +544,8 @@ button.cta-button {
     cursor: pointer;
     font-family: var(--font-primary);
     font-weight: 700;
-    margin: 14px 0 40px;
+    /* Eliminar margen inferior excesivo para evitar franja blanca entre bandas */
+    margin: 14px 0 0;
     text-align: center;
     text-transform: uppercase;
     transition: background var(--transition-fast), color var(--transition-fast), transform var(--transition-fast);

@@ -438,13 +438,13 @@ hr {
 .content-section {
     display: flex;
     align-items: center;
-    gap: 28px;
+    gap: 16px;
 }
 
 .image-content,
 .image-content img{
     border: none;
-    margin: 10px;
+    margin: 6px;
 }
 
 .text-content {
@@ -452,6 +452,16 @@ hr {
     /* Alinea el contenido de texto al inicio (parte superior) cuando el contenedor es
        un flex row; evita que el texto quede centrado verticalmente. */
     align-self: flex-start;
+}
+.content-section .text-content h1,
+.content-section .text-content h2,
+.content-section .text-content h3 {
+    margin-top: 0;
+    margin-bottom: 0.6rem;
+}
+.content-section .text-content p {
+    margin-top: 0;
+    margin-bottom: 0.8rem;
 }
 .image-content {
     flex: 1.2 1 0;
@@ -821,8 +831,8 @@ label[for="human-check"] { margin: 0; color: var(--color-text); font-weight: 500
     /* Reducir espacio entre imagen y texto en móvil */
     .image-content img,
     .content-section .image-content img {
-        margin-top: 8px !important;
-        margin-bottom: 8px !important;
+        margin-top: 4px !important;
+        margin-bottom: 4px !important;
     }
 
     /* Content section: stack vertically and center */
@@ -860,7 +870,7 @@ label[for="human-check"] { margin: 0; color: var(--color-text); font-weight: 500
 }
 
 /* Bands: unified styles (applies to all pages) */
-.band { padding: 50px 0; margin: 0; }
+.band { padding: 30px 0; margin: 0; }
 
 /* Color bands (usar variables para mantener coherencia con la paleta) */
 .band-accent { background: linear-gradient(135deg, var(--band-accent-start) 0%, var(--band-accent-end) 100%); color: var(--dhl-white); }
@@ -908,17 +918,17 @@ label[for="human-check"] { margin: 0; color: var(--color-text); font-weight: 500
 
 /* Responsive fixes para bandas e imágenes en móvil */
 @media (max-width: 900px) {
-    .band { padding: 28px 0; }
+    .band { padding: 20px 0; }
 
     /* Forzar apilado y centrado dentro de las bandas */
-    .band .content-section { flex-direction: column; gap: 18px; align-items: center; }
+    .band .content-section { flex-direction: column; gap: 12px; align-items: center; }
     .band .text-content { order: 2; width: 100%; }
     .band .image-content { order: 1; width: 100%; max-width: 520px; }
     .band .image-content img { width: 100%; height: auto; aspect-ratio: 4/3; object-fit: cover; display: block; }
 }
 
 @media (max-width: 600px) {
-    .band { padding: 20px 0; }
+    .band { padding: 14px 0; }
 
     /* En pantallas muy pequeñas preferimos imagen cuadrada y más compacta */
     .band .image-content img { aspect-ratio: 1 / 1; max-width: 420px; }

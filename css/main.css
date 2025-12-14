@@ -980,6 +980,20 @@ noscript + [data-include],
     padding: 22px;
 
 }
+
+/* Hacer que la columna derecha toque el borde derecho en escritorio */
+.contact-info-container {
+    position: relative;
+}
+
+@media (min-width: 901px) {
+    .contact-info-container {
+        /* Extiende el fondo hasta el borde derecho del viewport */
+        margin-right: calc(50% - 50vw);
+        /* Compensa el padding para que el contenido mantenga separación visual */
+        padding-right: calc(22px + (50vw - 50%));
+    }
+}
 .contact-info-container h2, .contact-info-container h3 { color: #fff; }
 .contact-info-container a { color: rgba(255,255,255,0.95); text-decoration: underline; }
 .contact-card .form-group { margin-bottom: 12px; }

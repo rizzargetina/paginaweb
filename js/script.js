@@ -76,6 +76,52 @@ document.addEventListener('DOMContentLoaded', () => {
             }
         }
 
+        // Ensure state stays correct when viewport crosses the mobile/desktop threshold.
+        // This prevents focusable elements inside the nav from remaining with tabindex="-1"
+        // after the user lets the page idle or resizes the window.
+        (function addResizeHandler() {
+            let lastWasMobile = window.innerWidth <= 900;
+            const focusableSelector = 'a[href], button, input, select, textarea, [tabindex]';
+
+            function restoreForDesktop() {
+                if (!nav) return;
+                nav.removeAttribute('aria-hidden');
+                try { nav.inert = false; } catch (e) {}
+                nav.classList.remove('mobile-menu-open');
+                mobileBtn.classList.remove('open');
+                mobileBtn.setAttribute('aria-expanded', 'false');
+                document.body.classList.remove('mobile-menu-open');
+                if (overlay) {
+                    overlay.classList.remove('visible');
+                    overlay.setAttribute('aria-hidden', 'true');
+                }
+                const focusables = nav.querySelectorAll(focusableSelector);
+                focusables.forEach((el) => {
+                    // If the element currently has tabindex -1 try to restore previous value
+                    if (el.getAttribute('tabindex') === '-1') {
+                        const prev = el.dataset.prevTabindex;
+                        if (prev === 'none' || prev === undefined) {
+                            el.removeAttribute('tabindex');
+                        } else {
+                            el.setAttribute('tabindex', prev);
+                        }
+                        delete el.dataset.prevTabindex;
+                    }
+                });
+            }
+
+            window.addEventListener('resize', function () {
+                const nowMobile = window.innerWidth <= 900;
+                if (nowMobile !== lastWasMobile) {
+                    // If switching to desktop, ensure nav is visible and keyboard-focusable
+                    if (!nowMobile) restoreForDesktop();
+                    // If switching to mobile, close the menu to enforce consistent state
+                    else applyState(false);
+                    lastWasMobile = nowMobile;
+                }
+            });
+        })();
+
         // inicializar (cerrado)
         applyState(false);
 

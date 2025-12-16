@@ -1,0 +1,35 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Diagrama dinámico - Calendario de trabajo</title>
+  <link rel="stylesheet" href="diagrama/style.css" />
+</head>
+<body>
+  <main class="app">
+    <header>
+      <h1>Diagrama choferes y tecnicos</h1>
+    </header>
+
+    <section class="controls">
+      <div id="todayStatus" class="today-status"></div>
+    </section>
+
+    <div class="layout">
+      <div class="main-col">
+        <section id="heatmap" class="heatmap" aria-label="Calendario de trabajo"></section>
+        <div class="edit-area" style="display:flex;gap:8px;align-items:center;margin-left:12px;">
+          <button id="editToggle" class="btn btn-icon edit-btn" title="Editar turnos" aria-pressed="false">
+            <span class="icon edit" aria-hidden="true"></span>
+            <span class="visually-hidden">Editar turnos</span>
+          </button>
+          <div id="editControls"></div>
+        </div>
+      </div>
+    </div>
+  </main>
+
+  <script src="diagrama/script.js"></script>
+</body>
+</html>

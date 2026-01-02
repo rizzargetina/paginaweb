@@ -185,7 +185,6 @@ hr {
 }
 .hero {
     align-items: center;
-    background-color: #000000;
     display: flex;
     height: 450px;
     margin-bottom: 20px;
@@ -194,7 +193,20 @@ hr {
     position: relative;
     width: 100%;
 }
-
+@media (min-width: 100px) {
+.hero {
+    align-items: center;
+    -webkit-backdrop-filter: blur(10px);
+    backdrop-filter: blur(10px);
+    display: flex;
+    height: 72vh;
+    margin-bottom: 20px;
+    justify-content: center;
+    overflow: hidden;
+    position: relative;
+    width: 100%;
+}
+}
 
 /* Primary CTA left as-is but can be simplified elsewhere */
 .cta-primary{ z-index: 3; }

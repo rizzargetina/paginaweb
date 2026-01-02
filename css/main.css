@@ -1,27 +1,15 @@
 :root {
     /* Accents & links */
-    --color-accent: #003b79; 
+    --color-accent: #003b79;
     --color-link: #0056b3;
-    --color-link-hover: #003d73;
     --bott-color: #f1f3f5;
-
-    /* Branding colors usados en todo el sitio */
-    --dhl-white: #ffffff;
-    --dhl-yellow: #f8f9fa;
 
     /* Core Colors */
     --color-border: #ced4da;
     --color-headings: #343a40;
     --color-primary-bg: #ffffff;
-    --color-secondary-bg: #f8f9fa;
     --color-text: #495057;
     --color-text-secondary: #6c757d;
-
-    /* Footer */
-    --color-footer-bg: #f8f9fa;
-    --color-footer-link: var(--color-link);
-    --color-footer-link-hover: var(--color-link-hover);
-    --color-footer-text: #495057;
 
     /* Header & Topbar */
     --color-header-bg: #04284a;
@@ -29,39 +17,29 @@
     --header-height: 60px;
     --spacing-unit: 8px;
 
-    /* Layout & Spacing */
     --container-width: 96%;
     --container-width-mobile: 90%;
-    --container-width-small: 92%;
-    --max-width: 1400px;
-    --gap-small: 10px;
-    --gap-medium: 20px;
-    --gap-large: 40px;
-    --padding-small: 10px;
-    --padding-medium: 20px;
-    --padding-large: 40px;
+    --max-width: 1280px;
+
+    --gap-medium: 16px;
 
     /* Fonts: use Futura when available, with sensible fallbacks */
     --font-primary: "Futura", "Futura PT", "Trebuchet MS", ui-sans-serif, system-ui, -apple-system, "Segoe UI", Roboto, Arial, "Noto Sans", "Liberation Sans", sans-serif;
     /* Use a dedicated variable for headings (keeps bold/uppercase treatments consistent) */
     --font-headings: "Futura", "Futura PT", "Trebuchet MS", "Segoe UI", Roboto, Arial, sans-serif;
-    
-    /* Font Sizes */
-    --font-size-large: 1.4rem;
-    --font-size-normal: 1rem;
-    --font-size-small: 0.9rem;
-    --font-size-tiny: 0.85rem;
 
-    /* Transitions */
+    /* Font Sizes (keep only those referenced) */
+    --font-size-large: 1.4rem;
+
+    /* Transitions (keep used ones) */
     --transition-fast: 0.2s ease;
-    --transition-normal: 0.3s ease;
     --transition-slow: 0.28s cubic-bezier(0.2, 0.8, 0.2, 1);
+
     /* Band colors (harmonized with site palette) */
     --band-accent-start: #050d1a; /* oscuro, cercano al header */
     --band-accent-end:   #001f47; /* tono azulado/neutral para gradiente */
     --band-muted-bg:     #f3f6f9; /* sutil off-white para secciones claras */
     --band-dark-bg:      var(--color-header-bg); /* reutiliza el color del header */
-    --band-dark-text:    var(--dhl-white);
     --band-white-bg:     #ffffff;
     --band-cta-bg:       rgba(255,255,255,0.08);
     --band-cta-border:   rgba(255,255,255,0.4);
@@ -527,7 +505,7 @@ background-position: center;
 }
 .service-card{display:block;overflow:hidden;position:relative;text-decoration:none}
 .service-card img{display:block;filter:brightness(.85);height:220px;object-fit:cover;width:100%}
-.service-card-title{background-color:rgba(16,22,36,.85);box-sizing:border-box;color:var(--dhl-white);font-family:var(--font-headings);font-size:1.15rem;font-weight:700;padding:calc(var(--spacing-unit)*1.5) calc(var(--spacing-unit)*2);position:absolute;left:0;bottom:0;text-align:center;width:100%}
+.service-card-title{background-color:rgba(16,22,36,.85);box-sizing:border-box;color:white;font-family:var(--font-headings);font-size:1.15rem;font-weight:700;padding:calc(var(--spacing-unit)*1.5) calc(var(--spacing-unit)*2);position:absolute;left:0;bottom:0;text-align:center;width:100%}
 .service-card:hover .service-card-title,.service-card:focus-within .service-card-title{background-color: #004fd8;}
 
 
@@ -877,9 +855,9 @@ label[for="human-check"] { margin: 0; color: var(--color-text); font-weight: 500
 .band { padding: 30px 0; margin: 0; }
 
 /* Color bands (usar variables para mantener coherencia con la paleta) */
-.band-accent { background: linear-gradient(135deg, var(--band-accent-start) 0%, var(--band-accent-end) 100%); color: var(--dhl-white); }
+.band-accent { background: linear-gradient(135deg, var(--band-accent-start) 0%, var(--band-accent-end) 100%); color: white; }
 .band-muted  { background: var(--band-muted-bg); color: var(--color-text); }
-.band-dark   { background: var(--band-dark-bg); color: var(--band-dark-text); }
+.band-dark   { background: var(--band-dark-bg); color: white; }
 .band-white  { background: var(--band-white-bg); color: var(--color-text); }
 
 
@@ -892,7 +870,7 @@ label[for="human-check"] { margin: 0; color: var(--color-text); font-weight: 500
 /* Text colors on dark bands */
 .band-accent h1, .band-accent h2, .band-accent h3, .band-accent h4,
 .band-dark h1, .band-dark h2, .band-dark h3, .band-dark h4,
-.band-hero h1, .band-hero h2, .band-hero h3, .band-hero h4 { color: var(--dhl-white); }
+.band-hero h1, .band-hero h2, .band-hero h3, .band-hero h4 { color: white; }
 .band-accent p, .band-dark p, .band-hero p { color: rgba(255,255,255,0.92); }
 
 /* Key metrics inside bands */
@@ -911,7 +889,7 @@ label[for="human-check"] { margin: 0; color: var(--color-text); font-weight: 500
 .band-accent .cta-button, .band-dark .cta-button, .band-hero .cta-button {
     background: var(--band-cta-bg);
     border-color: var(--band-cta-border);
-    color: var(--dhl-white);
+    color: white;
 }
 .band-accent .cta-button:hover,
 .band-accent .cta-button:focus,

@@ -49,10 +49,6 @@ html {
     box-sizing: border-box;
 }
 
-/* GT America Condensed: prefer the locally installed font if available.
-   This project does not bundle GT America (commercial). If you have the
-   font files (woff/woff2) add them into `fonts/` and update the src: url(...)
-   below to reference those files instead of relying on local(). */
 @font-face {
     font-family: 'GT America Condensed';
     src: local('GT America Condensed'), local('GT-America-Condensed'), local('GT America Cond'), local('GTAmerCondensed');

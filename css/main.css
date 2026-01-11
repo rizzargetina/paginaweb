@@ -908,8 +908,15 @@ label[for="human-check"] { margin: 0; color: var(--color-text); font-weight: 500
 @media (max-width: 600px) {
     .band { padding: 14px 0; }
 
-    /* En pantallas muy pequeñas preferimos imagen cuadrada y más compacta */
-    .band .image-content img { aspect-ratio: 1 / 1; max-width: 420px; }
+    /* En pantallas muy pequeñas, las imágenes deben conservar su relación de aspecto natural */
+    .band .image-content img {
+        aspect-ratio: unset;
+        max-width: 420px;
+        width: 100%;
+        height: auto;
+        object-fit: contain;
+        display: block;
+    }
 }
 
 

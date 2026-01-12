@@ -1,3 +1,7 @@
+/* Subrayar todos los enlaces */
+a, a:visited {
+    text-decoration: underline;
+}
 :root {
     /* Accents & links */
     --color-accent: #1F4D7A;
@@ -138,7 +142,8 @@ strong {
 }
 
 a {
-    color: #2a537b;
+    color: #343a40;
+    text-decoration: none;
 }
 /* Emphasis link style (replaces inline styles in HTML) */
 .link-animated { color: var(--color-link); font-weight: 700; }

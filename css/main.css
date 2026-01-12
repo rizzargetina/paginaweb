@@ -1,7 +1,3 @@
-/* Subrayar todos los enlaces */
-a, a:visited {
-    text-decoration: underline;
-}
 :root {
     /* Accents & links */
     --color-accent: #1F4D7A;

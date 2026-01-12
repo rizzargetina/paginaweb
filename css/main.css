@@ -249,74 +249,44 @@ background-position: center;
 /* Minimal dropdown styling that preserves the existing header design.
    The menu appears on hover/focus only on desktop and is hidden on mobile. */
 .nav-dropdown { position: relative; display: inline-flex; align-items: center; }
-/* Dropdown visual mejorado */
 .dropdown-menu {
     display: none;
+    background-color: var( --color-header-bg);
     position: absolute;
-    top: 100%;
+    top: 0;
     left: 0;
     min-width: 220px;
-    background: #18314a;
-    border-radius: 10px;
-    box-shadow: 0 8px 24px 0 rgba(0,0,0,0.18), 0 1.5px 4px 0 rgba(0,0,0,0.10);
+    background: transparent; /* keep header background visible */
     z-index: 1200;
     flex-direction: column;
-    padding: 8px 0;
-    opacity: 0;
-    pointer-events: none;
-    transform: translateY(10px);
-    transition: opacity 0.22s cubic-bezier(.4,0,.2,1), transform 0.22s cubic-bezier(.4,0,.2,1);
 }
-
-.nav-dropdown:hover .dropdown-menu,
-.nav-dropdown:focus-within .dropdown-menu {
-    display: flex;
-    opacity: 1;
-    pointer-events: auto;
-    transform: translateY(0);
-}
-/* Ítems del dropdown mejorados */
 .dropdown-item {
+    display: block;
+    background-color: var( --color-header-bg);
+    padding: 10px 14px;
+        align-items: center;
     display: flex;
-    align-items: center;
     font-family: var(--font-headings);
-    font-size: 1rem;
-    font-weight: 600;
-    padding: 12px 22px;
-    min-height: 48px;
-    letter-spacing: 0.8px;
+    font-size: 0.9rem; /* Ligeramente  p para un look 1s refinado si hay muchos items */
+    font-weight: 700;
+    height: 60px;
+    letter-spacing: 0.8px; /* Un pocos de espaciado♦ñ entre letras para msculas */
+    padding: 12px; /* Un poco  de padding horizontal */
     position: relative;
     text-transform: uppercase;
-    color: #f5f7fa !important;
-    background: none;
-    border: none;
-    transition: background 0.18s;
-    cursor: pointer;
-}
-.dropdown-item:not(:last-child) {
-    border-bottom: 1px solid rgba(255,255,255,0.08);
-}
-.dropdown-item:hover, .dropdown-item:focus {
-    background: rgba(30,60,100,0.18);
-    color: #fff !important;
+    color: #e8e8e8 !important; /* Asegura que el texto sea negro */
 }
 .dropdown-item { position: relative; }
-.dropdown-item .dropdown-label {
-    position: relative;
-    display: inline-block;
-    padding-bottom: 2px;
-}
+.dropdown-item .dropdown-label { position: relative; display: inline-block; }
 .dropdown-item .dropdown-label::after {
     content: "";
     position: absolute;
-    left: 0;
+    left: 0; /* align to label content */
     right: 0;
-    bottom: -2px;
+    bottom: 0px; /* tweak this value if you want the line closer/further from the text */
     height: 2px;
     background: var(--color-link);
-    border-radius: 1px;
     transform: scaleX(0);
-    transition: transform 0.18s;
 }
 .dropdown-item:hover .dropdown-label::after,
 .dropdown-item:focus .dropdown-label::after,

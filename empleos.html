@@ -22,6 +22,10 @@
                 <div class="text-content">
                     <h2>Unite a Nuestro Equipo</h2>
                     <p> Mostranos lo que haces! Valoramos iniciativa, predisposicion y trabajo en equipo.</p>
+                        <div id="gif-amigable-container" style="margin-top: 24px; margin-bottom: 24px; text-align: center; display: none;">
+                            <img src="img/penguin.gif" alt="Gif amigable" style="max-width: 220px; width: 100%; border-radius: 12px; box-shadow: 0 2px 8px rgba(0,0,0,0.08);">
+                            <!-- Reemplaza 'img/tu-gif-aqui.gif' por el gif que prefieras -->
+                        </div>
                 </div>
                 <div class="image-content">
                     <img src="img/10.jpg" alt="Nuestro equipo de trabajo" class="responsive-image">
@@ -29,6 +33,15 @@
             </div>
         </div>
     </section>
+    <script>
+    // Mostrar el gif después de 2 segundos
+    window.addEventListener('DOMContentLoaded', function() {
+      setTimeout(function() {
+        var gif = document.getElementById('gif-amigable-container');
+        if (gif) gif.style.display = 'block';
+      }, 2000);
+    });
+    </script>
 <style>
     .vacantes-grid {
     display: grid;
@@ -63,7 +76,7 @@
         <div class="container">
             <h2>¿Cómo Postularse?</h2>
             <div id="como-postular">
-                <p>Si te queres unir a nuestro equipo, envia tu CV al siguiente correo: "mcampos" luego "@" luego "timolsrl.com"  </p>
+                <p>Envia tu CV al siguiente correo: "mcampos" luego "@" luego "timolsrl.com"  </p>
                 <p><span id="correo-postulacion"></span></p>
 
                 </div>

@@ -29,24 +29,41 @@
             </div>
         </div>
     </section>
+<style>
+    .vacantes-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: var(--gap-medium);
+}
+.vacante{display:block;overflow:hidden;position:relative;text-decoration:none}
+.vacante img{display:block;filter:brightness(.85);height:220px;object-fit:cover;width:100%}
+.vacante-title{background-color:rgba(16,22,36,.85);box-sizing:border-box;color:white;font-family:var(--font-headings);font-size:1.15rem;font-weight:700;padding:calc(var(--spacing-unit)*1.5) calc(var(--spacing-unit)*2);position:absolute;left:0;bottom:0;text-align:center;width:100%}
+.vacante:hover .vacante-title,.vacante:focus-within .vacante-title{background-color:var(--color-accent);}
+
+</style>
 
     <section class="band band-muted">
         <div class="container">
             <h2>Vacantes Actuales</h2>
-            <div class="service-cards-container">
-                <div class="service-card">
-                    <img src="img/13.jpg" alt="Hidrogruista">
-                    <div class="service-card-title">Hidrogruista</div>
+            <div class="vacantes-grid">
+                <div class="vacante">
+                    <img src="img/hidro-ilustracion.webp" alt="Hidrogruista">
+                    <div class="vacante-title">Hidrogruista</div>
+                </div>
+                <div class="vacante">
+                    <img src="img/malacate-ilustracion.jpg" alt="Malacatero">
+                    <div class="vacante-title">Malacatero</div>
                 </div>
             </div>
+
         </div>
     </section>
 
     <section class="band band-accent">
         <div class="container">
-            <h2>¿Cómo Postular?</h2>
+            <h2>¿Cómo Postularse?</h2>
             <div id="como-postular">
-                <p>Si te queres unir a nuestro equipo, envia tu CV al siguiente correo</p>
+                <p>Si te queres unir a nuestro equipo, envia tu CV al siguiente correo: "mcampos" luego "@" luego "timolsrl.com"  </p>
                 <p><span id="correo-postulacion"></span></p>
 
                 </div>

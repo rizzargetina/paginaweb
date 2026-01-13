@@ -963,7 +963,7 @@ noscript + [data-include],
     background: var(--color-header-bg);
     color: #fff;
     padding: 22px;
-
+    border-radius: 0 0 0 20px; /* Solo esquina inferior izquierda */
 }
 
 /* Hacer que la columna derecha toque el borde derecho en escritorio */

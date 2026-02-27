@@ -1,12 +1,58 @@
-<footer class="footer">
+<footer class="footer" aria-label="Pie de página">
+    <style>
+    .footer { background: #091828; color:#ffffff; padding:48px 0 18px; }
+    .footer .footer-container { display:block; max-width:1200px; margin:0 auto; }
+    .footer-top { display:grid; grid-template-columns:1fr 1fr 1fr; gap:28px; align-items:start; }
+    .footer-col h3{ font-size:1.05rem; margin:0 0 14px; letter-spacing:0.6px }
+    .contact-list{ list-style:none; padding:0; margin:0; }
+    .contact-list li{ display:flex; align-items:center; gap:12px; margin-bottom:12px; color:rgba(255,255,255,0.92); }
+    .contact-list a{ color:inherit; text-decoration:none }
+    .contact-list .icon{ width:34px; height:34px; display:inline-flex; align-items:center; justify-content:center; color:#0f2a40; border-radius:6px; font-weight:700; flex:0 0 34px }
+    .logos-col .footer-logos{ display:flex; flex-direction:column; gap:12px; align-items:flex-start }
+    .footer-logos img{ max-width:140px; opacity:0.95 }
+
+    .footer-bottom{ display:flex; justify-content:space-between; align-items:center; gap:12px; margin-top:28px; padding-top:18px; border-top:1px solid rgba(255,255,255,0.04); font-size:0.95rem }
+    .footer-actions{ display:flex; gap:12px; align-items:center }
+    .lang-button{ background:#f6a623; color:#0f2a40; border:none; padding:10px 12px; border-radius:6px; font-weight:700; cursor:pointer }
+    .back-to-top{ display:inline-flex; align-items:center; justify-content:center; width:48px; height:48px; background:#f6a623; color:#0f2a40; border-radius:6px; text-decoration:none }
+    .footer small{ color:rgba(255,255,255,0.6) }
+
+    @media (max-width:900px){
+      .footer-top{ grid-template-columns:1fr; }
+      .footer-bottom{ flex-direction:column; align-items:flex-start; gap:10px }
+      .footer-logos img{ max-width:120px }
+    }
+    </style>
+
     <div class="container footer-container">
-        <div class="footer-left">
-            <p> Domicilio: Pastor J. A. Bowdler 502 - (8324) Cipolletti, Rio Negro</p>
-            <p> Razon Social: TRANSPORTE JGT S.R.L. & TIMOL S.R.L. </p>
+        <div class="footer-top">
+            <div class="footer-col">
+                <h3 style="color: white;">OFICINA</h3>
+                <ul class="contact-list">
+                    <li><span class="icon">📍</span> Pastor J. A. Bowdler 502 - Cipolletti, Río Negro</li>
+                </ul>
+            </div>
+
+            <div class="footer-col">
+                <h3 style="margin-top:12px; color: white;" >TRABAJÁ CON NOSOTROS</h3>
+                <p style="margin:0.3rem 0 0;">✉️ busquedasrrhh548@gmail.com (Adjuntá tu CV)</p>
+            </div>
+
         </div>
-        <div class="footer-right">
-            <p>Ultima Actualizacion:  26 Jun. 2025</p>
-            <p> <a href="FOTOS.html"> FOTOS</a></p>
+
+        <div class="footer-bottom">
+            <div class="copyright">Transporte JGT SRL y Timol SRL </div>
+            <div class="footer-actions">
+                <a class="back-to-top" href="#" title="Ir arriba" aria-label="Ir arriba">▲</a>
+            </div>
         </div>
     </div>
+
+    <script>
+      (function(){
+        var btn = document.querySelector('.back-to-top');
+        if(!btn) return;
+        btn.addEventListener('click', function(e){ e.preventDefault(); window.scrollTo({top:0,behavior:'smooth'}); });
+      })();
+    </script>
 </footer>

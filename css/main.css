@@ -914,6 +914,105 @@ label[for="human-check"] { margin: 0; color: var(--color-text); font-weight: 500
 .band-hero .cta-button:hover,
 .band-hero .cta-button:focus { background: rgba(255,255,255,0.18); }
 
+/* Visual para 'Área de cobertura' - círculo relleno que ocupa ~30% del ancho
+   y se mantiene cuadrado (aspect-ratio 1) */
+#coverage { position: relative; }
+#coverage .coverage-visual {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 18px 0 8px;
+}
+#coverage .coverage-circle {
+    width: 30%;
+    aspect-ratio: 1 / 1;
+    max-width: 320px;
+    min-width: 100px;
+    background: var(--color-accent);
+    border-radius: 50%;
+    box-shadow: 0 8px 18px rgba(0,0,0,0.12) inset, 0 6px 18px rgba(16,22,36,0.08);
+}
+
+@media (max-width: 600px) {
+    #coverage .coverage-circle { width: 45%; }
+}
+
+/* Pin & coordinates inside the coverage circle */
+#coverage .coverage-circle {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    color: #fff;
+}
+
+#coverage .coverage-pin {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+}
+
+#coverage .pin-icon {
+    width: 56px;
+    height: 56px;
+    fill: #ff7b00;
+    opacity: 0.98;
+    filter: drop-shadow(0 6px 10px rgba(0,0,0,0.18));
+}
+
+/* coordinates text removed; pin is now a link to Google Maps */
+
+@media (max-width: 900px) {
+    #coverage .pin-icon { width: 46px; height: 46px; }
+}
+
+@media (max-width: 600px) {
+    #coverage .pin-icon { width: 36px; height: 36px; }
+}
+
+/* Custom tooltip since native title may not show in some contexts */
+#coverage .coverage-pin {
+    position: relative;
+}
+
+#coverage .coverage-pin::after {
+    content: attr(data-tooltip);
+    position: absolute;
+    bottom: calc(100% + 10px);
+    left: 50%;
+    transform: translateX(-50%);
+    background: rgba(0,0,0,0.85);
+    color: #fff;
+    padding: 6px 10px;
+    border-radius: 6px;
+    font-size: 0.85rem;
+    white-space: nowrap;
+    opacity: 0;
+    pointer-events: none;
+    transition: opacity 120ms ease, transform 120ms ease;
+}
+
+#coverage .coverage-pin::before {
+    content: '';
+    position: absolute;
+    bottom: calc(100% + 4px);
+    left: 50%;
+    transform: translateX(-50%);
+    border: 6px solid transparent;
+    border-top-color: rgba(0,0,0,0.85);
+    opacity: 0;
+    transition: opacity 120ms ease;
+}
+
+#coverage .coverage-pin:hover::after,
+#coverage .coverage-pin:focus::after,
+#coverage .coverage-pin:hover::before,
+#coverage .coverage-pin:focus::before {
+    opacity: 1;
+}
+
 /* Responsive fixes para bandas e imágenes en móvil */
 @media (max-width: 900px) {
     .band { padding: 20px 0; }

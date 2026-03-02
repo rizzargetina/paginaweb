@@ -912,11 +912,10 @@ label[for="human-check"] { margin: 0; color: var(--color-text); font-weight: 500
 #coverage .coverage-circle {
     width: 30%;
     aspect-ratio: 1 / 1;
-    max-width: 320px;
-    min-width: 100px;
-    background: var(--color-accent);
+    max-width: 480px;
+    min-width: 150px;
+    background: var(--band-accent-end);
     border-radius: 50%;
-    box-shadow: 0 8px 18px rgba(0,0,0,0.12) inset, 0 6px 18px rgba(16,22,36,0.08);
 }
 
 @media (max-width: 600px) {
@@ -943,7 +942,7 @@ label[for="human-check"] { margin: 0; color: var(--color-text); font-weight: 500
 #coverage .pin-icon {
     width: 56px;
     height: 56px;
-    fill: #ff7b00;
+    fill: var(--color-gold);
     opacity: 0.98;
     filter: drop-shadow(0 6px 10px rgba(0,0,0,0.18));
 }

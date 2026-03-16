@@ -844,7 +844,7 @@ label[for="human-check"] { margin: 0; color: var(--color-text); font-weight: 500
 /* Key metrics inside bands */
 .band-accent #key-metrics, .band-dark #key-metrics, .band-hero #key-metrics { border: 0; margin: 0; padding: 0; background: transparent; }
 .band-accent #key-metrics .metric-item .number,
-.band-dark #key-metrics .metric-item .number,
+.band-dark #ke-metrics .metric-item .number,
 .band-hero #key-metrics .metric-item .number { color: #ffffff; }
 .band-accent #key-metrics .metric-item .label,
 .band-dark #key-metrics .metric-item .label,
@@ -878,9 +878,8 @@ label[for="human-check"] { margin: 0; color: var(--color-text); font-weight: 500
 #coverage .coverage-circle {
     width: 30%;
     aspect-ratio: 1 / 1;
-    max-width: 480px;
+    max-width: 0px;
     min-width: 150px;
-    background: var(--band-accent-end);
     border-radius: 50%;
 }
 

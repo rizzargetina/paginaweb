@@ -81,7 +81,7 @@
     <script>
         // Mostrar correos dinámicamente (evita scrapers)
         function mostrarCorreo(id, usuario, dominio) {
-            const correo = `${usuario}@${dominio}`;
+            const correo = `${usuario}[at]${dominio}`;
             const el = document.getElementById(id);
             if (el) el.innerHTML = `<a href="mailto:${correo}">${correo}</a>`;
         }

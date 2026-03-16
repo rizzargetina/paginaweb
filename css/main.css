@@ -18,15 +18,9 @@
 
     /* Layout sizes */
     --spacing-unit: 8px;
-    --container-width: 96%;
     --container-width-mobile: 90%;
-    --max-width: 1280px;
     --gap-medium: 16px;
 
-    /* Typography */
-    --font-primary: "Futura", "Futura PT", "Trebuchet MS", ui-sans-serif, system-ui, -apple-system, "Segoe UI", Roboto, Arial, "Noto Sans", "Liberation Sans", sans-serif;
-    --font-headings: "Futura", "Futura PT", "Trebuchet MS", "Segoe UI", Roboto, Arial, sans-serif;
-    --font-size-large: 1.4rem;
 
     /* Transitions */
     --transition-fast: 0.2s cubic-bezier(0.4, 0, 0.2, 1);
@@ -37,9 +31,7 @@
     --band-accent-end: #001f47;
     --band-muted-bg: #f3f6f9;
     --band-dark-bg: var(--color-header-bg);
-    --band-white-bg: #ffffff;
     --band-cta-bg: rgba(255,255,255,0.08);
-    --band-cta-border: rgba(255,255,255,0.4);
 
     /* Accent details */
     --color-gold: #ffb703;
@@ -49,14 +41,6 @@ html {
     box-sizing: border-box;
 }
 
-@font-face {
-    font-family: 'GT America Condensed';
-    src: local('GT America Condensed'), local('GT-America-Condensed'), local('GT America Cond'), local('GTAmerCondensed');
-    font-weight: 700;
-    font-style: normal;
-    font-display: swap;
-    font-stretch: condensed;
-}
 .header {
     background: var(--color-header-bg);
     color: white;
@@ -96,7 +80,6 @@ html {
 body {
     background-color: var(--color-primary-bg);
     color: var(--color-text);
-    font-family: var(--font-primary);
     font-size: 18px;
     font-weight: 400;
     line-height: 1.65;
@@ -107,7 +90,6 @@ body {
 
 
 h1, h2, h3, h4, h5, h6 {
-   font-family: var(--font-primary);
    font-weight: 700;
    color: var(--color-headings);
 
@@ -133,9 +115,6 @@ section h1,
 }
 
 
-p {
-    font-size: var(--font-size-large);
-}
 
 strong {
     font-weight: 700;
@@ -220,7 +199,6 @@ background-position: center;
 .navlink {
     align-items: center;
     display: flex;
-    font-family: var(--font-headings);
     font-size: 0.9rem; /* Ligeramente  p para un look 1s refinado si hay muchos items */
     font-weight: 700;
     height: 100%;
@@ -252,7 +230,6 @@ background-position: center;
     padding: 10px 14px;
         align-items: center;
     display: flex;
-    font-family: var(--font-headings);
     font-size: 0.9rem; /* Ligeramente  p para un look 1s refinado si hay muchos items */
     font-weight: 700;
     height: 60px;
@@ -362,7 +339,6 @@ background-position: center;
 .footer {
     background-color: black;
     color: white;
-     font-family: var(--font-primary);
      font-size: 0.9rem;
     margin-top: 0;
      padding: 40px 0;
@@ -374,10 +350,8 @@ background-position: center;
     flex-wrap: wrap;
     gap: var(--gap-medium);
     justify-content: space-between;
-    max-width: var(--max-width);
     padding-left: 16px;
     padding-right: 16px;
-    width: var(--container-width-mobile);
 }
 
 .footer-left, .footer-right {
@@ -477,7 +451,7 @@ background-position: center;
 }
 .metric-item { flex: 1; min-width: 200px; padding: 20px }
 .metric-item .icon { font-size: 2.8rem; color: var(--color-link); margin-bottom: .5rem; display: block }
-.metric-item .number { font-size: 2.5rem; font-weight: 700; color: var(--color-headings); font-family: var(--font-headings) }
+.metric-item .number { font-size: 2.5rem; font-weight: 700; color: var(--color-headings); }
 .metric-item .label { font-size: 1rem; color: var(--color-text-secondary) }
 
 .service-cards-container {
@@ -487,7 +461,7 @@ background-position: center;
 }
 .service-card{display:block;overflow:hidden;position:relative;text-decoration:none}
 .service-card img{display:block;filter:brightness(.85);height:220px;object-fit:cover;width:100%}
-.service-card-title{background-color:rgba(16,22,36,.85);box-sizing:border-box;color:white;font-family:var(--font-headings);font-size:1.15rem;font-weight:700;padding:calc(var(--spacing-unit)*1.5) calc(var(--spacing-unit)*2);position:absolute;left:0;bottom:0;text-align:center;width:100%}
+.service-card-title{background-color:rgba(16,22,36,.85);box-sizing:border-box;color:white;font-size:1.15rem;font-weight:700;padding:calc(var(--spacing-unit)*1.5) calc(var(--spacing-unit)*2);position:absolute;left:0;bottom:0;text-align:center;width:100%}
 .service-card:hover .service-card-title,.service-card:focus-within .service-card-title{background-color:var(--color-accent);}
 
 
@@ -502,7 +476,6 @@ button.cta-button {
     background: rgba(92, 92, 92, 0.08);
     border: 1px solid rgba(28, 28, 28, 0.18);
     cursor: pointer;
-    font-family: var(--font-primary);
     font-weight: 700;
     /* Eliminar margen inferior excesivo para evitar franja blanca entre bandas */
     margin: 14px 0 0;
@@ -561,7 +534,6 @@ button.cta-button {
     background: var(--color-accent);
     color: #fafdff;
     display: flex;
-    font-family: 'GT America Condensed', var(--font-headings);
     font-size: 2.3rem;
     font-weight: 700;
     gap: 12px;
@@ -590,7 +562,7 @@ button.cta-button {
 #contact-form input[type="tel"],
 #contact-form textarea {
     width:100%; padding:12px; border:1px solid var(--color-border);
-    background:var(--color-primary-bg); color:var(--color-text); font:1rem/1.2 var(--font-primary);
+    background:var(--color-primary-bg); color:var(--color-text);
 }
 
 #contact-form ::placeholder { color:var(--color-text-secondary); opacity:.8; font-style:italic; }
@@ -864,7 +836,6 @@ label[for="human-check"] { margin: 0; color: var(--color-text); font-weight: 500
 
 
 /* Container inside bands aligns with site width */
-.band .container { width: var(--container-width); margin: 0 auto; }
 
 /* Alternate layout for sections */
 .content-section.alt { flex-direction: row-reverse; }

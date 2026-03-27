@@ -17,6 +17,7 @@
     --header-height: 70px;
 
     /* Layout sizes */
+    /* 123milanesa */
     --spacing-unit: 8px;
     --container-width-mobile: 90%;
     --gap-medium: 16px;
@@ -137,8 +138,7 @@ hr {
     max-width: 1400px; /* Ancho de contenido amplio, estilo corporativo */
     margin-left: auto;
     margin-right: auto;
-    padding-left: 1.5em;
-    padding-right: 1.5em;
+
 }
 .hero {
     align-items: center;
@@ -203,60 +203,10 @@ background-position: center;
     font-weight: 700;
     height: 100%;
     letter-spacing: 0.8px; /* Un pocos de espaciado♦ñ entre letras para msculas */
-    padding: 12px; /* Un poco  de padding horizontal */
+    padding: 10px; /* Un poco  de padding horizontal */
     position: relative;
     text-transform: uppercase;
     color: #e8e8e8 !important; /* Asegura que el texto sea negro */
-}
-
-
-/* Minimal dropdown styling that preserves the existing header design.
-   The menu appears on hover/focus only on desktop and is hidden on mobile. */
-.nav-dropdown { position: relative; display: inline-flex; align-items: center; }
-.dropdown-menu {
-    display: none;
-    background-color: var( --color-header-bg);
-    position: absolute;
-    top: 0;
-    left: 0;
-    min-width: 220px;
-    background: transparent; /* keep header background visible */
-    z-index: 1200;
-    flex-direction: column;
-}
-.dropdown-item {
-    display: block;
-    background-color: var( --color-header-bg);
-    padding: 10px 14px;
-        align-items: center;
-    display: flex;
-    font-size: 0.9rem; /* Ligeramente  p para un look 1s refinado si hay muchos items */
-    font-weight: 700;
-    height: 60px;
-    letter-spacing: 0.8px; /* Un pocos de espaciado♦ñ entre letras para msculas */
-    padding: 12px; /* Un poco  de padding horizontal */
-    position: relative;
-    text-transform: uppercase;
-    color: #e8e8e8 !important; /* Asegura que el texto sea negro */
-}
-.dropdown-item { position: relative; }
-.dropdown-item .dropdown-label { position: relative; display: inline-block; }
-.dropdown-item .dropdown-label::after {
-    content: "";
-    position: absolute;
-    left: 0; /* align to label content */
-    right: 0;
-    bottom: 0px; /* tweak this value if you want the line closer/further from the text */
-    height: 2px;
-    background: var(--color-link);
-    transform: scaleX(0);
-}
-.dropdown-item:hover .dropdown-label::after,
-.dropdown-item:focus .dropdown-label::after,
-.dropdown-item:focus-visible .dropdown-label::after,
-.dropdown-item.active .dropdown-label::after {
-    transform: scaleX(1);
-    opacity: 1;
 }
 
 
@@ -311,47 +261,18 @@ background-position: center;
 }
 
 
-/* Legacy rules cleaned */
-
-
-
-.language-selector {
-    align-items: center;
-    display: flex; /* Para alinear bien los elementos */
-}
-.language-selector span { 
-    margin: 0 4px;
-    opacity: 0.7;
-}
-.language-selector a {
-    padding: 2px 6px; 
-    font-weight: 500;
-}
-.language-selector a.lang-active {
-    font-weight: 700;
-    background-color: var(--bott-color);
-}
-.language-selector a:not(.lang-active):hover {
-    background-color: rgba(255, 255, 255, 0.08);
-}
-
 
 .footer {
-    background-color: black;
+
     color: white;
      font-size: 0.9rem;
-    margin-top: 0;
-     padding: 40px 0;
 }
 
 .footer-container {
     align-items: flex-start;
     display: flex;
     flex-wrap: wrap;
-    gap: var(--gap-medium);
     justify-content: space-between;
-    padding-left: 16px;
-    padding-right: 16px;
 }
 
 .footer-left, .footer-right {
@@ -409,7 +330,6 @@ background-position: center;
     display: block;
 }
 #client-logos {
-    padding-left: 0; 
     text-align: center; 
     margin-top: 40px;
 }
@@ -449,7 +369,7 @@ background-position: center;
     justify-content: space-around;
     text-align: center;
 }
-.metric-item { flex: 1; min-width: 200px; padding: 20px }
+.metric-item { flex: 1; min-width: 200px; }
 .metric-item .icon { font-size: 2.8rem; color: var(--color-link); margin-bottom: .5rem; display: block }
 .metric-item .number { font-size: 2.5rem; font-weight: 700; color: var(--color-headings); }
 .metric-item .label { font-size: 1rem; color: var(--color-text-secondary) }
@@ -820,11 +740,9 @@ label[for="human-check"] { margin: 0; color: var(--color-text); font-weight: 500
     font-weight: 600;
 }
 
-/* Bands: unified styles (applies to all pages) */
-.band { padding: 30px 0; margin: 0; }
 
 /* Color bands (usar variables para mantener coherencia con la paleta) */
-.band-accent { background: linear-gradient(135deg, var(--band-accent-start) 0%, var(--band-accent-end) 100%); color: white; }
+.band-accent { background: var(--band-dark-bg); color: white; }
 .band-muted  { background: var(--band-muted-bg); color: var(--color-text); }
 .band-dark   { background: var(--band-dark-bg); color: white; }
 .band-white  { background: var(--band-white-bg); color: var(--color-text); }
@@ -839,10 +757,10 @@ label[for="human-check"] { margin: 0; color: var(--color-text); font-weight: 500
 .band-accent h1, .band-accent h2, .band-accent h3, .band-accent h4,
 .band-dark h1, .band-dark h2, .band-dark h3, .band-dark h4,
 .band-hero h1, .band-hero h2, .band-hero h3, .band-hero h4 { color: white; }
-.band-accent p, .band-dark p, .band-hero p { color: rgba(255,255,255,0.92); }
+.band-accent p, .band-dark p, .band-hero p { color: rgba(215, 213, 213, 0.92); }
 
 /* Key metrics inside bands */
-.band-accent #key-metrics, .band-dark #key-metrics, .band-hero #key-metrics { border: 0; margin: 0; padding: 0; background: transparent; }
+.band-accent #key-metrics, .band-dark #key-metrics, .band-hero #key-metrics { border: 0; margin: 0; padding: 30px;  }
 .band-accent #key-metrics .metric-item .number,
 .band-dark #ke-metrics .metric-item .number,
 .band-hero #key-metrics .metric-item .number { color: #ffffff; }
@@ -866,22 +784,7 @@ label[for="human-check"] { margin: 0; color: var(--color-text); font-weight: 500
 .band-hero .cta-button:hover,
 .band-hero .cta-button:focus { background: rgba(255,255,255,0.18); }
 
-/* Visual para 'Área de cobertura' - círculo relleno que ocupa ~30% del ancho
-   y se mantiene cuadrado (aspect-ratio 1) */
-#coverage { position: relative; }
-#coverage .coverage-visual {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    padding: 18px 0 8px;
-}
-#coverage .coverage-circle {
-    width: 30%;
-    aspect-ratio: 1 / 1;
-    max-width: 0px;
-    min-width: 150px;
-    border-radius: 50%;
-}
+
 
 @media (max-width: 600px) {
     #coverage .coverage-circle { width: 45%; }
@@ -923,49 +826,10 @@ label[for="human-check"] { margin: 0; color: var(--color-text); font-weight: 500
 }
 
 /* Custom tooltip since native title may not show in some contexts */
-#coverage .coverage-pin {
-    position: relative;
-}
 
-#coverage .coverage-pin::after {
-    content: attr(data-tooltip);
-    position: absolute;
-    bottom: calc(100% + 10px);
-    left: 50%;
-    transform: translateX(-50%);
-    background: rgba(0,0,0,0.85);
-    color: #fff;
-    padding: 6px 10px;
-    border-radius: 6px;
-    font-size: 0.85rem;
-    white-space: nowrap;
-    opacity: 0;
-    pointer-events: none;
-    transition: opacity 120ms ease, transform 120ms ease;
-}
-
-#coverage .coverage-pin::before {
-    content: '';
-    position: absolute;
-    bottom: calc(100% + 4px);
-    left: 50%;
-    transform: translateX(-50%);
-    border: 6px solid transparent;
-    border-top-color: rgba(0,0,0,0.85);
-    opacity: 0;
-    transition: opacity 120ms ease;
-}
-
-#coverage .coverage-pin:hover::after,
-#coverage .coverage-pin:focus::after,
-#coverage .coverage-pin:hover::before,
-#coverage .coverage-pin:focus::before {
-    opacity: 1;
-}
 
 /* Responsive fixes para bandas e imágenes en móvil */
 @media (max-width: 900px) {
-    .band { padding: 20px 0; }
 
     /* Forzar apilado y centrado dentro de las bandas */
     .band .content-section { flex-direction: column; gap: 12px; align-items: center; }
@@ -975,7 +839,6 @@ label[for="human-check"] { margin: 0; color: var(--color-text); font-weight: 500
 }
 
 @media (max-width: 600px) {
-    .band { padding: 14px 0; }
 
     /* En pantallas muy pequeñas, las imágenes deben conservar su relación de aspecto natural */
     .band .image-content img {
@@ -1020,7 +883,7 @@ noscript + [data-include],
     flex: 1.1 1 0;
     background: var(--color-header-bg);
     color: #fff;
-    padding: 22px;
+    padding: 30px;
     border-radius: 0 0 0 20px; /* Solo esquina inferior izquierda */
 }
 
@@ -1042,7 +905,6 @@ noscript + [data-include],
 .contact-card .form-group { margin-bottom: 12px; }
 .contact-card input[type="text"], .contact-card input[type="email"], .contact-card input[type="tel"], .contact-card textarea {
     width: 100%;
-    padding: 12px;
     border: 1px solid rgba(3, 10, 27, 0.08);
 
     background: #fff;

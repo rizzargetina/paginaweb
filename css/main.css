@@ -4,6 +4,12 @@
     --color-link: #0056b3;
     --bott-color: #f1f3f5;
 
+    /* El color dorado/amarillo que resalta sobre el azul */
+    --color-gold: #ffb703; 
+    --color-header-bg: #0B1F33;
+    --header-height: 70px;
+    --transition-fast: 0.2s cubic-bezier(0.4, 0, 0.2, 1);
+
     /* Core colors */
     --color-border: #ced4da;
     --color-headings: #343a40;
@@ -139,6 +145,11 @@ hr {
     margin-left: auto;
     margin-right: auto;
 
+    /* Espaciado horizontal por defecto para evitar que el contenido quede pegado
+       a los bordes de la ventana en pantallas pequeñas. Se usa una unidad de
+       espacio controlada por la variable --spacing-unit para coherencia. */
+    padding-left: calc(var(--spacing-unit) * 2);
+    padding-right: calc(var(--spacing-unit) * 2);
 }
 .hero {
     align-items: center;
@@ -207,6 +218,34 @@ background-position: center;
     position: relative;
     text-transform: uppercase;
     color: #e8e8e8 !important; /* Asegura que el texto sea negro */
+}
+
+
+
+
+/* La línea amarilla (invisible por defecto) */
+.navlink::after {
+    content: "";
+    position: absolute;
+    bottom: 0;         /* Pegado al borde inferior del header */
+    left: 15px;        /* Alineado con el inicio del texto (matching padding) */
+    right: 15px;       /* Alineado con el final del texto */
+    height: 4px;       /* Grosor de la línea */
+    background: var(--color-gold);
+    
+    /* Animación: empieza con escala 0 (invisible) */
+    transform: scaleX(0);
+    transition: transform var(--transition-fast);
+}
+
+/* Efecto al pasar el mouse (Hover) y cuando el enlace está activo */
+.navlink:hover::after, 
+.navlink.active::after {
+    transform: scaleX(1); /* La línea se expande a su ancho total */
+}
+
+.navlink:hover {
+    color: #ffffff !important; /* El texto brilla un poco más al hacer hover */
 }
 
 
@@ -747,6 +786,14 @@ label[for="human-check"] { margin: 0; color: var(--color-text); font-weight: 500
 .band-dark   { background: var(--band-dark-bg); color: white; }
 .band-white  { background: var(--band-white-bg); color: var(--color-text); }
 
+/* Base para bandas de ancho completo: establecer un padding vertical
+   consistente para todas las secciones que usan la clase .band. Esto
+   garantiza que los textos no queden "pegados" al fondo y mantiene
+   una jerarquía visual coherente en todo el sitio. */
+.band {
+    padding: calc(var(--spacing-unit) * 6) 0;
+}
+
 
 /* Container inside bands aligns with site width */
 
@@ -884,7 +931,7 @@ noscript + [data-include],
     background: var(--color-header-bg);
     color: #fff;
     padding: 30px;
-    border-radius: 0 0 0 20px; /* Solo esquina inferior izquierda */
+
 }
 
 /* Hacer que la columna derecha toque el borde derecho en escritorio */
@@ -934,48 +981,5 @@ noscript + [data-include],
   .contact-info-container { order: -1; width: 100%; }
 }
 
-@media (max-width: 600px) {
-    .contact-info-container {
-    width: 100vw !important;
-    margin-left: calc(-1 * (100vw - 100%) / 2);
-    margin-right: calc(-1 * (100vw - 100%) / 2);
-    border-radius: 0 !important;
-    padding-left: 16px;
-    padding-right: 16px;
-    }
-}
 
 
-:root {
-    /* El color dorado/amarillo que resalta sobre el azul */
-    --color-gold: #ffb703; 
-    --color-header-bg: #0B1F33;
-    --header-height: 70px;
-    --transition-fast: 0.2s cubic-bezier(0.4, 0, 0.2, 1);
-}
-
-
-/* La línea amarilla (invisible por defecto) */
-.navlink::after {
-    content: "";
-    position: absolute;
-    bottom: 0;         /* Pegado al borde inferior del header */
-    left: 15px;        /* Alineado con el inicio del texto (matching padding) */
-    right: 15px;       /* Alineado con el final del texto */
-    height: 4px;       /* Grosor de la línea */
-    background: var(--color-gold);
-    
-    /* Animación: empieza con escala 0 (invisible) */
-    transform: scaleX(0);
-    transition: transform var(--transition-fast);
-}
-
-/* Efecto al pasar el mouse (Hover) y cuando el enlace está activo */
-.navlink:hover::after, 
-.navlink.active::after {
-    transform: scaleX(1); /* La línea se expande a su ancho total */
-}
-
-.navlink:hover {
-    color: #ffffff !important; /* El texto brilla un poco más al hacer hover */
-}

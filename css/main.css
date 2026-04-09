@@ -933,6 +933,7 @@ noscript + [data-include],
     flex: 1.1 1 0;
     background: var(--color-header-bg);
     color: #fff;
+    padding: 30px;
 
 }
 

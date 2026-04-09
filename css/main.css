@@ -529,7 +529,7 @@ button.cta-button {
 
 #contact-form ::placeholder { color:var(--color-text-secondary); opacity:.8; font-style:italic; }
 #contact-form input:focus, #contact-form textarea:focus { outline:none; border-color:var(--color-link); }
-#contact-form textarea { min-height:150px; resize:vertical; }
+#contact-form textarea { min-height:200px; resize:vertical; }
 
 /* Compact checkbox */
 .human-check { display:flex; gap:8px; align-items:center; }

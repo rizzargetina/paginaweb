@@ -51,11 +51,9 @@
 
                 <!-- Contact Info -->
                 <div class="contact-info-container">
-                    <h2>Información útil</h2>
-                        <h3>📬 Correos de contacto:</h3>
-                        <p>Juan Gabriel Tarifa —     <span id="correo-tarifa"></span></p>
-                        <p>Gabriel Alejandro Morales — <span id="correo-morales"></span></p>
-
+                    <h2>Correos electrónicos</h2>
+                        <p>Juan Gabriel Tarifa: </p><p>juangabrieltarifa[at]hotmail.com</p>
+                        <p>Gabriel Alejandro Morales: </p><p>gmorales[at]timolsrl.com</p>
                 </div>
             </div>
         </section>
@@ -64,25 +62,6 @@
     <div data-include="templates/footer.html"></div>
     <script src="js/include.js" ></script>
     <script src="js/script.js"></script>
-    <script>
-        // Mostrar correos dinámicamente (evita scrapers)
-        function mostrarCorreo(id, usuario, dominio) {
-            const correo = `${usuario}[at]${dominio}`;
-            const el = document.getElementById(id);
-            if (el) el.innerHTML = `<a href="${correo}">${correo}</a>`;
-        }
-        mostrarCorreo('correo-tarifa', 'juangabrieltarifa', 'hotmail.com');
-        mostrarCorreo('correo-morales', 'gmorales', 'timolsrl.com');
 
-        // Validación del formulario: honeypot simple
-        document.getElementById('contact-form').addEventListener('submit', function (e) {
-            var hp = document.getElementById('company');
-            if (hp && hp.value) {
-                e.preventDefault();
-                var status = document.getElementById('form-status');
-                if (status) status.textContent = 'Error: posible spam detectado.';
-            }
-        });
-    </script>
 </body>
 </html>

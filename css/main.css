@@ -933,7 +933,6 @@ noscript + [data-include],
     flex: 1.1 1 0;
     background: var(--color-header-bg);
     color: #fff;
-    padding: 30px;
 
 }
 
@@ -942,16 +941,7 @@ noscript + [data-include],
     position: relative;
 }
 
-@media (min-width: 901px) {
-    .contact-info-container {
-        /* Extiende el fondo hasta el borde derecho del viewport */
-        margin-right: calc(50% - 50vw);
-        /* Compensa el padding para que el contenido mantenga separación visual */
-        padding-right: calc(22px + (50vw - 50%));
-    }
-}
 .contact-info-container h2, .contact-info-container h3 { color: #fff; }
-.contact-info-container a { color: rgba(255,255,255,0.95); text-decoration: underline; }
 .contact-card .form-group { margin-bottom: 12px; }
 .contact-card input[type="text"], .contact-card input[type="email"], .contact-card input[type="tel"], .contact-card textarea {
     width: 100%;

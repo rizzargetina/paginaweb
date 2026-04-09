@@ -2,13 +2,13 @@
 
 :root {
     /* Accents & core palette */
-    --color-accent: #1F5A8A;
-    --color-link: #0B5FA5;
+    --color-accent: #1F4D7A;
+    --color-link: #0056b3;
     --bott-color: #f1f3f5;
 
     /* El color dorado/amarillo que resalta sobre el azul */
     --color-gold: #ffb703; 
-    --color-header-bg: #0B2233;
+    --color-header-bg: #0B1F33;
     --header-height: 70px;
     --transition-fast: 0.2s cubic-bezier(0.4, 0, 0.2, 1);
 
@@ -20,7 +20,7 @@
     --color-text-secondary: #6c757d;
 
     /* Header */
-    --color-header-bg: #0B2233;
+    --color-header-bg: #0B1F33;
     --color-header-text: #ffffff;
     --header-height: 70px;
 
@@ -36,8 +36,8 @@
     --transition-slow: 0.28s cubic-bezier(0.2, 0.8, 0.2, 1);
 
     /* Bands */
-    --band-accent-start: #081b2b;
-    --band-accent-end: #0d3b57;
+    --band-accent-start: #050d1a;
+    --band-accent-end: #001f47;
     --band-muted-bg: #f3f6f9;
     --band-dark-bg: var(--color-header-bg);
     --band-cta-bg: rgba(255,255,255,0.08);
@@ -59,8 +59,6 @@ html {
     top: 0; /* Header fijo en la parte superior */
     width: 100%;
     z-index: 1000;
-
-
 }
 
 /* ----------------------------- */
@@ -943,7 +941,16 @@ noscript + [data-include],
     position: relative;
 }
 
+@media (min-width: 901px) {
+    .contact-info-container {
+        /* Extiende el fondo hasta el borde derecho del viewport */
+        margin-right: calc(50% - 50vw);
+        /* Compensa el padding para que el contenido mantenga separación visual */
+        padding-right: calc(22px + (50vw - 50%));
+    }
+}
 .contact-info-container h2, .contact-info-container h3 { color: #fff; }
+.contact-info-container a { color: rgba(255,255,255,0.95); text-decoration: underline; }
 .contact-card .form-group { margin-bottom: 12px; }
 .contact-card input[type="text"], .contact-card input[type="email"], .contact-card input[type="tel"], .contact-card textarea {
     width: 100%;
@@ -956,7 +963,7 @@ noscript + [data-include],
 }
 .contact-card input:focus, .contact-card textarea:focus {
     outline: none;
-    border-color: var(--color-link);
+    border-color: rgba(0,120,212,0.9);
 
 }
 .cta-button.cta-primary {
